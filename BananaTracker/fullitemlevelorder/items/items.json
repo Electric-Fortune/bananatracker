@@ -783,6 +783,13 @@
     "img": "images/key.png",
     "codes": "k8"
   },
+  {
+    "name": "Level 8 Key",
+    "type": "toggle_badged",
+    "base_item": "k8",
+    "img": "images/checkmark.png",
+    "codes": "k8b"
+  },
 
   {
     "type": "static",
