@@ -33,7 +33,7 @@
               "item_size": 31,
               "item_margin": "0,0,7,5",
               "rows": [
-                [ "pearl", "bean", "rainbow", "n64coin", "cr", "fair", "bm" , "gb"  ]
+                [ "pearl", "bean", "n64coin", "rainbow", "cr", "fair", "bm" , "gb"  ]
               ]
             }
           ]
