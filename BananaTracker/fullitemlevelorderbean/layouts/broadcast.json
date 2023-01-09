@@ -6,26 +6,40 @@
     "margin": "10",
     "content": [
       {
-        "type": "array",
-        "orientation": "horizontal",
-        "content": [
-          {
-            "type": "itemgrid",
-            "h_alignment": "center",
-            "item_size": 36,
-            "item_margin": "0,0,7,5",
-            "rows": [
-              [ "dk", "dkg", "dki", "dkm", "dkb", "dkp", "dkbp" ],
-              [ "di", "dig", "dii", "dim", "dib", "dip", "dibp" ],
-              [ "la", "lag", "lai", "lam", "lab", "lap", "labp" ],
-              [ "ti", "tig", "tii", "tim", "tib", "tip", "tibp" ],
-              [ "ch", "chg", "chi", "chm", "chb", "chp", "chbp" ],
-              [ "ss", "dive", "orng", "brrl", "vine", "filmwave", "hasns_1" ],
-              [ "pearl", "bean", "n64coin", "cr", "fair", "bm" , "gb"  ]
-            ]
-          }
-        ]
-      },
+          "type": "array",
+          "orientation": "horizontal",
+          "content": [
+            {
+              "type": "itemgrid",
+              "h_alignment": "center",
+              "item_size": 36,
+              "item_margin": "0,0,7,5",
+              "rows": [
+                [ "dk", "dkg", "dki", "dkm", "dkb", "dkp", "dkbp" ],
+                [ "di", "dig", "dii", "dim", "dib", "dip", "dibp" ],
+                [ "la", "lag", "lai", "lam", "lab", "lap", "labp" ],
+                [ "ti", "tig", "tii", "tim", "tib", "tip", "tibp" ],
+                [ "ch", "chg", "chi", "chm", "chb", "chp", "chbp" ],
+                [ "ss", "dive", "orng", "brrl", "vine", "filmwave", "hasns_1" ],
+              ]
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "orientation": "horizontal",
+          "content": [
+            {
+              "type": "itemgrid",
+              "h_alignment": "center",
+              "item_size": 31,
+              "item_margin": "0,0,7,5",
+              "rows": [
+                [ "pearl", "bean", "rainbow", "n64coin", "cr", "fair", "bm" , "gb"  ]
+              ]
+            }
+          ]
+        },
       {
           "type": "array",
           "orientation": "horizontal",
