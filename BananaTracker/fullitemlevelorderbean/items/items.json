@@ -445,6 +445,15 @@
 	  "initial_quantity": 0,
     "max_quantity": 201
   },
+    {
+    "name": "Rainbow Coins",
+    "type": "consumable",
+    "img": "images/rainbowcoin.png",
+    "codes": "rainbow,rbc",
+    "swap_actions": false,
+    "initial_quantity": 0,
+    "max_quantity": 16
+  },
 
   {
     "type": "static",
