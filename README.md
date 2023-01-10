@@ -1,7 +1,7 @@
 # Banana Tracker
 - An [EmoTracker](https://emotracker.net/) pack for the [Donkey Kong 64 randomizer](https://github.com/2dos/dk64-randomizer) but can also be used for vanilla Donkey Kong 64 as well.
 - Current Version: **Version 1.2.6** (January 8 2023)
-<img src="https://raw.githubusercontent.com/jxjacob/bananatracker/master/bananatracker_example.PNG">
+<img src="https://raw.githubusercontent.com/jxjacob/bananatracker/master/bananatracker_example.jpg">
 
 # Features
 This tracker features tracking for various DK64 Randomizer settings as well as 101% playthroughs.
