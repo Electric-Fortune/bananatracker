@@ -1,0 +1,386 @@
+[
+  {
+    "name": "Open Lobbies",
+	"type": "toggle",
+	"img": "images/settings/b_locker.png",
+	"codes": "open_lobbies"
+  },
+  {
+    "name": "Open Levels",
+	"type": "toggle",
+	"img": "images/settings/switch.png",
+	"codes": "open_levels",
+  },
+  {
+    "name": "Remove High Requirements",
+	"type": "toggle",
+	"initial_active_state": true,
+	"img": "images/dk_move.png",
+	"codes": "no_hi_reqs"
+  },
+  {
+	"name": "Auto Complete Bonus Barrels",
+	"type": "toggle",
+	"img": "images/settings/bonus.png",
+	"codes": "auto_bonus"
+  },
+  {
+	"name": "Hard Shooting",
+	"type": "toggle",
+	"img": "images/settings/hard_shoot.png",
+	"codes": "hard_shoot"
+  },
+  {
+	"name": "Progressive Switch Strength",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/settings/slam_switch.png",
+	    "codes": "prog_switch,prog_switch_on",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/settings/slam_switch.png",
+		"img_mods": "@disabled",
+	    "codes": "prog_switch,prog_switch_off",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Fast Golden Bananas",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/settings/shiny_gb.png",
+	    "codes": "fast_gbs,fast_gbs_on",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/settings/shiny_gb.png",
+		"img_mods": "@disabled",
+	    "codes": "fast_gbs,fast_gbs_off",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Free Trade Agreement",
+	"type": "toggle",
+	"img": "images/settings/tag_barrel.png",
+	"codes": "free_trade"
+  },
+  {
+    "name": "Kongless Hint Doors",
+	"type": "toggle",
+	"loop": true,
+	"img": "images/settings/wrinkly_door_any.png",
+	"codes": "kongless_hints"
+  },
+  {
+    "name": "Kongless Hint Doors (Right Click to disable Wrinkly Puzzles)",
+    "type": "toggle_badged",
+    "base_item": "kongless_hints",
+    "img": "images/settings/wrinkly_door_boulder.png",
+    "codes": "no_wrinkly_puzzles"
+  },
+  {
+	"name": "Pre-Activated Bananaports (Off, *Isles Only*, All)",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/settings/bananaport_isles.png",
+	    "codes": "bananaport,bananaport_isles",
+	    "inherit_codes": false
+	  },
+	  {
+	    "img": "images/settings/bananaport.png",
+	    "codes": "bananaport,bananaport_all",
+	    "inherit_codes": false
+	  },
+	  {
+		"img": "images/settings/bananaport.png",
+		"img_mods": "@disabled",
+		"codes": "bananaport,bananaport_off",
+	    "inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Helm Start Location (Vanilla, *Skip Start*, Skip All)",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/settings/krem_isle_half.png",
+	    "codes": "helm_skip,helm_skip_start",
+	    "inherit_codes": false
+	  },
+	  {
+	    "img": "images/settings/krem_isle.png",
+	    "codes": "helm_skip,helm_skip_all",
+	    "inherit_codes": false
+	  },
+	  {
+		"img": "images/settings/krem_isle.png",
+		"img_mods": "@disabled",
+		"codes": "helm_start,helm_skip_none",
+	    "inherit_codes": false
+	  }
+	]
+  },
+  {
+    "name": "Kasplat Location Randomizer (Vanilla, *Vanilla Locations*, Location Shuffle)",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/settings/kasplat.png",
+	    "codes": "kasplat_rando,kasplat_rando_swap",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/settings/butwherewasthekasplat.png",
+	    "codes": "kasplat_rando,kasplat_rando_on",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/settings/kasplat.png",
+	    "img_mods": "@disabled",
+	    "codes": "kasplat_rando,kasplat_rando_vanilla",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+    "name": "Battle Arena Location Randomizer",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/arena.png",
+	    "img_mods": "@disabled",
+	    "codes": "arena_rando,arena_rando_off",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/arena.png",
+	    "codes": "arena_rando,arena_rando_on",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Banana Fairy Location Randomizer",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/settings/not_a_fairy.png",
+	    "img_mods": "@disabled",
+	    "codes": "fairy_rando,fairy_rando_off",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/settings/not_a_fairy.png",
+	    "codes": "fairy_rando,fairy_rando_on",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+    "name": "Dirt Patch Location Randomizer",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/settings/dirt_patch.png",
+	    "img_mods": "@disabled",
+	    "codes": "dirt_patch_rando,dirt_patch_rando_off",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/settings/dirt_patch.png",
+	    "codes": "dirt_patch_rando,dirt_patch_rando_on",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+    "name": "Colored Banana Location Randomizer",
+	"type": "toggle",
+	"img": "images/settings/rainbow_bananas.png",
+	"codes": "cb_rando"
+  },
+  {
+    "name": "Medal Colored Banana Amount",
+	"type": "consumable",
+	"img": "images/settings/bunch.png",
+	"codes": "medal_amount",
+	"disabled_img_mods": "@enabled",
+	"max_quantity": 100,
+	"initial_quantity": 75
+  },
+  {
+	"name": "Jetpac Banana Medal Amount",
+	"type": "consumable", 
+	"img": "images/bananamedal.gif",
+	"codes": "jetpac_amount",
+	"disabled_img_mods": "@enabled",
+	"max_quantity": 40,
+	"initial_quantity": 15
+  },
+  {
+	"name": "Rareware Banana Fairy Amount",
+	"type": "consumable",
+	"img": "images/fairy.png",
+	"codes": "rw_gb_amount",
+	"disabled_img_mods": "@enabled",
+	"max_quantity": 20,
+	"initial_quantity": 20
+  },
+  {
+	"name": "Helm B. Locker Amount",
+	"type": "consumable",
+	"img": "images/GB.gif",
+	"codes": "helm_entry_amount",
+	"disabled_img_mods": "@enabled",
+	"max_quantity": 201,
+	"initial_quantity": 100
+  },
+  {
+	"name": "Helm Door 1 Amount",
+	"type": "consumable",
+	"img": "images/settings/helm_door.png",
+	"codes": "helm_1_amount",
+	"disabled_img_mods": "@enabled",
+	"max_quantity": 201,
+	"initial_quantity": 4
+  },
+  {
+	"name": "Helm Door 1 Collectable",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true, 
+	"stages": [
+	  {
+	    "img": "images/crown.png",
+	    "codes": "helm_1_type,helm_1_cr",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/fairy.png",
+	    "codes": "helm_1_type,helm_1_fair",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/bean.png",
+	    "codes": "helm_1_type,helm_1_bean",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/pearl.png",
+	    "codes": "helm_1_type,helm_1_pearl",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/GB.gif",
+	    "codes": "helm_1_type,helm_1_gb",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/lanky_bp.png",
+	    "codes": "helm_1_type,helm_1_bp",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/n64rw_coin.png",
+	    "codes": "helm_1_type,helm_1_coin",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/key.png",
+	    "codes": "helm_1_type,helm_1_key",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/bananamedal.gif",
+	    "codes": "helm_1_type,helm_1_bm",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Helm Door 2 Amount",
+	"type": "consumable",
+	"img": "images/settings/helm_door.png",
+	"codes": "helm_2_amount",
+	"disabled_img_mods": "@enabled",
+	"max_quantity": 201,
+	"initial_quantity": 2
+  },
+  {
+	"name": "Helm Door 2 Collectable",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true, 
+	"stages": [
+	  {
+	    "img": "images/n64rw_coin.png",
+	    "codes": "helm_2_type,helm_2_coin",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/key.png",
+	    "codes": "helm_2_type,helm_2_key",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/bananamedal.gif",
+	    "codes": "helm_2_type,helm_2_bm",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/crown.png",
+	    "codes": "helm_2_type,helm_2_cr",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/fairy.png",
+	    "codes": "helm_2_type,helm_2_fair",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/bean.png",
+	    "codes": "helm_2_type,helm_2_bean",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/pearl.png",
+	    "codes": "helm_2_type,helm_2_pearl",
+		"inherit_codes": false
+	  },
+	   {
+	    "img": "images/GB.gif",
+	    "codes": "helm_2_type,helm_2_gb",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/lanky_bp.png",
+	    "codes": "helm_2_type,helm_2_bp",
+		"inherit_codes": false
+	  }
+	]
+  }
+]

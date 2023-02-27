@@ -1,0 +1,560 @@
+﻿[
+  {
+    "name": "Donkey Kong",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/dk.png",
+    "codes": "donkeykong,dk"
+  },
+  {
+    "name": "Coconut Shooter",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/dk_gun.png",
+    "codes": "coconutshooter,dkg"
+  },
+  {
+    "name": "Bongo Blast",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/dk_inst.png",
+    "codes": "bongoblast,dki"
+  },
+  {
+    "name": "Baboon Blast",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/dkpad.png",
+    "codes": "baboonblast,dkp"
+  },
+  {
+    "name": "Strong Kong",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/dkbarrel.png",
+    "codes": "strongkong,dkb"
+  },
+  {
+    "name": "Gorilla Grab",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/dk_move.png",
+    "codes": "gorillagrab,dkm"
+  },
+  {
+    "name": "DK Blueprints",
+    "type": "consumable",
+    "img": "images/dk_bp.png",
+    "codes": "dkblueprints,dkbp",
+    "swap_actions": false,
+	  "initial_quantity": 0,
+    "max_quantity": 8
+  },
+
+
+  {
+    "name": "Diddy Kong",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/diddy.png",
+    "codes": "diddykong,di"
+  },
+  {
+    "name": "Peanut Popguns",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/diddy_gun.png",
+    "codes": "peanutpopguns,dig"
+  },
+  {
+    "name": "Guitar Gazump",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/diddy_inst.png",
+    "codes": "guitargazump,dii"
+  },
+  {
+    "name": "Chimpy Charge",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/diddy_move.png",
+    "codes": "chimpcharge,dim"
+  },
+  {
+    "name": "Rocketbarrel Boost",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/diddybarrel.png",
+    "codes": "rocketbarrelboost,dib"
+  },
+  {
+    "name": "Simian Spring",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/diddypad.png",
+    "codes": "simianspring,dip"
+  },
+  {
+    "name": "Diddy Blueprints",
+    "type": "consumable",
+    "img": "images/diddy_bp.png",
+    "codes": "diddyblueprints,dibp",
+    "swap_actions": false,
+	  "initial_quantity": 0,
+    "max_quantity": 8
+  },
+
+
+  {
+    "name": "Lanky Kong",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/lanky.png",
+    "codes": "lankykong,la"
+  },
+  {
+    "name": "Grape Shooter",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/lanky_gun.png",
+    "codes": "grapeshooter,lag"
+  },
+  {
+    "name": "Trombone Tremor",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/lanky_inst.png",
+    "codes": "trombonetremor,lai"
+  },
+  {
+    "name": "OrangStand",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/lanky_move.png",
+    "codes": "orangstand,lam"
+  },
+  {
+    "name": "Baboon Balloon",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/lankypad.png",
+    "codes": "baboonballoon,lap"
+  },
+  {
+    "name": "OrangStand Sprint",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/lankybarrel.png",
+    "codes": "orangstandsprint,lab"
+  },
+  {
+    "name": "Lanky Blueprints",
+    "type": "consumable",
+    "img": "images/lanky_bp.png",
+    "codes": "lankyblueprints,labp",
+    "swap_actions": false,
+	  "initial_quantity": 0,
+    "max_quantity": 8
+  },
+
+
+  {
+    "name": "Tiny Kong",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/tiny.png",
+    "codes": "tinykong,ti"
+  },
+  {
+    "name": "Feather Bow",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/tiny_gun.png",
+    "codes": "featherbow,tig"
+  },
+  {
+    "name": "Saxophone Slam",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/tiny_inst.png",
+    "codes": "saxophoneslam,tii"
+  },
+  {
+    "name": "Mini-Monkey",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/tinybarrel.png",
+    "codes": "minimonkey,tib"
+  },
+  {
+    "name": "Pony Tail Twirl",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/tiny_move.png",
+    "codes": "ponytailtwirl,tim"
+  },
+  {
+    "name": "Monkeyport",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/tinypad.png",
+    "codes": "monkeyport,tip"
+  },
+  {
+    "name": "Tiny Blueprints",
+    "type": "consumable",
+    "img": "images/tiny_bp.png",
+    "codes": "tinyblueprints,tibp",
+    "swap_actions": false,
+	  "initial_quantity": 0,
+    "max_quantity": 8
+  },
+
+
+  {
+    "name": "Chunky Kong",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/chunky.png",
+    "codes": "chunkykong,ch"
+  },
+  {
+    "name": "Pineapple Launcher",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/chunky_gun.png",
+    "codes": "pineapplelauncher,chg"
+  },
+  {
+    "name": "Trangle Trample",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/chunky_inst.png",
+    "codes": "trangletrample,chi"
+  },
+  {
+    "name": "Hunky Chunky",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/chunkybarrel.png",
+    "codes": "hunkychunky,chb"
+  },
+  {
+    "name": "Primate Punch",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/chunky_move.png",
+    "codes": "primatepunch,chm"
+  },
+  {
+    "name": "Gorilla Gone",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/chunkypad.png",
+    "codes": "gorillagone,chp"
+  },
+  {
+    "name": "Chunky Blueprints",
+    "type": "consumable",
+    "img": "images/chunky_bp.png",
+    "codes": "chunkyblueprints,chbp",
+    "swap_actions": false,
+	  "initial_quantity": 0,
+    "max_quantity": 8
+  },
+  {
+	"name": "Potion",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/checks/potion.png",
+	"codes": "pot"
+  },
+  {
+	"name": "Donkey Potion",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/checks/potion_donkey.png",
+	"codes": "dk_pot"
+  },
+  {
+	"name": "Diddy Potion",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/checks/potion_diddy.png",
+	"codes": "di_pot"
+  },
+  {
+	"name": "Lanky Potion",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/checks/potion_lanky.png",
+	"codes": "la_pot"
+  },
+  {
+	"name": "Tiny Potion",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/checks/potion_tiny.png",
+	"codes": "ti_pot"
+  },
+  {
+	"name": "Chunky Potion",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/checks/potion_chunky.png",
+	"codes": "ch_pot"
+  },
+  {
+    "name": "Cranky Kong",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/cranky.png",
+	"codes": "crankykong,ck"
+  },
+  {
+    "name": "Funky Kong",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/funky.png",
+	"codes": "funkykong,fu"
+  },
+  {
+    "name": "Candy Kong",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/candy.png",
+	"codes": "candykong,ca"
+  },
+
+  {
+    "name": "Simian Slam",
+    "type": "progressive",
+	"allow_disabled": false,
+    "stages": [
+      {
+        "img": "images/slam1.png",
+        "codes": "slam,simianslam,ss"
+      },
+      {
+        "img": "images/slam2.png",
+        "codes": "slam,supersimianslam,sss"
+      },
+      {
+        "img": "images/slam3.png",
+        "codes": "slam,superdupersimianslam,sdss"
+      }
+    ]
+  },
+  {
+    "name": "Homing Ammo",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/homing.png",
+    "codes": "homingammo,ha"
+  },
+  {
+    "name": "Sniper Scope",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/sniper.png",
+    "codes": "sniperscope,sns"
+  },
+  {
+    "name": "Homing Ammo & Sniper Scope",
+    "type": "progressive",
+    "stages": [
+      {
+        "img": "images/homingscope1.png",
+        "codes": "ha_no_sns",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/homingscope2.png",
+        "codes": "no_ha_sns",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/homingscope.png",
+        "codes": "ha_sns",
+		"inherit_codes": false
+      }
+    ]
+  },
+  {
+    "name": "Camera",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/film.gif",
+    "codes": "camera,cam"
+  },
+  {
+   "name": "Shockwave",
+   "type": "toggle",
+   "loop": "true",
+   "img": "images/shockwave.png",
+   "codes": "shockwave,wave"
+  },
+  {
+    "name": "Camera & Shockwave",
+    "type": "progressive",
+    "stages": [
+      {
+        "img": "images/filmwave1.png",
+        "codes": "film_no_wave",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/filmwave2.png",
+        "codes": "no_film_wave",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/filmwave.png",
+        "codes": "film_wave",
+		"inherit_codes": false
+      }
+    ]
+  },
+  {
+   "name": "Diving",
+   "type": "toggle",
+   "loop": "true",
+   "img": "images/swim.png",
+   "codes": "diving,dive"
+  },
+  {
+   "name": "Orange Throwing",
+   "type": "toggle",
+   "loop": "true",
+   "img": "images/orange.png",
+   "codes": "orange,orng"
+  },
+  {
+   "name": "Barrel Throwing",
+   "type": "toggle",
+   "loop": "true",
+   "img": "images/barrel2.png",
+   "codes": "barrel,brrl"
+  },
+  {
+   "name": "Vine Swinging",
+   "type": "toggle",
+   "loop": "true",
+   "img": "images/vine.png",
+   "codes": "vines,vine"
+  },
+  {
+   "name": "Bean",
+   "type": "toggle",
+   "loop": "true",
+   "img": "images/bean.png",
+   "codes": "beans,bean"
+  },
+  {
+    "name": "Pearls",
+    "type": "consumable",
+    "img": "images/pearl.png",
+    "codes": "pearls,pearl",
+    "swap_actions": false,
+    "initial_quantity": 0,
+    "max_quantity": 5
+  },
+  {
+    "name": "Company Coins",
+    "type": "progressive",
+    "stages": [
+      {
+        "img": "images/n64rw_coin_rwbw.png",
+        "codes": "n64coin",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/n64rw_coin_n64bw.png",
+        "codes": "rwcoin",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/n64rw_coin.png",
+        "codes": "bothcoins",
+		"inherit_codes": false
+      }
+    ]
+  },
+  {
+    "name": "N64 Coin",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/n64_coin.png",
+	"codes": "n64coin_full"
+  },
+  {
+    "name": "Rareware Coin",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/rareware_coin.png",
+	"codes": "rwcoin_full"
+  },
+  {
+    "name": "Battle Crowns",
+    "type": "consumable",
+    "img": "images/crown.png",
+    "codes": "crowns,cr",
+    "swap_actions": false,
+	"initial_quantity": 0,
+    "max_quantity": 10
+  },
+  {
+    "name": "Banana Fairies",
+    "type": "consumable",
+    "img": "images/fairy.png",
+    "codes": "fairies,fair",
+    "swap_actions": false,
+	"initial_quantity": 0,
+    "max_quantity": 20
+  },
+  {
+    "name": "Banana Medals",
+    "type": "consumable",
+    "img": "images/bananamedal.gif",
+    "codes": "bananamedals,bm",
+    "swap_actions": false,
+	"initial_quantity": 0,
+    "max_quantity": 40
+  },
+  {
+    "name": "Golden Bananas",
+    "type": "consumable",
+    "img": "images/GB.gif",
+    "codes": "goldenbananas,gb",
+    "swap_actions": false,
+	"initial_quantity": 0,
+    "max_quantity": 201
+  },
+  {
+    "name": "Keys",
+	"type": "consumable",
+	"img": "images/key.png",
+	"codes": "keys",
+	"swap_actions": false,
+	"initial_quantity": 0,
+	"max_quantity": 8
+  },
+  {
+    "name": "Rainbow Coins",
+    "type": "consumable",
+    "img": "images/rainbowcoin.png",
+    "codes": "rainbow,rbc",
+    "swap_actions": false,
+    "initial_quantity": 0,
+    "max_quantity": 16
+  },
+  {
+	"name": "Ice Trap",
+	"type": "consumable",
+	"img": "images/checks/icetrap.png",
+	"codes": "icetrap,it",
+	"swap_actions": false,
+	"initial_quantity": 0,
+	"max_quantity": 20
+  }  
+]

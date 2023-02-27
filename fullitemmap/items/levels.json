@@ -1,0 +1,501 @@
+[ 
+  {
+    "type": "static",
+    "img": "images/1.png",
+    "codes": "l1"
+  },
+  {
+    "name": "Level 1",
+    "type": "progressive",
+	"loop": true,
+	"allow_disabled": false,
+    "stages": [
+      {
+        "img": "images/unknown.png",
+        "codes": "level1"
+      },
+      {
+        "img": "images/japes.png",
+		"codes": "level1,l1_japes",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/aztec.png",
+		"codes": "level1,l1_aztec",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/factory.png",
+		"codes": "level1,l1_factory",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/galleon.png",
+		"codes": "level1,l1_galleon",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/forest.png",
+		"codes": "level1,l1_forest",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/caves.png",
+		"codes": "level1,l1_caves",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/castle.png",
+		"codes": "level1,l1_castle",
+		"inherit_codes": false
+      }
+    ]
+  },
+  {
+    "name": "Level 1 Key",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/key.png",
+    "codes": "k1"
+  },
+  {
+    "name": "Level 1 Key",
+    "type": "toggle_badged",
+    "base_item": "k1",
+    "img": "images/checkmark.png",
+    "codes": "k1b"
+  },
+
+  {
+    "type": "static",
+    "img": "images/2.png",
+    "codes": "l2"
+  },
+  {
+    "name": "Level 2",
+    "type": "progressive",
+	"loop": true,
+	"allow_disabled": false,
+    "stages": [
+      {
+        "img": "images/unknown.png",
+        "codes": "level2"
+      },
+      {
+        "img": "images/japes.png",
+		"codes": "level2, l2_japes",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/aztec.png",
+		"codes": "level2, l2_aztec",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/factory.png",
+		"codes": "level2, l2_factory",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/galleon.png",
+		"codes": "level2, l2_galleon",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/forest.png",
+		"codes": "level2, l2_forest",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/caves.png",
+		"codes": "level2, l2_caves",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/castle.png",
+		"codes": "level2, l2_castle",
+		"inherit_codes": false
+      }
+    ]
+  },
+  {
+    "name": "Level 2 Key",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/key.png",
+    "codes": "k2"
+  },
+  {
+    "name": "Level 2 Key",
+    "type": "toggle_badged",
+    "base_item": "k2",
+    "img": "images/checkmark.png",
+    "codes": "k2b"
+  },
+
+  {
+    "type": "static",
+    "img": "images/3.png",
+    "codes": "l3"
+  },
+  {
+    "name": "Level 3",
+    "type": "progressive",
+	"loop": true,
+	"allow_disabled": false,
+    "stages": [
+      {
+        "img": "images/unknown.png",
+        "codes": "level3"
+      },
+      {
+        "img": "images/japes.png",
+		"codes": "level3, l3_japes",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/aztec.png",
+		"codes": "level3, l3_aztec",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/factory.png",
+		"codes": "level3, l3_factory",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/galleon.png",
+		"codes": "level3, l3_galleon",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/forest.png",
+		"codes": "level3, l3_forest",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/caves.png",
+		"codes": "level3, l3_caves",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/castle.png",
+		"codes": "level3, l3_castle",
+		"inherit_codes": false
+      }
+    ]
+  },
+  {
+    "name": "Level 3 Key",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/key.png",
+    "codes": "k3"
+  },
+  {
+    "name": "Level 3 Key",
+    "type": "toggle_badged",
+    "base_item": "k3",
+    "img": "images/checkmark.png",
+    "codes": "k3b"
+  },
+
+  {
+    "type": "static",
+    "img": "images/4.png",
+    "codes": "l4"
+  },
+  {
+    "name": "Level 4",
+    "type": "progressive",
+	"loop": true,
+	"allow_disabled": false,
+    "stages": [
+      {
+        "img": "images/unknown.png",
+        "codes": "level4"
+      },
+      {
+        "img": "images/japes.png",
+		"codes": "level4, l4_japes",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/aztec.png",
+		"codes": "level4, l4_aztec",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/factory.png",
+		"codes": "level4, l4_factory",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/galleon.png",
+		"codes": "level4, l4_galleon",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/forest.png",
+		"codes": "level4, l4_forest",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/caves.png",
+		"codes": "level4, l4_caves",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/castle.png",
+		"codes": "level4, l4_castle",
+		"inherit_codes": false
+      }
+    ]
+  },
+  {
+    "name": "Level 4 Key",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/key.png",
+    "codes": "k4"
+  },
+  {
+    "name": "Level 4 Key",
+    "type": "toggle_badged",
+    "base_item": "k4",
+    "img": "images/checkmark.png",
+    "codes": "k4b"
+  },
+
+  {
+    "type": "static",
+    "img": "images/5.png",
+    "codes": "l5"
+  },
+  {
+    "name": "Level 5",
+    "type": "progressive",
+	"loop": true,
+	"allow_disabled": false,
+    "stages": [
+      {
+        "img": "images/unknown.png",
+        "codes": "level5"
+      },
+      {
+        "img": "images/japes.png",
+		"codes": "level5, l5_japes",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/aztec.png",
+		"codes": "level5, l5_aztec",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/factory.png",
+		"codes": "level5, l5_factory",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/galleon.png",
+		"codes": "level5, l5_galleon",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/forest.png",
+		"codes": "level5, l5_forest",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/caves.png",
+		"codes": "level5, l5_caves",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/castle.png",
+		"codes": "level5, l5_castle",
+		"inherit_codes": false
+      }
+    ]
+  },
+  {
+    "name": "Level 5 Key",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/key.png",
+    "codes": "k5"
+  },
+  {
+    "name": "Level 5 Key",
+    "type": "toggle_badged",
+    "base_item": "k5",
+    "img": "images/checkmark.png",
+    "codes": "k5b"
+  },
+
+  {
+    "type": "static",
+    "img": "images/6.png",
+    "codes": "l6"
+  },
+  {
+    "name": "Level 6",
+    "type": "progressive",
+	"loop": true,
+	"allow_disabled": false,
+    "stages": [
+      {
+        "img": "images/unknown.png",
+        "codes": "level6"
+      },
+      {
+        "img": "images/japes.png",
+		"codes": "level6, l6_japes",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/aztec.png",
+		"codes": "level6, l6_aztec",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/factory.png",
+		"codes": "level6, l6_factory",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/galleon.png",
+		"codes": "level6, l6_galleon",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/forest.png",
+		"codes": "level6, l6_forest",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/caves.png",
+		"codes": "level6, l6_caves",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/castle.png",
+		"codes": "level6, l6_castle",
+		"inherit_codes": false
+      }
+    ]
+  },
+  {
+    "name": "Level 6 Key",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/key.png",
+    "codes": "k6"
+  },
+  {
+    "name": "Level 6 Key",
+    "type": "toggle_badged",
+    "base_item": "k6",
+    "img": "images/checkmark.png",
+    "codes": "k6b"
+  },
+
+  {
+    "type": "static",
+    "img": "images/7.png",
+    "codes": "l7"
+  },
+  {
+    "name": "Level 7",
+    "type": "progressive",
+	"loop": true,
+	"allow_disabled": false,
+    "stages": [
+      {
+        "img": "images/unknown.png",
+        "codes": "level7"
+      },
+      {
+        "img": "images/japes.png",
+		"codes": "level7, l7_japes",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/aztec.png",
+		"codes": "level7, l7_aztec",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/factory.png",
+		"codes": "level7, l7_factory",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/galleon.png",
+		"codes": "level7, l7_galleon",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/forest.png",
+		"codes": "level7, l7_forest",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/caves.png",
+		"codes": "level7, l7_caves",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/castle.png",
+		"codes": "level7, l7_castle",
+		"inherit_codes": false
+      }
+    ]
+  },
+  {
+    "name": "Level 7 Key",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/key.png",
+    "codes": "k7"
+  },
+  {
+    "name": "Level 7 Key",
+    "type": "toggle_badged",
+    "base_item": "k7",
+    "img": "images/checkmark.png",
+    "codes": "k7b"
+  },
+  
+  {
+    "type": "static",
+    "img": "images/8.png",
+    "codes": "l8"
+  },
+  {
+    "name": "Level 8",
+    "type": "static",
+    "img": "images/helm.png",
+    "codes": "level8"
+  },
+  {
+    "name": "Level 8 Key",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/key.png",
+    "codes": "k8"
+  },
+  
+  {
+    "type": "static",
+    "img": "images/9.png",
+    "codes": "l9"
+  },
+  {
+    "name": "Isles Label",
+    "type": "static",
+    "img": "images/isles.png",
+    "codes": "isleslabel"
+  }
+]
