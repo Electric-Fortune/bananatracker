@@ -1,17 +1,17 @@
 # Banana Tracker
 - An [EmoTracker](https://emotracker.net/) pack for the [Donkey Kong 64 randomizer](https://github.com/2dos/dk64-randomizer) but can also be used for vanilla Donkey Kong 64 as well.
-- Current Version: **Version 1.2.7** (February ?? 2023)
+- Current Version: **Version 1.3.0** (February 28 2023)
 <img src="https://raw.githubusercontent.com/jxjacob/bananatracker/master/bananatracker_example.PNG">
 
 # Features
 This tracker features tracking packs for various DK64 Randomizer settings as well as 101% playthroughs.
 
 ### Standard Randomizer
-- All kongs' Cranky upgrades, Funky guns, Candy instruments and blueprint count (up to 8).
+- Tracking for Kongs, Cranky upgrades, Funky weapons, Candy instruments and blueprint count (up to 8 per Kong).
 - Progressive Simian Slam
 - Homing Ammo and Sniper Scope Funky upgrades
 - Fairy Camera
-- Golden Banana Count
+- Golden Banana counter
 - Keys and Crowns available in each level
 
 ### Long Randomizer
@@ -24,7 +24,8 @@ This tracker features tracking packs for various DK64 Randomizer settings as wel
 
 ### Level Order Randomizer Race
 - Features existing functionality from the Standard Randomizer pack for all moves/collectibles
-- Levels now cycle through the 7 available options for Level Order Randomizer (Crown tracking is removed)
+- Levels now cycle through the 7 available options for Level Order Randomizer (with a place holder for unknown lobbies)
+- Per-level Crown tracking is removed
 
 ### Level Order Randomizer Race w/Shops
 - Adds an additional pane for tracking purchases from Funky, Cranky, and Candy in each level
@@ -51,15 +52,18 @@ This tracker features tracking packs for various DK64 Randomizer settings as wel
 - Adds the ability to resize the tracker for customizable map size control
 
 ## Map Tracker Usage
-When using the Full Item Level Order Randomizer Map Tracker pack, the locations of item checks update based on the items the player has currently highlighted in the Items tracker. The color of each location represents the accessibility of the check as follows:
-- White: This item check is accessible and in logic for the player to obtain
+# Location Accessibility
+When using the Full Item Level Order Randomizer Map Tracker pack, the locations of item checks update based on the items the player has currently highlighted in the "Kongs / Abilities / Collectables / Lobbies" tracker. The color of each location represents the accessibility of the check as follows:
+- Green (location) / White (text): This item check is accessible and in logic for the player to obtain
 - Yellow: This item check is accessible, but not in logic
 - Blue: This item check is not accessible, but can be peeked to see what type of item the check contains
 - Red: This item check is not accessible and not peekable
 - Orange: This location contains multiple item checks at varying levels of accessibility
 - Gray: This location has been checked off and is empty
 
-Note that the map tracker is using glitchless logic to determine the accessibility of its map locations. Some checks may be marked yellow as out of logic if they are accessible using damage boosting, Tag Anywhere, advanced platforming, or an option not currently set in the settings menu
+# Check Location Logic
+The map tracker assumes glitchless logic to determine the logical accessibility of its map locations. Some checks may be marked yellow as out of logic if they are accessible using damage boosting, Tag Anywhere, advanced platforming, or an option not currently set in the settings menu.
+
 The tracker's logic also assumes a few attributes that would be too volatile to be useful:
 - Every location requires either a specific Kong or any Kong, so no locations will show up until a Kong is highlighted in the Item tracker
 - All non-Isles level locations and level lobby locations will not be in logic until the appropriate level is selected in the Item tracker and the player can access that lobby from DK Isles
