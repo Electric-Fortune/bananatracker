@@ -88,20 +88,20 @@ Many item check locations are capturable using the dashed box next to the vanill
 ## Settings
 The tracker features a settings menu accessible by clicking the gear icon above the "Kong / Abilities / Collectables / Lobbies" tracker. These settings include the randomizer settings that impact the logic in a trackable way, and are split into 3 groups of settings: Item Pools, Check Amount Requirements, and Logic Settings
 
-###Item Pools
+### Item Pools
 - Each item pool setting toggles the visibility of its respective vanilla item type locations.
 - The Tough Golden Banana Pool controls the visibility of certain Golden Bananas deemed particularly difficult (consult the generator website for more info)
 - The Miscellaneous Pool controls the visibility of the Pearl treasure chest location in Galleon and the Bean anthill location in Forest (separate from the Golden Banana)
 - The Hint Pool controls the visibility of 5 Wrinkly Door check locations in each lobby. These do not correspond to an actual check location, but are a useful tracker for determining which hints have already been read. This pool defaults to OFF
 
-###Check Amount Requirements
+### Check Amount Requirements
 - Jetpac Banana Medal Amount: represented by the Banana Medal counter, controls how many Banana Medals must be collected before the Jetpac check in the DK Isles Full Level hub is accessible
 - Medal Colored Banana Amount: represented by the Donkey Kong yellow banana bunch, controls how many colored bananas must be collected for each Kong's Banana Medal check in each level. The map tracker interally converts the marked Kongs, Abilities, and Settings into a current total available vanilla colored banana amount per level per kong to determine the accessibility of these checks
 - Rareware Banana Fairy Amount: represented by the Banana Fairy counter, controls how many Banana Fairies must be collected before the Rareware Golden Banana check is accessible
 - Helm B. Locker Amount: represented by the Golden Banana counter, controls how many Golden Bananas the Helm B. Locker requires. Meeting or exceeding the Golden Banana amount will make the Hideout Helm level hub accessible (if the player also has Gorilla Gone, Vine Swinging, and Helm Lobby access)
 - Helm Door 1/2 Amount: represented by both Helm Door counters along with the collectible icon beneath them, together these control the type and amount of collectibles needed for each Helm door. Note that being able to open Helm Door 1 but not Helm Door 2 allows the player to peek the Key 8 and 2 vanilla Helm Banana Fairy item checks, but otherwise the doors are interchangable
 
-###Logic Settings
+### Logic Settings
 The default settings mimic those set by the "Season 1 Race Settings" preset. There are 16 available options corresponding to various toggles in the randomizer that affect location logic in some way:
 - Open Lobbies: represented by the B. Locker icon, controls whether the lobbies expect their respective keys for logical access. Note that, if this setting is enabled, lobbies 2 and 6 will still need a way to access upper DK Isles, and lobby 3 will need a way to access upper Krem Isle
 - Open Levels: represented by the Peanut Popgun Switch icon, toggles logic analogous to the "Open Levels" option in the randomizer settings
