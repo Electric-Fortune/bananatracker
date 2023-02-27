@@ -1,14 +1,20 @@
-{
+﻿{
 	"name": "DK64 Item and Move Tracker",
 	"game_name": "Donkey Kong 64",
 	"platform": "n64",
-	"package_version": "1.2.6",
+	"package_version": "1.3.0",
 	"package_uid": "bananatracker_dk64",
 	"layout_engine_version": "1.0",
-	"author": "2dos, OnlySpaghettiCode, JXJacob",
+	"author": "2dos, OnlySpaghettiCode, JXJacob, ElectricFortune",
 	"variants": {
 		"standard": {
 			"display_name": "Standard Randomizer"
+		},
+		"long": {
+			"display_name": "Long Randomizer"
+		},
+		"101": {
+			"display_name": "101% Playthrough Tracker"
 		},
 		"levelorder": {
 			"display_name": "Level Order Randomizer Race"
@@ -22,11 +28,8 @@
 		"fullitemlevelorderbean": {
 			"display_name": "Full Item Level Order Randomizer (Extended)"
 		},
-		"long": {
-			"display_name": "Long Randomizer"
-		},
-		"101": {
-			"display_name": "101% Playthrough Tracker"
+		"fullitemmap": {
+			"display_name": "Full Item Level Order Randomizer Map Tracker"
 		}
 	}
 }
