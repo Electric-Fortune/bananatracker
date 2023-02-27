@@ -38,13 +38,13 @@
 	"stages": [
 	  {
 	    "img": "images/settings/slam_switch.png",
-	    "codes": "prog_switch,prog_switch_on",
+		"img_mods": "@disabled",
+	    "codes": "prog_switch,prog_switch_off",
 		"inherit_codes": false
 	  },
 	  {
 	    "img": "images/settings/slam_switch.png",
-		"img_mods": "@disabled",
-	    "codes": "prog_switch,prog_switch_off",
+	    "codes": "prog_switch,prog_switch_on",
 		"inherit_codes": false
 	  }
 	]
@@ -137,7 +137,7 @@
 	]
   },
   {
-    "name": "Kasplat Location Randomizer (Vanilla, *Vanilla Locations*, Location Shuffle)",
+    "name": "Kasplat Location Shuffler (Vanilla, *Vanilla Locations*, Location Shuffle)",
 	"type": "progressive",
 	"allow_disabled": false,
 	"loop": true,
@@ -161,7 +161,7 @@
 	]
   },
   {
-    "name": "Battle Arena Location Randomizer",
+    "name": "Battle Arena Location Shuffler",
 	"type": "progressive",
 	"allow_disabled": false,
 	"loop": true,
@@ -180,7 +180,7 @@
 	]
   },
   {
-	"name": "Banana Fairy Location Randomizer",
+	"name": "Banana Fairy Location Shuffler",
 	"type": "progressive",
 	"allow_disabled": false,
 	"loop": true,
@@ -199,7 +199,7 @@
 	]
   },
   {
-    "name": "Dirt Patch Location Randomizer",
+    "name": "Dirt Patch Location Shuffler",
 	"type": "progressive",
 	"allow_disabled": false,
 	"loop": true,
@@ -218,7 +218,7 @@
 	]
   },
   {
-    "name": "Colored Banana Location Randomizer",
+    "name": "Colored Banana Location Shuffler",
 	"type": "toggle",
 	"img": "images/settings/rainbow_bananas.png",
 	"codes": "cb_rando"

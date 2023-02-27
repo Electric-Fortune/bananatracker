@@ -1,10 +1,10 @@
 # Banana Tracker
 - An [EmoTracker](https://emotracker.net/) pack for the [Donkey Kong 64 randomizer](https://github.com/2dos/dk64-randomizer) but can also be used for vanilla Donkey Kong 64 as well.
 - Current Version: **Version 1.3.0** (February 28 2023)
-<img src="https://raw.githubusercontent.com/jxjacob/bananatracker/master/bananatracker_example.PNG">
+<img src="https://raw.githubusercontent.com/Electric-Fortune/bananatracker/master/bananatracker_example.PNG">
 
 # Features
-This tracker features tracking packs for various DK64 Randomizer settings as well as 101% playthroughs.
+This tracker features tracking packs for various DK64 Randomizer settings as well as vanilla DK64 101% playthroughs.
 
 ### Standard Randomizer
 - Tracking for Kongs, Cranky upgrades, Funky weapons, Candy instruments and blueprint count (up to 8 per Kong).
@@ -51,8 +51,8 @@ This tracker features tracking packs for various DK64 Randomizer settings as wel
 - Adds a settings gear to customize the functionality of the map locations based on your randomizer settings
 - Adds the ability to resize the tracker for customizable map size control
 
-## Map Tracker Usage
-# Location Accessibility
+# Map Tracker Usage
+### Location Accessibility
 When using the Full Item Level Order Randomizer Map Tracker pack, the locations of item checks update based on the items the player has currently highlighted in the "Kongs / Abilities / Collectables / Lobbies" tracker. The color of each location represents the accessibility of the check as follows:
 - Green (location) / White (text): This item check is accessible and in logic for the player to obtain
 - Yellow: This item check is accessible, but not in logic
@@ -61,49 +61,65 @@ When using the Full Item Level Order Randomizer Map Tracker pack, the locations 
 - Orange: This location contains multiple item checks at varying levels of accessibility
 - Gray: This location has been checked off and is empty
 
-# Check Location Logic
+### Check Location Logic
 The map tracker assumes glitchless logic to determine the logical accessibility of its map locations. Some checks may be marked yellow as out of logic if they are accessible using damage boosting, Tag Anywhere, advanced platforming, or an option not currently set in the settings menu.
 
-The tracker's logic also assumes a few attributes that would be too volatile to be useful:
-- Every location requires either a specific Kong or any Kong, so no locations will show up until a Kong is highlighted in the Item tracker
-- All non-Isles level locations and level lobby locations will not be in logic until the appropriate level is selected in the Item tracker and the player can access that lobby from DK Isles
+The map tracker's logic also assumes a few attributes that would be too volatile to be useful:
+- Every check location requires either any of the Kongs or a specific Kong, so no locations will show up until a Kong is highlighted in the tracker
+- All non-Isles level check locations and level lobby check locations will not be in logic until the appropriate level lobby is selected in the tracker and the player can access that lobby from DK Isles
+- The non-Isles levels will be accessible in logic as soon as the player has access to that level's lobby, regardless of whether the player has enough Golden Bananas to get past the randomized B. Locker
 - Each level has a "Full Level" location hub next to its title indicating checks that can be acquired anywhere in the level, such as Banana Medals or Bosses
-- The Jetpac game check, which can be acquired in any Cranky's Lab, is located in the Isles Full Level hub once the player has enough Banana Medals marked on the Item tracker
+- The Jetpac game check, which can be acquired in any Cranky's Lab, is located in the Isles Full Level hub once the player has enough Banana Medals marked on the tracker
 - Bonus Barrel checks are in logic as soon as the barrel can be accessed with the Kong assigned to the barrel, without considering the potential additional requirements of the minigame within
-- The logic has no knowledge of Colored Bananas or Banana Coins, so Bosses are marked as accessible in logic as soon as you have access to a level, Banana Medals are accessible as soon as you have their corresponding Kong, and Shop purchases are accessible as soon as you have that Kong and can access the shop
+- The logic has no knowledge of Banana Coins, so Shop purchases are accessible as soon as you have that Kong and can access the shop
+- Due to randomized Troff 'n' Scoff values, the tracker also cannot determine when the player would have enough colored bananas for the Boss, and thus marks it as available as soon as the level is accessible
 - If Kasplats are shuffled between their vanilla locations, they will be marked as accessible as soon as any Kong can defeat them, even if the proper Kong is not owned yet
 - The Kong freeing puzzles are accessible in logic as soon as any valid Kong has the requirements to open the Kong cage
-- The two Golden Bananas involving Diddy's cage in Japes have event flags tied to them, corresponding to collecting the item in front of the cage (which spawns the gun switches), and collecting the item within the cage (which opens the gates to the rest of Japes)
+- The two Golden Bananas involving Diddy's cage in Japes have event flags tied to them (denoted with checkmarks), corresponding to collecting the item in front of the cage (which spawns the gun switches), and collecting the item within the cage (which opens the gates to the rest of Japes)
 
+### Capturing Items
 Many item check locations are capturable using the dashed box next to the vanilla item icon. Only item checks that cannot be seen until they are immediately collectable lack this capture box (such as the Squawks instrument pads on Isles or Dirt Patch rewards). The capture box items contain some quirks:
-- The generic potion can apply to many different abilities on the Item tracker, and thus will not update any particular ability when the location is checked
-- Similarly the generic key can apply to any of the 8 keys, but due to each key behaving differently in the logic, the captured key will not update any particular key on the Item tracker
-- The Nintendo and Rareware coins will not update the Item tracker Company Coin slot due to its progressive nature
-- An ice trap option is given for checks that can be visually identified as an ice trap, checking these will increment an internal ice trap counter that is otherwise not represented on the Item tracker (ice trap visual borrowed from Hamsda's ZOoTR Map Tracker)
-- All other items on the capture menu will correctly increment or toggle their associated item on the Item tracker when the captured location is checked
+- The potions can apply to many different abilities on the tracker, and thus will not update any particular ability when the location is checked
+- Similarly, the generic Key item can apply to any of the 8 Keys, but due to each Key behaving differently in the logic, the captured Key will not update any particular Key on the tracker. The generic Key counter will update to reflect the total number of specific Keys collected if a new specific Key is marked
+- The Nintendo and Rareware coins will not update the progressive Company Coins on the tracker due to their progressive nature
+- An ice trap option is given for checks that can be visually identified as an ice trap, checking these will increment an internal ice trap counter that is otherwise not represented on the tracker (ice trap visual borrowed from Hamsda's ZOoTR Map Tracker)
+- All other items on the capture menu will correctly increment or toggle their associated item on the tracker when the captured location is checked
 
-The tracker features a settings menu accessible by clicking the gear icon above the Item tracker. These settings include the randomizer settings that impact the logic in a trackable way, and are split into 4 groups of settings: Item Pools, Logic Settings, Location Randomizers, and Check Amount Requirements
-- Each item pool setting toggles the visibility of its respective vanilla item type locations. The Miscellaneous Pool controls the visibility of the Pearl treasure chest location in Galleon and the Bean anthill location in Forest (separate from the Golden Banana)
-There are 10 available options corresponding to various toggles in the randomizer that affect location logic in some way:
-- Open Lobbies: represented by the B. Locker icon, controls whether the lobbies expect their respective keys for logical access. Note that lobbies 2 and 6 will still need a way to access upper DK Isles
+## Settings
+The tracker features a settings menu accessible by clicking the gear icon above the "Kong / Abilities / Collectables / Lobbies" tracker. These settings include the randomizer settings that impact the logic in a trackable way, and are split into 3 groups of settings: Item Pools, Check Amount Requirements, and Logic Settings
+
+###Item Pools
+- Each item pool setting toggles the visibility of its respective vanilla item type locations.
+- The Tough Golden Banana Pool controls the visibility of certain Golden Bananas deemed particularly difficult (consult the generator website for more info)
+- The Miscellaneous Pool controls the visibility of the Pearl treasure chest location in Galleon and the Bean anthill location in Forest (separate from the Golden Banana)
+- The Hint Pool controls the visibility of 5 Wrinkly Door check locations in each lobby. These do not correspond to an actual check location, but are a useful tracker for determining which hints have already been read. This pool defaults to OFF
+
+###Check Amount Requirements
+- Jetpac Banana Medal Amount: represented by the Banana Medal counter, controls how many Banana Medals must be collected before the Jetpac check in the DK Isles Full Level hub is accessible
+- Medal Colored Banana Amount: represented by the Donkey Kong yellow banana bunch, controls how many colored bananas must be collected for each Kong's Banana Medal check in each level. The map tracker interally converts the marked Kongs, Abilities, and Settings into a current total available vanilla colored banana amount per level per kong to determine the accessibility of these checks
+- Rareware Banana Fairy Amount: represented by the Banana Fairy counter, controls how many Banana Fairies must be collected before the Rareware Golden Banana check is accessible
+- Helm B. Locker Amount: represented by the Golden Banana counter, controls how many Golden Bananas the Helm B. Locker requires. Meeting or exceeding the Golden Banana amount will make the Hideout Helm level hub accessible (if the player also has Gorilla Gone, Vine Swinging, and Helm Lobby access)
+- Helm Door 1/2 Amount: represented by both Helm Door counters along with the collectible icon beneath them, together these control the type and amount of collectibles needed for each Helm door. Note that being able to open Helm Door 1 but not Helm Door 2 allows the player to peek the Key 8 and 2 vanilla Helm Banana Fairy item checks, but otherwise the doors are interchangable
+
+###Logic Settings
+The default settings mimic those set by the "Season 1 Race Settings" preset. There are 16 available options corresponding to various toggles in the randomizer that affect location logic in some way:
+- Open Lobbies: represented by the B. Locker icon, controls whether the lobbies expect their respective keys for logical access. Note that, if this setting is enabled, lobbies 2 and 6 will still need a way to access upper DK Isles, and lobby 3 will need a way to access upper Krem Isle
 - Open Levels: represented by the Peanut Popgun Switch icon, toggles logic analogous to the "Open Levels" option in the randomizer settings
 - Remove High Requirements: represented by the Gorilla Grab lever icon, toggles logic analogous to the "Remove High Requirements" option in the randomizer settings. This defaults to ON
-- Pre-Activated Bananaports: represented by the 1 Bananaport icon, toggles logic allowing access to some areas early if the Bananaports in those areas are pre-activated. Comes with 3 settings: Off, Isles Only, and On to align with the "Activate Bananaports" setting in the randomizer, defaults to Isles Only
-- Helm Skip Amount: represented by the top of Krem Isle icon, toggles logic expecting certain moves for checks in the Hideout Helm location hub. Analogous to the "Helm Start Location" option in the randomizer, this option comes with 3 settings: Skip None, Skip Half, and Skip Full, analogous to Vanilla, Skip Start, and Skip All settings respectively, defaults to Skip Half
-- Progressive Switch Strength: represented by the Super Simian Slam Chunky Switch icon, changes behavior of locations behind Simian Slam switches such that switches in the first 4 randomized levels require Simian Slam, switches in levels 5 and 6 require Super Simian Slam, and switches in level 7 require Super Duper Simian Slam. Defaults to ON
-- Hard Shooting: represented by the Coconut Gun image, changes the logic of a few locations to no longer require Homing Ammo or Sniper Scope in logic. Note that these locations will display as yellow if all other logical requirements are met when this setting is turned off, indicating that they can still be acquired, but it is not expected in logic
-- Auto Complete Bonus Barrels: represented by the Bonus Barrel icon, changes the logic of a handful of Bonus Barrels to not require certain movement to the Bonus Barrel, such as Tiny's Bonus Barrel in Aztec Lobby no longer requiring Pony Tail Twirl if this setting is enabled
+- Progressive Switch Strength: represented by the Super Simian Slam Chunky Switch icon, changes behavior of locations behind Simian Slam switches such that switches in the first 4 randomized levels require Simian Slam, switches in levels 5 and 6 require Super Simian Slam, and switches in level 7 require Super Duper Simian Slam (including the Galleon lobby switch as the Slam level as Galleon itself)
 - Fast Golden Bananas: represented by the sparkling Golden Banana icon, toggles logic analogous to the "Fast GBs" option in the randomizer settings (which only affects the logical requirements of Round 1 Arcade and Mermaid Pearl amount to turn in). This defaults to ON
-- Free Trade Agreement: represented by the Tag Barrel icon, toggles logic for locations accessible without their assigned Kong unlocked yet (mostly vanilla Kasplat locations). Note that since the tracker has no knowledge of what the actual collectible will be from checks, both the "Major Collectibles" and "Major Collectibles except Blueprints" options for Free Trade Agreement in the randomizer are included when this setting is enabled
-The next 4 options control the enabling of custom location randomizers. When enabled, these options will remove their respective vanilla locations from each level and place a location for that/those item(s) in that level's "Full Level" location hub instead
-- Kasplat Location Randomizer: represented by the Kasplat icon, comes with 3 settings: Vanilla, Swap, and Randomized, analogous to the "Shuffle Kasplat" options in the randomizer: "Vanilla", "Vanilla Locations", and "Location Shuffle", respectively. Defaults to "Swap (Vanilla Locations)", note that when Randomized (the Kasplat with ?'s), all Kasplat rewards will show as in logic in each level as soon as you have their respective Kong
-- Battle Arena Location Randomizer: represented by the Battle Arena icon, note that the location in each level (2 in Isles) will show as in logic as soon as you have access to a level
-- Banana Fairy Location Randomizer: represented by the X'd out Fairy icon, note that the 2 locations in each level (4 in Isles) will show as peekable as soon as you have access to a level, and in logic as soon as you have the Fairy Camera
-- Dirt Patch Location Randomizer: represented by the deconstructed Dirt Patch icon, note that the 2 locations in each level (4 in Isles) will be in logic once you have the Shockwave ability, and note that while each level has 2 locations available, in practice each level will have 1 or 2 dirt patch locations
-- The last 4 options control the amounts of certain collectibles needed for certain checks as input by the player when creating the seed or found on hints if randomized
-- Rareware Banana Fairy Amount: represented by the Banana Fairy counter, controls how many Banana Fairies the Banana Fairy Queen expects before opening the door to the Rareware Golden Banana check
-- Jetpac Banana Medal Amount: represented by the Banana Medal counter, controls how many Banana Medals Cranky requires before allowing you to play Jetpac and check the reward for it
-- Helm Door 1/2 Amount: represented by both Helm Door counters along with the collectible icon beneath them, together these control the type and amount of collectibles needed for each Helm door. Note that being able to open Helm Door 1 but not Helm Door 2 allows the player to peek the Key 8 and 2 Helm Banana Fairy items, but otherwise the doors are interchangable
+- Auto Complete Bonus Barrels: represented by the Bonus Barrel icon, changes the logic of a handful of Bonus Barrels to not require certain movement to the Bonus Barrel, such as Diddy's Bonus Barrel in Snide's DK Isles Lobby no longer requiring Simian Spring
+- Hard Shooting: represented by the Coconut Gun image, changes the logic of a few locations to no longer require Homing Ammo or Sniper Scope in logic. Note that these locations will display as yellow if all other logical requirements are met when this setting is turned off, indicating that they can still be acquired, but it is not expected in logic
+- Free Trade Agreement: represented by the Tag Barrel icon, toggles logic for locations accessible without their assigned Kong unlocked yet (mostly vanilla Kasplat locations). Note that since the tracker has no knowledge of what the actual collectible will be from checks, this setting when enabled mirrors the logic of both the "Major Collectibles" and "Major Collectibles except Blueprints" options for Free Trade Agreement in the randomizer
+- Pre-Activated Bananaports: represented by the Bananaport 1 icon, toggles logic allowing access to some areas early if the Bananaports in those areas are pre-activated. Aligns with the "Activate Bananaports" setting in the randomizer, defaults to Isles Only
+- Helm Skip Amount: represented by the top of Krem Isle icon, toggles logic expecting certain moves for checks in the Hideout Helm level hub. Analogous to the "Helm Start Location" option in the randomizer, defaults to Skip Start (icon highlighted with ½)
+- Kongless Hint Doors: represented by the Diddy Wrinkly Hint door with Donkey Kong's thinking face, this makes all locations in the Hint Pool accessible as soon as any Kong can access the location.
+- Remove Wrinkly Puzzles: represented by a Boulder when right-clicking the Kongless Hint Door icon, this changes a few Hint Pool locations in Aztec, Forest, and Caves lobbies to align with the changes made by the "Remove Wrinkly Puzzles" option in the Misc Changes selector in the randomizer
+- Kasplat Location Shuffler: represented by the Kasplat icon, analogous to the "Shuffle Kasplat" options in the randomizer. "Vanilla" and "Vanilla Locations" will maintain the Kasplat location boxes in each level, "Location Shuffle" (the Kasplat with ?'s) will move all Kasplat locations into each level's Full Level hub and all Kasplat rewards will show as in logic in each level as soon as you have that respective Kong
+- Colored Banana Location Shuffler: represented by the 5 single bananas icon. Removes the logic pertaining to vanilla colored bananas for each level's Banana Medal checks, so each Kong's Banana Medal check in a level will simply be displayed as in logic as soon as that Kong is acquired and that level is accessible
+- Battle Arena Location Shuffler: represented by the Battle Arena icon. Note that, when enabled, the Battle Arena vanilla locations will be moved into each level's Full Level hub and the check (2 checks in Isles) will show as in logic as soon as you have access to a level
+- Banana Fairy Location Shuffler: represented by the X'd out Fairy icon. Note that, when enabled, the Banana Fairy vanilla locations will be moved into each level's Full Level hub and the 2 checks (4 in Isles) will show as peekable as soon as you have access to a level, and in logic as soon as you have the Fairy Camera
+- Dirt Patch Location Shuffler: represented by the deconstructed Dirt Patch icon. Note that, when enabled, the Dirt Patch vanilla locations will be removed in each level and replaced by 2 checks (4 in Isles) in each level's Full Level hub. The checks will be in logic once you have the Shockwave ability, and note that while each level has 2 locations available, in practice each level will have 1 to 2 dirt patch locations, except Isles which will always have exactly 4
 
 # Instructions for use:
 1. Download EmoTracker at https://emotracker.net/

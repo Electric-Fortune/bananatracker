@@ -2105,7 +2105,7 @@
 				"item_count": 4
 			  },
 			  {
-			    "name": "Rareware Coin",
+			    "name": "Jetpac",
 				"chest_unopened_img": "images/rareware_coin.png",
 				"chest_opened_img": "images/checks/rareware_coin_done.png",
 				"capture_item": true,
