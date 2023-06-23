@@ -130,6 +130,7 @@ The default settings mimic those set by the "Season 2 Race Settings" preset. The
 5. Open EmoTracker. Click the gear, then "Installed Packages." Banana Tracker will be located under "Other."
 
 # Changelog
+## Version 1.3.1
 ### General changes
 - Removed horizontal layout competing with vertical layout and consolidated down to 1 layout
 - Updated default settings to match Season 2 Race Settings
