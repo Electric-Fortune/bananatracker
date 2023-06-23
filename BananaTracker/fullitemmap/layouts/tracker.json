@@ -171,7 +171,7 @@
     "item_margin": "0,0,10,4",
 	"rows": [
 	  [ "open_lobbies", "open_levels", "no_hi_reqs", "prog_switch" ],
-	  [ "fast_gbs", "auto_bonus", "hard_shoot", "free_trade" ],
+	  [ "fast_checks", "auto_bonus", "hard_shoot", "free_trade" ],
 	  [ "bananaport", "helm_start", "no_wrinkly_puzzles", "kasplat_rando" ],
 	  ["cb_rando", "arena_rando", "fairy_rando", "dirt_patch_rando" ]
     ]
@@ -281,144 +281,11 @@
         {
           "type": "dock",
           "dock": "left",
-          "v_alignment": "stretch",
           "content": [
             {
               "type": "group",
               "header": "Kongs / Abilities / Collectables / Lobbies",
               "dock": "top",
-			  "margin": "0,0,3,0",
-			  "header_content": {
-                "type": "button_popup",
-                "style": "settings",
-                "popup_background": "#FF212121",
-                "layout": "options_grid"
-		      },
-              "content": {
-                "type": "layout",
-				"h_alignment": "center",
-                "v_alignment": "center",
-				"margin": "3,3,-3,0",
-                "key": "shared_item_grid"
-              }
-            },
-            {
-              "type": "group",
-              "header": "Pinned Locations",
-              "content": {
-                "type": "recentpins",
-                "style": "wrap",
-                "h_alignment": "stretch",
-                "v_alignment": "stretch",
-                "orientation": "vertical",
-                "compact": true
-              }
-            }
-          ]
-        },
-        {
-          "type": "tabbed",
-          "tabs": [
-            {
-              "title": "",
-              "icon": "images/isles.png",
-              "content": {
-                "type": "map",
-                "maps": [
-                  "islesmap"
-                ]
-              }
-            },
-            {
-              "title": "",
-              "icon": "images/japes.png",
-              "content": {
-                "type": "map",
-                "maps": [
-                  "japesmap"
-                ]
-              }
-            },
-            {
-              "title": "",
-              "icon": "images/aztec.png",
-              "content": {
-                "type": "map",
-                "maps": [
-                  "aztecmap"
-                ]
-              }
-            },
-            {
-              "title": "",
-              "icon": "images/factory.png",
-              "content": {
-                "type": "map",
-                "maps": [
-                  "factorymap"
-                ]
-              }
-            },
-            {
-              "title": "",
-              "icon": "images/galleon.png",
-              "content": {
-                "type": "map",
-                "maps": [
-                  "galleonmap"
-                ]
-              }
-            },
-            {
-              "title": "",
-              "icon": "images/forest.png",
-              "content": {
-                "type": "map",
-                "maps": [
-                  "forestmap"
-                ]
-              }
-            },
-			{
-              "title": "",
-              "icon": "images/caves.png",
-              "content": {
-                "type": "map",
-                "maps": [
-                  "cavesmap"
-                ]
-              }
-            },
-			{
-              "title": "",
-              "icon": "images/castle.png",
-              "content": {
-                "type": "map",
-                "maps": [
-                  "castlemap"
-                ]
-              }
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "tracker_horizontal": {
-    "type": "container",
-    "background": "#000000",
-    "content": {
-      "type": "dock",
-      "dropshadow": true,
-      "content": [
-        {
-          "type": "dock",
-          "dock": "bottom",
-          "content": [
-            {
-              "type": "group",
-              "header": "Kongs / Abilities / Collectables / Lobbies",
-              "dock": "left",
               "margin": "0,0,3,0",
 			  "header_content": {
                 "type": "button_popup",
@@ -429,12 +296,26 @@
               "content": {
                 "type": "layout",
                 "h_alignment": "center",
-                "v_alignment": "center",
+                "v_alignment": "top",
 				"margin": "3,3,-3,0",
                 "key": "shared_item_grid"
               }
             },
-            {
+			{
+			  "type": "group",
+			  
+			  "dock": "bottom",
+			  "margin": "0,0,3,0",
+			  "content": {
+			  }
+			}
+          ]
+        },
+		{
+		  "type": "dock",
+		  "dock": "bottom",
+		  "content": [
+		    {
               "type": "group",
               "header": "Pinned Locations",
               "content": {
@@ -446,8 +327,8 @@
                 "compact": true
               }
             }
-          ]
-        },
+		  ]
+		},
         {
           "type": "tabbed",
           "tabs": [

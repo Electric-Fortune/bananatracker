@@ -38,32 +38,32 @@
 	"stages": [
 	  {
 	    "img": "images/settings/slam_switch.png",
-		"img_mods": "@disabled",
-	    "codes": "prog_switch,prog_switch_off",
+	    "codes": "prog_switch,prog_switch_on",
 		"inherit_codes": false
 	  },
 	  {
 	    "img": "images/settings/slam_switch.png",
-	    "codes": "prog_switch,prog_switch_on",
+		"img_mods": "@disabled",
+	    "codes": "prog_switch,prog_switch_off",
 		"inherit_codes": false
 	  }
 	]
   },
   {
-	"name": "Fast Golden Bananas",
+	"name": "Faster Checks",
 	"type": "progressive",
 	"allow_disabled": false,
 	"loop": true,
 	"stages": [
 	  {
 	    "img": "images/settings/shiny_gb.png",
-	    "codes": "fast_gbs,fast_gbs_on",
+	    "codes": "fast_checkss,fast_checks_on",
 		"inherit_codes": false
 	  },
 	  {
 	    "img": "images/settings/shiny_gb.png",
 		"img_mods": "@disabled",
-	    "codes": "fast_gbs,fast_gbs_off",
+	    "codes": "fast_checks,fast_checks_off",
 		"inherit_codes": false
 	  }
 	]
@@ -71,12 +71,14 @@
   {
 	"name": "Free Trade Agreement",
 	"type": "toggle",
+	"initial_active_state": true,
 	"img": "images/settings/tag_barrel.png",
 	"codes": "free_trade"
   },
   {
     "name": "Kongless Hint Doors",
 	"type": "toggle",
+	"initial_active_state": true,
 	"loop": true,
 	"img": "images/settings/wrinkly_door_any.png",
 	"codes": "kongless_hints"
@@ -85,6 +87,7 @@
     "name": "Kongless Hint Doors (Right Click to disable Wrinkly Puzzles)",
     "type": "toggle_badged",
     "base_item": "kongless_hints",
+	"initial_active_state": true,
     "img": "images/settings/wrinkly_door_boulder.png",
     "codes": "no_wrinkly_puzzles"
   },
@@ -144,18 +147,18 @@
 	"stages": [
 	  {
 	    "img": "images/settings/kasplat.png",
+	    "img_mods": "@disabled",
+	    "codes": "kasplat_rando,kasplat_rando_vanilla",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/settings/kasplat.png",
 	    "codes": "kasplat_rando,kasplat_rando_swap",
 		"inherit_codes": false
 	  },
 	  {
 	    "img": "images/settings/butwherewasthekasplat.png",
 	    "codes": "kasplat_rando,kasplat_rando_on",
-		"inherit_codes": false
-	  },
-	  {
-	    "img": "images/settings/kasplat.png",
-	    "img_mods": "@disabled",
-	    "codes": "kasplat_rando,kasplat_rando_vanilla",
 		"inherit_codes": false
 	  }
 	]
@@ -230,7 +233,7 @@
 	"codes": "medal_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 100,
-	"initial_quantity": 75
+	"initial_quantity": 40
   },
   {
 	"name": "Jetpac Banana Medal Amount",
@@ -248,7 +251,7 @@
 	"codes": "rw_gb_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 20,
-	"initial_quantity": 20
+	"initial_quantity": 5
   },
   {
 	"name": "Helm B. Locker Amount",
@@ -257,7 +260,7 @@
 	"codes": "helm_entry_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 201,
-	"initial_quantity": 100
+	"initial_quantity": 60
   },
   {
 	"name": "Helm Door 1 Amount",
@@ -266,7 +269,7 @@
 	"codes": "helm_1_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 201,
-	"initial_quantity": 4
+	"initial_quantity": 0
   },
   {
 	"name": "Helm Door 1 Collectable",
@@ -282,6 +285,11 @@
 	  {
 	    "img": "images/fairy.png",
 	    "codes": "helm_1_type,helm_1_fair",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/rainbowcoin.png",
+		"codes": "helm_1_type,helm_1_rbc",
 		"inherit_codes": false
 	  },
 	  {
@@ -328,7 +336,7 @@
 	"codes": "helm_2_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 201,
-	"initial_quantity": 2
+	"initial_quantity": 0
   },
   {
 	"name": "Helm Door 2 Collectable",
@@ -359,6 +367,11 @@
 	  {
 	    "img": "images/fairy.png",
 	    "codes": "helm_2_type,helm_2_fair",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/rainbowcoin.png",
+		"codes": "helm_2_type,helm_2_rbc",
 		"inherit_codes": false
 	  },
 	  {

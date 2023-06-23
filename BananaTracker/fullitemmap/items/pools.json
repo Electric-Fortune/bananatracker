@@ -51,7 +51,7 @@
   {
 	"name": "Company Coin Pool",
 	"type": "toggle",
-	"initial_active_state": true,
+	"initial_active_state": false,
 	"img": "images/n64_coin.png",
 	"codes": "coin_pool"
   },
@@ -65,7 +65,7 @@
   {
 	"name": "Fairy Pool",
 	"type": "toggle",
-	"initial_active_state": true,
+	"initial_active_state": false,
 	"img": "images/fairy.png",
 	"codes": "fairy_pool"
   },

@@ -6,7 +6,7 @@
     "children": [
 	  {
 	    "name": "DK Isles",
-		"color": "#EE0000",
+		"color": "#D25757",
 		"children": [
 		  {
 			"name": "Training Grounds",
@@ -127,7 +127,7 @@
 	  },
 	  {
         "name": "Jungle Japes",
-        "color": "#44CC44",
+        "color": "#59FF64",
         "access_rules": [
           "@logic/japes_lobby"
         ],
@@ -321,7 +321,7 @@
       },
       {
         "name": "Angry Aztec",
-        "color": "#CC9900",
+        "color": "#FFA010",
         "access_rules": [
           "@logic/aztec_lobby"
         ],
@@ -606,7 +606,7 @@
       },
 	  {
         "name": "Frantic Factory",
-        "color": "#888888",
+        "color": "#B5CDFF",
         "access_rules": [
           "@logic/factory_lobby"
         ],
@@ -876,7 +876,7 @@
       },
 	  {
         "name": "Gloomy Galleon",
-        "color": "#112255",
+        "color": "#0C7DED",
         "access_rules": [
           "@logic/galleon_lobby"
         ],
@@ -1161,7 +1161,7 @@
       },
 	  {
         "name": "Fungi Forest",
-        "color": "#116611",
+        "color": "#BB1CFF",
         "access_rules": [
           "@logic/forest_lobby"
         ],
@@ -1354,7 +1354,7 @@
       },
 	  {
         "name": "Crystal Caves",
-        "color": "#11AABB",
+        "color": "#3EE1E1",
         "access_rules": [
           "@logic/caves_lobby"
         ],
@@ -1639,7 +1639,7 @@
       },
 	  {
         "name": "Creepy Castle",
-        "color": "#5511BB",
+        "color": "#E84898",
         "access_rules": [
           "@logic/castle_lobby"
         ],
@@ -1931,7 +1931,7 @@
 	"children": [
 	  {
 	    "name": "DK Isles",
-		"color": "#EE0000",
+		"color": "#D25757",
 	    "children": [
 		  {
 		    "name": "DK Isles Full Level",
@@ -2131,7 +2131,7 @@
 	  },
 	  {
         "name": "Jungle Japes",
-        "color": "#44CC44",
+        "color": "#59FF64",
         "access_rules": [
           "@logic/japes_lobby"
         ],
@@ -2341,7 +2341,7 @@
 	  },
       {
         "name": "Angry Aztec",
-        "color": "#CC9900",
+        "color": "#FFA010",
         "access_rules": [
           "@logic/aztec_lobby,@logic/aztec_past_vine"
         ],
@@ -2551,7 +2551,7 @@
 	  },
 	  {
         "name": "Frantic Factory",
-        "color": "#888888",
+        "color": "#B5CDFF",
         "access_rules": [
           "@logic/factory_lobby"
         ],
@@ -2761,7 +2761,7 @@
 	  },
 	  {
         "name": "Gloomy Galleon",
-        "color": "#112255",
+        "color": "#0C7DED",
         "access_rules": [
           "@logic/galleon_lobby"
         ],
@@ -2971,7 +2971,7 @@
       },
 	  {
         "name": "Fungi Forest",
-        "color": "#116611",
+        "color": "#BB1CFF",
         "access_rules": [
           "@logic/forest_lobby"
         ],
@@ -3181,7 +3181,7 @@
       },
 	  {
         "name": "Crystal Caves",
-        "color": "#11AABB",
+        "color": "#3EE1E1",
         "access_rules": [
           "@logic/caves_lobby"
         ],
@@ -3391,7 +3391,7 @@
       },
 	  {
         "name": "Creepy Castle",
-        "color": "#5511BB",
+        "color": "#E84898",
         "access_rules": [
           "@logic/castle_lobby"
         ],
@@ -3601,7 +3601,7 @@
       },
 	  {
         "name": "Hideout Helm",
-        "color": "#444444",
+        "color": "#FF0000",
         "access_rules": [
           "@logic/helm_access"
         ],

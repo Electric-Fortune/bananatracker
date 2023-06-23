@@ -1,6 +1,6 @@
 # Banana Tracker
 - An [EmoTracker](https://emotracker.net/) pack for the [Donkey Kong 64 randomizer](https://github.com/2dos/dk64-randomizer) but can also be used for vanilla Donkey Kong 64 as well.
-- Current Version: **Version 1.3.0** (February 28 2023)
+- Current Version: **Version 1.3.1** (June 23 2023)
 <img src="https://raw.githubusercontent.com/Electric-Fortune/bananatracker/master/bananatracker_example.PNG">
 
 # Features
@@ -102,19 +102,19 @@ The tracker features a settings menu accessible by clicking the gear icon above 
 - Helm Door 1 / 2 Amount: represented by both Helm Door counters along with the collectible icon beneath them, together these control the type and amount of collectibles needed for each Helm door. Note that being able to open Helm Door 1 but not Helm Door 2 allows the player to peek the Key 8 and 2 vanilla Helm Banana Fairy item checks, but otherwise the doors are interchangable
 
 ### Logic Settings
-The default settings mimic those set by the "Season 1 Race Settings" preset. There are 16 available options corresponding to various toggles in the randomizer that affect location logic in some way:
+The default settings mimic those set by the "Season 2 Race Settings" preset. There are 16 available options corresponding to various toggles in the randomizer that affect location logic in some way:
 - Open Lobbies: represented by the B. Locker icon, controls whether the lobbies expect their respective keys for logical access. Note that, if this setting is enabled, lobbies 2 and 6 will still need a way to access upper DK Isles
 - Open Levels: represented by the Peanut Popgun Switch icon, toggles logic analogous to the "Open Levels" option in the randomizer settings
 - Remove High Requirements: represented by the Gorilla Grab lever icon, toggles logic analogous to the "Remove High Requirements" option in the randomizer settings. This defaults to ON
-- Progressive Switch Strength: represented by the Super Simian Slam Chunky Switch icon, changes behavior of locations behind Simian Slam switches such that switches in the first 4 randomized levels require Simian Slam, switches in levels 5 and 6 require Super Simian Slam, and switches in level 7 require Super Duper Simian Slam (including the Galleon lobby switch as the same Slam level as Galleon itself)
+- Progressive Switch Strength: represented by the Super Simian Slam Chunky Switch icon, changes behavior of locations behind Simian Slam switches such that switches in the first 4 randomized levels require Simian Slam, switches in levels 5 and 6 require Super Simian Slam, and switches in level 7 require Super Duper Simian Slam (including the Galleon lobby switch as the same Slam level as Galleon itself). This defaults to ON
 - Fast Golden Bananas: represented by the sparkling Golden Banana icon, toggles logic analogous to the "Fast GBs" option in the randomizer settings (which only affects the logical requirements of Round 1 Arcade and Mermaid Pearl amount to turn in). This defaults to ON
 - Auto Complete Bonus Barrels: represented by the Bonus Barrel icon, changes the logic of a handful of Bonus Barrels to not require certain movement to the Bonus Barrel, such as Diddy's Bonus Barrel in Snide's DK Isles Lobby no longer requiring Simian Spring
 - Hard Shooting: represented by the Coconut Gun image, changes the logic of a few locations to no longer require Homing Ammo or Sniper Scope in logic. Note that these locations will display as yellow if all other logical requirements are met when this setting is turned off, indicating that they can still be acquired, but it is not expected in logic
-- Free Trade Agreement: represented by the Tag Barrel icon, toggles logic for locations accessible without their assigned Kong unlocked yet (mostly vanilla Kasplat locations). Note that since the tracker has no knowledge of what the actual collectible will be from checks, this setting when enabled mirrors the logic of both the "Major Collectibles" and "Major Collectibles except Blueprints" options for Free Trade Agreement in the randomizer
+- Free Trade Agreement: represented by the Tag Barrel icon, toggles logic for locations accessible without their assigned Kong unlocked yet (mostly vanilla Kasplat locations). Note that since the tracker has no knowledge of what the actual collectible will be from checks, this setting when enabled mirrors the logic of both the "Major Collectibles" and "Major Collectibles except Blueprints" options for Free Trade Agreement in the randomizer. This defaults to ON
 - Pre-Activated Bananaports: represented by the Bananaport 1 icon, toggles logic allowing access to some areas early if the Bananaports in those areas are pre-activated. Analogous with the "Activate Bananaports" setting in the randomizer, defaults to Isles Only
 - Helm Start Location: represented by the top of Krem Isle icon, toggles logic expecting certain moves for checks in the Hideout Helm level hub. Analogous to the "Helm Start Location" option in the randomizer, defaults to Skip Start (icon highlighted with ½ to denote starting halfway through Helm)
-- Kongless Hint Doors: represented by the Diddy Wrinkly Hint door with Donkey Kong's thinking face, this makes all locations in the Hint Pool accessible as soon as any Kong can access the location
-- Remove Wrinkly Puzzles: represented by a Boulder when right-clicking the Kongless Hint Door icon, this changes a few Hint Pool locations in Aztec, Forest, and Caves lobbies to align with the changes made by the "Remove Wrinkly Puzzles" option in the Misc Changes selector in the randomizer
+- Kongless Hint Doors: represented by the Diddy Wrinkly Hint door with Donkey Kong's thinking face, this makes all locations in the Hint Pool accessible as soon as any Kong can access the location. This defaults to ON
+- Remove Wrinkly Puzzles: represented by a Boulder when right-clicking the Kongless Hint Door icon, this changes a few Hint Pool locations in Aztec, Forest, and Caves lobbies to align with the changes made by the "Remove Wrinkly Puzzles" option in the Misc Changes selector in the randomizer. This defaults to ON
 - Kasplat Location Shuffler: represented by the Kasplat icon, analogous to the "Shuffle Kasplat" options in the randomizer. "Vanilla" and "Vanilla Locations" will maintain the Kasplat location boxes in each level, "Location Shuffle" (the Kasplat with ?'s) will move all Kasplat locations into each level's Full Level hub and all Kasplat rewards will show as in logic in each level as soon as you have that respective Kong
 - Colored Banana Location Shuffler: represented by the 5 single bananas icon. Removes the logic pertaining to vanilla colored bananas for each level's Banana Medal checks, so each Kong's Banana Medal check in a level will simply be displayed as in logic as soon as that Kong is acquired and that level is accessible
 - Battle Arena Location Shuffler: represented by the Battle Arena icon. Note that, when enabled, the Battle Arena vanilla locations will be moved into each level's Full Level hub and the check (2 checks in Isles) will show as in logic as soon as you have access to a level
@@ -128,3 +128,22 @@ The default settings mimic those set by the "Season 1 Race Settings" preset. The
 4. Extract the Banana Tracker zip file. Open the unzipped folder and move the `BananaTracker` folder into the `\EmoTracker\packs` folder. 
    - Note: Make sure you don't drag the entire extracted folder into the packs folder. The location should look like this: `\Emotracker\packs\BananaTracker` 
 5. Open EmoTracker. Click the gear, then "Installed Packages." Banana Tracker will be located under "Other."
+
+# Changelog
+### General changes
+- Removed horizontal layout competing with vertical layout and consolidated down to 1 layout
+- Updated default settings to match Season 2 Race Settings
+- Added Rainbow Coin amount as a selectable Helm door option, with a Max quantity of 16
+- Changed level colors for single checks, shops, and hubs to match colors displayed in Wrinkly hints
+- Made Spider Boss check capturable to align with added item preview
+- Renamed internal setting names to align with changes to the Randomizer
+- Updated this README with version 1.3.1 and this changelog
+
+### Logic changes
+- Upper mushroom access in Fungi Forest is now fully in logic without any additional moves (formerly out of logic without vine, Diddy + Rocketbarrel, or every Kong + their gun)
+- Tiny GB in Galleon Lobby now shows as obtainable Out of Logic by substituting Pony Tail Twirl with DK (This accounts for kicking from near the B. Locker to the Mini Monkey barrel as DK and Tagging Anywhere to Tiny)
+- DK Lava GB in Caves Lobby now requires Orange to skip Strong Kong out of logic
+- Llama Kong Cage Prize and Kong now require Dive in logic in addition to a Gun + Instrument combo
+- Diddy Production Room GB is now obtainable Out of Logic by substituting Simian Spring with Tiny + Pony Tail Twirl (Twirling down from near Tiny's Bonus GB)
+- Updated Lighthouse Dirt Patch to expect lighthouse platform access like the Lighthouse GB check
+- Lanky Dungeon Toxic Waste Bonus GB can now be peeked without Baboon Balloon if the player has Tiny + Pony Tail Twirl

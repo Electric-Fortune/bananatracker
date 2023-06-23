@@ -396,6 +396,7 @@
 	  {
 	    "name": "upper_mushroom_access",
 		"access_rules": [
+		  "@logic/forest_lobby", 
 		  "@logic/forest_lobby,[vine]",
 		  "@logic/forest_lobby,di,dib",
 		  "@logic/forest_lobby,dk,dkg,di,dig,la,lag,ti,tig,ch,chg",

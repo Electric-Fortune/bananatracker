@@ -6,7 +6,7 @@
     "children": [
 	  {
 	    "name": "DK Isles",
-		"color": "#EE0000",
+		"color": "#D25757",
 		"children": [
 		  {
 		    "name": "DK Isles",
@@ -1066,7 +1066,9 @@
 				    "name": "Shrink and Swim",
 					"access_rules": [
 					  "ch,ti,tib,tim,dive,prog_switch_off,sss",
-					  "ch,ti,tib,tim,dive,prog_switch_on,$galleon_slam"
+					  "ch,ti,dk,tib,[tim],dive,prog_switch_off,sss",
+					  "ch,ti,tib,tim,dive,prog_switch_on,$galleon_slam",
+					  "ch,ti,dk,tib,[tim],dive,prog_switch_on,$galleon_slam"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -1560,8 +1562,9 @@
 				    "name": "Strong Kong",
 					"capture_item": true,
 					"access_rules": [
-					  "ch,chm,dk,[dkb]",
-					  "ch,chm,free_trade,[dk],[dkb]",
+					  "ch,chm,dk,dkb",
+					  "ch,chm,dk,orng,[dkb]",
+					  "ch,chm,orng,free_trade,[dk],[dkb]",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -2047,7 +2050,7 @@
 	  },
 	  {
 	    "name": "Jungle Japes",
-		"color": "#44CC44",
+		"color": "#59FF64",
 		"children": [
 		  {
 		    "name": "Main Area",
@@ -2887,7 +2890,7 @@
 	  },
       {
         "name": "Angry Aztec",
-        "color": "#CC9900",
+        "color": "#FFA010",
         "children": [
           {
             "name": "Oasis Area",
@@ -3342,8 +3345,8 @@
 					"chest_opened_img": "images/checks/lanky_done.png",
 					"capture_item": true,
 					"access_rules": [
-					  "@logic/any_gun_instrument",
-					  "{@logic/any_instrument}"
+					  "@logic/any_gun_instrument,dive",
+					  "{@logic/any_instrument},dive"
 					],
 					"visibility_rules": [
 					  "kong_pool"
@@ -3354,8 +3357,8 @@
 				    "name": "Prize",
 					"capture_item": true,
 					"access_rules": [
-					  "@logic/any_gun_instrument",
-					  "{@logic/any_instrument}"
+					  "@logic/any_gun_instrument,dive",
+					  "{@logic/any_instrument},dive"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -3722,7 +3725,7 @@
       },
 	  {
 	    "name": "Frantic Factory",
-		"color": "#888888",
+		"color": "#B5CDFF",
 		"children": [
 		  {
 		    "name": "Storage and Arcade",
@@ -3811,7 +3814,7 @@
 					  "dk,dkp"
 					],
 					"visibility_rules": [
-					  "gb_pool,fast_gbs_on"
+					  "gb_pool,fast_checks_on"
 					],
 				    "item_count": 1
 				  }
@@ -3966,7 +3969,7 @@
 					  "dk,dkp,dkm"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool,fast_gbs_off"
+					  "hard_gb_pool,fast_checks_off"
 					],
 					"item_count": 1
 				  },
@@ -4455,9 +4458,12 @@
 					"capture_item": true,
 					"access_rules": [
 					  "di,dip,prog_switch_off,ss,dk,dkg,dkm",
+					  "di,[dip],prog_switch_off,ss,dk,dkg,dkm,ti,tim",
 					  "di,dip,prog_switch_off,ss,no_hi_reqs",
 					  "di,dip,prog_switch_on,$factory_slam,dk,dkg,dkm",
+					  "di,[dip],prog_switch_on,$factory_slam,dk,dkg,dkm,ti,tim",
 					  "di,dip,prog_switch_on,$factory_slam,no_hi_reqs",
+					  "di,[dip],prog_switch_on,$factory_slam,no_hi_reqs,ti,tim",
 					  "{di,prog_switch_off,ss}",
 					  "{di,prog_switch_on,$factory_slam}"
 					],
@@ -4565,7 +4571,7 @@
 	  },
 	  {
 	    "name": "Gloomy Galleon",
-		"color": "#112255",
+		"color": "#0C7DED",
 		"children": [
 		  {
 		    "name": "Galleon Caves",
@@ -5196,8 +5202,8 @@
 				    "chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
 				    "access_rules": [
-				      "dk,@logic/wave_owned,prog_switch_off,ss",
-				      "dk,@logic/wave_owned,prog_switch_on,$galleon_slam"
+				      "@logic/lighthouse_platform,dk,@logic/wave_owned,prog_switch_off,ss",
+				      "@logic/lighthouse_platform,dk,@logic/wave_owned,prog_switch_on,$galleon_slam"
 				    ],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -5351,7 +5357,7 @@
 					"capture_item": true,
 					"access_rules": [
 					  "@logic/lighthouse_access,dive,ti,tib,pearl:5",
-					  "@logic/lighthouse_access,dive,ti,tib,fast_gbs_on,pearl:1",
+					  "@logic/lighthouse_access,dive,ti,tib,fast_checks_on,pearl:1",
 					  "{@logic/lighthouse_access,dive,ti,tib}"
 					],
 					"visibility_rules": [
@@ -5374,7 +5380,7 @@
 	  },
 	  {
 	    "name": "Fungi Forest",
-		"color": "#116611",
+		"color": "#BB1CFF",
 		"children": [
 		  {
 		    "name": "Mill Area",
@@ -5435,6 +5441,7 @@
 				"sections": [
 				  {
 				    "name": "Defeat It",
+					"capture_item": true,
 					"access_rules": [
 					  "ch,chm,ti,tib,@logic/night_access,@logic/any_gun,[tig]"
 					],
@@ -5881,8 +5888,7 @@
 					"chest_opened_img": "images/checks/crown_done.png",
 					"capture_item": true,
 					"access_rules": [
-					  "@logic/upper_mushroom_access,@logic/night_access,@logic/any_kong",
-					  "@logic/upper_mushroom_access,ti,tim,[@logic/night_access]"
+					  "@logic/upper_mushroom_access,@logic/any_kong"
 					],
 					"visibility_rules": [
 					  "cr_pool,arena_rando_off"
@@ -6215,7 +6221,7 @@
 	  },
 	  {
 	    "name": "Crystal Caves",
-		"color": "#11AABB",
+		"color": "#3EE1E1",
 		"children": [
 		  {
 		    "name": "Central Cave",
@@ -6966,7 +6972,7 @@
 	  },
 	  {
 	    "name": "Creepy Castle",
-		"color": "#5511BB",
+		"color": "#E84898",
 		"children": [
 		  {
 		    "name": "Castle Exterior",
@@ -7487,7 +7493,9 @@
 					"capture_item": true,
 					"access_rules": [
 					  "la,lai,lap,prog_switch_off,sdss",
-					  "la,lai,lap,prog_switch_on,$castle_slam"
+					  "la,lai,lap,prog_switch_on,$castle_slam",
+					  "{la,lai,prog_switch_off,ti,tim}",
+					  "{la,lai,prog_switch_on,$castle_slam,ti,tim}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
