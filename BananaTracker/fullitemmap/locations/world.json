@@ -5826,10 +5826,10 @@
 					"chest_opened_img": "images/checks/chunky_bp_done.png",
 					"capture_item": true,
 					"access_rules": [
-					  "@logic/upper_mushroom_access,@logic/any_kong,[ti],[tim],kasplat_rando_swap",
+					  "@logic/upper_mushroom_access,@logic/any_kong,kasplat_rando_swap",
 					  "@logic/night_access,vine,@logic/any_kong,kasplat_rando_swap",
-					  "@logic/upper_mushroom_access,[ti],[tim],kasplat_rando_vanilla,ch",
-					  "@logic/upper_mushroom_access,[ti],[tim],kasplat_rando_vanilla,free_trade,@logic/any_kong",
+					  "@logic/upper_mushroom_access,kasplat_rando_vanilla,ch",
+					  "@logic/upper_mushroom_access,kasplat_rando_vanilla,free_trade,@logic/any_kong",
 					  "@logic/night_access,vine,kasplat_rando_vanilla,ch",
 					  "@logic/night_access,vine,kasplat_rando_vanilla,free_trade,@logic/any_kong",
 					  "{@logic/upper_mushroom_access,kasplat_rando_vanilla,@logic/any_kong}",
