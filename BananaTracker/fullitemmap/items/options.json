@@ -57,13 +57,50 @@
 	"stages": [
 	  {
 	    "img": "images/settings/shiny_gb.png",
-	    "codes": "fast_checkss,fast_checks_on",
+	    "codes": "fast_checks,fast_checks_on",
 		"inherit_codes": false
 	  },
 	  {
 	    "img": "images/settings/shiny_gb.png",
 		"img_mods": "@disabled",
 	    "codes": "fast_checks,fast_checks_off",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Factory DK Arcade GB Location (*Blast Course*, Arcade Round 1)",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/settings/shiny_gb.png",
+	    "codes": "fast_arcade,fast_arcade_on",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/dk_move.png",
+		"codes": "fast_arcade,fast_arcade_off",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Galleon Cheap Mermaid",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/settings/mermaid.png",
+		"codes": "cheap_mermaid,cheap_mermaid_on",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/settings/mermaid.png",
+		"codes": "cheap_mermaid,cheap_mermaid_off",
+		"img_mods": "@disabled",
 		"inherit_codes": false
 	  }
 	]
@@ -116,6 +153,48 @@
 	]
   },
   {
+	"name": "Galleon Default Water Level (Lowered, *Raised*)",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/settings/enguarde.png",
+	    "codes": "galleon_water, galleon_water_raised",
+	    "inherit_codes": false
+	  },
+	  {
+	    "img": "images/settings/enguarde.png",
+	    "img_mods": "@disabled",
+	    "codes": "galleon_water, galleon_water_lowered",
+	    "inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Forest Default Time (*Day*, Night, Dusk/Progressive)",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/settings/shroom.png",
+	    "codes": "forest_time,forest_time_day",
+	    "inherit_codes": false
+	  },
+	  {
+	    "img": "images/settings/krossbones.png",
+	    "codes": "forest_time,forest_time_night",
+	    "inherit_codes": false
+	  },
+	  {
+		"img": "images/settings/krosshroom.png",
+		"codes": "forest_time,forest_time_dusk",
+	    "inherit_codes": false
+	  }
+	]
+  },
+  {
 	"name": "Helm Start Location (Vanilla, *Skip Start*, Skip All)",
 	"type": "progressive",
 	"allow_disabled": false,
@@ -140,7 +219,7 @@
 	]
   },
   {
-    "name": "Kasplat Location Shuffler (Vanilla, *Vanilla Locations*, Location Shuffle)",
+    "name": "Kasplat Location Shuffler (*Vanilla*, Vanilla Locations, Location Shuffle)",
 	"type": "progressive",
 	"allow_disabled": false,
 	"loop": true,
@@ -170,13 +249,13 @@
 	"loop": true,
 	"stages": [
 	  {
-	    "img": "images/arena.png",
+	    "img": "images/settings/battle_arena.png",
 	    "img_mods": "@disabled",
 	    "codes": "arena_rando,arena_rando_off",
 		"inherit_codes": false
 	  },
 	  {
-	    "img": "images/arena.png",
+	    "img": "images/settings/battle_arena.png",
 	    "codes": "arena_rando,arena_rando_on",
 		"inherit_codes": false
 	  }
@@ -189,13 +268,13 @@
 	"loop": true,
 	"stages": [
 	  {
-	    "img": "images/settings/not_a_fairy.png",
+	    "img": "images/settings/fairy_glow.png",
 	    "img_mods": "@disabled",
 	    "codes": "fairy_rando,fairy_rando_off",
 		"inherit_codes": false
 	  },
 	  {
-	    "img": "images/settings/not_a_fairy.png",
+	    "img": "images/settings/fairy_glow.png",
 	    "codes": "fairy_rando,fairy_rando_on",
 		"inherit_codes": false
 	  }
@@ -221,6 +300,25 @@
 	]
   },
   {
+	"name": "Melon Crate Location Shuffler",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+		"img": "images/settings/crate.png",
+		"img_mods": "@disabled",
+		"codes": "melon_crate_rando,melon_crate_rando_off",
+		"inherit_codes": false,
+	  },
+	  {
+		"img": "images/settings/crate.png",
+		"codes": "melon_crate_rando,melon_crate_rando_on",
+		"inherit_codes": false,
+	  }
+	]
+  },
+  {
     "name": "Colored Banana Location Shuffler",
 	"type": "toggle",
 	"img": "images/settings/rainbow_bananas.png",
@@ -233,7 +331,7 @@
 	"codes": "medal_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 100,
-	"initial_quantity": 40
+	"initial_quantity": 45
   },
   {
 	"name": "Jetpac Banana Medal Amount",
@@ -242,7 +340,7 @@
 	"codes": "jetpac_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 40,
-	"initial_quantity": 15
+	"initial_quantity": 9
   },
   {
 	"name": "Rareware Banana Fairy Amount",
@@ -251,7 +349,7 @@
 	"codes": "rw_gb_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 20,
-	"initial_quantity": 5
+	"initial_quantity": 4
   },
   {
 	"name": "Helm B. Locker Amount",
@@ -260,7 +358,7 @@
 	"codes": "helm_entry_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 201,
-	"initial_quantity": 60
+	"initial_quantity": 64
   },
   {
 	"name": "Helm Door 1 Amount",

@@ -1,0 +1,88 @@
+[
+  {
+    "name": "Japes Coconut Gates",
+	"type": "toggle",
+	"img": "images/barriers/japes_coconut_gates.png",
+	"initial_active_state": true,
+	"codes": "barrier_japes_coconut"
+  },
+  {
+    "name": "Japes Shellhive Gate",
+	"type": "toggle",
+	"img": "images/barriers/japes_shellhive_gate.png",
+	"codes": "barrier_japes_shellhive"
+  },
+  {
+    "name": "Aztec Tunnel Door",
+	"type": "toggle",
+	"img": "images/barriers/aztec_tunnel_door.png",
+	"initial_active_state": true,
+	"codes": "barrier_aztec_door"
+  },
+  {
+    "name": "Aztec 5DTemple Switches",
+	"type": "toggle",
+	"img": "images/barriers/aztec_5dtemple_switches.png",
+	"initial_active_state": true,
+	"codes": "barrier_aztec_5dtemple"
+  },
+  {
+    "name": "Aztec Llama Switches",
+	"type": "toggle",
+	"img": "images/barriers/aztec_llama_switches.png",
+	"codes": "barrier_aztec_llama"
+  },
+  {
+    "name": "Factory Production Room",
+	"type": "toggle",
+	"img": "images/barriers/factory_production_room.png",
+	"initial_active_state": true,
+	"codes": "barrier_factory_production"
+  },
+  {
+    "name": "Factory Testing Gate",
+	"type": "toggle",
+	"img": "images/barriers/factory_testing_gate.png",
+	"initial_active_state": true,
+	"codes": "barrier_factory_testing"
+  },
+  {
+    "name": "Galleon Lighthouse Gate",
+	"type": "toggle",
+	"img": "images/barriers/galleon_lighthouse_gate.png",
+	"initial_active_state": true,
+	"codes": "barrier_galleon_lighthouse"
+  },
+  {
+    "name": "Galleon Shipyard Area Gate",
+	"type": "toggle",
+	"img": "images/barriers/galleon_shipyard_gate.png",
+	"codes": "barrier_galleon_shipyard"
+  },
+  {
+	"name": "Galleon Seasick Ship",
+	"type": "toggle",
+	"img": "images/barriers/galleon_seasick_ship.png",
+	"initial_active_state": true,
+	"codes": "barrier_galleon_seasick"
+  },
+  {
+    "name": "Forest Green Tunnel",
+	"type": "toggle",
+	"img": "images/barriers/forest_green_tunnel.png",
+	"codes": "barrier_forest_green"
+  },
+  {
+    "name": "Forest Yellow Tunnel",
+	"type": "toggle",
+	"img": "images/barriers/forest_yellow_tunnel.png",
+	"codes": "barrier_forest_yellow"
+  },
+  {
+    "name": "Caves Igloo Music Pads",
+	"type": "toggle",
+	"img": "images/barriers/caves_igloo_pads.png",
+	"initial_active_state": true,
+	"codes": "barrier_caves_igloo"
+  }
+]

@@ -97,7 +97,9 @@
 					"access_rules": [
 					  "@logic/isles_rocketbarrel,di,dib,@logic/wave_owned",
 					  "@logic/cross_from_fungi_lobby,ti,tim,@logic/wave_owned,[di][dib],[@logic/isles_rocketbarrel]",
-					  "@logic/cross_from_fungi_lobby,dk,@logic/wave_owned,[di][dib],[@logic/isles_rocketbarrel]"
+					  "@logic/cross_from_fungi_lobby,dk,@logic/wave_owned,[di][dib],[@logic/isles_rocketbarrel]",
+					  "@logic/upper_isles_access,@logic/wave_owned,ch,brrl,di,[dib],[@logic/isles_rocketbarrel]",
+					  "@logic/upper_isles_access,@logic/wave_owned,ch,brrl,ti,[di],[dib],[@logic/isles_rocketbarrel]",
 					],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -375,6 +377,7 @@
 					"capture_item": true,
 					"access_rules": [
 					  "la,lab",
+					  "dk,[la],[lab]",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -676,7 +679,7 @@
 				    "name": "Bonus Barrel",
 					"capture_item": true,
 					"access_rules": [
-					  "di,dim,ti,tim",
+					  "di,dim,[ti],[tim]",
 					  "auto_bonus,ti",
 					  "auto_bonus,free_trade,@logic/any_kong",
 					  "{di,dim}",
@@ -1587,7 +1590,8 @@
 				  {
 				    "name": "Guitar Pad",
 					"access_rules": [
-					  "di,dib,dii"
+					  "di,dib,dii",
+					  "ch,chm,brrl,ti,tim,di,dii,[dib]"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -1976,8 +1980,7 @@
 		  {
 		    "name": "Helm Lobby",
 			"access_rules": [
-			  "@logic/any_kong,k6,k7,@logic/top_of_krem_isle",
-			  "@logic/any_kong,open_lobbies,@logic/top_of_krem_isle"
+			  "@logic/any_kong,@logic/helm_lobby"
 			],
 			"children": [
 			  {
@@ -1988,12 +1991,12 @@
 				    "name": "Bonus Barrel",
 					"capture_item": true,
 					"access_rules": [
-					  "ch,chp,vine",
-					  "ch,chp,ti,tim,[vine]",
-					  "ch,chp,orng,[vine]",
-					  "ti,tim,auto_bonus,[ch],[chp],[vine]",
-					  "@logic/any_kong,orng,auto_bonus,[ch],[chp],[vine]",
-					  "{ch,chp}",
+					  "@logic/helm_lobby_switch,vine",
+					  "@logic/helm_lobby_switch,ti,tim,[vine]",
+					  "@logic/helm_lobby_switch,orng,[vine]",
+					  "ti,tim,auto_bonus,[@logic/helm_lobby_switch],[vine]",
+					  "@logic/any_kong,orng,auto_bonus,[@logic/helm_lobby_switch],[vine]",
+					  "{@logic/helm_lobby_switch}",
 					  "{@logic/any_kong,auto_bonus}"
 					],
 					"visibility_rules": [
@@ -2059,6 +2062,31 @@
 			],
 			"children": [
 			  {
+				"name": "Behind Diddy Mountain",
+				"short_name": "Behind Mountain",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/any_kong",
+					],
+					"visibility_rules": [
+					  "melon_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "japesmap",
+					"x": 540,
+					"y": 340
+				  }
+				]
+			  },
+			  {
 			    "name": "In Front of Kong Cage",
 				"short_name": "Before Kong Cage",
 				"sections": [
@@ -2088,7 +2116,7 @@
 				"sections": [
 				  {
 				    "name": "Kong",
-					"chest_unopened_img": "images/diddy.png",
+					"chest_unopened_img": "images/diddy_hat.png",
 					"chest_opened_img": "images/checks/diddy_done.png",
 					"capture_item": true,
 					"access_rules": [
@@ -2460,7 +2488,9 @@
 					"capture_item": true,
 					"access_rules": [
 					  "di,dig,[dim],prog_switch_off,ss",
-					  "di,dig,[dim],prog_switch_on,$japes_slam"
+					  "di,dig,[dim],prog_switch_on,$japes_slam",
+					  "di,dig,ch,[dim],[prog_switch_off],[ss]",
+					  "di,dig,ch,[dim],[prog_switch_on],[$japes_slam]"
 					],
 					"visibility_rules": [
 					  "hard_gb_pool"
@@ -2482,7 +2512,7 @@
 		    "name": "Japes Tunnels",
 			"access_rules": [
 			  "@logic/japes_lobby,japes_kong_freed",
-			  "@logic/japes_lobby,open_levels"
+			  "@logic/japes_lobby,barrier_japes_coconut"
 			],
 			"children": [
 			  {
@@ -2638,7 +2668,7 @@
 		    "name": "Rambi Huts and Door",
 			"access_rules": [
 			  "@logic/japes_lobby,japes_kong_freed,dk,dkg",
-			  "@logic/japes_lobby,open_levels,dk,dkg",
+			  "@logic/japes_lobby,barrier_japes_coconut,dk,dkg",
 			  "{@logic/japes_lobby,@logic/any_kong}"
 			],
 			"children": [
@@ -2797,6 +2827,31 @@
 					"y": 213
 				  }
 				]
+			  },
+			  {
+				"name": "Chunky Rock Cave",
+				"short_name": "Chunky Cave",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",	
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "dk,dkg",
+					],
+					"visibility_rules": [
+					  "melon_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "japesmap",
+					"x": 915,
+					"y": 140
+				  }
+				]
 			  }
 			]
 		  },
@@ -2804,7 +2859,9 @@
 		    "name": "Hive Area",
 			"access_rules": [
 			  "@logic/japes_lobby,japes_kong_freed,ti,tig",
-			  "@logic/japes_lobby,open_levels",
+			  "@logic/japes_lobby,japes_kong_freed,barrier_japes_shellhive",
+			  "@logic/japes_lobby,barrier_japes_coconut,ti,tig",
+			  "@logic/japes_lobby,barrier_japes_coconut,barrier_japes_shellhive",
 			  "@logic/japes_lobby,bananaport_all,di,dig"
 			],
 			"children": [
@@ -2934,7 +2991,8 @@
 					"capture_item": true,
 					"access_rules": [
 					  "dk,dkg,[dkb]",
-					  "dk,dkg,ti,tim,kasplat_rando_swap"
+					  "dk,dkg,ti,tim,kasplat_rando_swap",
+					  "dk,dkg,ti,tim,kasplat_rando_vanilla,free_trade"
 					],
 					"visibility_rules": [
 					  "bp_pool,kasplat_rando_swap",
@@ -3326,6 +3384,56 @@
 					"y": 747
 				  }
 				]
+			  },
+			  {
+				"name": "Near Gong Tower",
+				"short_name": "Gong Tower",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/any_kong",
+					],
+					"visibility_rules": [
+					  "melon_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "aztecmap",
+					"x": 610,
+					"y": 800
+				  }
+				]
+			  },
+			  {
+				"name": "Atop Llama Temple",
+				"short_name": "Llama Roof",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "di,dib",
+					],
+					"visibility_rules": [
+					  "melon_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "aztecmap",
+					"x": 806,
+					"y": 475
+				  }
+				]
 			  }
 			]
 		  },
@@ -3335,6 +3443,31 @@
 			  "@logic/llama_temple_access"
 			],
 			"children": [
+			  {
+				"name": "Between Warp 1 and 2",
+				"short_name": "Between Warps",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/any_kong",
+					],
+					"visibility_rules": [
+					  "melon_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "aztecmap",
+					"x": 411,
+					"y": 333
+				  }
+				]
+			  },
 			  {
 			    "name": "Lanky Cage Room",
 				"short_name": "Lanky Cage",
@@ -3423,7 +3556,7 @@
 				  {
 				    "map": "aztecmap",
 					"x": 411,
-					"y": 305
+					"y": 303
 				  }
 				]
 			  },
@@ -3517,7 +3650,7 @@
 		  {
 		    "name": "5 Door Temple",
 			"access_rules": [
-			  "@logic/5_door_temple_access"
+			  "@logic/5_door_temple_switches"
 			],
 			"children": [
 			  {
@@ -3814,7 +3947,7 @@
 					  "dk,dkp"
 					],
 					"visibility_rules": [
-					  "gb_pool,fast_checks_on"
+					  "gb_pool,fast_arcade_on"
 					],
 				    "item_count": 1
 				  }
@@ -3824,6 +3957,31 @@
 				    "map": "factorymap",
 					"x": 585,
 					"y": 585
+				  }
+				]
+			  },
+			  {
+				"name": "Near Dual Shops",
+				"short_name": "Near Shops",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/any_kong",
+					],
+					"visibility_rules": [
+					  "melon_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "factorymap",
+					"x": 444,
+					"y": 574
 				  }
 				]
 			  },
@@ -3969,7 +4127,7 @@
 					  "dk,dkp,dkm"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool,fast_checks_off"
+					  "hard_gb_pool,fast_arcade_off"
 					],
 					"item_count": 1
 				  },
@@ -4000,7 +4158,8 @@
 		  {
 		    "name": "Testing and R&D",
 			"access_rules": [
-			  "@logic/factory_lobby,ss"
+			  "@logic/factory_lobby,ss",
+			  "@logic/factory_lobby,barrier_factory_testing"
 			],
 			"children": [
 			  {
@@ -4082,8 +4241,33 @@
 				"map_locations": [
 				  {
 				    "map": "factorymap",
-					"x": 690,
+					"x": 666,
 					"y": 155
+				  }
+				]
+			  },
+			  {
+				"name": "Near Warp 5 Shop",
+				"short_name": "Near Solo Shop",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/any_kong",
+					],
+					"visibility_rules": [
+					  "melon_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "factorymap",
+					"x": 700,
+					"y": 140
 				  }
 				]
 			  },
@@ -4372,8 +4556,9 @@
 		  {
 		    "name": "Production Room",
 			"access_rules": [
-			  "@logic/factory_lobby,dk,dkg,dkm",
-			  "@logic/factory_lobby,no_hi_reqs",
+			  "@logic/factory_lobby,ss,dk,dkg,dkm",
+			  "@logic/factory_lobby,barrier_factory_testing,dk,dkg,dkm",
+			  "@logic/factory_lobby,barrier_factory_production",
 			  "{@logic/factory_lobby,@logic/any_kong}"
 			],
 			"children": [
@@ -4385,7 +4570,7 @@
 					"short_name": "Power Production",
 					"access_rules": [
 					  "dk,dkg,dkm",
-					  "dk,dkg,no_hi_reqs"
+					  "dk,dkg,barrier_factory_production"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -4408,7 +4593,7 @@
 				    "name": "Strong Kong",
 					"access_rules": [
 					  "dk,[dkb],dkg,dkm",
-					  "dk,[dkb],no_hi_reqs"
+					  "dk,[dkb],barrier_factory_production"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -4432,9 +4617,9 @@
 					"capture_item": true,
 					"access_rules": [
 					  "ch,prog_switch_off,ss,dk,dkg,dkm",
-					  "ch,prog_switch_off,ss,no_hi_reqs",
+					  "ch,prog_switch_off,ss,barrier_factory_production",
 					  "ch,prog_switch_on,$factory_slam,dk,dkg,dkm",
-					  "ch,prog_switch_on,$factory_slam,no_hi_reqs"
+					  "ch,prog_switch_on,$factory_slam,barrier_factory_production"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -4459,11 +4644,11 @@
 					"access_rules": [
 					  "di,dip,prog_switch_off,ss,dk,dkg,dkm",
 					  "di,[dip],prog_switch_off,ss,dk,dkg,dkm,ti,tim",
-					  "di,dip,prog_switch_off,ss,no_hi_reqs",
+					  "di,dip,prog_switch_off,ss,barrier_factory_production",
 					  "di,dip,prog_switch_on,$factory_slam,dk,dkg,dkm",
 					  "di,[dip],prog_switch_on,$factory_slam,dk,dkg,dkm,ti,tim",
-					  "di,dip,prog_switch_on,$factory_slam,no_hi_reqs",
-					  "di,[dip],prog_switch_on,$factory_slam,no_hi_reqs,ti,tim",
+					  "di,dip,prog_switch_on,$factory_slam,barrier_factory_production",
+					  "di,[dip],prog_switch_on,$factory_slam,barrier_factory_production,ti,tim",
 					  "{di,prog_switch_off,ss}",
 					  "{di,prog_switch_on,$factory_slam}"
 					],
@@ -4492,13 +4677,13 @@
 					"chest_opened_img": "images/checks/dk_bp_done.png",
 					"capture_item": true,
 					"access_rules": [
-					  "@logic/any_kong,kasplat_rando_swap,no_hi_reqs",
+					  "@logic/any_kong,kasplat_rando_swap,barrier_factory_production",
 					  "kasplat_rando_swap,dk,dkg,dkm",
 					  "kasplat_rando_vanilla,dk,dkg,dkm",
-					  "kasplat_rando_vanilla,dk,no_hi_reqs",
-					  "kasplat_rando_vanilla,no_hi_reqs,free_trade,@logic/any_kong",
+					  "kasplat_rando_vanilla,dk,barrier_factory_production",
+					  "kasplat_rando_vanilla,barrier_factory_production,free_trade,@logic/any_kong",
 					  "{kasplat_rando_vanilla,dk,dkg,dkm}",
-					  "{kasplat_rando_vanilla,@logic/any_kong,no_hi_reqs}"
+					  "{kasplat_rando_vanilla,@logic/any_kong,barrier_factory_production}"
 					],
 					"visibility_rules": [
 					  "bp_pool,kasplat_rando_swap",
@@ -4524,7 +4709,8 @@
 					"capture_item": true,
 					"access_rules": [
 					  "la,lam",
-					  "{@logic/any_kong}"
+					  "{@logic/any_kong}",
+					  "ti,[la],[lam]"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -4586,7 +4772,7 @@
 				  {
 				    "name": "Shoot 3 Targets",
 					"access_rules": [
-					  "[@logic/water_switch_access],ch,chg,brrl"
+					  "[@logic/raised_water_access],ch,chg,brrl"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -4613,9 +4799,9 @@
 					"chest_opened_img": "images/checks/lanky_bp_done.png",
 					"capture_item": true,
 					"access_rules": [
-					  "[@logic/water_switch_access],ch,chg,kasplat_rando_swap",
-					  "[@logic/water_switch_access],ch,chg,kasplat_rando_vanilla,la",
-					  "[@logic/water_switch_access],ch,chg,kasplat_rando_vanilla,free_trade",
+					  "[@logic/raised_water_access],ch,chg,kasplat_rando_swap",
+					  "[@logic/raised_water_access],ch,chg,kasplat_rando_vanilla,la",
+					  "[@logic/raised_water_access],ch,chg,kasplat_rando_vanilla,free_trade",
 					  "{ch,chg,@logic/any_instrument}",
 					  "{ch,chg,kasplat_rando_vanilla}"
 					],
@@ -4756,7 +4942,7 @@
 		  {
 		    "name": "Shipyard Area",
 			"access_rules": [
-			  "@logic/galleon_lobby"
+			  "@logic/shipyard_access"
 			],
 			"children": [
 			  {
@@ -4810,6 +4996,31 @@
 				    "map": "galleonmap",
 					"x": 345,
 					"y": 785
+				  }
+				]
+			  },
+			  {
+				"name": "Flotsam Near Cactus",
+				"short_name": "Cactus Plank",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/any_kong",
+					],
+					"visibility_rules": [
+					  "melon_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "galleonmap",
+					"x": 238,
+					"y": 182
 				  }
 				]
 			  },
@@ -4912,9 +5123,9 @@
 				    "name": "Bonus Barrel",
 					"capture_item": true,
 					"access_rules": [
-					  "@logic/lighthouse_access,ch,chi,dive",
-					  "{di,dii,dive}",
-					  "{la,lai,dive}"
+					  "@logic/lighthouse_access,@logic/lowered_water_access,ch,chi,dive",
+					  "{@logic/lowered_water_access,di,dii,dive}",
+					  "{@logic/lowered_water_access,la,lai,dive}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -4938,9 +5149,9 @@
 				    "name": "Bonus Barrel",
 					"capture_item": true,
 					"access_rules": [
-					  "di,dii,dive",
-					  "{@logic/lighthouse_access,ch,chi,dive}",
-					  "{la,lai,dive}"
+					  "@logic/lowered_water_access,di,dii,dive",
+					  "{@logic/lighthouse_access,@logic/lowered_water_access,ch,chi,dive}",
+					  "{@logic/lowered_water_access,la,lai,dive}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -4964,8 +5175,8 @@
 				    "name": "On the Bed",
 					"capture_item": true,
 					"access_rules": [
-					  "la,lai,dive",
-					  "{di,dii,dive}"
+					  "@logic/lowered_water_access,la,lai,dive",
+					  "{@logic/lowered_water_access,di,dii,dive}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -5013,7 +5224,7 @@
 				    "name": "Bonus Barrel",
 					"capture_item": true,
 					"access_rules": [
-					  "la,dive,[@logic/water_switch_access],di,dip",
+					  "la,dive,[@logic/raised_water_access],di,dip",
 					  "di,dip,bananaport_all",
 					  "{la,dive,lap,@logic/any_gun,@logic/sns_owned}",
 					  "{la,dive,lap,ti,tim}",
@@ -5044,10 +5255,10 @@
                     "chest_opened_img": "images/checks/dk_bp_done.png",
 					"capture_item": true,
 					"access_rules": [
-					  "la,dive,[@logic/water_switch_access],di,dip,kasplat_rando_swap",
-					  "la,dive,[@logic/water_switch_access],di,dip,kasplat_rando_vanilla,dk",
-					  "la,dive,[@logic/water_switch_access],di,dip,kasplat_rando_vanilla,free_trade",
-					  "la,dive,lap,ti,tim,[@logic/water_switch_access],[di],[dip],kasplat_rando_swap",
+					  "la,dive,[@logic/raised_water_access],di,dip,kasplat_rando_swap",
+					  "la,dive,[@logic/raised_water_access],di,dip,kasplat_rando_vanilla,dk",
+					  "la,dive,[@logic/raised_water_access],di,dip,kasplat_rando_vanilla,free_trade",
+					  "la,dive,lap,ti,tim,[@logic/raised_water_access],[di],[dip],kasplat_rando_swap",
 					  "@logic/any_kong,kasplat_rando_swap,bananaport_all",
 					  "kasplat_rando_vanilla,bananaport_all,dk",
 					  "kasplat_rando_vanilla,bananaport_all,free_trade,@logic/any_kong",
@@ -5081,9 +5292,9 @@
 				    "name": "Bonus Barrel",
 					"capture_item": true,
 					"access_rules": [
-					  "la,dive,[@logic/water_switch_access],lap",
-					  "la,dive,[@logic/water_switch_access],di,dip,ti,tim,[lap]",
-					  "bananaport_all,[@logic/water_switch_access],la,lap",
+					  "la,dive,[@logic/raised_water_access],lap",
+					  "la,dive,[@logic/raised_water_access],di,dip,ti,tim,[lap]",
+					  "bananaport_all,[@logic/raised_water_access],la,lap",
 					  "bananaport_all,ti,tim,la,[lap]",
 					  "bananaport_all,ti,tim,free_trade,[la],[lap]"
 					],
@@ -5110,7 +5321,7 @@
 					"chest_unopened_img": "images/pearl.png",
 					"chest_opened_img": "images/checks/pearl_done.png",
 					"access_rules": [
-					  "la,dive,[@logic/water_switch_access],ti,tib",
+					  "la,dive,[@logic/raised_water_access],ti,tib",
 					  "bananaport_all,ti,tib"
 					],
 					"visibility_rules": [
@@ -5144,7 +5355,7 @@
 				    "name": "Race the Seal",
 					"capture_item": true,
 					"access_rules": [
-					  "dk,dkp,@logic/lighthouse_platform,@logic/water_switch_access",
+					  "dk,dkp,@logic/lighthouse_platform,@logic/raised_water_access",
 					  "{dk,dkp,@logic/lighthouse_platform}"
 					],
 					"visibility_rules": [
@@ -5229,8 +5440,8 @@
 					"access_rules": [
 					  "@logic/lighthouse_platform,dk,dkm,prog_switch_off,ss",
 					  "@logic/lighthouse_platform,dk,dkm,prog_switch_on,$galleon_slam",
-					  "@logic/lighthouse_platform,dk,no_hi_reqs,prog_switch_off,ss",
-					  "@logic/lighthouse_platform,dk,no_hi_reqs,prog_switch_on,$galleon_slam"
+					  "@logic/lighthouse_platform,dk,barrier_galleon_seasick,prog_switch_off,ss",
+					  "@logic/lighthouse_platform,dk,barrier_galleon_seasick,prog_switch_on,$galleon_slam"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -5357,7 +5568,7 @@
 					"capture_item": true,
 					"access_rules": [
 					  "@logic/lighthouse_access,dive,ti,tib,pearl:5",
-					  "@logic/lighthouse_access,dive,ti,tib,fast_checks_on,pearl:1",
+					  "@logic/lighthouse_access,dive,ti,tib,cheap_mermaid_on,pearl:1",
 					  "{@logic/lighthouse_access,dive,ti,tib}"
 					],
 					"visibility_rules": [
@@ -5437,13 +5648,38 @@
 				]
 			  },
 			  {
+				"name": "Behind Rafters Barn",
+				"short_name": "Behind Barn",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/any_kong",
+					],
+					"visibility_rules": [
+					  "melon_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "forestmap",
+					"x": 303,
+					"y": 169
+				  }
+				]
+			  },
+			  {
 			    "name": "Spider Fight",
 				"sections": [
 				  {
 				    "name": "Defeat It",
 					"capture_item": true,
 					"access_rules": [
-					  "ch,chm,ti,tib,@logic/night_access,@logic/any_gun,[tig]"
+					  "@logic/day_access,ch,chm,ti,tib,@logic/night_access,@logic/any_gun,[tig]"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -5466,8 +5702,8 @@
 				    "name": "Crush 3 Barrels",
 					"short_name": "3 Barrels",
 					"access_rules": [
-					  "ch,chm,chi,brrl,[dk],[dkm],[prog_switch_off],[sss]",
-					  "ch,chm,chi,brrl,[dk],[dkm],[prog_switch_on],[$forest_slam]"
+					  "@logic/day_access,ch,chm,chi,brrl,[dk],[dkm],[prog_switch_off],[sss]",
+					  "@logic/day_access,ch,chm,chi,brrl,[dk],[dkm],[prog_switch_on],[$forest_slam]"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -5487,12 +5723,12 @@
 			    "name": "Conveyor Cage",
 				"sections": [
 				  {
-				    "name": "Pull Levers (21132)",
-					"short_name": "Levers (21132)",
+				    "name": "Pull Levers",
+					"short_name": "Lever Code",
 					"capture_item": true,
 					"access_rules": [
-					  "dk,dkm,@logic/night_access,prog_switch_off,sss",
-					  "dk,dkm,@logic/night_access,prog_switch_on,$forest_slam",
+					  "@logic/day_access,dk,dkm,@logic/night_access,prog_switch_off,sss",
+					  "@logic/day_access,dk,dkm,@logic/night_access,prog_switch_on,$forest_slam",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -5646,6 +5882,31 @@
 				]
 			  },
 			  {
+				"name": "Near Thornbush",
+				"short_name": "Near Thornbush",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/any_kong,@logic/night_access",
+					],
+					"visibility_rules": [
+					  "melon_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "forestmap",
+					"x": 160,
+					"y": 444
+				  }
+				]
+			  },
+			  {
 			    "name": "Rosebush Barn",
 				"sections": [
 				  {
@@ -5664,7 +5925,33 @@
 				"map_locations": [
 				  {
 				    "map": "forestmap",
-					"x": 44,
+					"x": 42,
+					"y": 555
+				  }
+				]
+			  },
+			  {
+				"name": "Barn First Floor",
+				"short_name": "Barn 1st Floor",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/night_access,dk,[dkb],prog_switch_off,sss",
+					  "@logic/night_access,dk,[dkb],prog_switch_on,$forest_slam",
+					],
+					"visibility_rules": [
+					  "melon_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "forestmap",
+					"x": 69,
 					"y": 555
 				  }
 				]
@@ -5939,7 +6226,9 @@
 					  "@logic/upper_mushroom_access,la,lam,prog_switch_off,sss",
 					  "@logic/upper_mushroom_access,la,lam,prog_switch_on,$forest_slam",
 					  "@logic/upper_mushroom_access,la,di,dib,[lam],prog_switch_off,sss",
-					  "@logic/upper_mushroom_access,la,di,dib,[lam],prog_switch_on,$forest_slam"
+					  "@logic/upper_mushroom_access,la,di,dib,[lam],prog_switch_on,$forest_slam",
+					  "@logic/upper_mushroom_access,la,di,dk,[lam],prog_switch_off,sss",
+					  "@logic/upper_mushroom_access,la,di,dk,[lam],prog_switch_on,$forest_slam"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -6022,8 +6311,8 @@
 					"short_name": "Win Race",
 					"capture_item": true,
 					"access_rules": [
-					  "la,lai,lab",
-					  "{la,lai}"
+					  "@logic/day_access,la,lai,lab",
+					  "{@logic/day_access,la,lai}"
 					],
 					"visibility_rules": [
 					  "hard_gb_pool"
@@ -6130,6 +6419,31 @@
 					"y": 315
 				  }
 				]
+			  },
+			  {
+				"name": "Near Rocketbarrel",
+				"short_name": "Near T&S",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/any_kong",
+					],
+					"visibility_rules": [
+					  "melon_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "forestmap",
+					"x": 700,
+					"y": 434
+				  }
+				]
 			  }
 			]
 		  },
@@ -6198,7 +6512,7 @@
 					"capture_item": true,
 					"access_rules": [
 					  "ch,chb,brrl,chg,ti,tig",
-					  "ch,chb,brrl,open_levels",
+					  "ch,chb,brrl,barrier_forest_green",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -6383,14 +6697,14 @@
                     "chest_opened_img": "images/checks/diddy_bp_done.png",
 					"capture_item": true,
 					"access_rules": [
-					  "ti,tib,tim,kasplat_rando_swap",
+					  "ti,tib,[tim],kasplat_rando_swap",
 					  "@logic/any_kong,[ti],[tim],bananaport_all,[tib],kasplat_rando_swap",
 					  "@logic/any_kong,[di],[dib],bananaport_all",
-					  "ti,tib,tim,kasplat_rando_vanilla,di,[dib]",
-					  "ti,tib,tim,kasplat_rando_vanilla,free_trade",
+					  "ti,tib,[tim],kasplat_rando_vanilla,di,[dib]",
+					  "ti,tib,[tim],kasplat_rando_vanilla,free_trade",
 					  "[ti],[tim],bananaport_all,[tib],kasplat_rando_vanilla,di",
 					  "@logic/any_kong,[ti],[tim],bananaport_all,[tib],kasplat_rando_vanilla,free_trade",
-					  "{ti,tib,tim,kasplat_rando_vanilla}",
+					  "{ti,tib,kasplat_rando_vanilla}",
 					  "{@logic/any_kong,bananaport_all,kasplat_rando_vanilla}"
 					],
 					"visibility_rules": [
@@ -6422,6 +6736,12 @@
 					  "di,dib,kasplat_rando_swap",
 					  "@logic/any_kong,bananaport_all,kasplat_rando_swap",
 					  "la,lap,[di],[dib]",
+					  "ch,brrl,kasplat_rando_vanilla,la,[di],[dib]",
+					  "ch,brrl,kasplat_rando_swap,[di],[dib]",
+					  "ch,brrl,kasplat_rando_vanilla,free_trade,[di],[dib]",
+					  "ti,tim,kasplat_rando_vanilla,la,[di],[dib]",
+					  "ti,tim,kasplat_rando_swap,[di],[dib]",
+					  "ti,tim,kasplat_rando_vanilla,free_trade,[di],[dib]",
 					  "di,dib,kasplat_rando_vanilla,la",
 					  "di,dib,kasplat_rando_vanilla,free_trade",
 					  "bananaport_all,kasplat_rando_vanilla,la",
@@ -6540,7 +6860,7 @@
 				    "name": "Defeat the Enemies",
 					"short_name": "Defeat Enemies",
 					"access_rules": [
-					  "di,dii,orng,[dib]"
+					  "di,dii,orng"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -6590,6 +6910,7 @@
 					"capture_item": true,
 					"access_rules": [
 					  "di,dii,dip,dib",
+					  "di,dii,dib,ti,tim,[dip]",
 					  "{di,dii}"
 					],
 					"visibility_rules": [
@@ -7602,6 +7923,31 @@
 				]
 			  },
 			  {
+				"name": "Behind Mausoleum",
+				"short_name": "Behind Tomb",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/any_kong",
+					],
+					"visibility_rules": [
+					  "melon_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "castlemap",
+					"x": 820,
+					"y": 720
+				  }
+				]
+			  },
+			  {
 			    "name": "Mausoleum Sprint",
 				"sections": [
 				  {
@@ -7637,6 +7983,18 @@
 					  "ti,tig,tim,prog_switch_on,$castle_slam",
 					  "ti,tim,la,lag,[tig],prog_switch_off,sdss",
 					  "ti,tim,la,lag,[tig],prog_switch_on,$castle_slam",
+					  "ti,tig,orng,[tim],[prog_switch_off],sdss",
+					  "ti,tig,orng,[tim],[prog_switch_on],$castle_slam",
+					  "la,lag,ch,orng,[ti],[tig],[tim],[prog_switch_off],[sdss]",
+					  "la,lag,ch,orng,[ti],[tig],[tim],[prog_switch_on],[$castle_slam]",
+					  "la,lag,dk,orng,[ti],[tig],[tim],[prog_switch_off],[sdss]",
+					  "la,lag,dk,orng,[ti],[tig],[tim],[prog_switch_on],[$castle_slam]",
+					  "la,lag,di,orng,[ti],[tig],[tim],[prog_switch_off],[sdss]",
+					  "la,lag,di,orng,[ti],[tig],[tim],[prog_switch_on],[$castle_slam]",
+					  "la,lag,orng,[ti],[tig],[tim],[prog_switch_off],[sdss]",
+					  "la,lag,orng,ti,[tig],[tim],[prog_switch_on],[$castle_slam]",
+					  "ti,tig,dk,prog_switch_off,sdss,[tim]",
+					  "ti,tig,dk,prog_switch_on,$castle_slam,[tim]",
 					  "{ti,tig,tim}",
 					  "{ti,tig,ch}",
 					  "{ti,tig,dk}",

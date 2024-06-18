@@ -497,5 +497,11 @@
     "type": "static",
     "img": "images/isles.png",
     "codes": "isleslabel"
+  },
+  {
+	"name": "Go Mode",
+	"type": "toggle",
+	"img": "images/getout.png",
+	"codes": "gomode"
   }
 ]

@@ -56,7 +56,7 @@
     "name": "Diddy Kong",
     "type": "toggle",
     "loop": "true",
-    "img": "images/diddy.png",
+    "img": "images/diddy_hat.png",
     "codes": "diddykong,di"
   },
   {
@@ -325,12 +325,51 @@
 	"img": "images/candy.png",
 	"codes": "candykong,ca"
   },
-
+  {
+	"name": "K. Rool Order",
+	"type": "toggle",
+	"loop": true,
+	"initial_active_state": true,
+	"img": "images/settings/krool.png",
+	"codes": "krool,kr"
+  },
+  {
+    "name": "K. Rool Order (Right-click to enable Balanced Phases)",
+    "type": "toggle_badged",
+    "base_item": "krool",
+	"initial_active_state": true,
+    "img": "images/settings/krool_balanced.png",
+    "codes": "krool_balanced"
+  },
+  {
+	"name": "Krem Isle Top",
+	"type": "static",
+	"img": "images/settings/krem_isle.png",
+	"codes": "krem_isle_top"
+  },
+  {
+	"name": "Helm Order",
+	"type": "toggle",
+	"initial_active_state": true,
+	"img": "images/settings/krool_barrel.png",
+	"codes": "helm_barrel"
+  },
+  {
+	"name": "Helm Vines Spawner",
+	"type": "static",
+	"img": "images/vine.png",
+	"codes": "helm_vine"
+  },
   {
     "name": "Simian Slam",
     "type": "progressive",
 	"allow_disabled": false,
     "stages": [
+	  {
+		"img": "images/slam1.png",
+		"img_mods": "@disabled",
+		"codes": "slam,noslam"
+	  },
       {
         "img": "images/slam1.png",
         "codes": "slam,simianslam,ss"
@@ -556,5 +595,516 @@
 	"swap_actions": false,
 	"initial_quantity": 0,
 	"max_quantity": 20
-  }  
+  },
+  {
+	"name": "Krem Isle Top Access Pad",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "helm_access_?",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tinypad.png",
+        "codes": "helm_access_port",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/dkpad.png",
+        "codes": "helm_access_blast",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lankypad.png",
+        "codes": "helm_access_balloon",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Helm Lobby Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "helm_switch_?",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/chunkypad.png",
+        "codes": "helm_switch_gone",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/dk_move.png",
+        "codes": "helm_switch_grab",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_move.png",
+        "codes": "helm_switch_charge",
+		"inherit_codes": false
+      },
+	  {
+		"img": "images/dk_inst.png",
+		"codes": "helm_switch_bongos",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/diddy_inst.png",
+		"codes": "helm_switch_guitar",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/lanky_inst.png",
+		"codes": "helm_switch_trombone",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/tiny_inst.png",
+		"codes": "helm_switch_saxophone",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/chunky_inst.png",
+		"codes": "helm_switch_triangle",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Helm Phase 1",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "helm_phase_1_?",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/dk.png",
+        "codes": "helm_phase_1_dk",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_hat.png",
+        "codes": "helm_phase_1_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lanky.png",
+        "codes": "helm_phase_1_la",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tiny.png",
+        "codes": "helm_phase_1_ti",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky.png",
+        "codes": "helm_phase_1_ch",
+		"inherit_codes": false
+      },
+	  {
+		"img": "images/settings/funky_thumb.png",
+		"codes": "helm_phase_1_fu",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Helm Phase 2",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "helm_phase_2_?",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/dk.png",
+        "codes": "helm_phase_2_dk",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_hat.png",
+        "codes": "helm_phase_2_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lanky.png",
+        "codes": "helm_phase_2_la",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tiny.png",
+        "codes": "helm_phase_2_ti",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky.png",
+        "codes": "helm_phase_2_ch",
+		"inherit_codes": false
+      },
+	  {
+		"img": "images/settings/funky_thumb.png",
+		"codes": "helm_phase_2_fu",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Helm Phase 3",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "helm_phase_3_?",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/dk.png",
+        "codes": "helm_phase_3_dk",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_hat.png",
+        "codes": "helm_phase_3_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lanky.png",
+        "codes": "helm_phase_3_la",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tiny.png",
+        "codes": "helm_phase_3_ti",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky.png",
+        "codes": "helm_phase_3_ch",
+		"inherit_codes": false
+      },
+	  {
+		"img": "images/settings/funky_thumb.png",
+		"codes": "helm_phase_3_fu",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Helm Phase 4",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "helm_phase_4_?",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/dk.png",
+        "codes": "helm_phase_4_dk",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_hat.png",
+        "codes": "helm_phase_4_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lanky.png",
+        "codes": "helm_phase_4_la",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tiny.png",
+        "codes": "helm_phase_4_ti",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky.png",
+        "codes": "helm_phase_4_ch",
+		"inherit_codes": false
+      },
+	  {
+		"img": "images/settings/funky_thumb.png",
+		"codes": "helm_phase_4_fu",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Helm Phase 5",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "helm_phase_5_?",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/dk.png",
+        "codes": "helm_phase_5_dk",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_hat.png",
+        "codes": "helm_phase_5_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lanky.png",
+        "codes": "helm_phase_5_la",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tiny.png",
+        "codes": "helm_phase_5_ti",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky.png",
+        "codes": "helm_phase_5_ch",
+		"inherit_codes": false
+      },
+	  {
+		"img": "images/settings/funky_thumb.png",
+		"codes": "helm_phase_5_fu",
+		"inherit_codes": false
+	  }
+	]
+  },
+    {
+	"name": "K. Rool Phase 1",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "krool_phase_1_?",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/dk.png",
+        "codes": "krool_phase_1_dk",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_hat.png",
+        "codes": "krool_phase_1_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lanky.png",
+        "codes": "krool_phase_1_la",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tiny.png",
+        "codes": "krool_phase_1_ti",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky.png",
+        "codes": "krool_phase_1_ch",
+		"inherit_codes": false
+      },
+	  {
+		"img": "images/settings/funky_thumb.png",
+		"codes": "krool_phase_1_fu",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "K. Rool Phase 2",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "krool_phase_2_?",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/dk.png",
+        "codes": "krool_phase_2_dk",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_hat.png",
+        "codes": "krool_phase_2_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lanky.png",
+        "codes": "krool_phase_2_la",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tiny.png",
+        "codes": "krool_phase_2_ti",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky.png",
+        "codes": "krool_phase_2_ch",
+		"inherit_codes": false
+      },
+	  {
+		"img": "images/settings/funky_thumb.png",
+		"codes": "krool_phase_2_fu",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "K. Rool Phase 3",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "krool_phase_3_?",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/dk.png",
+        "codes": "krool_phase_3_dk",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_hat.png",
+        "codes": "krool_phase_3_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lanky.png",
+        "codes": "krool_phase_3_la",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tiny.png",
+        "codes": "krool_phase_3_ti",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky.png",
+        "codes": "krool_phase_3_ch",
+		"inherit_codes": false
+      },
+	  {
+		"img": "images/settings/funky_thumb.png",
+		"codes": "krool_phase_3_fu",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "K. Rool Phase 4",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "krool_phase_4_?",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/dk.png",
+        "codes": "krool_phase_4_dk",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_hat.png",
+        "codes": "krool_phase_4_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lanky.png",
+        "codes": "krool_phase_4_la",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tiny.png",
+        "codes": "krool_phase_4_ti",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky.png",
+        "codes": "krool_phase_4_ch",
+		"inherit_codes": false
+      },
+	  {
+		"img": "images/settings/funky_thumb.png",
+		"codes": "krool_phase_4_fu",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "K. Rool Phase 5",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "krool_phase_5_?",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/dk.png",
+        "codes": "krool_phase_5_dk",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_hat.png",
+        "codes": "krool_phase_5_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lanky.png",
+        "codes": "krool_phase_5_la",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tiny.png",
+        "codes": "krool_phase_5_ti",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky.png",
+        "codes": "krool_phase_5_ch",
+		"inherit_codes": false
+      },
+	  {
+		"img": "images/settings/funky_thumb.png",
+		"codes": "krool_phase_5_fu",
+		"inherit_codes": false
+	  }
+	]
+  }
 ]

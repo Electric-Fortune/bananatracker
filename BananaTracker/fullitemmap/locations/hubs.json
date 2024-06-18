@@ -32,7 +32,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -137,7 +137,7 @@
 			"short_name": "Cranky",
             "access_rules": [
               "@logic/japes_lobby,japes_kong_freed,@logic/any_kong",
-			  "@logic/japes_lobby,open_levels,@logic/any_kong"
+			  "@logic/japes_lobby,barrier_japes_coconut,@logic/any_kong"
             ],
             "sections": [
               {
@@ -158,7 +158,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -250,7 +250,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -351,7 +351,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -443,7 +443,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -535,7 +535,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -636,7 +636,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -698,7 +698,7 @@
               {
                 "map": "factorymap",
 				"size": 40,
-                "x": 425,
+                "x": 415,
                 "y": 570
               }
             ]
@@ -728,7 +728,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -790,7 +790,7 @@
               {
                 "map": "factorymap",
 				"size": 40,
-                "x": 425,
+                "x": 415,
                 "y": 615
               }
             ]
@@ -799,7 +799,8 @@
             "name": "Funky's Armory",
 			"short_name": "Funky",
             "access_rules": [
-              "@logic/any_kong,ss"
+              "@logic/any_kong,ss",
+			  "@logic/any_kong,barrier_factory_testing"
             ],
             "sections": [
               {
@@ -817,7 +818,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -885,7 +886,7 @@
             "name": "Candy's Music Store",
 			"short_name": "Candy",
             "access_rules": [
-              "@logic/any_kong"
+              "@logic/any_kong,@logic/shipyard_access"
             ],
             "sections": [
               {
@@ -906,7 +907,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -998,7 +999,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -1069,7 +1070,7 @@
             "name": "Funky's Armory",
 			"short_name": "Funky",
             "access_rules": [
-              "@logic/any_kong"
+              "@logic/any_kong,@logic/shipyard_access"
             ],
             "sections": [
               {
@@ -1090,7 +1091,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -1153,7 +1154,7 @@
                 "map": "galleonmap",
 				"size": 40,
                 "x": 227,
-                "y": 210
+                "y": 212
               }
             ]
           }
@@ -1191,7 +1192,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -1283,7 +1284,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -1384,7 +1385,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -1476,7 +1477,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -1568,7 +1569,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -1669,7 +1670,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -1761,7 +1762,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -1853,7 +1854,7 @@
 			  {
                 "name": "Diddy Purchase",
 				"short_name": "Diddy",
-                "chest_unopened_img": "images/diddy.png",
+                "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
 				"access_rules": [
@@ -3613,7 +3614,7 @@
 			    "name": "Donkey Medal",
                 "capture_item": true,
 				"access_rules": [
-				  "@logic/blast-o-matic_doors,dk,dki",
+				  "@logic/blast-o-matic_doors,$dk_helm_room",
 				  "{@logic/blast-o-matic_access,@logic/any_kong}"
 				],
 				"visibility_rules": [
@@ -3625,7 +3626,7 @@
 			    "name": "Diddy Medal",
                 "capture_item": true,
 				"access_rules": [
-				  "@logic/blast-o-matic_doors,di,dii,dib",
+				  "@logic/blast-o-matic_doors,$di_helm_room",
 				  "{@logic/blast-o-matic_access,di,dib}"
 				],
 				"visibility_rules": [
@@ -3637,7 +3638,7 @@
 			    "name": "Lanky Medal",
                 "capture_item": true,
 				"access_rules": [
-				  "@logic/blast-o-matic_doors,la,lai",
+				  "@logic/blast-o-matic_doors,$la_helm_room",
 				  "{@logic/blast-o-matic_access,@logic/any_kong}"
 				],
 				"visibility_rules": [
@@ -3649,7 +3650,7 @@
 			    "name": "Tiny Medal",
                 "capture_item": true,
 				"access_rules": [
-				  "@logic/blast-o-matic_doors,ti,tii",
+				  "@logic/blast-o-matic_doors,$ti_helm_room",
 				  "{@logic/blast-o-matic_access,@logic/any_kong}"
 				],
 				"visibility_rules": [
@@ -3661,7 +3662,7 @@
 			    "name": "Chunky Medal",
 				"capture_item": true,
 				"access_rules": [
-				  "@logic/blast-o-matic_doors,ch,chi",
+				  "@logic/blast-o-matic_doors,$ch_helm_room",
 				  "{@logic/blast-o-matic_access,@logic/any_kong}"
 				],
 				"visibility_rules": [

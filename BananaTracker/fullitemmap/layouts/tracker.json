@@ -110,7 +110,8 @@
             "item_width": 64,
             "rows": [
               [ "level7" ],
-              [ "level8" ]
+              [ "level8" ],
+			  [ "gomode" ]
             ]
           },
           {
@@ -163,29 +164,81 @@
 	]
   },
   
-  "settings_grid": {
+  "barriers_grid": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 15,
+	"item_width": 240,
+	"rows": [
+	  ["barrier_japes_coconut", "barrier_aztec_door"],
+	  ["barrier_japes_shellhive", "barrier_aztec_5dtemple"],
+	  ["barrier_factory_production", "barrier_aztec_llama"],
+	  ["barrier_factory_testing",  "barrier_galleon_lighthouse"],
+	  ["barrier_forest_green", "barrier_galleon_shipyard"],
+	  ["barrier_forest_yellow", "barrier_galleon_seasick"],
+	  ["barrier_caves_igloo"],
+	]
+  },
+  
+  "endgame_grid": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_size": 36,
+	"rows": [
+	  ["krem_isle_top", "helm_access_?", "", "", "helm_switch_?", "helm_vine"],
+	  ["helm_barrel", "helm_phase_1_dk", "helm_phase_2_ch", "helm_phase_3_ti", "helm_phase_4_la", "helm_phase_5_di"],
+	  ["krool_balanced", "krool_phase_1_dk", "krool_phase_2_di", "krool_phase_3_la", "krool_phase_4_ti", "krool_phase_5_ch"]
+	]
+  },
+  
+  "full_settings_grid": {
     "type": "itemgrid",
     "h_alignment": "center",
 	"item_size": 60,
 	"margin": "2,2,0,12",
     "item_margin": "0,0,10,4",
 	"rows": [
-	  [ "open_lobbies", "open_levels", "no_hi_reqs", "prog_switch" ],
-	  [ "fast_checks", "auto_bonus", "hard_shoot", "free_trade" ],
+	  [ "open_lobbies", "open_levels", "no_hi_reqs", "prog_switch", "galleon_water" ],
+	  [ "fast_checks", "auto_bonus", "hard_shoot", "free_trade", "forest_time" ],
 	  [ "bananaport", "helm_start", "no_wrinkly_puzzles", "kasplat_rando" ],
-	  ["cb_rando", "arena_rando", "fairy_rando", "dirt_patch_rando" ]
+	  [ "cb_rando", "arena_rando", "fairy_rando", "dirt_patch_rando", "melon_crate_rando" ]
+    ]
+  },
+  
+  "settings_grid": {
+	"type": "itemgrid",
+    "h_alignment": "center",
+	"item_size": 60,
+	"margin": "2,2,0,12",
+    "item_margin": "0,0,10,4",
+	"rows": [
+	  [ "auto_bonus", "open_lobbies", "prog_switch", "free_trade" ],
+	  [ "fast_arcade", "cheap_mermaid", "galleon_water", "forest_time" ],
+	  [ "hard_shoot", "bananaport", "helm_start", "no_wrinkly_puzzles"]
+    ]
+  },
+  
+  "shuffler_grid": {
+	"type": "itemgrid",
+    "h_alignment": "center",
+	"item_size": 60,
+	"margin": "2,2,0,12",
+    "item_margin": "0,0,10,4",
+	"rows": [
+	  [ "fairy_rando", "kasplat_rando", "arena_rando" ],
+	  [ "dirt_patch_rando", "cb_rando", "melon_crate_rando" ]
     ]
   },
   
   "item_rando_grid": {
 	"type": "itemgrid",
 	"h_alignment": "center",
-	"item_size": 30,
+	"item_size": 50,
 	"margin": "0,0,0,12",
 	"item_margin": "0,0,2,2",
 	"rows": [
 	  ["shop_pool","gb_pool","hard_gb_pool","cr_pool","bp_pool","key_pool","bm_pool"],
-	  ["coin_pool","kong_pool","fairy_pool","rbc_pool","misc_pool","hint_pool"]
+	  ["coin_pool","kong_pool","fairy_pool","rbc_pool","misc_pool","melon_pool","hint_pool"]
 	]
   },
   
@@ -241,11 +294,65 @@
 	  {
 	    "type": "layout",
 		"key": "options_grid_r"
+	  },
+	  {
+		"type": "layout",
+		"key": "barriers_grid"
 	  }
 	]
   },
   
   "options_grid": {
+	"type": "tabbed",
+	"tabs": [
+	  {
+		"title": "Main Settings",
+		"icon": "",
+		"content": {
+	  	  "type": "layout",
+		  "margin": "1,1,1,1",
+          "key": "settings_grid"
+		}
+	  },
+	  {
+		"title": "Item Pools",
+		"icon": "",
+		"content": {
+	  	  "type": "layout",
+		  "margin": "10,1,1,1",
+          "key": "item_rando_grid"
+		}
+	  },
+	  {
+		"title": "Check Thresholds",
+		"icon": "",
+		"content": {
+	  	  "type": "layout",
+          "key": "amounts_grid"
+		}
+	  },
+	  {
+		"title": "Location Shufflers",
+		"icon": "",
+		"content": {
+	  	  "type": "layout",
+		  "margin": "1,1,1,1",
+          "key": "shuffler_grid"
+		}
+	  },
+	  {
+		"title": "Open Barriers",
+		"icon": "",
+		"content": {
+	  	  "type": "layout",
+		  "margin": "1,1,1,1",
+          "key": "barriers_grid"
+		}
+	  },
+	]
+  },
+  
+  "options_gri": {
     "type": "array",
 	"orientation": "vertical",
 	"margin": "1,1,1,1",
@@ -303,10 +410,13 @@
             },
 			{
 			  "type": "group",
-			  
-			  "dock": "bottom",
-			  "margin": "0,0,3,0",
+			  "header": "Endgame Tracker",
+			  "dock": "top",
 			  "content": {
+				"type": "layout",
+				"h_alignment": "center",
+				"v_alignment": "top",
+				"key": "endgame_grid"
 			  }
 			}
           ]

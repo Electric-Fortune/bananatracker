@@ -23,7 +23,7 @@
   {
 	"name": "Battle Crown Pool",
 	"type": "toggle",
-	"initial_active_state": true,
+	"initial_active_state": false,
 	"img": "images/crown.png",
 	"codes": "cr_pool"
   },
@@ -51,7 +51,7 @@
   {
 	"name": "Company Coin Pool",
 	"type": "toggle",
-	"initial_active_state": false,
+	"initial_active_state": true,
 	"img": "images/n64_coin.png",
 	"codes": "coin_pool"
   },
@@ -65,7 +65,7 @@
   {
 	"name": "Fairy Pool",
 	"type": "toggle",
-	"initial_active_state": false,
+	"initial_active_state": true,
 	"img": "images/fairy.png",
 	"codes": "fairy_pool"
   },
@@ -82,6 +82,13 @@
 	"initial_active_state": true,
 	"img": "images/bean.png",
 	"codes": "misc_pool"
+  },
+  {
+	"name": "Melon Crate Pool",
+	"type": "toggle",
+	"initial_active_state": true,
+	"img": "images/melon_full.png",
+	"codes": "melon_pool"
   },
   {
     "name": "Hint Pool",

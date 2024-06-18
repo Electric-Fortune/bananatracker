@@ -129,7 +129,9 @@
 	  {
 	    "name": "top_of_krem_isle",
 		"access_rules": [
-		  "ti,tip"
+		  "helm_access_port,ti,tip",
+		  "helm_access_blast,dk,dkp",
+		  "helm_access_balloon,la,lap"
 		],
 		"item_count": 1
 	  },
@@ -141,10 +143,31 @@
 		"item_count": 1
 	  },
 	  {
-	    "name": "helm_access",
+		"name": "helm_lobby",
 		"access_rules": [
-		  "@logic/top_of_krem_isle,k6,k7,ch,chp,vine,$can_enter_helm",
-		  "@logic/top_of_krem_isle,open_lobbies,ch,chp,vine,$can_enter_helm"
+		  "@logic/top_of_krem_isle,k6,k7",
+		  "@logic/top_of_krem_isle,open_lobbies"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "helm_lobby_switch",
+		"access_rules": [
+		  "@logic/helm_lobby,helm_switch_gone,ch,chp",
+		  "@logic/helm_lobby,helm_switch_grab,dk,dkm",
+		  "@logic/helm_lobby,helm_switch_charge,di,dim",
+		  "@logic/helm_lobby,helm_switch_bongos,dk,dki",
+		  "@logic/helm_lobby,helm_switch_guitar,di,dii",
+		  "@logic/helm_lobby,helm_switch_trombone,la,lai",
+		  "@logic/helm_lobby,helm_switch_saxophone,ti,tii",
+		  "@logic/helm_lobby,helm_switch_triangle,ch,chi"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "helm_access",
+		"access_rules": [
+		  "@logic/helm_lobby_switch,vine,$can_enter_helm"
 		],
 		"item_count": 1
 	  },
@@ -160,16 +183,146 @@
 	  {
 	    "name": "blast-o-matic_doors",
 		"access_rules": [
-		  "@logic/blast-o-matic_access,dk,dkm,di,dib,chm,@logic/any_instrument",
-		  "@logic/helm_access,helm_skip_start,@logic/any_instrument",
+		  "@logic/blast-o-matic_access,dk,dkm,di,dib,ch,chm",
+		  "@logic/helm_access,helm_skip_start",
 		  "@logic/helm_access,helm_skip_all"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "helm_1st_phase",
+		"access_rules": [
+		  "@logic/helm_access,helm_skip_all",
+		  "@logic/blast-o-matic_doors,helm_phase_1_dk,dk,dki",
+		  "@logic/blast-o-matic_doors,helm_phase_1_di,di,dii,dib",
+		  "@logic/blast-o-matic_doors,helm_phase_1_la,la,lai",
+		  "@logic/blast-o-matic_doors,helm_phase_1_ti,ti,tii",
+		  "@logic/blast-o-matic_doors,helm_phase_1_ch,ch,chi",
+		  "@logic/blast-o-matic_doors,helm_phase_1_fu"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "helm_2nd_phase",
+		"access_rules": [
+		  "@logic/helm_access,helm_skip_all",
+		  "@logic/helm_1st_phase,helm_phase_2_dk,dk,dki",
+		  "@logic/helm_1st_phase,helm_phase_2_di,di,dii,dib",
+		  "@logic/helm_1st_phase,helm_phase_2_la,la,lai",
+		  "@logic/helm_1st_phase,helm_phase_2_ti,ti,tii",
+		  "@logic/helm_1st_phase,helm_phase_2_ch,ch,chi",
+		  "@logic/helm_1st_phase,helm_phase_2_fu"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "helm_3rd_phase",
+		"access_rules": [
+		  "@logic/helm_access,helm_skip_all",
+		  "@logic/helm_2nd_phase,helm_phase_3_dk,dk,dki",
+		  "@logic/helm_2nd_phase,helm_phase_3_di,di,dii,dib",
+		  "@logic/helm_2nd_phase,helm_phase_3_la,la,lai",
+		  "@logic/helm_2nd_phase,helm_phase_3_ti,ti,tii",
+		  "@logic/helm_2nd_phase,helm_phase_3_ch,ch,chi",
+		  "@logic/helm_2nd_phase,helm_phase_3_fu"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "helm_4th_phase",
+		"access_rules": [
+		  "@logic/helm_access,helm_skip_all",
+		  "@logic/helm_3rd_phase,helm_phase_4_dk,dk,dki",
+		  "@logic/helm_3rd_phase,helm_phase_4_di,di,dii,dib",
+		  "@logic/helm_3rd_phase,helm_phase_4_la,la,lai",
+		  "@logic/helm_3rd_phase,helm_phase_4_ti,ti,tii",
+		  "@logic/helm_3rd_phase,helm_phase_4_ch,ch,chi",
+		  "@logic/helm_3rd_phase,helm_phase_4_fu"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "helm_5th_phase",
+		"access_rules": [
+		  "@logic/helm_access,helm_skip_all",
+		  "@logic/helm_4th_phase,helm_phase_5_dk,dk,dki",
+		  "@logic/helm_4th_phase,helm_phase_5_di,di,dii,dib",
+		  "@logic/helm_4th_phase,helm_phase_5_la,la,lai",
+		  "@logic/helm_4th_phase,helm_phase_5_ti,ti,tii",
+		  "@logic/helm_4th_phase,helm_phase_5_ch,ch,chi",
+		  "@logic/helm_4th_phase,helm_phase_5_fu"
 		],
 		"item_count": 1
 	  },
 	  {
 	    "name": "key_8_room",
 		"access_rules": [
-		  "@logic/blast-o-matic_doors,$can_open_helm_door_1,$can_open_helm_door_2"
+		  "@logic/helm_5th_phase,$can_open_helm_door_1,$can_open_helm_door_2"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "krool_1st_phase",
+		"access_rules": [
+		  "krool_phase_1_dk,krool,$dk_krool_phase",
+		  "krool_phase_1_di,krool,di,dig,dib",
+		  "krool_phase_1_la,krool,la,brrl,lai",
+		  "krool_phase_1_ti,krool,ti,tib,tig",
+		  "krool_phase_1_ti,krool,ti,tib,[tig],orng",
+		  "krool_phase_1_ch,krool,$ch_krool_phase",
+		  "krool_phase_1_fu,krool"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "krool_2nd_phase",
+		"access_rules": [
+		  "@logic/krool_1st_phase,krool_phase_2_dk,krool,$dk_krool_phase",
+		  "@logic/krool_1st_phase,krool_phase_2_di,krool,di,dig,dib",
+		  "@logic/krool_1st_phase,krool_phase_2_la,krool,la,brrl,lai",
+		  "@logic/krool_1st_phase,krool_phase_2_ti,krool,ti,tib,tig",
+		  "@logic/krool_1st_phase,krool_phase_2_ti,krool,ti,tib,[tig],orng",
+		  "@logic/krool_1st_phase,krool_phase_2_ch,krool,$ch_krool_phase",
+		  "@logic/krool_1st_phase,krool_phase_2_fu,krool"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "krool_3rd_phase",
+		"access_rules": [
+		  "@logic/krool_2nd_phase,krool_phase_3_dk,krool,$dk_krool_phase",
+		  "@logic/krool_2nd_phase,krool_phase_3_di,krool,di,dig,dib",
+		  "@logic/krool_2nd_phase,krool_phase_3_la,krool,la,brrl,lai",
+		  "@logic/krool_2nd_phase,krool_phase_3_ti,krool,ti,tib,tig",
+		  "@logic/krool_2nd_phase,krool_phase_3_ti,krool,ti,tib,[tig],orng",
+		  "@logic/krool_2nd_phase,krool_phase_3_ch,krool,$ch_krool_phase",
+		  "@logic/krool_2nd_phase,krool_phase_3_fu,krool"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "krool_4th_phase",
+		"access_rules": [
+		  "@logic/krool_3rd_phase,krool_phase_4_dk,krool,$dk_krool_phase",
+		  "@logic/krool_3rd_phase,krool_phase_4_di,krool,di,dig,dib",
+		  "@logic/krool_3rd_phase,krool_phase_4_la,krool,la,brrl,lai",
+		  "@logic/krool_3rd_phase,krool_phase_4_ti,krool,ti,tib,tig",
+		  "@logic/krool_3rd_phase,krool_phase_4_ti,krool,ti,tib,[tig],orng",
+		  "@logic/krool_3rd_phase,krool_phase_4_ch,krool,$ch_krool_phase",
+		  "@logic/krool_3rd_phase,krool_phase_4_fu,krool"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "krool_5th_phase",
+		"access_rules": [
+		  "@logic/krool_4th_phase,krool_phase_5_dk,krool,$dk_krool_phase",
+		  "@logic/krool_4th_phase,krool_phase_5_di,krool,di,dig,dib",
+		  "@logic/krool_4th_phase,krool_phase_5_la,krool,la,brrl,lai",
+		  "@logic/krool_4th_phase,krool_phase_5_ti,krool,ti,tib,tig",
+		  "@logic/krool_4th_phase,krool_phase_5_ti,krool,ti,tib,[tig],orng",
+		  "@logic/krool_4th_phase,krool_phase_5_ch,krool,$ch_krool_phase",
+		  "@logic/krool_4th_phase,krool_phase_5_fu,krool"
 		],
 		"item_count": 1
 	  },
@@ -329,26 +482,43 @@
 		"access_rules": [
 		  "@logic/aztec_past_vine,di,dii,vine",
 		  "@logic/aztec_past_vine,di,dii,dib",
-		  "@logic/aztec_past_vine,open_levels",
+		  "@logic/aztec_past_vine,barrier_aztec_door",
 		  "@logic/aztec_past_vine,bananaport_all"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "llama_temple_switches",
+		"access_rules": [
+		  "@logic/aztec_door_access,dk,dkp",
+		  "@logic/aztec_door_access,barrier_aztec_llama"
 		],
 		"item_count": 1
 	  },
 	  {
 	    "name": "llama_temple_access",
 		"access_rules": [
-		  "@logic/aztec_door_access,dk,dkg",
-		  "@logic/aztec_door_access,la,lag",
-		  "@logic/aztec_door_access,ti,tig",
+		  "@logic/llama_temple_switches,dk,dkg",
+		  "@logic/llama_temple_switches,la,lag",
+		  "@logic/llama_temple_switches,ti,tig",
 		],
 		"item_count": 1
 	  },
 	  {
-	    "name": "5_door_temple_access",
+	    "name": "5_door_temple_switches",
 		"access_rules": [
 		  "@logic/aztec_door_access,di,dib,dig,prog_switch_off,ss",
 		  "@logic/aztec_door_access,di,dib,dig,prog_switch_on,$aztec_slam",
-		  "@logic/aztec_door_access,no_hi_reqs"
+		  "@logic/aztec_door_access,barrier_aztec_5dtemple"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "shipyard_access",
+		"access_rules": [
+		  "@logic/galleon_lobby,barrier_galleon_shipyard",
+		  "@logic/galleon_lobby,di,dig",
+		  "@logic/galleon_lobby,bananaport_all"
 		],
 		"item_count": 1
 	  },
@@ -356,14 +526,23 @@
 	    "name": "lighthouse_access",
 		"access_rules": [
 		  "@logic/galleon_lobby,dk,dkg",
-		  "@logic/galleon_lobby,open_levels",
+		  "@logic/galleon_lobby,barrier_galleon_lighthouse",
 		  "@logic/galleon_lobby,bananaport_all"
 		],
 		"item_count": 1
 	  },
 	  {
-	    "name": "water_switch_access",
+	    "name": "raised_water_access",
 		"access_rules": [
+		  "@logic/galleon_lobby,galleon_water_raised",
+		  "@logic/lighthouse_access,dive"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "lowered_water_access",
+		"access_rules": [
+		  "@logic/galleon_lobby,galleon_water_lowered",
 		  "@logic/lighthouse_access,dive"
 		],
 		"item_count": 1
@@ -371,8 +550,8 @@
 	  {
 	    "name": "lighthouse_platform",
 		"access_rules": [
-		  "@logic/water_switch_access",
-		  "@logic/k_rool_ship,ti,tim,[@logic/water_switch_access]",
+		  "@logic/raised_water_access",
+		  "@logic/k_rool_ship,ti,tim,[@logic/raised_water_access]",
 		  "@logic/galleon_lobby,bananaport_all"
 		],
 		"item_count": 1
@@ -381,13 +560,25 @@
 	    "name": "k_rool_ship",
 		"access_rules": [
 		  "@logic/lighthouse_platform,dk,ss,dkm",
-		  "@logic/lighthouse_access,no_hi_reqs"
+		  "@logic/lighthouse_access,barrier_galleon_seasick"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "day_access",
+		"access_rules": [
+		  "@logic/forest_lobby,forest_time_day",
+		  "@logic/forest_lobby,forest_time_dusk",
+		  "@logic/forest_lobby,[@logic/any_gun],orng",
+		  "@logic/forest_lobby,@logic/any_gun"
 		],
 		"item_count": 1
 	  },
 	  {
 	    "name": "night_access",
 		"access_rules": [
+		  "@logic/forest_lobby,forest_time_night",
+		  "@logic/forest_lobby,forest_time_dusk",
 		  "@logic/forest_lobby,[@logic/any_gun],orng",
 		  "@logic/forest_lobby,@logic/any_gun"
 		],
@@ -408,7 +599,7 @@
 	    "name": "owl_tree_access",
 		"access_rules": [
 		  "@logic/forest_lobby,la,lag",
-		  "@logic/forest_lobby,open_levels",
+		  "@logic/forest_lobby,barrier_forest_yellow",
 		  "@logic/forest_lobby,bananaport_all"
 		],
 		"item_count": 1
@@ -417,7 +608,7 @@
 		"name": "beanstalk_access",
 		"access_rules": [
 		  "@logic/forest_lobby,ti,tig,ch,chg",
-		  "@logic/forest_lobby,open_levels",
+		  "@logic/forest_lobby,barrier_forest_green",
 		  "@logic/forest_lobby,bananaport_all"
 		],
 		"item_count": 1
@@ -426,7 +617,7 @@
 	    "name": "igloo_access",
 		"access_rules": [
 		  "@logic/caves_lobby,di,dib",
-		  "@logic/caves_lobby,no_hi_reqs"
+		  "@logic/caves_lobby,barrier_caves_igloo"
 		],
 		"item_count": 1
 	  },
