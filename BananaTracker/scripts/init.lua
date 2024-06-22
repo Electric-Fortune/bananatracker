@@ -9,6 +9,7 @@ if HAS_MAP then
   Tracker:AddItems("items/progression.json")
   Tracker:AddItems("items/options.json")
   Tracker:AddItems("items/pools.json")
+  Tracker:AddItems("items/barriers.json")
 
   Tracker:AddMaps("maps/maps.json")
 
