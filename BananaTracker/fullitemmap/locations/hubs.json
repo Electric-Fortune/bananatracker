@@ -14,14 +14,29 @@
               "@logic/any_kong"
             ],
             "sections": [
+			  {
+			    "name": "Jetpac",
+				"chest_unopened_img": "images/rareware_coin.png",
+				"chest_opened_img": "images/checks/rareware_coin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "$can_play_jetpac,ck"
+				],
+				"visibility_rules": [
+				  "r_coin_pool,$can_play_jetpac"
+				],
+				"item_count": 1
+			  },
               {
                 "name": "Donkey Purchase",
 				"short_name": "Donkey",
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
-				  "dk",
+				  "dk,ck",
 				  "{@logic/any_kong}"
 				],
 				"visibility_rules": [
@@ -35,8 +50,9 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
-				  "di",
+				  "di,ck",
 				  "{@logic/any_kong}"
 				],
 				"visibility_rules": [
@@ -50,8 +66,9 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
-				  "la",
+				  "la,ck",
 				  "{@logic/any_kong}"
 				],
 				"visibility_rules": [
@@ -65,8 +82,9 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
-				  "ti",
+				  "ti,ck",
 				  "{@logic/any_kong}"
 				],
 				"visibility_rules": [
@@ -80,8 +98,9 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
-				  "ch",
+				  "ch,ck",
 				  "{@logic/any_kong}"
 				],
 				"visibility_rules": [
@@ -93,7 +112,10 @@
 				"name": "Back Tunnel", 
 				"chest_unopened_img": "images/rainbowcoin.png",
 				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
+				  "{@logic/any_kong}",
 				  "@logic/wave_owned"
 				],
 				"visibility_rules": [
@@ -105,8 +127,11 @@
 				"name": "Banana Hoard",
 				"chest_unopened_img": "images/rainbowcoin.png",
 				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
-				  "@logic/wave_owned,vine"
+				  "{vine,climb}",
+				  "@logic/wave_owned,vine,climb"
 				],
 				"visibility_rules": [
 				  "rbc_pool"
@@ -133,19 +158,34 @@
         ],
         "children": [
 		  {
-            "name": "Cranky's Lab",
-			"short_name": "Cranky",
+            "name": "Japes Cranky's Lab",
+			"short_name": "Japes Cranky",
             "access_rules": [
-              "@logic/japes_lobby,japes_kong_freed,@logic/any_kong",
-			  "@logic/japes_lobby,barrier_japes_coconut,@logic/any_kong"
+              "{@logic/japes_tunnels}",
+			  "@logic/japes_tunnels,ck",
             ],
             "sections": [
+			  {
+			    "name": "Jetpac",
+				"chest_unopened_img": "images/rareware_coin.png",
+				"chest_opened_img": "images/checks/rareware_coin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "$can_play_jetpac,ck"
+				],
+				"visibility_rules": [
+				  "r_coin_pool,$can_play_jetpac"
+				],
+				"item_count": 1
+			  },
               {
                 "name": "Donkey Purchase",
 				"short_name": "Donkey",
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -161,6 +201,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -176,6 +217,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -191,6 +233,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -206,6 +249,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -226,10 +270,11 @@
             ]
           },
 		  {
-            "name": "Funky's Armory",
-			"short_name": "Funky",
+            "name": "Japes Funky's Armory",
+			"short_name": "Japes Funky",
 			"access_rules": [
-              "@logic/any_kong"
+              "{@logic/any_kong,@logic/japes_hillside}",
+			  "@logic/any_kong,@logic/japes_hillside,fu,[@logic/japes_hillside_strict]"
             ],
             "sections": [
               {
@@ -238,6 +283,7 @@
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -253,6 +299,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -268,6 +315,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -283,6 +331,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -298,6 +347,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -327,10 +377,12 @@
         ],
         "children": [
           {
-            "name": "Candy's Music Store",
-			"short_name": "Candy",
+            "name": "Aztec Candy's Music Store",
+			"short_name": "Aztec Candy",
             "access_rules": [
-              "@logic/aztec_past_vine,@logic/any_kong"
+			  "{@logic/any_kong}",
+              "@logic/aztec_past_vine,@logic/any_kong,ca",
+			  "@logic/aztec_lobby,portal_shuffle_on,aztec_entry_afs,ca"
             ],
             "sections": [
               {
@@ -339,6 +391,7 @@
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -354,6 +407,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -369,6 +423,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -384,6 +439,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -399,6 +455,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -419,18 +476,34 @@
             ]
           },
 		  {
-            "name": "Cranky's Lab",
-			"short_name": "Cranky",
+            "name": "Aztec Cranky's Lab",
+			"short_name": "Aztec Cranky",
             "access_rules": [
-              "@logic/aztec_door_access,@logic/any_kong"
+              "{@logic/aztec_door_access,@logic/any_kong}",
+              "@logic/aztec_door_access,@logic/any_kong,ck"
             ],
             "sections": [
+			  {
+			    "name": "Jetpac",
+				"chest_unopened_img": "images/rareware_coin.png",
+				"chest_opened_img": "images/checks/rareware_coin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "$can_play_jetpac,ck"
+				],
+				"visibility_rules": [
+				  "r_coin_pool,$can_play_jetpac"
+				],
+				"item_count": 1
+			  },
               {
                 "name": "Donkey Purchase",
 				"short_name": "Donkey",
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -446,6 +519,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -461,6 +535,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -476,6 +551,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -491,6 +567,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -511,10 +588,11 @@
             ]
           },
 		  {
-            "name": "Funky's Armory",
-			"short_name": "Funky",
+            "name": "Aztec Funky's Armory",
+			"short_name": "Aztec Funky",
             "access_rules": [
-              "@logic/aztec_door_access,@logic/any_kong"
+              "{@logic/aztec_door_access,@logic/any_kong}",
+              "@logic/aztec_door_access,@logic/any_kong,fu"
             ],
             "sections": [
               {
@@ -523,6 +601,7 @@
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -538,6 +617,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -553,6 +633,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -568,6 +649,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -583,6 +665,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -598,7 +681,7 @@
                 "map": "aztecmap",
 				"size": 40,
                 "x": 585,
-                "y": 380
+                "y": 377
               }
             ]
           }
@@ -612,10 +695,11 @@
         ],
         "children": [
           {
-            "name": "Candy's Music Store",
-			"short_name": "Candy",
+            "name": "Factory Candy's Music Store",
+			"short_name": "Factory Candy",
 			"access_rules": [
-              "@logic/any_kong"
+              "@logic/any_kong,ca",
+              "{@logic/any_kong}"
             ],
             "sections": [
               {
@@ -624,6 +708,7 @@
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -639,6 +724,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -654,6 +740,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -669,6 +756,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -684,6 +772,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -704,18 +793,34 @@
             ]
           },
 		  {
-            "name": "Cranky's Lab",
-			"short_name": "Cranky",
+            "name": "Factory Cranky's Lab",
+			"short_name": "Factory Cranky",
 			"access_rules": [
-              "@logic/any_kong"
+              "@logic/any_kong,ck",
+              "{@logic/any_kong}"
             ],
             "sections": [
+			  {
+			    "name": "Jetpac",
+				"chest_unopened_img": "images/rareware_coin.png",
+				"chest_opened_img": "images/checks/rareware_coin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "$can_play_jetpac,ck"
+				],
+				"visibility_rules": [
+				  "r_coin_pool,$can_play_jetpac"
+				],
+				"item_count": 1
+			  },
               {
                 "name": "Donkey Purchase",
 				"short_name": "Donkey",
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -731,6 +836,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -746,6 +852,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -761,6 +868,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -776,6 +884,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -796,11 +905,11 @@
             ]
           },
 		  {
-            "name": "Funky's Armory",
-			"short_name": "Funky",
+            "name": "Factory Funky's Armory",
+			"short_name": "Factory Funky",
             "access_rules": [
-              "@logic/any_kong,ss",
-			  "@logic/any_kong,barrier_factory_testing"
+              "@logic/testing_access,fu",
+              "{@logic/testing_access}"
             ],
             "sections": [
               {
@@ -809,9 +918,13 @@
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "shop_pool"
 				],
                 "item_count": 1
               },
@@ -821,9 +934,13 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "shop_pool"
 				],
                 "item_count": 1
               },
@@ -833,9 +950,13 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "shop_pool"
 				],
                 "item_count": 1
               },
@@ -845,9 +966,13 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "shop_pool"
 				],
                 "item_count": 1
               },
@@ -857,9 +982,13 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "shop_pool"
 				],
                 "item_count": 1
               }
@@ -883,10 +1012,11 @@
         ],
         "children": [
           {
-            "name": "Candy's Music Store",
-			"short_name": "Candy",
+            "name": "Galleon Candy's Music Store",
+			"short_name": "Galleon Candy",
             "access_rules": [
-              "@logic/any_kong,@logic/shipyard_access"
+              "@logic/any_kong,@logic/shipyard_access,ca",
+              "{@logic/any_kong,@logic/shipyard_access}"
             ],
             "sections": [
               {
@@ -895,6 +1025,7 @@
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -910,6 +1041,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -925,6 +1057,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -940,6 +1073,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -955,6 +1089,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -975,18 +1110,34 @@
             ]
           },
 		  {
-            "name": "Cranky's Lab",
-			"short_name": "Cranky",
+            "name": "Galleon Cranky's Lab",
+			"short_name": "Galleon Cranky",
             "access_rules": [
-              "@logic/any_kong"
+              "@logic/any_kong,ck",
+              "{@logic/any_kong}"
             ],
             "sections": [
+			  {
+			    "name": "Jetpac",
+				"chest_unopened_img": "images/rareware_coin.png",
+				"chest_opened_img": "images/checks/rareware_coin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "$can_play_jetpac,ck"
+				],
+				"visibility_rules": [
+				  "r_coin_pool,$can_play_jetpac"
+				],
+				"item_count": 1
+			  },
               {
                 "name": "Donkey Purchase",
 				"short_name": "Donkey",
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -1002,6 +1153,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -1017,6 +1169,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -1032,6 +1185,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -1047,6 +1201,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -1067,10 +1222,11 @@
             ]
           },
 		  {
-            "name": "Funky's Armory",
-			"short_name": "Funky",
+            "name": "Galleon Funky's Armory",
+			"short_name": "Galleon Funky",
             "access_rules": [
-              "@logic/any_kong,@logic/shipyard_access"
+              "@logic/any_kong,@logic/shipyard_access,fu",
+              "{@logic/any_kong,@logic/shipyard_access}"
             ],
             "sections": [
               {
@@ -1079,6 +1235,7 @@
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -1094,6 +1251,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -1109,6 +1267,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -1124,6 +1283,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -1139,6 +1299,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -1168,18 +1329,34 @@
         ],
         "children": [
 		  {
-            "name": "Cranky's Lab",
-			"short_name": "Cranky",
+            "name": "Forest Cranky's Lab",
+			"short_name": "Forest Cranky",
             "access_rules": [
-              "@logic/any_kong"
+              "@logic/any_kong,ck",
+              "{@logic/any_kong}"
             ],
             "sections": [
+			  {
+			    "name": "Jetpac",
+				"chest_unopened_img": "images/rareware_coin.png",
+				"chest_opened_img": "images/checks/rareware_coin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "$can_play_jetpac,ck"
+				],
+				"visibility_rules": [
+				  "r_coin_pool,$can_play_jetpac"
+				],
+				"item_count": 1
+			  },
               {
                 "name": "Donkey Purchase",
 				"short_name": "Donkey",
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -1195,6 +1372,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -1210,6 +1388,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -1225,6 +1404,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -1240,6 +1420,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -1260,10 +1441,11 @@
             ]
           },
 		  {
-            "name": "Funky's Armory",
-			"short_name": "Funky",
+            "name": "Forest Funky's Armory",
+			"short_name": "Forest Funky",
             "access_rules": [
-              "@logic/beanstalk_access"
+              "@logic/beanstalk_access,fu",
+              "{@logic/beanstalk_access}"
             ],
             "sections": [
               {
@@ -1272,6 +1454,7 @@
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -1287,6 +1470,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -1302,6 +1486,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -1317,6 +1502,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -1332,6 +1518,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -1346,7 +1533,7 @@
               {
                 "map": "forestmap",
 				"size": 40,
-                "x": 65,
+                "x": 60,
                 "y": 765
               }
             ]
@@ -1361,10 +1548,11 @@
         ],
         "children": [
           {
-            "name": "Candy's Music Store",
-			"short_name": "Candy",
+            "name": "Caves Candy's Music Store",
+			"short_name": "Caves Candy",
             "access_rules": [
-              "@logic/any_kong"
+              "@logic/any_kong,ca",
+              "{@logic/any_kong}"
             ],
             "sections": [
               {
@@ -1373,6 +1561,7 @@
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -1388,6 +1577,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -1403,6 +1593,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -1418,6 +1609,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -1433,6 +1625,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -1453,18 +1646,34 @@
             ]
           },
 		  {
-            "name": "Cranky's Lab",
-			"short_name": "Cranky",
+            "name": "Caves Cranky's Lab",
+			"short_name": "Caves Cranky",
             "access_rules": [
-              "@logic/any_kong"
+              "@logic/any_kong,ck",
+              "{@logic/any_kong}"
             ],
             "sections": [
+			  {
+			    "name": "Jetpac",
+				"chest_unopened_img": "images/rareware_coin.png",
+				"chest_opened_img": "images/checks/rareware_coin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "$can_play_jetpac,ck"
+				],
+				"visibility_rules": [
+				  "r_coin_pool,$can_play_jetpac"
+				],
+				"item_count": 1
+			  },
               {
                 "name": "Donkey Purchase",
 				"short_name": "Donkey",
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -1480,6 +1689,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -1495,6 +1705,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -1510,6 +1721,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -1525,6 +1737,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -1545,10 +1758,11 @@
             ]
           },
 		  {
-            "name": "Funky's Armory",
-			"short_name": "Funky",
+            "name": "Caves Funky's Armory",
+			"short_name": "Caves Funky",
             "access_rules": [
-              "@logic/any_kong"
+              "@logic/any_kong,fu",
+              "{@logic/any_kong}"
             ],
             "sections": [
               {
@@ -1557,6 +1771,7 @@
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -1572,6 +1787,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -1587,6 +1803,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -1602,6 +1819,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -1617,6 +1835,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -1646,10 +1865,11 @@
         ],
         "children": [
           {
-            "name": "Candy's Music Store",
-			"short_name": "Candy",
+            "name": "Castle Candy's Music Store",
+			"short_name": "Castle Candy",
             "access_rules": [
-              "@logic/any_kong"
+              "@logic/castle_above_climb,@logic/any_kong,ca,[@logic/castle_above_climb_strict]",
+              "{@logic/castle_above_climb,@logic/any_kong}"
             ],
             "sections": [
               {
@@ -1658,6 +1878,7 @@
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -1673,6 +1894,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -1688,6 +1910,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -1703,6 +1926,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -1718,6 +1942,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -1732,24 +1957,40 @@
               {
                 "map": "castlemap",
 				"size": 40,
-                "x": 125,
-                "y": 785
+                "x": 128,
+                "y": 790
               }
             ]
           },
 		  {
-            "name": "Cranky's Lab",
-			"short_name": "Cranky",
+            "name": "Castle Cranky's Lab",
+			"short_name": "Castle Cranky",
             "access_rules": [
-              "@logic/any_kong"
+              "@logic/castle_above_climb,@logic/any_kong,ck,[@logic/castle_above_climb_strict]",
+              "{@logic/castle_above_climb,@logic/any_kong}"
             ],
             "sections": [
+			  {
+			    "name": "Jetpac",
+				"chest_unopened_img": "images/rareware_coin.png",
+				"chest_opened_img": "images/checks/rareware_coin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "$can_play_jetpac,ck"
+				],
+				"visibility_rules": [
+				  "r_coin_pool,$can_play_jetpac"
+				],
+				"item_count": 1
+			  },
               {
                 "name": "Donkey Purchase",
 				"short_name": "Donkey",
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -1765,6 +2006,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -1780,6 +2022,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -1795,6 +2038,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -1810,6 +2054,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -1830,10 +2075,11 @@
             ]
           },
 		  {
-            "name": "Funky's Armory",
-			"short_name": "Funky",
+            "name": "Castle Funky's Armory",
+			"short_name": "Castle Funky",
             "access_rules": [
-              "@logic/any_kong"
+              "@logic/any_kong,fu",
+              "{@logic/any_kong}"
             ],
             "sections": [
               {
@@ -1842,6 +2088,7 @@
                 "chest_unopened_img": "images/dk.png",
 				"chest_opened_img": "images/checks/dk_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "dk",
 				  "{@logic/any_kong}"
@@ -1857,6 +2104,7 @@
                 "chest_unopened_img": "images/diddy_hat.png",
 				"chest_opened_img": "images/checks/diddy_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "di",
 				  "{@logic/any_kong}"
@@ -1872,6 +2120,7 @@
                 "chest_unopened_img": "images/lanky.png",
 				"chest_opened_img": "images/checks/lanky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "la",
 				  "{@logic/any_kong}"
@@ -1887,6 +2136,7 @@
                 "chest_unopened_img": "images/tiny.png",
 				"chest_opened_img": "images/checks/tiny_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ti",
 				  "{@logic/any_kong}"
@@ -1902,6 +2152,7 @@
                 "chest_unopened_img": "images/chunky.png",
 				"chest_opened_img": "images/checks/chunky_done.png",
                 "capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "ch",
 				  "{@logic/any_kong}"
@@ -1916,8 +2167,8 @@
               {
                 "map": "castlemap",
 				"size": 40,
-                "x": 804,
-                "y": 800
+                "x": 801,
+                "y": 810
 			  }
             ]
           }
@@ -1926,7 +2177,7 @@
 	]
   },
   {
-    "name": "Globals",
+    "name": "Colored Banana Rewards",
     "chest_unopened_img": "images/bananamedal.gif",
     "chest_opened_img": "images/checks/bananamedal_done.png",
 	"children": [
@@ -1935,196 +2186,127 @@
 		"color": "#D25757",
 	    "children": [
 		  {
-		    "name": "DK Isles Full Level",
-			"short_name": "Isles Globals",
+		    "name": "DK Isles Colored Banana Rewards",
+			"short_name": "Isles CB Rewards",
 			"sections": [
 			  {
-			    "name": "Donkey Blueprint",
-				"chest_unopened_img": "images/dk_bp.png",
-				"chest_opened_img": "images/checks/dk_bp_done.png",
-				"capture_item": true,
+				"name": "Donkey Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "dk",
-				  "{@logic/any_kong}"
+				  "dk,cb_rando"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
 			  {
-			    "name": "Diddy Blueprint",
-				"chest_unopened_img": "images/diddy_bp.png",
-				"chest_opened_img": "images/checks/diddy_bp_done.png",
-				"capture_item": true,
+			    "name": "Donkey Medal",
 				"access_rules": [
-				  "di",
-				  "{@logic/any_kong}"
+				  "dk,cb_rando"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "bm_pool"
+				],
+                "item_count": 1
+			  },
+			  
+			  {
+				"name": "Diddy Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
+				"access_rules": [
+				  "di,cb_rando"
+				],
+				"visibility_rules": [
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
 			  {
-			    "name": "Lanky Blueprint",
-				"chest_unopened_img": "images/lanky_bp.png",
-				"chest_opened_img": "images/checks/lanky_bp_done.png",
-				"capture_item": true,
+			    "name": "Diddy Medal",
 				"access_rules": [
-				  "la",
-				  "{@logic/any_kong}"
+				  "di,cb_rando"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "bm_pool"
+				],
+                "item_count": 1
+			  },
+			  {
+				"name": "Lanky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
+				"access_rules": [
+				  "la,cb_rando"
+				],
+				"visibility_rules": [
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
 			  {
-			    "name": "Tiny Blueprint",
-				"chest_unopened_img": "images/tiny_bp.png",
-				"chest_opened_img": "images/checks/tiny_bp_done.png",
-				"capture_item": true,
+			    "name": "Lanky Medal",
 				"access_rules": [
-				  "ti",
-				  "{@logic/any_kong}"
+				  "la,cb_rando"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "bm_pool"
+				],
+                "item_count": 1
+			  },
+			  {
+				"name": "Tiny Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
+				"access_rules": [
+				  "ti,cb_rando"
+				],
+				"visibility_rules": [
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
 			  {
-			    "name": "Chunky Blueprint",
-				"chest_unopened_img": "images/chunky_bp.png",
-				"chest_opened_img": "images/checks/chunky_bp_done.png",
-				"capture_item": true,
+			    "name": "Tiny Medal",
 				"access_rules": [
-				  "ch",
-				  "{@logic/any_kong}"
+				  "ti,cb_rando"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "bm_pool"
+				],
+                "item_count": 1
+			  },
+			  {
+				"name": "Chunky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
+				"access_rules": [
+				  "ch,cb_rando"
+				],
+				"visibility_rules": [
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
 			  {
-			    "name": "Battle Crown 1",
-				"chest_unopened_img": "images/crown.png",
-				"chest_opened_img": "images/checks/crown_done.png",
-				"capture_item": true,
+			    "name": "Chunky Medal",
 				"access_rules": [
-				  "@logic/any_kong"
+				  "ch,cb_rando"
 				],
 				"visibility_rules": [
-				  "cr_pool,arena_rando_on"
+				  "bm_pool"
 				],
-				"clear_as_group": false,
-				"item_count": 1
-			  },
-			  {
-			    "name": "Battle Crown 2",
-				"chest_unopened_img": "images/crown.png",
-				"chest_opened_img": "images/checks/crown_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong"
-				],
-				"visibility_rules": [
-				  "cr_pool,arena_rando_on"
-				],
-				"clear_as_group": false,
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 1",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 2",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 3",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 4",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Dirt Patches",
-				"chest_unopened_img": "images/rainbowcoin.png",
-				"chest_opened_img": "images/checks/rainbowcoin_done.png",
-				"access_rules": [
-				  "@logic/any_kong,@logic/wave_owned"
-				],
-				"visibility_rules": [
-				  "rbc_pool,dirt_patch_rando_on"
-				],
-				"clear_as_group": false,
-				"item_count": 4
-			  },
-			  {
-			    "name": "Jetpac",
-				"chest_unopened_img": "images/rareware_coin.png",
-				"chest_opened_img": "images/checks/rareware_coin_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "$can_play_jetpac"
-				],
-				"visibility_rules": [
-				  "coin_pool"
-				],
-				"item_count": 1
+                "item_count": 1
 			  }
 			],
 			"map_locations": [
 			  {
 			    "map": "islesmap",
 				"size": 30,
-				"x": 40,
-				"y": 50
+				"x": 115,
+				"y": 20
 			  }
 			]
 		  }
@@ -2138,9 +2320,21 @@
         ],
 		"children": [
 		  {
-		    "name": "Jungle Japes Full Level",
-			"short_name": "Japes Globals",
+		    "name": "Jungle Japes Colored Banana Rewards",
+			"short_name": "Japes CB Rewards",
 			"sections": [
+			  {
+				"name": "Donkey Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
+				"access_rules": [
+				  "dk,$japes_dk_cbs|hool,[$japes_dk_cbs|half]"
+				],
+				"visibility_rules": [
+				  "hbm_pool"
+				],
+				"item_count": 1
+			  },
 			  {
 			    "name": "Donkey Medal",
 				"access_rules": [
@@ -2151,17 +2345,16 @@
 				],
                 "item_count": 1
 			  },
+			  
 			  {
-			    "name": "Donkey Blueprint",
-				"chest_unopened_img": "images/dk_bp.png",
-				"chest_opened_img": "images/checks/dk_bp_done.png",
-				"capture_item": true,
+				"name": "Diddy Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "dk",
-				  "{@logic/any_kong}"
+				  "di,$japes_di_cbs|hool,[$japes_di_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2176,16 +2369,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Diddy Blueprint",
-				"chest_unopened_img": "images/diddy_bp.png",
-				"chest_opened_img": "images/checks/diddy_bp_done.png",
-				"capture_item": true,
+				"name": "Lanky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "di",
-				  "{@logic/any_kong}"
+				  "la,$japes_la_cbs|hool,[$japes_la_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2200,16 +2391,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Lanky Blueprint",
-				"chest_unopened_img": "images/lanky_bp.png",
-				"chest_opened_img": "images/checks/lanky_bp_done.png",
-				"capture_item": true,
+				"name": "Tiny Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "la",
-				  "{@logic/any_kong}"
+				  "ti,$japes_ti_cbs|hool,[$japes_ti_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2224,16 +2413,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Tiny Blueprint",
-				"chest_unopened_img": "images/tiny_bp.png",
-				"chest_opened_img": "images/checks/tiny_bp_done.png",
-				"capture_item": true,
+				"name": "Chunky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "ti",
-				  "{@logic/any_kong}"
+				  "ch,$japes_ch_cbs|hool,[$japes_ch_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2248,78 +2435,11 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Chunky Blueprint",
-				"chest_unopened_img": "images/chunky_bp.png",
-				"chest_opened_img": "images/checks/chunky_bp_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "ch",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-			    "name": "Battle Crown",
-				"chest_unopened_img": "images/crown.png",
-				"chest_opened_img": "images/checks/crown_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong"
-				],
-				"visibility_rules": [
-				  "cr_pool,arena_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 1",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 2",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Dirt Patches",
-				"chest_unopened_img": "images/rainbowcoin.png",
-				"chest_opened_img": "images/checks/rainbowcoin_done.png",
-				"access_rules": [
-				  "@logic/any_kong,@logic/wave_owned"
-				],
-				"visibility_rules": [
-				  "rbc_pool,dirt_patch_rando_on"
-				],
-				"clear_as_group": false,
-				"item_count": 2
-			  },
-			  {
 			    "name": "Boss",
 				"chest_unopened_img": "images/key.png",
 				"chest_opened_img": "images/checks/key_done.png",
 				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "@logic/any_kong"
 				],
@@ -2344,13 +2464,25 @@
         "name": "Angry Aztec",
         "color": "#FFA010",
         "access_rules": [
-          "@logic/aztec_lobby,@logic/aztec_past_vine"
+          "@logic/aztec_lobby,[@logic/aztec_past_vine]"
         ],
 		"children": [
 		  {
-		    "name": "Angry Aztec Full Level",
-			"short_name": "Aztec Globals",
+		    "name": "Angry Aztec Colored Banana Rewards",
+			"short_name": "Aztec CB Rewards",
 			"sections": [
+			  {
+				"name": "Donkey Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
+				"access_rules": [
+				  "dk,$aztec_dk_cbs|hool,[$aztec_dk_cbs|half]"
+				],
+				"visibility_rules": [
+				  "hbm_pool"
+				],
+				"item_count": 1
+			  },
 			  {
 			    "name": "Donkey Medal",
 				"access_rules": [
@@ -2362,16 +2494,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Donkey Blueprint",
-				"chest_unopened_img": "images/dk_bp.png",
-				"chest_opened_img": "images/checks/dk_bp_done.png",
-				"capture_item": true,
+				"name": "Diddy Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "dk",
-				  "{@logic/any_kong}"
+				  "di,$aztec_di_cbs|hool,[$aztec_di_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2386,16 +2516,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Diddy Blueprint",
-				"chest_unopened_img": "images/diddy_bp.png",
-				"chest_opened_img": "images/checks/diddy_bp_done.png",
-				"capture_item": true,
+				"name": "Lanky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "di",
-				  "{@logic/any_kong}"
+				  "la,$aztec_la_cbs|hool,[$aztec_la_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2410,16 +2538,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Lanky Blueprint",
-				"chest_unopened_img": "images/lanky_bp.png",
-				"chest_opened_img": "images/checks/lanky_bp_done.png",
-				"capture_item": true,
+				"name": "Tiny Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "la",
-				  "{@logic/any_kong}"
+				  "ti,$aztec_ti_cbs|hool,[$aztec_ti_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2434,16 +2560,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Tiny Blueprint",
-				"chest_unopened_img": "images/tiny_bp.png",
-				"chest_opened_img": "images/checks/tiny_bp_done.png",
-				"capture_item": true,
+				"name": "Chunky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "ti",
-				  "{@logic/any_kong}"
+				  "ch,$aztec_ch_cbs|hool,[$aztec_ch_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2458,78 +2582,11 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Chunky Blueprint",
-				"chest_unopened_img": "images/chunky_bp.png",
-				"chest_opened_img": "images/checks/chunky_bp_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "ch",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-			    "name": "Battle Crown",
-				"chest_unopened_img": "images/crown.png",
-				"chest_opened_img": "images/checks/crown_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong"
-				],
-				"visibility_rules": [
-				  "cr_pool,arena_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 1",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 2",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Dirt Patches",
-				"chest_unopened_img": "images/rainbowcoin.png",
-				"chest_opened_img": "images/checks/rainbowcoin_done.png",
-				"access_rules": [
-				  "@logic/any_kong,@logic/wave_owned"
-				],
-				"visibility_rules": [
-				  "rbc_pool,dirt_patch_rando_on"
-				],
-				"clear_as_group": false,
-				"item_count": 2
-			  },
-			  {
 			    "name": "Boss",
 				"chest_unopened_img": "images/key.png",
 				"chest_opened_img": "images/checks/key_done.png",
 				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "@logic/any_kong"
 				],
@@ -2558,9 +2615,21 @@
         ],
 		"children": [
 		  {
-		    "name": "Frantic Factory Full Level",
-			"short_name": "Factory Globals",
+		    "name": "Frantic Factory Colored Banana Rewards",
+			"short_name": "Factory CB Rewards",
 			"sections": [
+			  {
+				"name": "Donkey Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
+				"access_rules": [
+				  "dk,$factory_dk_cbs|hool,[$factory_dk_cbs|half]"
+				],
+				"visibility_rules": [
+				  "hbm_pool"
+				],
+				"item_count": 1
+			  },
 			  {
 			    "name": "Donkey Medal",
 				"access_rules": [
@@ -2572,16 +2641,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Donkey Blueprint",
-				"chest_unopened_img": "images/dk_bp.png",
-				"chest_opened_img": "images/checks/dk_bp_done.png",
-				"capture_item": true,
+				"name": "Diddy Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "dk",
-				  "{@logic/any_kong}"
+				  "di,$factory_di_cbs|hool,[$factory_di_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2596,16 +2663,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Diddy Blueprint",
-				"chest_unopened_img": "images/diddy_bp.png",
-				"chest_opened_img": "images/checks/diddy_bp_done.png",
-				"capture_item": true,
+				"name": "Lanky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "di",
-				  "{@logic/any_kong}"
+				  "la,$factory_la_cbs|hool,[$factory_la_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2620,16 +2685,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Lanky Blueprint",
-				"chest_unopened_img": "images/lanky_bp.png",
-				"chest_opened_img": "images/checks/lanky_bp_done.png",
-				"capture_item": true,
+				"name": "Tiny Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "la",
-				  "{@logic/any_kong}"
+				  "ti,$factory_ti_cbs|hool,[$factory_ti_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2644,16 +2707,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Tiny Blueprint",
-				"chest_unopened_img": "images/tiny_bp.png",
-				"chest_opened_img": "images/checks/tiny_bp_done.png",
-				"capture_item": true,
+				"name": "Chunky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "ti",
-				  "{@logic/any_kong}"
+				  "ch,$factory_ch_cbs|hool,[$factory_ch_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2668,78 +2729,11 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Chunky Blueprint",
-				"chest_unopened_img": "images/chunky_bp.png",
-				"chest_opened_img": "images/checks/chunky_bp_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "ch",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-			    "name": "Battle Crown",
-				"chest_unopened_img": "images/crown.png",
-				"chest_opened_img": "images/checks/crown_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong"
-				],
-				"visibility_rules": [
-				  "cr_pool,arena_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 1",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 2",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Dirt Patches",
-				"chest_unopened_img": "images/rainbowcoin.png",
-				"chest_opened_img": "images/checks/rainbowcoin_done.png",
-				"access_rules": [
-				  "@logic/any_kong,@logic/wave_owned"
-				],
-				"visibility_rules": [
-				  "rbc_pool,dirt_patch_rando_on"
-				],
-				"clear_as_group": false,
-				"item_count": 2
-			  },
-			  {
 			    "name": "Boss",
 				"chest_unopened_img": "images/key.png",
 				"chest_opened_img": "images/checks/key_done.png",
 				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "@logic/any_kong"
 				],
@@ -2768,9 +2762,21 @@
         ],
 		"children": [
 		  {
-		    "name": "Gloomy Galleon Full Level",
-			"short_name": "Galleon Globals",
+		    "name": "Gloomy Galleon Colored Banana Rewards",
+			"short_name": "Galleon CB Rewards",
 			"sections": [
+			  {
+				"name": "Donkey Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
+				"access_rules": [
+				  "dk,$galleon_dk_cbs|hool,[$galleon_dk_cbs|half]"
+				],
+				"visibility_rules": [
+				  "hbm_pool"
+				],
+				"item_count": 1
+			  },
 			  {
 			    "name": "Donkey Medal",
 				"access_rules": [
@@ -2782,16 +2788,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Donkey Blueprint",
-				"chest_unopened_img": "images/dk_bp.png",
-				"chest_opened_img": "images/checks/dk_bp_done.png",
-				"capture_item": true,
+				"name": "Diddy Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "dk",
-				  "{@logic/any_kong}"
+				  "di,$galleon_di_cbs|hool,[$galleon_di_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2806,16 +2810,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Diddy Blueprint",
-				"chest_unopened_img": "images/diddy_bp.png",
-				"chest_opened_img": "images/checks/diddy_bp_done.png",
-				"capture_item": true,
+				"name": "Lanky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "di",
-				  "{@logic/any_kong}"
+				  "la,$galleon_la_cbs|hool,[$galleon_la_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2830,16 +2832,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Lanky Blueprint",
-				"chest_unopened_img": "images/lanky_bp.png",
-				"chest_opened_img": "images/checks/lanky_bp_done.png",
-				"capture_item": true,
+				"name": "Tiny Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "la",
-				  "{@logic/any_kong}"
+				  "ti,$galleon_ti_cbs|hool,[$galleon_ti_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2854,16 +2854,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Tiny Blueprint",
-				"chest_unopened_img": "images/tiny_bp.png",
-				"chest_opened_img": "images/checks/tiny_bp_done.png",
-				"capture_item": true,
+				"name": "Chunky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "ti",
-				  "{@logic/any_kong}"
+				  "ch,$galleon_ch_cbs|hool,[$galleon_ch_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -2878,78 +2876,11 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Chunky Blueprint",
-				"chest_unopened_img": "images/chunky_bp.png",
-				"chest_opened_img": "images/checks/chunky_bp_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "ch",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-			    "name": "Battle Crown",
-				"chest_unopened_img": "images/crown.png",
-				"chest_opened_img": "images/checks/crown_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong"
-				],
-				"visibility_rules": [
-				  "cr_pool,arena_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 1",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 2",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Dirt Patches",
-				"chest_unopened_img": "images/rainbowcoin.png",
-				"chest_opened_img": "images/checks/rainbowcoin_done.png",
-				"access_rules": [
-				  "@logic/any_kong,@logic/wave_owned"
-				],
-				"visibility_rules": [
-				  "rbc_pool,dirt_patch_rando_on"
-				],
-				"clear_as_group": false,
-				"item_count": 2
-			  },
-			  {
 			    "name": "Boss",
 				"chest_unopened_img": "images/key.png",
 				"chest_opened_img": "images/checks/key_done.png",
 				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "@logic/any_kong"
 				],
@@ -2978,9 +2909,21 @@
         ],
 		"children": [
 		  {
-		    "name": "Fungi Forest Full Level",
-			"short_name": "Forest Globals",
+		    "name": "Fungi Forest Colored Banana Rewards",
+			"short_name": "Forest CB Rewards",
 			"sections": [
+			  {
+				"name": "Donkey Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
+				"access_rules": [
+				  "dk,$forest_dk_cbs|hool,[$forest_dk_cbs|half]"
+				],
+				"visibility_rules": [
+				  "hbm_pool"
+				],
+				"item_count": 1
+			  },
 			  {
 			    "name": "Donkey Medal",
 				"access_rules": [
@@ -2992,16 +2935,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Donkey Blueprint",
-				"chest_unopened_img": "images/dk_bp.png",
-				"chest_opened_img": "images/checks/dk_bp_done.png",
-				"capture_item": true,
+				"name": "Diddy Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "dk",
-				  "{@logic/any_kong}"
+				  "di,$forest_di_cbs|hool,[$forest_di_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -3016,16 +2957,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Diddy Blueprint",
-				"chest_unopened_img": "images/diddy_bp.png",
-				"chest_opened_img": "images/checks/diddy_bp_done.png",
-				"capture_item": true,
+				"name": "Lanky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "di",
-				  "{@logic/any_kong}"
+				  "la,$forest_la_cbs|hool,[$forest_la_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -3040,16 +2979,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Lanky Blueprint",
-				"chest_unopened_img": "images/lanky_bp.png",
-				"chest_opened_img": "images/checks/lanky_bp_done.png",
-				"capture_item": true,
+				"name": "Tiny Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "la",
-				  "{@logic/any_kong}"
+				  "ti,$forest_ti_cbs|hool,[$forest_ti_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -3064,16 +3001,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Tiny Blueprint",
-				"chest_unopened_img": "images/tiny_bp.png",
-				"chest_opened_img": "images/checks/tiny_bp_done.png",
-				"capture_item": true,
+				"name": "Chunky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "ti",
-				  "{@logic/any_kong}"
+				  "ch,$forest_ch_cbs|hool,[$forest_ch_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -3088,78 +3023,11 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Chunky Blueprint",
-				"chest_unopened_img": "images/chunky_bp.png",
-				"chest_opened_img": "images/checks/chunky_bp_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "ch",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-			    "name": "Battle Crown",
-				"chest_unopened_img": "images/crown.png",
-				"chest_opened_img": "images/checks/crown_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong"
-				],
-				"visibility_rules": [
-				  "cr_pool,arena_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 1",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 2",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Dirt Patches",
-				"chest_unopened_img": "images/rainbowcoin.png",
-				"chest_opened_img": "images/checks/rainbowcoin_done.png",
-				"access_rules": [
-				  "@logic/any_kong,@logic/wave_owned"
-				],
-				"visibility_rules": [
-				  "rbc_pool,dirt_patch_rando_on"
-				],
-				"clear_as_group": false,
-				"item_count": 2
-			  },
-			  {
 			    "name": "Boss",
 				"chest_unopened_img": "images/key.png",
 				"chest_opened_img": "images/checks/key_done.png",
 				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "@logic/any_kong"
 				],
@@ -3188,9 +3056,21 @@
         ],
 		"children": [
 		  {
-		    "name": "Crystal Caves Full Level",
-			"short_name": "Caves Globals",
+		    "name": "Crystal Caves Colored Banana Rewards",
+			"short_name": "Caves CB Rewards",
 			"sections": [
+			  {
+				"name": "Donkey Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
+				"access_rules": [
+				  "dk,$caves_dk_cbs|hool,[$caves_dk_cbs|half]"
+				],
+				"visibility_rules": [
+				  "hbm_pool"
+				],
+				"item_count": 1
+			  },
 			  {
 			    "name": "Donkey Medal",
 				"access_rules": [
@@ -3202,16 +3082,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Donkey Blueprint",
-				"chest_unopened_img": "images/dk_bp.png",
-				"chest_opened_img": "images/checks/dk_bp_done.png",
-				"capture_item": true,
+				"name": "Diddy Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "dk",
-				  "{@logic/any_kong}"
+				  "di,$caves_di_cbs|hool,[$caves_di_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -3226,16 +3104,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Diddy Blueprint",
-				"chest_unopened_img": "images/diddy_bp.png",
-				"chest_opened_img": "images/checks/diddy_bp_done.png",
-				"capture_item": true,
+				"name": "Lanky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "di",
-				  "{@logic/any_kong}"
+				  "la,$caves_la_cbs|hool,[$caves_la_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -3250,16 +3126,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Lanky Blueprint",
-				"chest_unopened_img": "images/lanky_bp.png",
-				"chest_opened_img": "images/checks/lanky_bp_done.png",
-				"capture_item": true,
+				"name": "Tiny Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "la",
-				  "{@logic/any_kong}"
+				  "ti,$caves_ti_cbs|hool,[$caves_ti_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -3274,16 +3148,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Tiny Blueprint",
-				"chest_unopened_img": "images/tiny_bp.png",
-				"chest_opened_img": "images/checks/tiny_bp_done.png",
-				"capture_item": true,
+				"name": "Chunky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "ti",
-				  "{@logic/any_kong}"
+				  "ch,$caves_ch_cbs|hool,[$caves_ch_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -3298,78 +3170,11 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Chunky Blueprint",
-				"chest_unopened_img": "images/chunky_bp.png",
-				"chest_opened_img": "images/checks/chunky_bp_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "ch",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-			    "name": "Battle Crown",
-				"chest_unopened_img": "images/crown.png",
-				"chest_opened_img": "images/checks/crown_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong"
-				],
-				"visibility_rules": [
-				  "cr_pool,arena_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 1",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 2",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Dirt Patches",
-				"chest_unopened_img": "images/rainbowcoin.png",
-				"chest_opened_img": "images/checks/rainbowcoin_done.png",
-				"access_rules": [
-				  "@logic/any_kong,@logic/wave_owned"
-				],
-				"visibility_rules": [
-				  "rbc_pool,dirt_patch_rando_on"
-				],
-				"clear_as_group": false,
-				"item_count": 2
-			  },
-			  {
 			    "name": "Boss",
 				"chest_unopened_img": "images/key.png",
 				"chest_opened_img": "images/checks/key_done.png",
 				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "@logic/any_kong"
 				],
@@ -3398,9 +3203,21 @@
         ],
 		"children": [
 		  {
-		    "name": "Creepy Castle Full Level",
-			"short_name": "Castle Globals",
+		    "name": "Creepy Castle Colored Banana Rewards",
+			"short_name": "Castle CB Rewards",
 			"sections": [
+			  {
+				"name": "Donkey Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
+				"access_rules": [
+				  "dk,$castle_dk_cbs|hool,[$castle_dk_cbs|half]"
+				],
+				"visibility_rules": [
+				  "hbm_pool"
+				],
+				"item_count": 1
+			  },
 			  {
 			    "name": "Donkey Medal",
 				"access_rules": [
@@ -3412,16 +3229,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Donkey Blueprint",
-				"chest_unopened_img": "images/dk_bp.png",
-				"chest_opened_img": "images/checks/dk_bp_done.png",
-				"capture_item": true,
+				"name": "Diddy Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "dk",
-				  "{@logic/any_kong}"
+				  "di,$castle_di_cbs|hool,[$castle_di_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -3436,16 +3251,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Diddy Blueprint",
-				"chest_unopened_img": "images/diddy_bp.png",
-				"chest_opened_img": "images/checks/diddy_bp_done.png",
-				"capture_item": true,
+				"name": "Lanky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "di",
-				  "{@logic/any_kong}"
+				  "la,$castle_la_cbs|hool,[$castle_la_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -3460,16 +3273,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Lanky Blueprint",
-				"chest_unopened_img": "images/lanky_bp.png",
-				"chest_opened_img": "images/checks/lanky_bp_done.png",
-				"capture_item": true,
+				"name": "Tiny Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "la",
-				  "{@logic/any_kong}"
+				  "ti,$castle_ti_cbs|hool,[$castle_ti_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -3484,16 +3295,14 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Tiny Blueprint",
-				"chest_unopened_img": "images/tiny_bp.png",
-				"chest_opened_img": "images/checks/tiny_bp_done.png",
-				"capture_item": true,
+				"name": "Chunky Half Medal",
+				"chest_unopened_img": "images/checks/half_bm.gif",
+				"chest_opened_img": "images/checks/half_bm_done.gif",
 				"access_rules": [
-				  "ti",
-				  "{@logic/any_kong}"
+				  "ch,$castle_ch_cbs|hool,[$castle_ch_cbs|half]"
 				],
 				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
+				  "hbm_pool"
 				],
 				"item_count": 1
 			  },
@@ -3508,78 +3317,11 @@
                 "item_count": 1
 			  },
 			  {
-			    "name": "Chunky Blueprint",
-				"chest_unopened_img": "images/chunky_bp.png",
-				"chest_opened_img": "images/checks/chunky_bp_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "ch",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "bp_pool,kasplat_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-			    "name": "Battle Crown",
-				"chest_unopened_img": "images/crown.png",
-				"chest_opened_img": "images/checks/crown_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong"
-				],
-				"visibility_rules": [
-				  "cr_pool,arena_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 1",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Banana Fairy 2",
-				"chest_unopened_img": "images/fairy.png",
-				"chest_opened_img": "images/checks/fairy_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned",
-				  "{@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "fairy_pool,fairy_rando_on"
-				],
-				"item_count": 1
-			  },
-			  {
-				"name": "Dirt Patches",
-				"chest_unopened_img": "images/rainbowcoin.png",
-				"chest_opened_img": "images/checks/rainbowcoin_done.png",
-				"access_rules": [
-				  "@logic/any_kong,@logic/wave_owned"
-				],
-				"visibility_rules": [
-				  "rbc_pool,dirt_patch_rando_on"
-				],
-				"clear_as_group": false,
-				"item_count": 2
-			  },
-			  {
 			    "name": "Boss",
 				"chest_unopened_img": "images/key.png",
 				"chest_opened_img": "images/checks/key_done.png",
 				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
 				  "@logic/any_kong"
 				],
@@ -3599,103 +3341,125 @@
 			]
 		  }
 		]
-      },
+      }
+	]
+  },
+  {
+	"name": "Location Shufflers",
+	"chest_unopened_img": "images/melon.png",
+	"chest_opened_img": "images/checks/melon_done.png",
+	"children": [
 	  {
-        "name": "Hideout Helm",
-        "color": "#FF0000",
-        "access_rules": [
-          "@logic/helm_access"
-        ],
-		"children": [
+	    "name": "DK Isles",
+		"color": "#D25757",
+	    "children": [
 		  {
-		    "name": "Hideout Helm",
+		    "name": "DK Isles Location Shufflers",
+			"short_name": "Isles Anywhere",
 			"sections": [
-			  {
-			    "name": "Donkey Medal",
-                "capture_item": true,
-				"access_rules": [
-				  "@logic/blast-o-matic_doors,$dk_helm_room",
-				  "{@logic/blast-o-matic_access,@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "bm_pool"
-				],
-                "item_count": 1
-			  },
-			  {
-			    "name": "Diddy Medal",
-                "capture_item": true,
-				"access_rules": [
-				  "@logic/blast-o-matic_doors,$di_helm_room",
-				  "{@logic/blast-o-matic_access,di,dib}"
-				],
-				"visibility_rules": [
-				  "bm_pool"
-				],
-                "item_count": 1
-			  },
-			  {
-			    "name": "Lanky Medal",
-                "capture_item": true,
-				"access_rules": [
-				  "@logic/blast-o-matic_doors,$la_helm_room",
-				  "{@logic/blast-o-matic_access,@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "bm_pool"
-				],
-                "item_count": 1
-			  },
-			  {
-			    "name": "Tiny Medal",
-                "capture_item": true,
-				"access_rules": [
-				  "@logic/blast-o-matic_doors,$ti_helm_room",
-				  "{@logic/blast-o-matic_access,@logic/any_kong}"
-				],
-				"visibility_rules": [
-				  "bm_pool"
-				],
-                "item_count": 1
-			  },
-			  {
-			    "name": "Chunky Medal",
+			{
+			    "name": "Donkey Blueprint",
+				"chest_unopened_img": "images/dk_bp.png",
+				"chest_opened_img": "images/checks/dk_bp_done.png",
 				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
-				  "@logic/blast-o-matic_doors,$ch_helm_room",
-				  "{@logic/blast-o-matic_access,@logic/any_kong}"
+				  "dk",
+				  "{@logic/any_kong}"
 				],
 				"visibility_rules": [
-				  "bm_pool"
-				],
-                "item_count": 1
-			  },
-			  {
-			    "name": "Battle Crown",
-				"chest_unopened_img": "images/crown.png",
-				"chest_opened_img": "images/checks/crown_done.png",
-				"capture_item": true,
-				"access_rules": [
-				  "@logic/blast-o-matic_access,di,dib,arena_rando_off",
-				  "arena_rando_on"
-				],
-				"visibility_rules": [
-				  "cr_pool"
+				  "bp_pool,kasplat_rando_on"
 				],
 				"item_count": 1
 			  },
 			  {
-			    "name": "Key 8",
-				"chest_unopened_img": "images/key.png",
-				"chest_opened_img": "images/checks/key_done.png",
+			    "name": "Diddy Blueprint",
+				"chest_unopened_img": "images/diddy_bp.png",
+				"chest_opened_img": "images/checks/diddy_bp_done.png",
 				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
-				  "@logic/key_8_room,@logic/any_kong",
-				  "{@logic/blast-o-matic_doors,$can_open_helm_door_1,@logic/any_kong}"
+				  "di",
+				  "{@logic/any_kong}"
 				],
 				"visibility_rules": [
-				  "key_pool"
+				  "bp_pool,kasplat_rando_on"
 				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Lanky Blueprint",
+				"chest_unopened_img": "images/lanky_bp.png",
+				"chest_opened_img": "images/checks/lanky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "la",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Tiny Blueprint",
+				"chest_unopened_img": "images/tiny_bp.png",
+				"chest_opened_img": "images/checks/tiny_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ti",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Chunky Blueprint",
+				"chest_unopened_img": "images/chunky_bp.png",
+				"chest_opened_img": "images/checks/chunky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ch",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Battle Crown 1",
+				"chest_unopened_img": "images/crown.png",
+				"chest_opened_img": "images/checks/crown_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "cr_pool,arena_rando_on"
+				],
+				"clear_as_group": false,
+				"item_count": 1
+			  },
+			  {
+			    "name": "Battle Crown 2",
+				"chest_unopened_img": "images/crown.png",
+				"chest_opened_img": "images/checks/crown_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "cr_pool,arena_rando_on"
+				],
+				"clear_as_group": false,
 				"item_count": 1
 			  },
 			  {
@@ -3703,14 +3467,13 @@
 				"chest_unopened_img": "images/fairy.png",
 				"chest_opened_img": "images/checks/fairy_done.png",
 				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned,fairy_rando_on",
-				  "{@logic/any_kong,fairy_rando_on}",
-				  "@logic/key_8_room,@logic/cam_owned,@logic/any_kong,fairy_rando_off",
-				  "{@logic/blast-o-matic_doors,$can_open_helm_door_1,@logic/any_kong,fairy_rando_off}"
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
 				],
 				"visibility_rules": [
-				  "fairy_pool"
+				  "fairy_pool,fairy_rando_on"
 				],
 				"item_count": 1
 			  },
@@ -3719,14 +3482,131 @@
 				"chest_unopened_img": "images/fairy.png",
 				"chest_opened_img": "images/checks/fairy_done.png",
 				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"access_rules": [
-				  "@logic/any_kong,@logic/cam_owned,fairy_rando_on",
-				  "{@logic/any_kong,fairy_rando_on}",
-				  "@logic/key_8_room,@logic/cam_owned,@logic/any_kong,fairy_rando_off",
-				  "{@logic/blast-o-matic_doors,$can_open_helm_door_1,@logic/any_kong,fairy_rando_off}"
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
 				],
 				"visibility_rules": [
-				  "fairy_pool"
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 3",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 4",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 1",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 2",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 3",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 4",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 1",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 2",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
 				],
 				"item_count": 1
 			  }
@@ -3734,14 +3614,2272 @@
 			"map_locations": [
 			  {
 			    "map": "islesmap",
-				"size": 25,
-				"x": 140,
-				"y": 115
+				"size": 30,
+				"x": 145,
+				"y": 20
+			  }
+			]
+		  }
+		]
+	  },
+	  {
+		"name": "Jungle Japes",
+        "color": "#59FF64",
+        "access_rules": [
+          "@logic/japes_lobby"
+        ],
+		"children": [
+		  {
+		    "name": "Jungle Japes Location Shufflers",
+			"short_name": "Japes Anywhere",
+			"sections": [
+			  {
+				"name": "Japes DK Portal Location",
+				"chest_unopened_img": "images/settings/portal.png",
+				"chest_opened_img": "images/settings/portal.png",
+				"access_rules": [
+				  "@logic/japes_lobby"
+				],
+				"visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"hosted_item": "japes_entry",
+				"item_count": 0
+			  },
+			  {
+			    "name": "Donkey Blueprint",
+				"chest_unopened_img": "images/dk_bp.png",
+				"chest_opened_img": "images/checks/dk_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "dk",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Yellow Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "dk",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Diddy Blueprint",
+				"chest_unopened_img": "images/diddy_bp.png",
+				"chest_opened_img": "images/checks/diddy_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "di",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Red Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "di",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Lanky Blueprint",
+				"chest_unopened_img": "images/lanky_bp.png",
+				"chest_opened_img": "images/checks/lanky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "la",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Blue Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "la",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Tiny Blueprint",
+				"chest_unopened_img": "images/tiny_bp.png",
+				"chest_opened_img": "images/checks/tiny_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ti",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Purple Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ti",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Chunky Blueprint",
+				"chest_unopened_img": "images/chunky_bp.png",
+				"chest_opened_img": "images/checks/chunky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ch",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Green Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ch",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Battle Crown",
+				"chest_unopened_img": "images/crown.png",
+				"chest_opened_img": "images/checks/crown_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "cr_pool,arena_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 1",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 2",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 1",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 2",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 1",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 2",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  }
+			],
+			"map_locations": [
+			  {
+			    "map": "japesmap",
+				"force_visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"size": 60,
+				"x": 645,
+				"y": 69
+			  }
+			]
+		  }
+		]
+	  },
+	  {
+		"name": "Angry Aztec",
+        "color": "#FFA010",
+        "access_rules": [
+          "@logic/aztec_lobby,[@logic/aztec_past_vines]"
+        ],
+		"children": [
+		  {
+		    "name": "Angry Aztec Location Shufflers",
+			"short_name": "Aztec Anywhere",
+			"sections": [
+			  {
+				"name": "Aztec DK Portal Location",
+				"chest_unopened_img": "images/settings/portal.png",
+				"chest_opened_img": "images/settings/portal.png",
+				"access_rules": [
+				  "@logic/aztec_lobby"
+				],
+				"visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"hosted_item": "aztec_entry",
+				"item_count": 0
+			  },
+			  {
+			    "name": "Donkey Blueprint",
+				"chest_unopened_img": "images/dk_bp.png",
+				"chest_opened_img": "images/checks/dk_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "dk",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Yellow Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "dk",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Diddy Blueprint",
+				"chest_unopened_img": "images/diddy_bp.png",
+				"chest_opened_img": "images/checks/diddy_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "di",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Red Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "di",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Lanky Blueprint",
+				"chest_unopened_img": "images/lanky_bp.png",
+				"chest_opened_img": "images/checks/lanky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "la",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Blue Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "la",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Tiny Blueprint",
+				"chest_unopened_img": "images/tiny_bp.png",
+				"chest_opened_img": "images/checks/tiny_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ti",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Purple Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ti",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Chunky Blueprint",
+				"chest_unopened_img": "images/chunky_bp.png",
+				"chest_opened_img": "images/checks/chunky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ch",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Green Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ch",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Battle Crown",
+				"chest_unopened_img": "images/crown.png",
+				"chest_opened_img": "images/checks/crown_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "cr_pool,arena_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 1",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 2",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 1",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 2",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 1",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 2",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  }
+			],
+			"map_locations": [
+			  {
+			    "map": "aztecmap",
+				"force_visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"size": 60,
+				"x": 640,
+				"y": 69
+			  }
+			]
+		  }
+		]
+	  },
+	  {
+		"name": "Frantic Factory",
+        "color": "#B5CDFF",
+        "access_rules": [
+          "@logic/factory_lobby"
+        ],
+		"children": [
+		  {
+		    "name": "Frantic Factory Location Shufflers",
+			"short_name": "Factory Anywhere",
+			"sections": [
+			  {
+				"name": "Factory DK Portal Location",
+				"chest_unopened_img": "images/settings/portal.png",
+				"chest_opened_img": "images/settings/portal.png",
+				"access_rules": [
+				  "@logic/factory_lobby"
+				],
+				"visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"hosted_item": "factory_entry",
+				"item_count": 0
+			  },
+			  {
+			    "name": "Donkey Blueprint",
+				"chest_unopened_img": "images/dk_bp.png",
+				"chest_opened_img": "images/checks/dk_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "dk",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Yellow Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "dk",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Diddy Blueprint",
+				"chest_unopened_img": "images/diddy_bp.png",
+				"chest_opened_img": "images/checks/diddy_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "di",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Red Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "di",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Lanky Blueprint",
+				"chest_unopened_img": "images/lanky_bp.png",
+				"chest_opened_img": "images/checks/lanky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "la",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Blue Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "la",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Tiny Blueprint",
+				"chest_unopened_img": "images/tiny_bp.png",
+				"chest_opened_img": "images/checks/tiny_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ti",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Purple Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ti",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Chunky Blueprint",
+				"chest_unopened_img": "images/chunky_bp.png",
+				"chest_opened_img": "images/checks/chunky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ch",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Green Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ch",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Battle Crown",
+				"chest_unopened_img": "images/crown.png",
+				"chest_opened_img": "images/checks/crown_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "cr_pool,arena_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 1",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 2",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 1",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 2",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 1",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 2",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  }
+			],
+			"map_locations": [
+			  {
+			    "map": "factorymap",
+				"force_visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"size": 60,
+				"x": 750,
+				"y": 64
+			  }
+			]
+		  }
+		]
+	  },
+	  {
+		"name": "Gloomy Galleon",
+        "color": "#0C7DED",
+        "access_rules": [
+          "@logic/galleon_lobby"
+        ],
+		"children": [
+		  {
+		    "name": "Gloomy Galleon Location Shufflers",
+			"short_name": "Galleon Anywhere",
+			"sections": [
+			  {
+				"name": "Galleon DK Portal Location",
+				"chest_unopened_img": "images/settings/portal.png",
+				"chest_opened_img": "images/settings/portal.png",
+				"access_rules": [
+				  "@logic/galleon_lobby"
+				],
+				"visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"hosted_item": "galleon_entry",
+				"item_count": 0
+			  },
+			  {
+			    "name": "Donkey Blueprint",
+				"chest_unopened_img": "images/dk_bp.png",
+				"chest_opened_img": "images/checks/dk_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "dk",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Yellow Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "dk",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Diddy Blueprint",
+				"chest_unopened_img": "images/diddy_bp.png",
+				"chest_opened_img": "images/checks/diddy_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "di",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Red Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "di",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Lanky Blueprint",
+				"chest_unopened_img": "images/lanky_bp.png",
+				"chest_opened_img": "images/checks/lanky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "la",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Blue Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "la",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Tiny Blueprint",
+				"chest_unopened_img": "images/tiny_bp.png",
+				"chest_opened_img": "images/checks/tiny_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ti",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Purple Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ti",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Chunky Blueprint",
+				"chest_unopened_img": "images/chunky_bp.png",
+				"chest_opened_img": "images/checks/chunky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ch",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Green Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ch",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Battle Crown",
+				"chest_unopened_img": "images/crown.png",
+				"chest_opened_img": "images/checks/crown_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "cr_pool,arena_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 1",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 2",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 1",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 2",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 1",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 2",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  }
+			],
+			"map_locations": [
+			  {
+			    "map": "galleonmap",
+				"force_visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"size": 60,
+				"x": 750,
+				"y": 64
+			  }
+			]
+		  }
+		]
+	  },
+	  {
+		"name": "Fungi Forest",
+        "color": "#BB1CFF",
+        "access_rules": [
+          "@logic/forest_lobby"
+        ],
+		"children": [
+		  {
+		    "name": "Fungi Forest Location Shufflers",
+			"short_name": "Forest Anywhere",
+			"sections": [
+			  {
+				"name": "Forest DK Portal Location",
+				"chest_unopened_img": "images/settings/portal.png",
+				"chest_opened_img": "images/settings/portal.png",
+				"access_rules": [
+				  "@logic/forest_lobby"
+				],
+				"visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"hosted_item": "forest_entry",
+				"item_count": 0
+			  },
+			  {
+			    "name": "Donkey Blueprint",
+				"chest_unopened_img": "images/dk_bp.png",
+				"chest_opened_img": "images/checks/dk_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "dk",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Yellow Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "dk",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Diddy Blueprint",
+				"chest_unopened_img": "images/diddy_bp.png",
+				"chest_opened_img": "images/checks/diddy_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "di",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Red Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "di",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Lanky Blueprint",
+				"chest_unopened_img": "images/lanky_bp.png",
+				"chest_opened_img": "images/checks/lanky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "la",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Blue Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "la",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Tiny Blueprint",
+				"chest_unopened_img": "images/tiny_bp.png",
+				"chest_opened_img": "images/checks/tiny_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ti",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Purple Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ti",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Chunky Blueprint",
+				"chest_unopened_img": "images/chunky_bp.png",
+				"chest_opened_img": "images/checks/chunky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ch",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Green Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ch",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Battle Crown",
+				"chest_unopened_img": "images/crown.png",
+				"chest_opened_img": "images/checks/crown_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "cr_pool,arena_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 1",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 2",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 1",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 2",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 1",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 2",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  }
+			],
+			"map_locations": [
+			  {
+			    "map": "forestmap",
+				"force_visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"size": 60,
+				"x": 610,
+				"y": 64
+			  }
+			]
+		  }
+		]
+	  },
+	  {
+		"name": "Crystal Caves",
+        "color": "#3EE1E1",
+        "access_rules": [
+          "@logic/caves_lobby"
+        ],
+		"children": [
+		  {
+		    "name": "Crystal Caves Location Shufflers",
+			"short_name": "Caves Anywhere",
+			"sections": [
+			  {
+				"name": "Caves DK Portal Location",
+				"chest_unopened_img": "images/settings/portal.png",
+				"chest_opened_img": "images/settings/portal.png",
+				"access_rules": [
+				  "@logic/caves_lobby"
+				],
+				"visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"hosted_item": "caves_entry",
+				"item_count": 0
+			  },
+			  {
+			    "name": "Donkey Blueprint",
+				"chest_unopened_img": "images/dk_bp.png",
+				"chest_opened_img": "images/checks/dk_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "dk",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Yellow Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "dk",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Diddy Blueprint",
+				"chest_unopened_img": "images/diddy_bp.png",
+				"chest_opened_img": "images/checks/diddy_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "di",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Red Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "di",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Lanky Blueprint",
+				"chest_unopened_img": "images/lanky_bp.png",
+				"chest_opened_img": "images/checks/lanky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "la",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Blue Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "la",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Tiny Blueprint",
+				"chest_unopened_img": "images/tiny_bp.png",
+				"chest_opened_img": "images/checks/tiny_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ti",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Purple Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ti",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Chunky Blueprint",
+				"chest_unopened_img": "images/chunky_bp.png",
+				"chest_opened_img": "images/checks/chunky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ch",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Green Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ch",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Battle Crown",
+				"chest_unopened_img": "images/crown.png",
+				"chest_opened_img": "images/checks/crown_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "cr_pool,arena_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 1",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 2",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 1",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 2",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 1",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 2",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  }
+			],
+			"map_locations": [
+			  {
+			    "map": "cavesmap",
+				"force_visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"size": 60,
+				"x": 660,
+				"y": 64
+			  }
+			]
+		  }
+		]
+	  },
+	  {
+		"name": "Creepy Castle",
+        "color": "#E84898",
+        "access_rules": [
+          "@logic/castle_lobby"
+        ],
+		"children": [
+		  {
+		    "name": "Creepy Castle Location Shufflers",
+			"short_name": "Castle Anywhere",
+			"sections": [
+			  {
+				"name": "Castle DK Portal Location",
+				"chest_unopened_img": "images/settings/portal.png",
+				"chest_opened_img": "images/settings/portal.png",
+				"access_rules": [
+				  "@logic/castle_lobby"
+				],
+				"visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"hosted_item": "castle_entry",
+				"item_count": 0
+			  },
+			  {
+			    "name": "Donkey Blueprint",
+				"chest_unopened_img": "images/dk_bp.png",
+				"chest_opened_img": "images/checks/dk_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "dk",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Yellow Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "dk",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Diddy Blueprint",
+				"chest_unopened_img": "images/diddy_bp.png",
+				"chest_opened_img": "images/checks/diddy_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "di",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Red Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "di",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Lanky Blueprint",
+				"chest_unopened_img": "images/lanky_bp.png",
+				"chest_opened_img": "images/checks/lanky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "la",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Blue Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "la",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Tiny Blueprint",
+				"chest_unopened_img": "images/tiny_bp.png",
+				"chest_opened_img": "images/checks/tiny_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ti",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Purple Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ti",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Chunky Blueprint",
+				"chest_unopened_img": "images/chunky_bp.png",
+				"chest_opened_img": "images/checks/chunky_bp_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "ch",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "bp_pool,kasplat_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Green Door Hint",
+				"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+				"chest_opened_img": "images/checks/wrinkly_door_done.png",
+				"access_rules": [
+				  "ch",
+				  "@logic/any_kong,kongless_hints"
+				],
+				"visibility_rules": [
+				  "hint_pool,shuffled_hints"
+				],
+				"item_count": 1
+			  },
+			  {
+			    "name": "Battle Crown",
+				"chest_unopened_img": "images/crown.png",
+				"chest_opened_img": "images/checks/crown_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "cr_pool,arena_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 1",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Banana Fairy 2",
+				"chest_unopened_img": "images/fairy.png",
+				"chest_opened_img": "images/checks/fairy_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/cam_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "fairy_pool,fairy_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 1",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Dirt Patch 2",
+				"chest_unopened_img": "images/rainbowcoin.png",
+				"chest_opened_img": "images/checks/rainbowcoin_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong,@logic/wave_owned",
+				  "{@logic/any_kong}"
+				],
+				"visibility_rules": [
+				  "rbc_pool,dirt_patch_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 1",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  },
+			  {
+				"name": "Melon Crate 2",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
+				"access_rules": [
+				  "@logic/any_kong"
+				],
+				"visibility_rules": [
+				  "melon_pool,melon_crate_rando_on"
+				],
+				"item_count": 1
+			  }
+			],
+			"map_locations": [
+			  {
+			    "map": "castlemap",
+				"force_visibility_rules": [
+				  "portal_shuffle_on"
+				],
+				"size": 60,
+				"x": 670,
+				"y": 60
 			  }
 			]
 		  }
 		]
 	  }
 	]
+  },
+  {
+	"name": "Hideout Helm",
+	"chest_unopened_img": "images/bananamedal.gif",
+    "chest_opened_img": "images/checks/bananamedal_done.png",
+    "color": "#FF0000",
+    "access_rules": [
+      "@logic/helm_access"
+    ],
+	"sections": [
+	  {
+	    "name": "Donkey Medal",
+        "capture_item": true,
+		"capture_item_layout": "tracker_capture_item_only",
+		"access_rules": [
+		  "@logic/blast-o-matic_doors,$dk_helm_room",
+		  "{@logic/blast-o-matic_stars,@logic/any_kong}"
+		],
+		"visibility_rules": [
+		  "hm_pool"
+		],
+        "item_count": 1
+	  },
+	  {
+	    "name": "Diddy Medal",
+        "capture_item": true,
+		"capture_item_layout": "tracker_capture_item_only",
+	    "access_rules": [
+		  "@logic/blast-o-matic_doors,$di_helm_room",
+		  "{@logic/blast-o-matic_stars,di,dib}"
+		],
+		"visibility_rules": [
+		  "hm_pool"
+		],
+        "item_count": 1
+	  },
+	  {
+	    "name": "Lanky Medal",
+        "capture_item": true,
+	    "capture_item_layout": "tracker_capture_item_only",
+		"access_rules": [
+		  "@logic/blast-o-matic_doors,$la_helm_room",
+		  "{@logic/blast-o-matic_stars,@logic/any_kong}"
+		],
+		"visibility_rules": [
+		  "hm_pool"
+		],
+        "item_count": 1
+	  },
+	  {
+	    "name": "Tiny Medal",
+        "capture_item": true,
+		"capture_item_layout": "tracker_capture_item_only",
+		"access_rules": [
+		  "@logic/blast-o-matic_doors,$ti_helm_room",
+		  "{@logic/blast-o-matic_stars,@logic/any_kong}"
+		],
+		"visibility_rules": [
+		  "hm_pool"
+		],
+        "item_count": 1
+	  },
+	  {
+	    "name": "Chunky Medal",
+		"capture_item": true,
+		"capture_item_layout": "tracker_capture_item_only",
+		"access_rules": [
+		  "@logic/blast-o-matic_doors,$ch_helm_room",
+		  "{@logic/blast-o-matic_stars,@logic/any_kong}"
+		],
+		"visibility_rules": [
+		  "hm_pool"
+		],
+        "item_count": 1
+	  },
+	  {
+	    "name": "Battle Crown",
+		"chest_unopened_img": "images/crown.png",
+		"chest_opened_img": "images/checks/crown_done.png",
+		"capture_item": true,
+		"capture_item_layout": "tracker_capture_item_only",
+		"access_rules": [
+		  "@logic/blast-o-matic_access,di,dib,arena_rando_off",
+		  "arena_rando_on"
+		],
+		"visibility_rules": [
+		  "cr_pool"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "Melon Crate",
+		"chest_unopened_img": "images/melon.png",
+		"chest_opened_img": "images/checks/melon_done.png",
+		"capture_item": true,
+		"capture_item_layout": "tracker_capture_item_only",
+		"access_rules": [
+		  "@logic/helm_5th_phase,@logic/any_kong"
+		],
+		"visibility_rules": [
+		  "melon_pool,melon_pool_5,melon_crate_rando_off"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "Key 8",
+		"chest_unopened_img": "images/key.png",
+		"chest_opened_img": "images/checks/key_done.png",
+		"capture_item": true,
+		"capture_item_layout": "tracker_capture_item_only",
+		"access_rules": [
+		  "@logic/key_8_room,@logic/any_kong",
+		  "{@logic/blast-o-matic_doors,$can_open_helm_door_1,@logic/any_kong}"
+		],
+		"visibility_rules": [
+		  "key_pool"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "Banana Fairy 1",
+		"chest_unopened_img": "images/fairy.png",
+		"chest_opened_img": "images/checks/fairy_done.png",
+		"capture_item": true,
+		"capture_item_layout": "tracker_capture_item_only",
+		"access_rules": [
+		  "@logic/any_kong,@logic/cam_owned,fairy_rando_on",
+		  "{@logic/any_kong,fairy_rando_on}",
+		  "@logic/key_8_room,@logic/cam_owned,@logic/any_kong,fairy_rando_off",
+		  "{@logic/blast-o-matic_doors,$can_open_helm_door_1,@logic/any_kong,fairy_rando_off}"
+		],
+		"visibility_rules": [
+		  "fairy_pool"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "Banana Fairy 2",
+		"chest_unopened_img": "images/fairy.png",
+		"chest_opened_img": "images/checks/fairy_done.png",
+		"capture_item": true,
+		"capture_item_layout": "tracker_capture_item_only",
+		"access_rules": [
+		  "@logic/any_kong,@logic/cam_owned,fairy_rando_on",
+		  "{@logic/any_kong,fairy_rando_on}",
+		  "@logic/key_8_room,@logic/cam_owned,@logic/any_kong,fairy_rando_off",
+		  "{@logic/blast-o-matic_doors,$can_open_helm_door_1,@logic/any_kong,fairy_rando_off}"
+		],
+		"visibility_rules": [
+		  "fairy_pool"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "Melon Crate 1",
+		"chest_unopened_img": "images/melon.png",
+		"chest_opened_img": "images/checks/melon_done.png",
+		"capture_item": true,
+		"capture_item_layout": "tracker_capture_item_only",
+		"access_rules": [
+		  "@logic/any_kong"
+		],
+		"visibility_rules": [
+		  "melon_pool,melon_crate_rando_on"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "Melon Crate 2",
+		"chest_unopened_img": "images/melon.png",
+		"chest_opened_img": "images/checks/melon_done.png",
+		"capture_item": true,
+		"capture_item_layout": "tracker_capture_item_only",
+		"access_rules": [
+		  "@logic/any_kong"
+		],
+		"visibility_rules": [
+		  "melon_pool,melon_crate_rando_on"
+		],
+		"item_count": 1
+	  }
+	],
+	"map_locations": [
+	  {
+		"map": "islesmap",
+		"size": 25,
+		"x": 140,
+		"y": 115
+	  }
+	]
+  },
+  {
+	"name": "Snide's Rewards",
+	"chest_unopened_img": "images/snide.png",
+	"chest_opened_img": "images/checks/check_GB.gif",
+	"sections": [
+      {
+        "name": "Turn In Blueprint",
+	    "short_name": "Turn In",
+        "capture_item": true,
+		"capture_item_layout": "tracker_capture_item_only",
+		"clear_as_group": false,
+		"access_rules": [
+		  "$snide_rewards",
+		  "{@logic/any_kong}"
+	    ],
+	    "visibility_rules": [
+          "snide_pool"
+	    ],
+        "item_count": 40
+      },
+    ],
+    "map_locations": [
+      {
+        "map": "islesmap",
+	    "size": 20,
+        "x": 123,
+        "y": 120,
+		"restrict_visibility_rules": [
+		  "@logic/upper_krem_access"
+		]
+      },
+	  {
+		"map": "japesmap",
+		"size": 40,
+		"x": 440,
+		"y": 350,
+		"restrict_visibility_rules": [
+		  "@logic/japes_hillside,[@logic/japes_hillside_strict]"
+		]
+	  },
+	  {
+		"map": "aztecmap",
+		"size": 40,
+		"x": 456,
+		"y": 543,
+		"restrict_visibility_rules": [
+		  "@logic/aztec_door_access"
+		]
+	  },
+	  {
+		"map": "factorymap",
+		"size": 40,
+		"x": 250,
+		"y": 700,
+		"restrict_visibility_rules": [
+		  "@logic/testing_access",
+		  "@logic/factory_start_access,bananaport_all"
+		]
+	  },
+	  {
+		"map": "galleonmap",
+		"size": 40,
+		"x": 820,
+		"y": 212,
+		"restrict_visibility_rules": [
+		  "@logic/lighthouse_access,@logic/raised_water_access",
+		  "@logic/lighthouse_access,la,monkey_moves",
+		  "@logic/lighthouse_access,ch,monkey_moves",
+		  "@logic/planks_access,bananaport_all"
+		]
+	  },
+	  {
+		"map": "forestmap",
+		"size": 40,
+		"x": 323,
+		"y": 280,
+		"restrict_visibility_rules": [
+		  "@logic/day_access"
+		]
+	  },
+	  {
+		"map": "cavesmap",
+		"size": 40,
+		"x": 102,
+		"y": 628,
+		"restrict_visibility_rules": [
+		  "@logic/caves_ice_walls",
+		  "@logic/caves_lobby,portal_shuffle_on,caves_entry_siw"
+		]
+	  },
+	  {
+		"map": "castlemap",
+		"size": 40,
+		"x": 717,
+		"y": 277,
+		"restrict_visibility_rules": [
+		  "@logic/castle_above_climb,[@logic/castle_above_climb_strict]"
+		]
+	  }
+    ]
   }
 ]

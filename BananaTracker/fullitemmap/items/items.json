@@ -209,8 +209,6 @@
 	  "initial_quantity": 0,
     "max_quantity": 8
   },
-
-
   {
     "name": "Chunky Kong",
     "type": "toggle",
@@ -265,6 +263,7 @@
   {
 	"name": "Potion",
 	"type": "toggle",
+	"initial_active_state": true,
 	"loop": "true",
 	"img": "images/checks/potion.png",
 	"codes": "pot"
@@ -272,6 +271,7 @@
   {
 	"name": "Donkey Potion",
 	"type": "toggle",
+	"initial_active_state": true,
 	"loop": "true",
 	"img": "images/checks/potion_donkey.png",
 	"codes": "dk_pot"
@@ -279,6 +279,7 @@
   {
 	"name": "Diddy Potion",
 	"type": "toggle",
+	"initial_active_state": true,
 	"loop": "true",
 	"img": "images/checks/potion_diddy.png",
 	"codes": "di_pot"
@@ -286,6 +287,7 @@
   {
 	"name": "Lanky Potion",
 	"type": "toggle",
+	"initial_active_state": true,
 	"loop": "true",
 	"img": "images/checks/potion_lanky.png",
 	"codes": "la_pot"
@@ -293,6 +295,7 @@
   {
 	"name": "Tiny Potion",
 	"type": "toggle",
+	"initial_active_state": true,
 	"loop": "true",
 	"img": "images/checks/potion_tiny.png",
 	"codes": "ti_pot"
@@ -300,30 +303,48 @@
   {
 	"name": "Chunky Potion",
 	"type": "toggle",
+	"initial_active_state": true,
 	"loop": "true",
 	"img": "images/checks/potion_chunky.png",
 	"codes": "ch_pot"
   },
   {
-    "name": "Cranky Kong",
+    "name": "Cranky's Lab",
 	"type": "toggle",
 	"loop": "true",
 	"img": "images/cranky.png",
 	"codes": "crankykong,ck"
   },
   {
-    "name": "Funky Kong",
+    "name": "Funky's Armory",
 	"type": "toggle",
 	"loop": "true",
 	"img": "images/funky.png",
 	"codes": "funkykong,fu"
   },
   {
-    "name": "Candy Kong",
+    "name": "Candy's Music Store",
 	"type": "toggle",
 	"loop": "true",
 	"img": "images/candy.png",
 	"codes": "candykong,ca"
+  },
+  {
+	"name": "Snide's HQ",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/snide.png",
+	"codes": "snide,sn"
+  },
+  {
+	"name": "Wrinkly Hints",
+	"type": "toggle",
+	"initial_active_state": false,
+	"ignore_user_input": true,
+	"allow_disabled": false,
+	"capturable": true,
+	"img": "images/settings/wrinkly.png",
+	"codes": "wrinkly"
   },
   {
 	"name": "K. Rool Order",
@@ -334,12 +355,12 @@
 	"codes": "krool,kr"
   },
   {
-    "name": "K. Rool Order (Right-click to enable Balanced Phases)",
+    "name": "K. Rool Order (Right-click to require Baboon Blast for DK Phase)",
     "type": "toggle_badged",
     "base_item": "krool",
 	"initial_active_state": true,
-    "img": "images/settings/krool_balanced.png",
-    "codes": "krool_balanced"
+    "img": "images/settings/krool_blast.png",
+    "codes": "krool_blast"
   },
   {
 	"name": "Krem Isle Top",
@@ -359,6 +380,14 @@
 	"type": "static",
 	"img": "images/vine.png",
 	"codes": "helm_vine"
+  },
+  {
+	"name": "Helm Vines Spawner (Right-click for free Helm Lobby Bananaport)",
+	"type": "toggle_badged",
+	"base_item": "helm_vine",
+	"initial_active_state": true,
+	"img": "images/settings/helm_bananaport.png",
+	"codes": "helm_free_bananaport"
   },
   {
     "name": "Simian Slam",
@@ -420,6 +449,19 @@
     ]
   },
   {
+	"name": "Homing Ammo & Sniper Scope",
+	"type": "composite_toggle",
+	"codes": "homing_scope",
+	"item_left": "ha",
+	"item_right": "sns",
+	"images": [
+	  { "left": false, "right": false, "img": "images/homingscope.png", "img_mods": "@disabled"},
+	  { "left": true, "right": false, "img": "images/homingscope1.png"},
+	  { "left": false, "right": true, "img": "images/homingscope2.png"},
+	  { "left": true, "right": true, "img": "images/homingscope.png"}
+	]
+  },
+  {
     "name": "Camera",
     "type": "toggle",
     "loop": "true",
@@ -436,23 +478,43 @@
   {
     "name": "Camera & Shockwave",
     "type": "progressive",
-    "stages": [
-      {
-        "img": "images/filmwave1.png",
-        "codes": "film_no_wave",
+	"stages": [
+	  {
+		"img": "images/filmwave1.png",
+		"codes": "film_no_wave",
 		"inherit_codes": false
-      },
-      {
-        "img": "images/filmwave2.png",
-        "codes": "no_film_wave",
+	  },
+	  {
+		"img": "images/filmwave2.png",
+		"codes": "no_film_wave",
 		"inherit_codes": false
-      },
-      {
-        "img": "images/filmwave.png",
-        "codes": "film_wave",
+	  },
+	  {
+		"img": "images/filmwave.png",
+		"codes": "film_wave",
 		"inherit_codes": false
-      }
-    ]
+	  },
+	]
+  },
+  {
+	"name": "Camera & Shockwave",
+	"type": "composite_toggle",
+	"codes": "cam_wave",
+	"item_left": "cam",
+	"item_right": "wave",
+	"images": [
+	  { "left": false, "right": false, "img": "images/filmwave.png", "img_mods": "@disabled"},
+	  { "left": true, "right": false, "img": "images/filmwave1.png"},
+	  { "left": false, "right": true, "img": "images/filmwave2.png"},
+	  { "left": true, "right": true, "img": "images/filmwave.png"}
+	]
+  },
+  {
+	"name": "Climbing", 
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/climb.png",
+	"codes": "climbing,climb"
   },
   {
    "name": "Diving",
@@ -499,6 +561,20 @@
     "max_quantity": 5
   },
   {
+    "name": "N64 Coin",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/n64_coin.png",
+	"codes": "n64coin_full"
+  },
+  {
+    "name": "Rareware Coin",
+	"type": "toggle",
+	"loop": "true",
+	"img": "images/rareware_coin.png",
+	"codes": "rwcoin_full"
+  },
+  {
     "name": "Company Coins",
     "type": "progressive",
     "stages": [
@@ -520,18 +596,17 @@
     ]
   },
   {
-    "name": "N64 Coin",
-	"type": "toggle",
-	"loop": "true",
-	"img": "images/n64_coin.png",
-	"codes": "n64coin_full"
-  },
-  {
-    "name": "Rareware Coin",
-	"type": "toggle",
-	"loop": "true",
-	"img": "images/rareware_coin.png",
-	"codes": "rwcoin_full"
+	"name": "Company Coins",
+	"type": "composite_toggle",
+	"codes": "compcoins",
+	"item_left": "n64coin_full",
+	"item_right": "rwcoin_full",
+	"images": [
+	  { "left": false, "right": false, "img": "images/n64rw_coin.png", "img_mods": "@disabled"},
+	  { "left": true, "right": false, "img": "images/n64rw_coin_rwbw.png"},
+	  { "left": false, "right": true, "img": "images/n64rw_coin_n64bw.png"},
+	  { "left": true, "right": true, "img": "images/n64rw_coin.png"}
+	]
   },
   {
     "name": "Battle Crowns",
@@ -540,7 +615,7 @@
     "codes": "crowns,cr",
     "swap_actions": false,
 	"initial_quantity": 0,
-    "max_quantity": 10
+    "max_quantity": 32
   },
   {
     "name": "Banana Fairies",
@@ -567,7 +642,7 @@
     "codes": "goldenbananas,gb",
     "swap_actions": false,
 	"initial_quantity": 0,
-    "max_quantity": 201
+    "max_quantity": 250
   },
   {
     "name": "Keys",
@@ -585,7 +660,7 @@
     "codes": "rainbow,rbc",
     "swap_actions": false,
     "initial_quantity": 0,
-    "max_quantity": 16
+    "max_quantity": 30
   },
   {
 	"name": "Ice Trap",
@@ -594,517 +669,48 @@
 	"codes": "icetrap,it",
 	"swap_actions": false,
 	"initial_quantity": 0,
-	"max_quantity": 20
+	"max_quantity": 50
   },
   {
-	"name": "Krem Isle Top Access Pad",
+	"name": "Hint Locations (*Vanilla*, Dos' Doors, Season 5, Shuffled)",
 	"type": "progressive",
 	"allow_disabled": false,
 	"loop": true,
 	"stages": [
 	  {
-	    "img": "images/question_mark.png",
-	    "codes": "helm_access_?",
+	    "img": "images/settings/wrinkly.png",
+	    "codes": "vanilla_hints",
 		"inherit_codes": false
       },
 	  {
-        "img": "images/tinypad.png",
-        "codes": "helm_access_port",
+        "img": "images/settings/t_s.png",
+        "codes": "dos_hints",
 		"inherit_codes": false
       },
       {
-        "img": "images/dkpad.png",
-        "codes": "helm_access_blast",
+        "img": "images/5_hints.png",
+        "codes": "season_5_hints",
 		"inherit_codes": false
       },
-      {
-        "img": "images/lankypad.png",
-        "codes": "helm_access_balloon",
+	  {
+        "img": "images/question_mark.png",
+        "codes": "shuffled_hints",
 		"inherit_codes": false
       }
 	]
   },
   {
-	"name": "Helm Lobby Switch",
-	"type": "progressive",
-	"allow_disabled": false,
-	"loop": true,
-	"stages": [
-	  {
-	    "img": "images/question_mark.png",
-	    "codes": "helm_switch_?",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/chunkypad.png",
-        "codes": "helm_switch_gone",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/dk_move.png",
-        "codes": "helm_switch_grab",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/diddy_move.png",
-        "codes": "helm_switch_charge",
-		"inherit_codes": false
-      },
-	  {
-		"img": "images/dk_inst.png",
-		"codes": "helm_switch_bongos",
-		"inherit_codes": false
-	  },
-	  {
-		"img": "images/diddy_inst.png",
-		"codes": "helm_switch_guitar",
-		"inherit_codes": false
-	  },
-	  {
-		"img": "images/lanky_inst.png",
-		"codes": "helm_switch_trombone",
-		"inherit_codes": false
-	  },
-	  {
-		"img": "images/tiny_inst.png",
-		"codes": "helm_switch_saxophone",
-		"inherit_codes": false
-	  },
-	  {
-		"img": "images/chunky_inst.png",
-		"codes": "helm_switch_triangle",
-		"inherit_codes": false
-	  }
-	]
+	"name": "Foolish Location",
+	"type": "toggle",
+	"initial_active_state": true,
+	"img": "images/hints/getout.png",
+	"codes": "fool"
   },
   {
-	"name": "Helm Phase 1",
-	"type": "progressive",
-	"allow_disabled": false,
-	"loop": true,
-	"stages": [
-	  {
-	    "img": "images/question_mark.png",
-	    "codes": "helm_phase_1_?",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/dk.png",
-        "codes": "helm_phase_1_dk",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/diddy_hat.png",
-        "codes": "helm_phase_1_di",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/lanky.png",
-        "codes": "helm_phase_1_la",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/tiny.png",
-        "codes": "helm_phase_1_ti",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/chunky.png",
-        "codes": "helm_phase_1_ch",
-		"inherit_codes": false
-      },
-	  {
-		"img": "images/settings/funky_thumb.png",
-		"codes": "helm_phase_1_fu",
-		"inherit_codes": false
-	  }
-	]
-  },
-  {
-	"name": "Helm Phase 2",
-	"type": "progressive",
-	"allow_disabled": false,
-	"loop": true,
-	"stages": [
-	  {
-	    "img": "images/question_mark.png",
-	    "codes": "helm_phase_2_?",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/dk.png",
-        "codes": "helm_phase_2_dk",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/diddy_hat.png",
-        "codes": "helm_phase_2_di",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/lanky.png",
-        "codes": "helm_phase_2_la",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/tiny.png",
-        "codes": "helm_phase_2_ti",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/chunky.png",
-        "codes": "helm_phase_2_ch",
-		"inherit_codes": false
-      },
-	  {
-		"img": "images/settings/funky_thumb.png",
-		"codes": "helm_phase_2_fu",
-		"inherit_codes": false
-	  }
-	]
-  },
-  {
-	"name": "Helm Phase 3",
-	"type": "progressive",
-	"allow_disabled": false,
-	"loop": true,
-	"stages": [
-	  {
-	    "img": "images/question_mark.png",
-	    "codes": "helm_phase_3_?",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/dk.png",
-        "codes": "helm_phase_3_dk",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/diddy_hat.png",
-        "codes": "helm_phase_3_di",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/lanky.png",
-        "codes": "helm_phase_3_la",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/tiny.png",
-        "codes": "helm_phase_3_ti",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/chunky.png",
-        "codes": "helm_phase_3_ch",
-		"inherit_codes": false
-      },
-	  {
-		"img": "images/settings/funky_thumb.png",
-		"codes": "helm_phase_3_fu",
-		"inherit_codes": false
-	  }
-	]
-  },
-  {
-	"name": "Helm Phase 4",
-	"type": "progressive",
-	"allow_disabled": false,
-	"loop": true,
-	"stages": [
-	  {
-	    "img": "images/question_mark.png",
-	    "codes": "helm_phase_4_?",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/dk.png",
-        "codes": "helm_phase_4_dk",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/diddy_hat.png",
-        "codes": "helm_phase_4_di",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/lanky.png",
-        "codes": "helm_phase_4_la",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/tiny.png",
-        "codes": "helm_phase_4_ti",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/chunky.png",
-        "codes": "helm_phase_4_ch",
-		"inherit_codes": false
-      },
-	  {
-		"img": "images/settings/funky_thumb.png",
-		"codes": "helm_phase_4_fu",
-		"inherit_codes": false
-	  }
-	]
-  },
-  {
-	"name": "Helm Phase 5",
-	"type": "progressive",
-	"allow_disabled": false,
-	"loop": true,
-	"stages": [
-	  {
-	    "img": "images/question_mark.png",
-	    "codes": "helm_phase_5_?",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/dk.png",
-        "codes": "helm_phase_5_dk",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/diddy_hat.png",
-        "codes": "helm_phase_5_di",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/lanky.png",
-        "codes": "helm_phase_5_la",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/tiny.png",
-        "codes": "helm_phase_5_ti",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/chunky.png",
-        "codes": "helm_phase_5_ch",
-		"inherit_codes": false
-      },
-	  {
-		"img": "images/settings/funky_thumb.png",
-		"codes": "helm_phase_5_fu",
-		"inherit_codes": false
-	  }
-	]
-  },
-    {
-	"name": "K. Rool Phase 1",
-	"type": "progressive",
-	"allow_disabled": false,
-	"loop": true,
-	"stages": [
-	  {
-	    "img": "images/question_mark.png",
-	    "codes": "krool_phase_1_?",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/dk.png",
-        "codes": "krool_phase_1_dk",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/diddy_hat.png",
-        "codes": "krool_phase_1_di",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/lanky.png",
-        "codes": "krool_phase_1_la",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/tiny.png",
-        "codes": "krool_phase_1_ti",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/chunky.png",
-        "codes": "krool_phase_1_ch",
-		"inherit_codes": false
-      },
-	  {
-		"img": "images/settings/funky_thumb.png",
-		"codes": "krool_phase_1_fu",
-		"inherit_codes": false
-	  }
-	]
-  },
-  {
-	"name": "K. Rool Phase 2",
-	"type": "progressive",
-	"allow_disabled": false,
-	"loop": true,
-	"stages": [
-	  {
-	    "img": "images/question_mark.png",
-	    "codes": "krool_phase_2_?",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/dk.png",
-        "codes": "krool_phase_2_dk",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/diddy_hat.png",
-        "codes": "krool_phase_2_di",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/lanky.png",
-        "codes": "krool_phase_2_la",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/tiny.png",
-        "codes": "krool_phase_2_ti",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/chunky.png",
-        "codes": "krool_phase_2_ch",
-		"inherit_codes": false
-      },
-	  {
-		"img": "images/settings/funky_thumb.png",
-		"codes": "krool_phase_2_fu",
-		"inherit_codes": false
-	  }
-	]
-  },
-  {
-	"name": "K. Rool Phase 3",
-	"type": "progressive",
-	"allow_disabled": false,
-	"loop": true,
-	"stages": [
-	  {
-	    "img": "images/question_mark.png",
-	    "codes": "krool_phase_3_?",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/dk.png",
-        "codes": "krool_phase_3_dk",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/diddy_hat.png",
-        "codes": "krool_phase_3_di",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/lanky.png",
-        "codes": "krool_phase_3_la",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/tiny.png",
-        "codes": "krool_phase_3_ti",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/chunky.png",
-        "codes": "krool_phase_3_ch",
-		"inherit_codes": false
-      },
-	  {
-		"img": "images/settings/funky_thumb.png",
-		"codes": "krool_phase_3_fu",
-		"inherit_codes": false
-	  }
-	]
-  },
-  {
-	"name": "K. Rool Phase 4",
-	"type": "progressive",
-	"allow_disabled": false,
-	"loop": true,
-	"stages": [
-	  {
-	    "img": "images/question_mark.png",
-	    "codes": "krool_phase_4_?",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/dk.png",
-        "codes": "krool_phase_4_dk",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/diddy_hat.png",
-        "codes": "krool_phase_4_di",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/lanky.png",
-        "codes": "krool_phase_4_la",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/tiny.png",
-        "codes": "krool_phase_4_ti",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/chunky.png",
-        "codes": "krool_phase_4_ch",
-		"inherit_codes": false
-      },
-	  {
-		"img": "images/settings/funky_thumb.png",
-		"codes": "krool_phase_4_fu",
-		"inherit_codes": false
-	  }
-	]
-  },
-  {
-	"name": "K. Rool Phase 5",
-	"type": "progressive",
-	"allow_disabled": false,
-	"loop": true,
-	"stages": [
-	  {
-	    "img": "images/question_mark.png",
-	    "codes": "krool_phase_5_?",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/dk.png",
-        "codes": "krool_phase_5_dk",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/diddy_hat.png",
-        "codes": "krool_phase_5_di",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/lanky.png",
-        "codes": "krool_phase_5_la",
-		"inherit_codes": false
-      },
-	  {
-        "img": "images/tiny.png",
-        "codes": "krool_phase_5_ti",
-		"inherit_codes": false
-      },
-      {
-        "img": "images/chunky.png",
-        "codes": "krool_phase_5_ch",
-		"inherit_codes": false
-      },
-	  {
-		"img": "images/settings/funky_thumb.png",
-		"codes": "krool_phase_5_fu",
-		"inherit_codes": false
-	  }
-	]
+	"name": "Kong Path",
+	"type": "toggle",
+	"initial_active_state": true,
+	"img": "images/settings/tag_barrel.png",
+	"codes": "kongs"
   }
 ]

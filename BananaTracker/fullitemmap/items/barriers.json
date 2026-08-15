@@ -10,7 +10,15 @@
     "name": "Japes Shellhive Gate",
 	"type": "toggle",
 	"img": "images/barriers/japes_shellhive_gate.png",
+	"initial_active_state": false,
 	"codes": "barrier_japes_shellhive"
+  },
+  {
+	"name": "Aztec Tiny Temple Ice",
+	"type": "toggle",
+	"img": "images/barriers/aztec_tiny_temple_ice.png",
+	"initial_active_state": true,
+	"codes": "barrier_aztec_ice"
   },
   {
     "name": "Aztec Tunnel Door",
@@ -30,6 +38,7 @@
     "name": "Aztec Llama Switches",
 	"type": "toggle",
 	"img": "images/barriers/aztec_llama_switches.png",
+	"initial_active_state": false,
 	"codes": "barrier_aztec_llama"
   },
   {
@@ -37,6 +46,7 @@
 	"type": "toggle",
 	"img": "images/barriers/factory_production_room.png",
 	"initial_active_state": true,
+	"disabled_img_mods": "saturation|0.0,brightness|0.36",
 	"codes": "barrier_factory_production"
   },
   {
@@ -44,19 +54,23 @@
 	"type": "toggle",
 	"img": "images/barriers/factory_testing_gate.png",
 	"initial_active_state": true,
+	"disabled_img_mods": "saturation|0.0,brightness|0.36",
 	"codes": "barrier_factory_testing"
   },
   {
     "name": "Galleon Lighthouse Gate",
 	"type": "toggle",
 	"img": "images/barriers/galleon_lighthouse_gate.png",
-	"initial_active_state": true,
+	"initial_active_state": false,
+	"disabled_img_mods": "saturation|0.0,brightness|0.6",
 	"codes": "barrier_galleon_lighthouse"
   },
   {
     "name": "Galleon Shipyard Area Gate",
 	"type": "toggle",
 	"img": "images/barriers/galleon_shipyard_gate.png",
+	"initial_active_state": true,
+	"disabled_img_mods": "saturation|0.0,brightness|0.6",
 	"codes": "barrier_galleon_shipyard"
   },
   {
@@ -64,18 +78,29 @@
 	"type": "toggle",
 	"img": "images/barriers/galleon_seasick_ship.png",
 	"initial_active_state": true,
+	"disabled_img_mods": "saturation|0.0,brightness|0.6",
 	"codes": "barrier_galleon_seasick"
+  },
+  {
+	"name": "Galleon Treasure Room",
+	"type": "toggle",
+	"img": "images/barriers/galleon_treasure_room.png",
+	"initial_active_state": false,
+	"disabled_img_mods": "saturation|0.0,brightness|0.6",
+	"codes": "barrier_galleon_treasure"
   },
   {
     "name": "Forest Green Tunnel",
 	"type": "toggle",
 	"img": "images/barriers/forest_green_tunnel.png",
+	"initial_active_state": false,
 	"codes": "barrier_forest_green"
   },
   {
     "name": "Forest Yellow Tunnel",
 	"type": "toggle",
 	"img": "images/barriers/forest_yellow_tunnel.png",
+	"initial_active_state": false,
 	"codes": "barrier_forest_yellow"
   },
   {
@@ -83,6 +108,1109 @@
 	"type": "toggle",
 	"img": "images/barriers/caves_igloo_pads.png",
 	"initial_active_state": true,
+	"disabled_img_mods": "saturation|0.0,brightness|0.44",
 	"codes": "barrier_caves_igloo"
+  },
+  {
+    "name": "Caves Ice Walls",
+	"type": "toggle",
+	"img": "images/barriers/caves_ice_walls.png",
+	"initial_active_state": true,
+	"disabled_img_mods": "saturation|0.0,brightness|0.44",
+	"codes": "barrier_caves_ice"
+  },
+  {
+    "name": "Castle Crypt Doors",
+	"type": "toggle",
+	"img": "images/barriers/castle_crypt_doors.png",
+	"initial_active_state": false,
+	"codes": "barrier_castle_crypt"
+  },
+  {
+    "name": "Helm Star Gates",
+	"type": "toggle",
+	"img": "images/barriers/helm_star_gates.png",
+	"initial_active_state": true,
+	"disabled_img_mods": "saturation|0.0,brightness|0.9",
+	"codes": "barrier_helm_star"
+  },
+  {
+    "name": "Helm Punch Doors",
+	"type": "toggle",
+	"img": "images/barriers/helm_punch_gates.png",
+	"initial_active_state": true,
+	"disabled_img_mods": "saturation|0.0,brightness|0.9",
+	"codes": "barrier_helm_punch"
+  },
+  
+  {
+	"name": "Japes Kong Cage",
+	"type": "static",
+	"img": "images/japes_puzzle.png",
+	"codes": "k_puzzle_japes"
+  },
+  {
+	"name": "Aztec Tiny Temple Kong Cage",
+	"type": "static",
+	"img": "images/tiny_temple.png",
+	"codes": "k_puzzle_tiny"
+  },
+  {
+	"name": "Aztec Llama Temple Spit Instrument",
+	"type": "static",
+	"img": "images/llama_inst.png",
+	"codes": "k_puzzle_llama_inst"
+  },
+  {
+	"name": "Aztec Llama Temple Kong Cage",
+	"type": "static",
+	"img": "images/llama.png",
+	"codes": "k_puzzle_llama_gun"
+  },
+  {
+	"name": "Factory Kong Cage",
+	"type": "static",
+	"img": "images/factory.png",
+	"codes": "k_puzzle_factory"
+  },
+  {
+	"name": "Japes Kong Puzzle Switches",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+        "img": "images/dk_gun.png",
+        "codes": "japes_puzzle_dk",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_gun.png",
+        "codes": "japes_puzzle_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lanky_gun.png",
+        "codes": "japes_puzzle_la",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tiny_gun.png",
+        "codes": "japes_puzzle_ti",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky_gun.png",
+        "codes": "japes_puzzle_ch",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/settings/any_gun.png",
+        "codes": "japes_puzzle_any",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "japes_puzzle_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Tiny Temple KONG Letters Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+      {
+        "img": "images/diddy_move.png",
+        "codes": "tiny_puzzle_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky_move.png",
+        "codes": "tiny_puzzle_ch",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "tiny_puzzle_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Llama Temple Kong Puzzle Instrument Pad/Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+        "img": "images/settings/dk_gun_inst.png",
+        "codes": "llama_kong_dk",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/settings/diddy_gun_inst.png",
+        "codes": "llama_kong_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/settings/lanky_gun_inst.png",
+        "codes": "llama_kong_la",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/settings/tiny_gun_inst.png",
+        "codes": "llama_kong_ti",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/settings/chunky_gun_inst.png",
+        "codes": "llama_kong_ch",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/settings/any_gun_inst.png",
+        "codes": "llama_kong_any",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "llama_kong_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Factory Slam Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "factory_puzzle_?",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/dk.png",
+        "codes": "factory_puzzle_dk",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_hat.png",
+        "codes": "factory_puzzle_di",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lanky.png",
+        "codes": "factory_puzzle_la",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tiny.png",
+        "codes": "factory_puzzle_ti",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky.png",
+        "codes": "factory_puzzle_ch",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Krem Isle Top Access Pad",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+        "img": "images/tinypad.png",
+        "codes": "helm_access_port",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/dkpad.png",
+        "codes": "helm_access_blast",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/lankypad.png",
+        "codes": "helm_access_balloon",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "helm_access_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Helm Lobby Vines Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+        "img": "images/chunkypad.png",
+        "codes": "helm_switch_gone",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/dk_move.png",
+        "codes": "helm_switch_grab",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_move.png",
+        "codes": "helm_switch_charge",
+		"inherit_codes": false
+      },
+	  {
+		"img": "images/dk_inst.png",
+		"codes": "helm_switch_bongos",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/diddy_inst.png",
+		"codes": "helm_switch_guitar",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/lanky_inst.png",
+		"codes": "helm_switch_trombone",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/tiny_inst.png",
+		"codes": "helm_switch_saxophone",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/chunky_inst.png",
+		"codes": "helm_switch_triangle",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "helm_switch_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Aztec Lobby Back Room Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "aztec_lobby_door_feather",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/chunky_gun.png",
+        "codes": "aztec_lobby_door_pineapple",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/dk_gun.png",
+        "codes": "aztec_lobby_door_coconut",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_gun.png",
+        "codes": "aztec_lobby_door_peanut",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/lanky_gun.png",
+        "codes": "aztec_lobby_door_grape",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/settings/any_gun.png",
+        "codes": "aztec_lobby_door_any",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/question_mark.png",
+        "codes": "aztec_lobby_door_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Forest Lobby Fairy Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "forest_lobby_fairy_feather",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/chunky_gun.png",
+        "codes": "forest_lobby_fairy_pineapple",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/dk_gun.png",
+        "codes": "forest_lobby_fairy_coconut",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_gun.png",
+        "codes": "forest_lobby_fairy_peanut",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/lanky_gun.png",
+        "codes": "forest_lobby_fairy_grape",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/settings/any_gun.png",
+        "codes": "forest_lobby_fairy_any",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/question_mark.png",
+        "codes": "forest_lobby_fairy_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Isles Rocketbarrel Pad",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/lanky_inst.png",
+	    "codes": "isles_rb_pad_trombone",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/tiny_inst.png",
+        "codes": "isles_rb_pad_saxophone",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/chunky_inst.png",
+        "codes": "isles_rb_pad_triangle",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/dk_inst.png",
+        "codes": "isles_rb_pad_bongos",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/diddy_inst.png",
+        "codes": "isles_rb_pad_guitar",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/any_inst.png",
+        "codes": "isles_rb_pad_any",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/question_mark.png",
+        "codes": "isles_rb_pad_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Japes Hive Area Switches",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "japes_hive_feather",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/chunky_gun.png",
+        "codes": "japes_hive_pineapple",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/dk_gun.png",
+        "codes": "japes_hive_coconut",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/diddy_gun.png",
+        "codes": "japes_hive_peanut",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/lanky_gun.png",
+        "codes": "japes_hive_grape",
+		"inherit_codes": false
+      },
+      {
+        "img": "images/settings/any_gun.png",
+        "codes": "japes_hive_any",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/question_mark.png",
+        "codes": "japes_hive_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Japes First Tunnel Switches",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/diddy_gun.png",
+	    "codes": "japes_first_tunnel_peanut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/lanky_gun.png",
+	    "codes": "japes_first_tunnel_grape",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "japes_first_tunnel_feather",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/chunky_gun.png",
+	    "codes": "japes_first_tunnel_pineapple",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/dk_gun.png",
+	    "codes": "japes_first_tunnel_coconut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/settings/any_gun.png",
+	    "codes": "japes_first_tunnel_any",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/question_mark.png",
+        "codes": "japes_first_tunnel_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Japes Painting Room Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/diddy_gun.png",
+	    "codes": "japes_painting_peanut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/lanky_gun.png",
+	    "codes": "japes_painting_grape",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "japes_painting_feather",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/chunky_gun.png",
+	    "codes": "japes_painting_pineapple",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/dk_gun.png",
+	    "codes": "japes_painting_coconut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/settings/any_gun.png",
+	    "codes": "japes_painting_any",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/question_mark.png",
+        "codes": "japes_painting_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Japes Rambi Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/dk_gun.png",
+	    "codes": "japes_rambi_coconut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/diddy_gun.png",
+	    "codes": "japes_rambi_peanut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/lanky_gun.png",
+	    "codes": "japes_rambi_grape",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "japes_rambi_feather",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/chunky_gun.png",
+	    "codes": "japes_rambi_pineapple",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/settings/any_gun.png",
+	    "codes": "japes_rambi_any",
+		"inherit_codes": false
+      },
+	  {
+        "img": "images/question_mark.png",
+        "codes": "japes_rambi_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Aztec First Kasplat Switches",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/dk_gun.png",
+	    "codes": "aztec_kasplat_coconut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/diddy_gun.png",
+	    "codes": "aztec_kasplat_peanut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/lanky_gun.png",
+	    "codes": "aztec_kasplat_grape",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "aztec_kasplat_feather",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/chunky_gun.png",
+	    "codes": "aztec_kasplat_pineapple",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/settings/any_gun.png",
+	    "codes": "aztec_kasplat_any",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "aztec_kasplat_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Aztec Connecting Tunnel Pad",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/diddy_inst.png",
+	    "codes": "aztec_tunnel_guitar",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/lanky_inst.png",
+	    "codes": "aztec_tunnel_trombone",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/tiny_inst.png",
+	    "codes": "aztec_tunnel_saxophone",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/chunky_inst.png",
+	    "codes": "aztec_tunnel_triangle",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/dk_inst.png",
+	    "codes": "aztec_tunnel_bongos",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/any_inst.png",
+	    "codes": "aztec_tunnel_any",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "aztec_tunnel_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Aztec Llama Temple Front Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/dk_gun.png",
+	    "codes": "aztec_llama_f_coconut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/diddy_gun.png",
+	    "codes": "aztec_llama_f_peanut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/lanky_gun.png",
+	    "codes": "aztec_llama_f_grape",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "aztec_llama_f_feather",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/chunky_gun.png",
+	    "codes": "aztec_llama_f_pineapple",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/settings/any_gun.png",
+	    "codes": "aztec_llama_f_any",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "aztec_llama_f_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Aztec Llama Temple Side Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/lanky_gun.png",
+	    "codes": "aztec_llama_s_grape",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "aztec_llama_s_feather",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/chunky_gun.png",
+	    "codes": "aztec_llama_s_pineapple",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/dk_gun.png",
+	    "codes": "aztec_llama_s_coconut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/diddy_gun.png",
+	    "codes": "aztec_llama_s_peanut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/settings/any_gun.png",
+	    "codes": "aztec_llama_s_any",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "aztec_llama_s_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Aztec Llama Temple Back Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "aztec_llama_b_feather",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/chunky_gun.png",
+	    "codes": "aztec_llama_b_pineapple",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/dk_gun.png",
+	    "codes": "aztec_llama_b_coconut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/diddy_gun.png",
+	    "codes": "aztec_llama_b_peanut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/lanky_gun.png",
+	    "codes": "aztec_llama_b_grape",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/settings/any_gun.png",
+	    "codes": "aztec_llama_b_any",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "aztec_llama_b_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Aztec Quicksand Tunnel Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/dk.png",
+	    "codes": "aztec_quicksand_dk",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/diddy_hat.png",
+	    "codes": "aztec_quicksand_di",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/lanky.png",
+	    "codes": "aztec_quicksand_la",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/tiny.png",
+	    "codes": "aztec_quicksand_ti",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/chunky.png",
+	    "codes": "aztec_quicksand_ch",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "aztec_quicksand_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Galleon Lighthouse Switches",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/dk_gun.png",
+	    "codes": "galleon_lighthouse_coconut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/diddy_gun.png",
+	    "codes": "galleon_lighthouse_peanut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/lanky_gun.png",
+	    "codes": "galleon_lighthouse_grape",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "galleon_lighthouse_feather",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/chunky_gun.png",
+	    "codes": "galleon_lighthouse_pineapple",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/settings/any_gun.png",
+	    "codes": "galleon_lighthouse_any",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "galleon_lighthouse_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Galleon Shipyard Switches",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/diddy_gun.png",
+	    "codes": "galleon_shipyard_peanut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/lanky_gun.png",
+	    "codes": "galleon_shipyard_grape",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "galleon_shipyard_feather",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/chunky_gun.png",
+	    "codes": "galleon_shipyard_pineapple",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/dk_gun.png",
+	    "codes": "galleon_shipyard_coconut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/settings/any_gun.png",
+	    "codes": "galleon_shipyard_any",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "galleon_shipyard_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Galleon Cannon Cave Switches",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/chunky_gun.png",
+	    "codes": "galleon_cannon_pineapple",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/dk_gun.png",
+	    "codes": "galleon_cannon_coconut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/diddy_gun.png",
+	    "codes": "galleon_cannon_peanut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/lanky_gun.png",
+	    "codes": "galleon_cannon_grape",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "galleon_cannon_feather",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/settings/any_gun.png",
+	    "codes": "galleon_cannon_any",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "galleon_cannon_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Forest Yellow Tunnel Switch",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/lanky_gun.png",
+	    "codes": "forest_yellow_grape",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "forest_yellow_feather",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/chunky_gun.png",
+	    "codes": "forest_yellow_pineapple",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/dk_gun.png",
+	    "codes": "forest_yellow_coconut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/diddy_gun.png",
+	    "codes": "forest_yellow_peanut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/settings/any_gun.png",
+	    "codes": "forest_yellow_any",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "forest_yellow_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Forest Green Tunnel Clock-Side Switches",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "forest_green_feather",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/chunky_gun.png",
+	    "codes": "forest_green_pineapple",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/dk_gun.png",
+	    "codes": "forest_green_coconut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/diddy_gun.png",
+	    "codes": "forest_green_peanut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/lanky_gun.png",
+	    "codes": "forest_green_grape",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/settings/any_gun.png",
+	    "codes": "forest_green_any",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "forest_green_?",
+		"inherit_codes": false
+      }
+	]
+  },
+  {
+	"name": "Forest Green Tunnel Apple-Side Switches",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+	    "img": "images/chunky_gun.png",
+	    "codes": "forest_apple_pineapple",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/dk_gun.png",
+	    "codes": "forest_apple_coconut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/diddy_gun.png",
+	    "codes": "forest_apple_peanut",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/lanky_gun.png",
+	    "codes": "forest_apple_grape",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/tiny_gun.png",
+	    "codes": "forest_apple_feather",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/settings/any_gun.png",
+	    "codes": "forest_apple_any",
+		"inherit_codes": false
+      },
+	  {
+	    "img": "images/question_mark.png",
+	    "codes": "forest_apple_?",
+		"inherit_codes": false
+      }
+	]
   }
 ]

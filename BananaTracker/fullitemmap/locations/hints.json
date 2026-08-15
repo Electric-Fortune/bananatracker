@@ -1,0 +1,1520 @@
+[
+  {
+	"name": "Isles Regions",
+	"color": "#D25757",
+	"children": [
+	  {
+		"name": "Hideout Helm",
+		"color": "#FF0000",
+		"sections": [
+		  {
+		    "name": "Hideout Helm",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0,
+			"force_invisibility_rules": [ "cb_rando" ]
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 140,
+			"y": 27
+		  }
+		]
+	  },
+	  {
+		"name": "Isles Colored Banana Rewards",
+		"short_name": "Isles CBs",
+		"sections": [
+		  {
+		    "name": "Isles Colored Banana Rewards",
+		    "short_name": "Isles CBs",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0,
+			"visibility_rules": [ "cb_rando" ]
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 140,
+			"y": 27
+		  }
+		]
+	  },
+	  {
+		"name": "Isles Shops",
+		"sections": [
+		  {
+		    "name": "Isles Shops",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+			"capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 174,
+			"y": 27
+		  }
+		]
+	  },
+	  {
+		"name": "Main Isle",
+		"sections": [
+		  {
+		    "name": "Main Isle",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 208,
+			"y": 27
+		  }
+		]
+	  },
+	  {
+		"name": "Outer Isles",
+		"sections": [
+		  {
+		    "name": "Outer Isles",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 242,
+			"y": 27
+		  }
+		]
+	  },
+	  {
+		"name": "Krem Isle",
+		"sections": [
+		  {
+		    "name": "Krem Isle",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 276,
+			"y": 27
+		  }
+		]
+	  },
+	  {
+		"name": "Japes - Forest Lobbies",
+		"short_name": "Early Lobbies",
+		"sections": [
+		  {
+		    "name": "Japes - Forest Lobbies",
+			"short_name": "Early Lobbies",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 310,
+			"y": 27
+		  }
+		]
+	  },
+	  {
+		"name": "Caves - Helm Lobbies",
+		"short_name": "Late Lobbies",
+		"sections": [
+		  {
+		    "name": "Caves - Helm Lobbies",
+			"short_name": "Late Lobbies",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 344,
+			"y": 27
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"name": "Japes Regions",
+	"color": "#59FF64",
+	"children": [
+	  {
+		"name": "Japes Colored Banana Rewards",
+		"short_name": "Japes CBs",
+		"sections": [
+		  {
+		    "name": "Japes Colored Banana Rewards",
+		    "short_name": "Japes CBs",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 140,
+			"y": 75
+		  }
+		]
+	  },
+	  {
+		"name": "Japes Shops",
+		"sections": [
+		  {
+		    "name": "Japes Shops",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 174,
+			"y": 75
+		  }
+		]
+	  },
+	  {
+		"name": "Japes Lowlands",
+		"sections": [
+		  {
+		    "name": "Japes Lowlands",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 208,
+			"y": 75
+		  }
+		]
+	  },
+	  {
+		"name": "Japes Hillside",
+		"sections": [
+		  {
+		    "name": "Japes Hillside",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 242,
+			"y": 75
+		  }
+		]
+	  },
+	  {
+		"name": "Japes Stormy Tunnel Area",
+		"short_name": "Japes Stormy/Tunnel",
+		"sections": [
+		  {
+		    "name": "Stormy Tunnel Area",
+		    "short_name": "Japes Stormy/Tunnel",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 276,
+			"y": 75
+		  }
+		]
+	  },
+	  {
+		"name": "Japes Hive Tunnel Area",
+		"short_name": "Japes Hive/Tunnel",
+		"sections": [
+		  {
+		    "name": "Hive Tunnel Area",
+			"short_name": "Japes Hive/Tunnel",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 310,
+			"y": 75
+		  }
+		]
+	  },
+	  {
+		"name": "Japes Caves & Mines",
+		"short_name": "Japes Caves/Mines",
+		"sections": [
+		  {
+		    "name": "Japes Caves & Mines",
+			"short_name": "Japes Caves/Mines",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 344,
+			"y": 75
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"name": "Aztec Regions",
+	"color": "#FFA010",
+	"children": [
+	  {
+		"name": "Aztec Colored Banana Rewards",
+		"short_name": "Aztec CBs",
+		"sections": [
+		  {
+		    "name": "Aztec Colored Banana Rewards",
+		    "short_name": "Aztec CBs",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 140,
+			"y": 124
+		  }
+		]
+	  },
+	  {
+		"name": "Aztec Shops",
+		"sections": [
+		  {
+		    "name": "Aztec Shops",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 174,
+			"y": 124
+		  }
+		]
+	  },
+	  {
+		"name": "Aztec Oasis and Totem Area",
+		"short_name": "Aztec Oasis/Totem",
+		"sections": [
+		  {
+		    "name": "Aztec Oasis and Totem Area",
+			"short_name": "Aztec Oasis/Totem",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 208,
+			"y": 124
+		  }
+		]
+	  },
+	  {
+		"name": "Aztec Tiny Temple",
+		"sections": [
+		  {
+		    "name": "Aztec Tiny Temple",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 242,
+			"y": 124
+		  }
+		]
+	  },
+	  {
+		"name": "Aztec Various Tunnels",
+		"short_name": "Aztec Tunnels",
+		"sections": [
+		  {
+		    "name": "Aztec Various Tunnels",
+			"short_name": "Aztec Tunnels",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 276,
+			"y": 124
+		  }
+		]
+	  },
+	  {
+		"name": "Aztec Llama Temple",
+		"sections": [
+		  {
+		    "name": "Aztec Llama Temple",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 310,
+			"y": 124
+		  }
+		]
+	  },
+	  {
+		"name": "Aztec 5 Door Temple",
+		"short_name": "Aztec 5DT",
+		"sections": [
+		  {
+		    "name": "Aztec 5 Door Temple",
+		    "short_name": "Aztec 5DT",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 344,
+			"y": 124
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"name": "Factory Regions",
+	"color": "#B5CDFF",
+	"children": [
+	  {
+		"name": "Factory Colored Banana Rewards",
+		"short_name": "Factory CBs",
+		"sections": [
+		  {
+		    "name": "Factory Colored Banana Rewards",
+		    "short_name": "Factory CBs",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 140,
+			"y": 172
+		  }
+		]
+	  },
+	  {
+		"name": "Factory Shops",
+		"sections": [
+		  {
+		    "name": "Factory Shops",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 174,
+			"y": 172
+		  }
+		]
+	  },
+	  {
+		"name": "Factory Start",
+		"sections": [
+		  {
+		    "name": "Factory Start",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0,
+			"visibility_rules": [ "vanilla_hints", "shuffled_hints" ],
+			"force_invisibility_rules": [ "season_5_hints", "dos_hints" ]
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 208,
+			"y": 172
+		  }
+		]
+	  },
+	  {
+		"name": "Factory Storage & Arcade Area",
+		"short_name": "Factory Storage/Arcade",
+		"sections": [
+		  {
+		    "name": "Factory Storage & Arcade Area",
+			"short_name": "Factory Storage/Arcade",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 242,
+			"y": 172
+		  }
+		]
+	  },
+	  {
+		"name": "Factory Testing Area",
+		"short_name": "Factory Testing",
+		"sections": [
+		  {
+		    "name": "Factory Testing Area",
+			"short_name": "Factory Testing",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 276,
+			"y": 172
+		  }
+		]
+	  },
+	  {
+		"name": "Factory R&D Area",
+		"short_name": "Factory R&D",
+		"sections": [
+		  {
+		    "name": "Factory R&D Area",
+		    "short_name": "Factory R&D",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 310,
+			"y": 172
+		  }
+		]
+	  },
+	  
+	  {
+		"name": "Factory Production Room",
+		"short_name": "Factory Production",
+		"sections": [
+		  {
+		    "name": "Factory Production Room",
+			"short_name": "Factory Production",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 344,
+			"y": 172
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"name": "Galleon Regions",
+	"color": "#0C7DED",
+	"children": [
+	  {
+		"name": "Galleon Colored Banana Rewards",
+		"short_name": "Galleon CBs",
+		"sections": [
+		  {
+		    "name": "Galleon Colored Banana Rewards",
+		    "short_name": "Galleon CBs",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 140,
+			"y": 220
+		  }
+		]
+	  },
+	  {
+		"name": "Galleon Shops",
+		"sections": [
+		  {
+		    "name": "Galleon Shops",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 174,
+			"y": 220
+		  }
+		]
+	  },
+	  {
+		"name": "Galleon Caverns",
+		"sections": [
+		  {
+		    "name": "Galleon Caverns",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 208,
+			"y": 220
+		  }
+		]
+	  },
+	  {
+		"name": "Galleon Lighthouse Area",
+		"short_name": "Galleon Lighthouse",
+		"sections": [
+		  {
+		    "name": "Galleon Lighthouse Area",
+			"short_name": "Galleon Lighthouse",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 242,
+			"y": 220
+		  }
+		]
+	  },
+	  {
+		"name": "Galleon 5 Door Ship",
+		"short_name": "Galleon 5DS",
+		"sections": [
+		  {
+		    "name": "Galleon 5 Door Ship",
+			"short_name": "Galleon 5DS",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 276,
+			"y": 220
+		  }
+		]
+	  },
+	  {
+		"name": "Galleon Shipyard Outskirts",
+		"short_name": "Galleon Shipyard",
+		"sections": [
+		  {
+		    "name": "Galleon Shipyard Outskirts",
+		    "short_name": "Galleon Shipyard",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 310,
+			"y": 220
+		  }
+		]
+	  },
+	  {
+		"name": "Galleon Treasure Room",
+		"sections": [
+		  {
+		    "name": "Galleon Treasure Room",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 344,
+			"y": 220
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"name": "Forest Regions",
+	"color": "#BB1CFF",
+	"children": [
+	  {
+		"name": "Forest Colored Banana Rewards",
+		"short_name": "Forest CBs",
+		"sections": [
+		  {
+		    "name": "Forest Colored Banana Rewards",
+		    "short_name": "Forest CBs",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 140,
+			"y": 271
+		  }
+		]
+	  },
+	  {
+		"name": "Forest Shops",
+		"sections": [
+		  {
+		    "name": "Forest Shops",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 174,
+			"y": 271
+		  }
+		]
+	  },
+	  {
+		"name": "Forest Center & Beanstalk Area",
+		"sections": [
+		  {
+		    "name": "Forest Center/Beanstalk",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 208,
+			"y": 271
+		  }
+		]
+	  },
+	  {
+		"name": "Forest Mills",
+		"sections": [
+		  {
+		    "name": "Forest Mills",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 242,
+			"y": 271
+		  }
+		]
+	  },
+	  {
+		"name": "Forest Giant Mushroom Exterior",
+		"short_name": "Forest Mushroom Outside",
+		"sections": [
+		  {
+		    "name": "Forest Giant Mushroom Exterior",
+			"short_name": "Forest Mushroom Outside",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 276,
+			"y": 271
+		  }
+		]
+	  },
+	  {
+		"name": "Forest Giant Mushroom Interior",
+		"short_name": "Forest Mushroom Inside",
+		"sections": [
+		  {
+		    "name": "Forest Giant Mushroom Interior",
+		    "short_name": "Forest Mushroom Inside",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 310,
+			"y": 271
+		  }
+		]
+	  },
+	  {
+		"name": "Forest Owl Tree",
+		"sections": [
+		  {
+		    "name": "Forest Owl Tree",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 344,
+			"y": 271
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"name": "Caves Regions",
+	"color": "#3EE1E1",
+	"children": [
+	  {
+		"name": "Caves Colored Banana Rewards",
+		"short_name": "Caves CBs",
+		"sections": [
+		  {
+		    "name": "Caves Colored Banana Rewards",
+		    "short_name": "Caves CBs",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 140,
+			"y": 324
+		  }
+		]
+	  },
+	  {
+		"name": "Caves Shops",
+		"sections": [
+		  {
+		    "name": "Caves Shops",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 174,
+			"y": 324
+		  }
+		]
+	  },
+	  {
+		"name": "Caves Main Area",
+		"short_name": "Caves Main",
+		"sections": [
+		  {
+		    "name": "Caves Main Area",
+			"short_name": "Caves Main",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 208,
+			"y": 324
+		  }
+		]
+	  },
+	  {
+		"name": "Caves Igloo Area",
+		"short_name": "Caves Igloo",
+		"sections": [
+		  {
+		    "name": "Caves Igloo Area",
+			"short_name": "Caves Igloo",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 242,
+			"y": 324
+		  }
+		]
+	  },
+	  {
+		"name": "Caves Cabins Area",
+		"short_name": "Caves Cabins",
+		"sections": [
+		  {
+		    "name": "Caves Cabins Area",
+		    "short_name": "Caves Cabins",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 276,
+			"y": 324
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"name": "Castle Regions",
+	"color": "#E84898",
+	"children": [
+	  {
+		"name": "Castle Colored Banana Rewards",
+		"short_name": "Castle CBs",
+		"sections": [
+		  {
+		    "name": "Castle Colored Banana Rewards",
+		    "short_name": "Castle CBs",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 140,
+			"y": 377
+		  }
+		]
+	  },
+	  {
+		"name": "Castle Shops",
+		"sections": [
+		  {
+		    "name": "Castle Shops",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 174,
+			"y": 377
+		  }
+		]
+	  },
+	  {
+		"name": "Castle Surroundings",
+		"sections": [
+		  {
+		    "name": "Castle Surroundings",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 208,
+			"y": 377
+		  }
+		]
+	  },
+	  {
+		"name": "Castle Rooms",
+		"sections": [
+		  {
+		    "name": "Castle Rooms",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 242,
+			"y": 377
+		  }
+		]
+	  },
+	  {
+		"name": "Castle Underground",
+		"sections": [
+		  {
+		    "name": "Castle Underground",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 276,
+			"y": 377
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"name": "Global Regions",
+	"color": "#D25757",
+	"children": [
+	  {
+		"name": "Starting Items",
+		"sections": [
+		  {
+		    "name": "Starting Items",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 140,
+			"y": 427
+		  }
+		]
+	  },
+	  {
+		"name": "Troff & Scoff",
+		"short_name": "Bosses",
+		"sections": [
+		  {
+			"name": "Troff & Scoff",
+		    "short_name": "Bosses",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 174,
+			"y": 427
+		  }
+		]
+	  },
+	  {
+		"name": "1st - 8th Snide Rewards",
+		"short_name": "Snide 1-8",
+		"sections": [
+		  {
+			"name": "1st - 8th Snide Rewards",
+		    "short_name": "Snide 1-8",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0,
+			"visibility_rules": [ "vanilla_hints", "season_5_hints", "shuffled_hints" ],
+			"force_invisibility_rules": [ "dos_hints" ]
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 208,
+			"y": 427
+		  }
+		]
+	  },
+	  {
+		"name": "9th - 16th Snide Rewards",
+		"short_name": "Snide 9-16",
+		"sections": [
+		  {
+		    "name": "9th - 16th Snide Rewards",
+		    "short_name": "Snide 9-16",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0,
+			"visibility_rules": [ "vanilla_hints", "shuffled_hints" ],
+			"force_invisibility_rules": [ "season_5_hints", "dos_hints" ]
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 242,
+			"y": 427
+		  }
+		]
+	  },
+	  {
+		"name": "17th - 24th Snide Rewards",
+		"short_name": "Snide 17-24",
+		"sections": [
+		  {
+		    "name": "17th - 24th Snide Rewards",
+			"short_name": "Snide 17-24",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0,
+			"visibility_rules": [ "vanilla_hints", "shuffled_hints" ],
+			"force_invisibility_rules": [ "season_5_hints", "dos_hints" ]
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 276,
+			"y": 427
+		  }
+		]
+	  },
+	  {
+		"name": "25th - 32nd Snide Rewards",
+		"short_name": "Snide 25-32",
+		"sections": [
+		  {
+		    "name": "25th - 32nd Snide Rewards",
+			"short_name": "Snide 25-32",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0,
+			"visibility_rules": [ "vanilla_hints", "shuffled_hints" ],
+			"force_invisibility_rules": [ "season_5_hints", "dos_hints" ]
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 310,
+			"y": 427
+		  }
+		]
+	  },
+	  {
+		"name": "33rd - 40th Snide Rewards",
+		"short_name": "Snide 33-40",
+		"sections": [
+		  {
+		    "name": "33rd - 40th Snide Rewards",
+			"short_name": "Snide 33-40",
+		    "capture_item": true,
+			"capture_item_layout": "tracker_capture_item_hints",
+		    "capture_persist": true,
+		    "capture_badge_offset": "5,1",
+		    "hosted_item": "wrinkly",
+		    "item_count": 0,
+			"visibility_rules": [ "vanilla_hints", "shuffled_hints" ],
+			"force_invisibility_rules": [ "season_5_hints", "dos_hints" ]
+		  }
+		],
+		"map_locations": [
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"x": 344,
+			"y": 427
+		  }
+		]
+	  }
+	]
+  }
+]

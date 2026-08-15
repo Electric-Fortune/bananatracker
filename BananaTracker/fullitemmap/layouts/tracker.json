@@ -6,6 +6,7 @@
       {
         "type": "array",
         "orientation": "horizontal",
+		"margin": "0,-4",
         "content": [
           {
             "type": "itemgrid",
@@ -18,7 +19,8 @@
               [ "la", "lag", "lai", "lam", "lab", "lap", "labp" ],
               [ "ti", "tig", "tii", "tim", "tib", "tip", "tibp" ],
               [ "ch", "chg", "chi", "chm", "chb", "chp", "chbp" ],
-              [ "slam", "dive", "orng", "brrl", "vine", "film_wave", "ha_sns" ]
+			  [ "slam", "dive", "orng", "brrl", "vine", "climb" ],
+			  [ "ck", "fu", "ca", "sn", "cam_wave", "homing_scope" ]
             ]
           }
         ]
@@ -30,10 +32,11 @@
           {
             "type": "itemgrid",
             "h_alignment": "center",
+			"margin": "1,-1,0,0",
             "item_size": 32,
-            "item_margin": "0,0,7,5",
+            "item_margin": "0,0,7,0",
             "rows": [
-              [ "pearl", "bean", "n64coin", "rainbow", "cr", "fair", "bm" , "gb"  ]
+              [ "pearl", "bean", "compcoins", "rainbow", "cr", "fair", "bm" , "gb"  ]
             ]
           }
         ]
@@ -45,7 +48,7 @@
           {
             "type": "itemgrid",
             "h_alignment": "right",
-            "item_margin": "0,1",
+            "item_margin": "-4,1",
             "item_height": 18,
             "item_width": 14,
             "rows": [
@@ -57,7 +60,7 @@
           {
             "type": "itemgrid",
             "h_alignment": "left",
-            "item_margin": "0,2,2,2",
+            "item_margin": "-4,2,0,2",
             "item_height": 16,
             "item_width": 64,
             "rows": [
@@ -69,19 +72,19 @@
           {
             "type": "itemgrid",
             "h_alignment": "left",
-            "item_margin": "-1,1,8,1",
+            "item_margin": "-4,1,8,1",
             "item_height": 18,
             "item_width": 14,
             "rows": [
-              [ "k1b", "l4" ],
-              [ "k2b", "l5" ],
-              [ "k3b", "l6" ]
+              [ "k1", "l4" ],
+              [ "k2", "l5" ],
+              [ "k3", "l6" ]
             ]
           },
           {
             "type": "itemgrid",
             "h_alignment": "left",
-            "item_margin": "-5,2,5,2",
+            "item_margin": "-14,2,0,2",
             "item_height": 16,
             "item_width": 64,
             "rows": [
@@ -93,19 +96,19 @@
           {
             "type": "itemgrid",
             "h_alignment": "left",
-            "item_margin": "-2,1,8,1",
+            "item_margin": "-4,1,8,1",
             "item_height": 18,
             "item_width": 14,
             "rows": [
-              [ "k4b", "l7" ],
-              [ "k5b", "l8" ],
-              [ "k6b", "" ]
+              [ "k4", "l7" ],
+              [ "k5", "l8" ],
+              [ "k6", "" ]
             ]
           },
           {
             "type": "itemgrid",
             "h_alignment": "left",
-            "item_margin": "-5,2,5,2",
+            "item_margin": "-14,2,0,2",
             "item_height": 16,
             "item_width": 64,
             "rows": [
@@ -117,17 +120,48 @@
           {
             "type": "itemgrid",
             "h_alignment": "left",
-            "item_margin": "-2,1,0,1",
+            "item_margin": "-4,1,0,1",
             "item_height": 18,
             "item_width": 14,
             "rows": [
-              [ "k7b"],
+              [ "k7"],
               [ "k8" ]
             ]
           }
         ]
       }
     ]
+  },
+  
+  "hint_item_grid": {
+    "type": "array",
+    "orientation": "vertical",
+    "content": [
+      {
+        "type": "array",
+        "orientation": "horizontal",
+        "content": [
+          {
+            "type": "itemgrid",
+            "h_alignment": "center",
+			"item_size": 36,
+            "item_margin": "0,0,8,5",
+			"rows": [
+              [ "dk", "dkg", "dki", "dkm", "dkb", "dkp" ],
+              [ "di", "dig", "dii", "dim", "dib", "dip" ],
+              [ "la", "lag", "lai", "lam", "lab", "lap" ],
+              [ "ti", "tig", "tii", "tim", "tib", "tip" ],
+              [ "ch", "chg", "chi", "chm", "chb", "chp" ],
+			  [ "dive", "orng", "brrl", "vine", "climb", "pot" ],
+			  [ "slam", "cam", "wave", "ha", "sns", "bean" ],
+			  [ "ck", "fu", "ca", "sn", "kongs", "fool" ],
+			  [ "k1", "k2", "k3", "k4" ],
+			  [ "k5", "k6", "k7", "k8" ]
+            ]
+          }
+        ]
+      }
+	]
   },
   
   "item_only_grid": {
@@ -141,11 +175,12 @@
           {
             "type": "itemgrid",
             "h_alignment": "center",
+			"margin": "0,-2",
 			"item_size": 36,
             "item_margin": "0,0,8,5",
 			"rows": [
-              [ "dk", "di", "la", "ti", "ch" ],
-			  [ "dk_pot", "di_pot", "la_pot", "ti_pot", "ch_pot" ],
+              [ "ck", "dk", "di", "la", "ti", "ch", "fu"],
+			  [ "ca", "dk_pot", "di_pot", "la_pot", "ti_pot", "ch_pot", "sn"],
 			  [ "dkbp", "dibp", "labp", "tibp", "chbp" ]
             ]
           },
@@ -164,212 +199,81 @@
 	]
   },
   
-  "barriers_grid": {
-	"type": "itemgrid",
-	"h_alignment": "center",
-	"item_height": 15,
-	"item_width": 240,
-	"rows": [
-	  ["barrier_japes_coconut", "barrier_aztec_door"],
-	  ["barrier_japes_shellhive", "barrier_aztec_5dtemple"],
-	  ["barrier_factory_production", "barrier_aztec_llama"],
-	  ["barrier_factory_testing",  "barrier_galleon_lighthouse"],
-	  ["barrier_forest_green", "barrier_galleon_shipyard"],
-	  ["barrier_forest_yellow", "barrier_galleon_seasick"],
-	  ["barrier_caves_igloo"],
-	]
-  },
-  
   "endgame_grid": {
 	"type": "itemgrid",
 	"h_alignment": "center",
 	"item_size": 36,
 	"rows": [
-	  ["krem_isle_top", "helm_access_?", "", "", "helm_switch_?", "helm_vine"],
 	  ["helm_barrel", "helm_phase_1_dk", "helm_phase_2_ch", "helm_phase_3_ti", "helm_phase_4_la", "helm_phase_5_di"],
-	  ["krool_balanced", "krool_phase_1_dk", "krool_phase_2_di", "krool_phase_3_la", "krool_phase_4_ti", "krool_phase_5_ch"]
+	  ["krool_blast", "krool_phase_1_dk", "krool_phase_2_di", "krool_phase_3_la", "krool_phase_4_ti", "krool_phase_5_ch"]
 	]
   },
   
-  "full_settings_grid": {
-    "type": "itemgrid",
-    "h_alignment": "center",
-	"item_size": 60,
-	"margin": "2,2,0,12",
-    "item_margin": "0,0,10,4",
-	"rows": [
-	  [ "open_lobbies", "open_levels", "no_hi_reqs", "prog_switch", "galleon_water" ],
-	  [ "fast_checks", "auto_bonus", "hard_shoot", "free_trade", "forest_time" ],
-	  [ "bananaport", "helm_start", "no_wrinkly_puzzles", "kasplat_rando" ],
-	  [ "cb_rando", "arena_rando", "fairy_rando", "dirt_patch_rando", "melon_crate_rando" ]
-    ]
-  },
-  
-  "settings_grid": {
-	"type": "itemgrid",
-    "h_alignment": "center",
-	"item_size": 60,
-	"margin": "2,2,0,12",
-    "item_margin": "0,0,10,4",
-	"rows": [
-	  [ "auto_bonus", "open_lobbies", "prog_switch", "free_trade" ],
-	  [ "fast_arcade", "cheap_mermaid", "galleon_water", "forest_time" ],
-	  [ "hard_shoot", "bananaport", "helm_start", "no_wrinkly_puzzles"]
-    ]
-  },
-  
-  "shuffler_grid": {
-	"type": "itemgrid",
-    "h_alignment": "center",
-	"item_size": 60,
-	"margin": "2,2,0,12",
-    "item_margin": "0,0,10,4",
-	"rows": [
-	  [ "fairy_rando", "kasplat_rando", "arena_rando" ],
-	  [ "dirt_patch_rando", "cb_rando", "melon_crate_rando" ]
-    ]
-  },
-  
-  "item_rando_grid": {
-	"type": "itemgrid",
-	"h_alignment": "center",
-	"item_size": 50,
-	"margin": "0,0,0,12",
-	"item_margin": "0,0,2,2",
-	"rows": [
-	  ["shop_pool","gb_pool","hard_gb_pool","cr_pool","bp_pool","key_pool","bm_pool"],
-	  ["coin_pool","kong_pool","fairy_pool","rbc_pool","misc_pool","melon_pool","hint_pool"]
-	]
-  },
-  
-  "amounts_grid": {
-	"type": "itemgrid",
-	"h_alignment": "center",
-	"item_size": 50,
-	"item_margin": "3,3,15,5",
-	"rows": [
-	  ["jetpac_amount","medal_amount","rw_gb_amount"],
-	  ["helm_1_amount","helm_entry_amount","helm_2_amount"],
-	  ["","helm_1_type","","helm_2_type",""]
-	]
-  },
-  
-  "options_grid_l": {
-    "type": "array",
-	"orientation": "vertical",
-	"margin": "-50,-5,0,-5",
-	"content": [
-	  {
-		"type": "layout",
-		"key": "item_rando_grid"
-	  },
-	  {
-		"type": "layout",
-		"key": "amounts_grid"
-	  }
-	]
-  },
-  
-  "options_grid_r": {
-    "type": "array",
-	"orientation": "vertical",
-	"margin": "-50,-5,0,-5",
-	"content": [
-	  {
-		"type": "layout",
-		"key": "settings_grid"
-	  }
-	]
-  },
-  
-  "options_grid_b": {
-    "type": "array",
-	"orientation": "horizontal",
-	"margin": "0,0,-5,-5",
-	"content": [
-	  {
-		"type": "layout",
-		"key": "options_grid_l"
-	  },
-	  {
-	    "type": "layout",
-		"key": "options_grid_r"
-	  },
-	  {
-		"type": "layout",
-		"key": "barriers_grid"
-	  }
-	]
-  },
-  
-  "options_grid": {
-	"type": "tabbed",
-	"tabs": [
-	  {
-		"title": "Main Settings",
-		"icon": "",
-		"content": {
-	  	  "type": "layout",
-		  "margin": "1,1,1,1",
-          "key": "settings_grid"
+  "hint_grid": {
+    "type": "scroll",
+	"vertical_scrollbar_visibility": "auto",
+	"content":
+	{
+	  "type": "array",
+	  "orientation": "vertical",
+      "content": [
+        {
+	      "type": "array",
+		  "orientation": "horizontal",
+		  "content": [
+		    {
+			  "type": "text",
+			  "text": "Hint Locations",
+			  "font_size": 12,
+			  "v_alignment": "center"
+			},
+			{
+			  "type": "itemgrid",
+			  "h_alignment": "center",
+			  "item_size": 44,
+			  "rows": [
+			    ["vanilla_hints","no_wrinkly_puzzles"]
+			  ]
+			},
+			{
+			  "type": "text",
+			  "text": "Kongless Hint Doors\n + Wrinkly Puzzles",
+			  "font_size": 12,
+			  "v_alignment": "center"
+			}
+		  ]
+		},
+		{
+		  "type": "map",
+		  "maps": [ "hintsmap" ],
+		  "orientation": "vertical",
+		  "margin": "-10,-20,0,-20",
+		  "width": 300,
+		  "height": 369
 		}
-	  },
-	  {
-		"title": "Item Pools",
-		"icon": "",
-		"content": {
-	  	  "type": "layout",
-		  "margin": "10,1,1,1",
-          "key": "item_rando_grid"
-		}
-	  },
-	  {
-		"title": "Check Thresholds",
-		"icon": "",
-		"content": {
-	  	  "type": "layout",
-          "key": "amounts_grid"
-		}
-	  },
-	  {
-		"title": "Location Shufflers",
-		"icon": "",
-		"content": {
-	  	  "type": "layout",
-		  "margin": "1,1,1,1",
-          "key": "shuffler_grid"
-		}
-	  },
-	  {
-		"title": "Open Barriers",
-		"icon": "",
-		"content": {
-	  	  "type": "layout",
-		  "margin": "1,1,1,1",
-          "key": "barriers_grid"
-		}
-	  },
-	]
-  },
-  
-  "options_gri": {
-    "type": "array",
-	"orientation": "vertical",
-	"margin": "1,1,1,1",
-	"content": [
-      {
-	    "type": "group",
-		"header": "Settings (Hover over an image for its description, default of multistate settings given by *)",
-		"v_alignment": "center"
-	  },
-	  {
-	    "type": "layout",
-		"key": "options_grid_b"
-	  }
-	]
+	  ]
+	}
   },
 
   "tracker_capture_item": {
+    "type": "container",
+    "content": {
+      "type": "layout",
+	  "margin": "10,10,5,0",
+      "key": "hint_item_grid"
+    }
+  },
+  
+  "tracker_capture_item_hints": {
+    "type": "container",
+    "content": {
+      "type": "layout",
+	  "margin": "10,10,5,0",
+      "key": "hint_item_grid"
+    }
+  },
+  
+  "tracker_capture_item_only": {
     "type": "container",
     "content": {
       "type": "layout",
@@ -393,7 +297,7 @@
               "type": "group",
               "header": "Kongs / Abilities / Collectables / Lobbies",
               "dock": "top",
-              "margin": "0,0,3,0",
+              "margin": "3,0,3,0",
 			  "header_content": {
                 "type": "button_popup",
                 "style": "settings",
@@ -412,11 +316,24 @@
 			  "type": "group",
 			  "header": "Endgame Tracker",
 			  "dock": "top",
+			  "margin": "3,0,3,0",
 			  "content": {
 				"type": "layout",
 				"h_alignment": "center",
 				"v_alignment": "top",
 				"key": "endgame_grid"
+			  }
+			},
+			{
+		      "type": "group",
+			  "header": "Hints",
+			  "dock": "top",
+			  "margin": "3,0,3,0",
+			  "content": {
+				"type": "layout",
+				"h_alignment": "center",
+				"v_alignment": "top",
+				"key": "hint_grid"
 			  }
 			}
           ]
@@ -441,6 +358,7 @@
 		},
         {
           "type": "tabbed",
+		  "margin": "0,5,0,0",
           "tabs": [
             {
               "title": "",

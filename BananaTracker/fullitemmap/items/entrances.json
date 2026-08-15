@@ -1,0 +1,270 @@
+[
+  {
+	"name": "Japes DK Portal Location",
+	"short_name": "Japes Entrance",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+		"img": "images/entry/japes_lowlands.png",
+		"codes": "japes_entry,japes_entry_ll",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/japes_hillside.png",
+		"codes": "japes_entry,japes_entry_hs",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/japes_stormy_area.png",
+		"codes": "japes_entry,japes_entry_sa",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/japes_hive_area.png",
+		"codes": "japes_entry,japes_entry_ha",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/japes_rambi_cave.png",
+		"codes": "japes_entry,japes_entry_rc",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/japes_first_tunnel_room.png",
+		"codes": "japes_entry,japes_entry_ftr",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/japes_painting_slope.png",
+		"codes": "japes_entry,japes_entry_ps",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/japes_lanky_cave_slope.png",
+		"codes": "japes_entry,japes_entry_lcs",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/japes_hillside_alcove.png",
+		"codes": "japes_entry,japes_entry_hsa",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/japes_blast_ledge.png",
+		"codes": "japes_entry,japes_entry_bl",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Aztec DK Portal Location",
+	"short_name": "Aztec Entrance",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+		"img": "images/entry/aztec_start.png",
+		"codes": "aztec_entry,aztec_entry_as",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/aztec_oasis.png",
+		"codes": "aztec_entry,aztec_entry_ao",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/aztec_totem.png",
+		"codes": "aztec_entry,aztec_entry_at",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/aztec_first_shop.png",
+		"codes": "aztec_entry,aztec_entry_afs",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/aztec_quicksand_tunnel.png",
+		"codes": "aztec_entry,aztec_entry_aqt",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Factory DK Portal Location",
+	"short_name": "Factory Entrance",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+		"img": "images/entry/factory_start_foyer.png",
+		"codes": "factory_entry,factory_entry_sf",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/factory_storage.png",
+		"codes": "factory_entry,factory_entry_stor",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/factory_arcade.png",
+		"codes": "factory_entry,factory_entry_arc",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/factory_testing.png",
+		"codes": "factory_entry,factory_entry_test",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/factory_rd.png",
+		"codes": "factory_entry,factory_entry_rd",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/factory_rd_upper.png",
+		"codes": "factory_entry,factory_entry_rdl",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/factory_storage_pipe.png",
+		"codes": "factory_entry,factory_entry_sp",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/factory_prod_upper.png",
+		"codes": "factory_entry,factory_entry_pu",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Galleon DK Portal Location",
+	"short_name": "Galleon Entrance",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+		"img": "images/entry/galleon_caverns.png",
+		"codes": "galleon_entry,galleon_entry_cv",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/galleon_plank_mast.png",
+		"codes": "galleon_entry,galleon_entry_mast",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/galleon_lighthouse.png",
+		"codes": "galleon_entry,galleon_entry_lh",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/galleon_lighthouse_platform.png",
+		"codes": "galleon_entry,galleon_entry_lp",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/galleon_shipyard.png",
+		"codes": "galleon_entry,galleon_entry_sy",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Forest DK Portal Location",
+	"short_name": "Forest Entrance",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+		"img": "images/entry/forest_center.png",
+		"codes": "forest_entry,forest_entry_c",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/forest_mushroom_lower.png",
+		"codes": "forest_entry,forest_entry_ml",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/forest_mushroom_upper.png",
+		"codes": "forest_entry,forest_entry_mu",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/forest_owl_tree.png",
+		"codes": "forest_entry,forest_entry_ot",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/forest_beanstalk.png",
+		"codes": "forest_entry,forest_entry_bs",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/forest_mills.png",
+		"codes": "forest_entry,forest_entry_mills",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/forest_mill_roof.png",
+		"codes": "forest_entry,forest_entry_mr",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Caves DK Portal Location",
+	"short_name": "Caves Entrance",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+		"img": "images/entry/caves_main.png",
+		"codes": "caves_entry,caves_entry_main",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/caves_start_ice_wall.png",
+		"codes": "caves_entry,caves_entry_fiw",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/caves_shop_ice_wall.png",
+		"codes": "caves_entry,caves_entry_siw",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/caves_boulder.png",
+		"codes": "caves_entry,caves_entry_bc",
+		"inherit_codes": false
+	  }
+	]
+  },
+  {
+	"name": "Castle DK Portal Location",
+	"short_name": "Castle Entrance",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+		"img": "images/entry/castle_main.png",
+		"codes": "castle_entry,castle_entry_main",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/entry/castle_back_bottom.png",
+		"codes": "castle_entry,castle_entry_bb",
+		"inherit_codes": false
+	  }
+	]
+  }
+]

@@ -20,7 +20,8 @@
               [ "la", "lag", "lai", "lam", "lab", "lap", "labp" ],
               [ "ti", "tig", "tii", "tim", "tib", "tip", "tibp" ],
               [ "ch", "chg", "chi", "chm", "chb", "chp", "chbp" ],
-              [ "ss", "dive", "orng", "brrl", "vine", "film_wave", "ha_sns" ]
+			  [ "slam", "dive", "orng", "brrl", "vine", "climb"],
+			  [ "ck", "fu", "ca", "sn", "cam_wave", "homing_scope" ]
             ]
           }
         ]
@@ -35,7 +36,7 @@
             "item_size": 32,
             "item_margin": "0,0,7,5",
             "rows": [
-              [ "pearl", "bean", "n64coin", "rainbow", "cr", "fair", "bm" , "gb"  ]
+              [ "pearl", "bean", "compcoins", "rainbow", "cr", "fair", "bm" , "gb"  ]
             ]
           }
         ]
