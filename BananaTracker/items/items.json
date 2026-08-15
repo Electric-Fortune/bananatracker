@@ -51,7 +51,6 @@
     "max_quantity": 8
   },
 
-
   {
     "name": "Diddy Kong",
     "type": "toggle",
@@ -103,7 +102,6 @@
 	  "initial_quantity": 0,
     "max_quantity": 8
   },
-
 
   {
     "name": "Lanky Kong",
@@ -157,7 +155,6 @@
     "max_quantity": 8
   },
 
-
   {
     "name": "Tiny Kong",
     "type": "toggle",
@@ -209,7 +206,6 @@
 	  "initial_quantity": 0,
     "max_quantity": 8
   },
-
 
   {
     "name": "Chunky Kong",
@@ -263,7 +259,6 @@
     "max_quantity": 8
   },
 
-
   {
     "name": "Simian Slam",
     "type": "progressive",
@@ -311,9 +306,8 @@
     "codes": "goldenbananas,gb",
     "swap_actions": false,
 	  "initial_quantity": 0,
-    "max_quantity": 201
+    "max_quantity": 250
   },
-
 
   {
     "name": "Japes Label",
@@ -336,7 +330,6 @@
     "codes": "japescrown,c1"
   },
 
-
   {
     "name": "Aztec Label",
     "type": "static",
@@ -357,7 +350,6 @@
     "img": "images/crown.png",
     "codes": "azteccrown,c2"
   },
-
 
   {
     "name": "Factory Label",
@@ -380,7 +372,6 @@
     "codes": "factorycrown,c3"
   },
 
-
   {
     "name": "Galleon Label",
     "type": "static",
@@ -401,7 +392,6 @@
     "img": "images/crown.png",
     "codes": "galleoncrown,c4"
   },
-
 
   {
     "name": "Forest Label",
@@ -424,7 +414,6 @@
     "codes": "forestcrown,c5"
   },
 
-
   {
     "name": "Caves Label",
     "type": "static",
@@ -445,7 +434,6 @@
     "img": "images/crown.png",
     "codes": "cavescrown,c6"
   },
-
 
   {
     "name": "Castle Label",
@@ -468,7 +456,6 @@
     "codes": "castlecrown,c7"
   },
 
-
   {
     "name": "Helm Label",
     "type": "static",
@@ -489,7 +476,6 @@
     "img": "images/crown.png",
     "codes": "helmcrown,c8"
   },
-
 
   {
     "name": "Isles Label",

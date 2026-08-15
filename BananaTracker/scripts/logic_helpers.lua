@@ -43,6 +43,48 @@ function get_object(code)
   return nil
 end
 
+function get_object_no_print(code)
+  local object = Tracker:FindObjectForCode(code)
+  if object then
+    return object
+  end
+  return nil
+end
+
+
+
+function snide_rewards()
+  local dkbp = Tracker:ProviderCountForCode("dkbp")
+  local dibp = Tracker:ProviderCountForCode("dibp")
+  local labp = Tracker:ProviderCountForCode("labp")
+  local tibp = Tracker:ProviderCountForCode("tibp")
+  local chbp = Tracker:ProviderCountForCode("chbp")
+  
+  local snide_count = Tracker:ProviderCountForCode("snide_checks")
+  if not_has("sn") then
+    return false
+  end
+  if not_has("dk") then
+    dkbp = 0
+  end
+  if not_has("di") then
+    dibp = 0
+  end
+  if not_has("la") then
+    labp = 0
+  end
+  if not_has("ti") then
+    tibp = 0
+  end
+  if not_has("ch") then
+    chbp = 0
+  end
+  if (40 - dkbp - dibp - labp - tibp - chbp < snide_count) then
+    return true
+  end 
+  return false
+end
+
 function wrinkly_puzzles()
   if has("no_wrinkly_puzzles") then
     return 0
@@ -143,27 +185,53 @@ end
 
 function japes_dk_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("dk") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 36 --2x warp 3 bunches + 3x hillside tree bunches + T&S alcove bunch + 6 on hills near mountain
+  local cb_total = 10 --2x warp 3 bunches
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("vine") or (logic == "ool") then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("climb") and (has("vine") or ool) then
     cb_total = cb_total + 5 --5 in starting area between vines
   end
   if has("dkg") then
-    cb_total = cb_total + 20 --Balloon by Chunky rock and balloon near Snide
+    cb_total = cb_total + 10 --Balloon by Chunky rock
   end
-  if has("vine") and has("dkp") then
+  if (has("portal_shuffle_on") and has("japes_entry_hsa")) or (has("@logic/japes_hillside") and has("monkey_moves")) or (has("climb") and has("vine")) then
+    cb_total = cb_total + 5 -- T&S alcove bunch
+  end
+  if has("@logic/japes_hillside") then
+     cb_total = cb_total + 6 --Slopes from Snide to Kong Cage
+	 if has("climb") then
+	   cb_total = cb_total + 5 --Kong cage hillside tree bunch
+	 end
+	 if has("climb") or (ool) then
+	   cb_total = cb_total + 5 --Funky hillside tree bunch
+	 end
+	 if has("climb") or ((ool) and (has("di") and has("dig") and has("ti") and has("tim")) or has("@logic/japes_shellhive") and has("bananaport_all")) then
+	   cb_total = cb_total + 5 --Snide hillside tree bunch
+	 end
+	 if has("dkg") then
+	   cb_total = cb_total + 10 --Balloon near Snide
+	 end
+  end
+  if ((has("climb") and has("vine")) or (has("portal_shuffle_on") and has("japes_entry_bl"))) and has("dkp") then
     cb_total = cb_total + 10 --2x bunches in Barrel Blast course
   end
-  if has("japes_kong_freed") or has("barrier_japes_coconut") then
+  if has("@logic/japes_tunnels") then
     cb_total = cb_total + 9 --Line of 9 between warp 4s
 	if has("dkg") then
-	  cb_total = cb_total + 20 --Balloon in front of Cranky's + bunch under Rambi crate + bunch in DK Rambi hut
+	  cb_total = cb_total + 10 --Balloon in front of Cranky's
+	end
+	if has("@logic/japes_rambi") then
+	  cb_total = cb_total + 10 --Bunch under Rambi crate + bunch in DK Rambi hut
 	end
   end
   return cb_total >= cb_amount
@@ -171,29 +239,46 @@ end
 
 function japes_di_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("di") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 32 --5 in starting area + 4x ground level tree bunches + 7 around mountain
+  local cb_total = 5 --5 in starting area
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
   if has("dive") then
     cb_total = cb_total + 10 --2x bunches in underwater bushes near Warp 4 gate
   end
-  if has("dig") then
-    cb_total = cb_total + 30 --Balloon in first tunnel peanut room + balloon on top of mountain + bunch in mountain before peanut switch + 5 in mountain stream
-	if (has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (japes_slam() == 1)) then
-	  cb_total = cb_total + 15 --Balloon and bunch in conveyor room beyond slam switch door
-	  if has("dim") or (logic == "ool") then
+  if has("climb") then
+    cb_total = cb_total + 10 --2x ground level tree bunches near Baboon Blast
+  end
+  if has("climb") or (has("@logic/japes_hillside") and (ool) and (has("dk") or (has("ti") and has("tim")))) then
+    cb_total = cb_total + 10 --2x ground level tree bunches near painting room
+  end
+  if has("@logic/japes_tunnel_room") then
+    cb_total = cb_total + 10 --Balloon in first tunnel peanut room
+  end
+  if has("@logic/japes_hillside") then
+    cb_total = cb_total + 7 --7 around mountain
+	if has("dig") then
+	  cb_total = cb_total + 20 --Balloon on top of mountain + bunch in mountain before peanut switch + 5 in mountain stream
+	  if (has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (japes_slam() == 1)) then
+	    cb_total = cb_total + 15 --Balloon and bunch in conveyor room beyond slam switch door
+	  end
+	  if ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (japes_slam() == 1)) and (has("dim") or (ool))) or ((ool) and has("ch")) then
 	    cb_total = cb_total + 5 --Bunch in minecart
 	  end
 	end
   end
-  if has("japes_kong_freed") or has("barrier_japes_coconut") then
+  if has("@logic/japes_tunnels") then
     cb_total = cb_total + 3 --3 near Diddy Kasplat
-	if has("dk") and has ("dkg") then
+	if has("@logic/japes_rambi") then
 	  cb_total = cb_total + 5 --Bunch in Diddy Rambi hut
 	end
   end
@@ -202,20 +287,25 @@ end
 
 function japes_la_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("la") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 10 --Bunch near Snide's HQ + Bunch on tree near Snide's HQ
+  local cb_total = 0
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("lam") or (logic == "ool") then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("lam") or (ool) or has("@logic/japes_painting_hill_strict") then
     cb_total = cb_total + 2 --Lower 2 on slippery hill to painting room
   end
-  if has("lam") or ((logic == "ool") and (has("dk") or (has("ti") and has("tim")))) then
+  if has("@logic/japes_painting_hill_strict") or ((ool) and has("@logic/japes_painting_hill")) then
     cb_total = cb_total + 1 --Upper 1 on slippery hill to painting room
-	if has("di") and has("dig") then
+	if has("@logic/japes_painting_room") then
 	  cb_total = cb_total + 20 --2x bunches on stairs in painting room + 2x bunches on pegs
 	  if has("lag") then
 	    cb_total = cb_total + 10 --Balloon in painting room
@@ -225,22 +315,40 @@ function japes_la_cbs(logic)
   if has("dive") then
     cb_total = cb_total + 5 --Line of 5 in water
   end
-  if has("di") and has("dig") and has("lag") then
+  if has("@logic/japes_tunnel_room") and has("lag") then
     cb_total = cb_total + 5 --Bunch under Bonus Barrel in first tunnel peanut room
   end
-  if has("japes_kong_freed") or has("barrier_japes_coconut") then
-    cb_total = cb_total + 6 --Bunch on tree near Cranky's Lab + 1 to Lanky Kasplat
-	if has("lam") or (logic == "ool") then
-	  cb_total = cb_total + 4 --Lower 2 on both slippery hills in Lanky Kasplat room
+  if has("@logic/japes_hillside") then
+    cb_total = cb_total + 5 --Bunch near Snide's HQ
+	if has("climb") then
+	  cb_total = cb_total + 5 --Bunch on tree near Snide's HQ
 	end
-	if has("lam") then
-	  cb_total = cb_total + 7 --Upper 1 on both slippery hills in Lanky Kasplat room + bunch at top of right hill
+  end
+  if has("@logic/japes_tunnels") then
+    cb_total = cb_total + 1 --1 to Lanky Kasplat
+	if has("climb") then
+	  cb_total = cb_total + 5 --Bunch on tree near Cranky's Lab
+	end
+	if has("lam") or (ool) or has("slope_resets") then
+	  cb_total = cb_total + 2 --Lower 2 on slippery hill to Bonus Barrel
+	end
+	if has("lam") or has("slope_resets") then
+	  cb_total = cb_total + 1 --Upper 1 on slippery hill to Bonus Barrel
+	end
+	if has("lam") or (ool) or has("slope_resets") or (has("portal_shuffle_on") and has("japes_entry_lcs")) then
+	  cb_total = cb_total + 2 --Lower 2 on slippery hill to nothing
+	end
+	if has("lam") or has("slope_resets") or (has("portal_shuffle_on") and has("japes_entry_lcs")) then
+	  cb_total = cb_total + 6 --Upper 1 on slippery hill to nothing + bunch
 	end
 	if has("lag") then
 	  cb_total = cb_total + 20 --Balloon in Lanky Kasplat room + balloon near Lanky Rambi Hut
 	end
-	if has("dk") and has("dkg") then
-	  cb_total = cb_total + 10 --Bunch in Lanky Rambi hut + 5 around Chunky switch beyond Rambi wall
+	if has("@logic/japes_rambi") then
+	  cb_total = cb_total + 5 --Bunch in Lanky Rambi hut
+	end
+	if has("@logic/japes_rambi_cave") then
+	  cb_total = cb_total + 5 --5 around Chunky switch beyond Rambi wall
 	end
   end
   return cb_total >= cb_amount
@@ -248,6 +356,8 @@ end
 
 function japes_ti_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ti") then
     return 0
   end
@@ -256,26 +366,35 @@ function japes_ti_cbs(logic)
   end
   local cb_total = 5 --Line of 5 in first tunnel
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("di") and has("dig") and has("tig") then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/japes_tunnel_room") and has("tig") then
     cb_total = cb_total + 5 --Bunch under Bonus Barrel in first tunnel peanut room
   end
-  if has("japes_kong_freed") or has("barrier_japes_coconut") then
-    cb_total = cb_total + 7 --Bunch on tree near Cranky's Lab + 2 before Rambi wall
-	if has("dk") and has("dkg") then
-	  cb_total = cb_total + 10 --Bunch in Tiny Rambi hut + line of 5 beyond Rambi wall
-	  if has("tig") then
-	    cb_total = cb_total + 10 --Balloon above Fairy pond beyond Rambi wall
-	  end
+  if has("@logic/japes_tunnels") then
+    cb_total = cb_total + 2 --2 before Rambi wall
+	if has("climb") then
+	  cb_total = cb_total + 5 --Bunch on tree near Cranky's Lab
 	end
 	if has("tig") then
 	  cb_total = cb_total + 10 --Balloon near Tiny Rambi hut
 	end
+	if has("@logic/japes_rambi") and has("dk") then
+	  cb_total = cb_total + 5 --Bunch in Tiny Rambi hut
+	end
+	if has("@logic/japes_rambi_cave") then
+	  cb_total = cb_total + 5 --line of 5 beyond Rambi wall
+	  if has("tig") then
+	    cb_total = cb_total + 10 --Balloon above Fairy pond beyond Rambi wall
+	  end
+	end
   end
-  if ((has("japes_kong_freed") or has("barrier_japes_coconut")) and (has("tig") or has("barrier_japes_shellhive"))) or (has("bananaport_all") and has("di") and has("dig")) then 
+  if has("@logic/japes_shellhive") then 
 	cb_total = cb_total + 5 --Bunch in front of hive
 	if has("tib") then
 	  cb_total = cb_total + 30 --6x bunches in stump tunnels
-	  if (has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (japes_slam() == 1)) then
+	  if ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (japes_slam() == 1)) and (has("orng") or (ool))) then
 		cb_total = cb_total + 8 --Ring of 8 around GB pedastal in hive
 	  end
 	  if has("tig") then
@@ -288,20 +407,30 @@ end
 
 function japes_ch_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ch") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 15 --2x bunches on Funky's Armory + 5 around underground X
+  local cb_total = 5 --5 around underground X
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
   if has("brrl") and has("ss") then
     cb_total = cb_total + 15 --Line of 5 + 2x bunches in Chunky underground
   end
-  if has("japes_kong_freed") or has("barrier_japes_coconut") then
-    cb_total = cb_total + 5 --Bunch on Cranky's Lab
-	if has("dk") and has("dkg") then
+  if has("@logic/japes_hillside") then
+    cb_total = cb_total + 10 --2x bunches on Funky's Armory
+  end
+  if has("@logic/japes_tunnels") then
+    if has("climb") then
+      cb_total = cb_total + 5 --Bunch on Cranky's Lab
+	end
+	if has("@logic/japes_rambi_cave") then
 	  if has("chg") then
 	    cb_total = cb_total + 30 --3x balloons around Chunky switch beyond Rambi wall
 	  end
@@ -310,11 +439,11 @@ function japes_ch_cbs(logic)
 	  end
 	end
   end
-  if has("japes_kong_freed") or has("barrier_japes_coconut") or (has("bananaport_all") and has("di") and has("dig") and (logic == "ool")) then
+  if has("@logic/japes_tunnel_to_hive_strict") or ((ool) and has("@logic/japes_tunnel_to_hive")) then
     cb_total = cb_total + 10 --Line of 10 in tunnel to feather gate
   end
-  if ((has("japes_kong_freed") or has("barrier_japes_coconut")) and (has("tig") or has("barrier_japes_shellhive"))) or (has("bananaport_all") and has("di") and has("dig")) then 
-	if has("chb") then
+  if has("@logic/japes_shellhive") then
+	if has("chb") and has("climb") then
 	  cb_total = cb_total + 20 --4x bunches on trees around Hunky Chunky barrel
     end
   end
@@ -323,6 +452,8 @@ end
 
 function aztec_dk_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("dk") then
     return 0
   end
@@ -331,25 +462,27 @@ function aztec_dk_cbs(logic)
   end
   local cb_total = 0 --All of Aztec requires some logic
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("vine") or (has("ti") and has("tim")) or (logic == "ool") then
-    cb_total = cb_total + 18 --3x bunches on oasis trees + line of 3 to llama cage
-	if has("dkg") and (has("dkb") or (logic == "ool")) then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/aztec_past_vine_strict") or ((ool) and has("@logic/aztec_past_vine")) then
+    cb_total = cb_total + 3 --line of 3 to llama cage
+	if has("climb") then
+	  cb_total = cb_total + 15 --3x bunches on oasis trees
+	end
+	if has("@logic/aztec_kasplat_room") and (has("dkb") or (ool)) then
 	  cb_total = cb_total + 10 --2x bunches in sand bridge Kasplat room
 	end
-	if (has("di") and has("dii") and (has("dib") or has("vine"))) or has("barrier_aztec_door") or has("bananaport_all") then
+	if has("@logic/aztec_door_access") then
 	  cb_total = cb_total + 7 --Line of 3 toward Snide's HQ + line of 4 up to llama temple
 	  if has("dkg") then
 	    cb_total = cb_total + 30 --2x balloons near Cranky's Lab + balloon behind llama temple
 	  end
-	  if has("barrier_aztec_llama") or has("dkp") then
-	    if has("dkg") or (has("la") and has("lag")) or (has("ti") and has("tig")) then
-	      cb_total = cb_total + 15 --4x lines of 3 going up stairs to llama in temple + line of 3 going up to Kong freeing instrument pad
-	    end
-	    if ((has("dkg") or (has("la") and has("lag")) or (has("ti") and has("tig"))) and ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (aztec_slam() == 1)))) or has("bananaport_all") then
-	      if has("dkb") or (logic == "ool") then
-   		    cb_total = cb_total + 20 --4x bunches in quicksand tunnel
-		  end
-		end
+	  if has("@logic/llama_temple_access") then
+	    cb_total = cb_total + 15 --4x lines of 3 going up stairs to llama in temple + line of 3 going up to Kong freeing instrument pad
+	  end
+	  if has("@logic/quicksand_tunnel") and (has("dkb") or (ool)) then
+   		cb_total = cb_total + 20 --4x bunches in quicksand tunnel
 	  end
 	end
   end
@@ -358,6 +491,8 @@ end
 
 function aztec_di_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("di") then
     return 0
   end
@@ -366,37 +501,43 @@ function aztec_di_cbs(logic)
   end
   local cb_total = 0 --All of Aztec requires some logic
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("vine") or (has("ti") and has("tim")) or (logic == "ool") then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/aztec_past_vine_strict") or ((ool) and has("@logic/aztec_past_vine")) then
     cb_total = cb_total + 5 --Bunch on warp 2
 	if has("dig") then
 	  cb_total = cb_total + 10 --Balloon above warp 2
 	end
-	if has("dig") or ((logic == "ool") and ((has("la") and has("lag")) or (has("ti") and has("tig")) or (has("ch") and has("chg")))) then
-	  if (logic == "ool") or (aztec_slam() == 1) then
+	if has("@logic/tiny_temple_access") then
+	  if (ool) or ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (aztec_slam() == 1))) then
 	    cb_total = cb_total + 1 --Lowest monkey tongue banana
 	  end
-	  if ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (aztec_slam() == 1))) then
+	  if (has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (aztec_slam() == 1)) then
 	    cb_total = cb_total + 2 --Upper 2 monkey tongue bananas
-		if (logic == "ool") or has("dig") then
+		if (ool) or has("dig") then
 		  cb_total = cb_total + 5 --Nearest bunch on long tongue to guitar pad
 		end
 		if has("dig") then
 		  cb_total = cb_total + 10 --2x further bunches on long tongue to guitar pad
 		end
       end
-	  if has("dive") then
+	  if has("@logic/tiny_temple_water") and has("dive") then
 	    cb_total = cb_total + 7 --Line of 3 from start to middle + line of 4 from middle to Kong cage
 	  end
 	end
-	if (has("dii") and (has("dib") or has("vine"))) or has("barrier_aztec_door") or has("bananaport_all") then
-	  cb_total = cb_total + 30 --Line of 5 from Aztec door to pressure plate + line of 3 up to Rocketbarrel barrel + line of 3 up to gong tower + 3x bunches on trees around gong tower + line of 4 going up stairs on 5 door temple
+	if has("@logic/aztec_door_access") then
+	  cb_total = cb_total + 15 --Line of 5 from Aztec door to pressure plate + line of 3 up to Rocketbarrel barrel + line of 3 up to gong tower + line of 4 going up stairs on 5 door temple
+	  if has("climb") or has("dib") then
+	    cb_total = cb_total + 15 --3x bunches on trees around gong tower
+	  end
 	  if has("dib") then
 	    cb_total = cb_total + 10 --Bunch in sun above totem + bunch above llama temple
 	  end
-	  if has("dig") and (has("barrier_aztec_5dtemple") or (has("dib") and ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (aztec_slam() == 1))))) then
+	  if has("@logic/5_door_temple_switches") and has("dig") then
 	    cb_total = cb_total + 10 --Balloon in Diddy 5 door temple
 	  end
-	  if has("dig") and (has("bananaport_all") or ((has("barrier_aztec_llama") or (has("dk") and has("dkp"))) and ((has("dk") and has("dkg")) or (has("la") and has("lag")) or (has("ti") and has("tig"))) and ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (aztec_slam() == 1))) and (has("dkb") or (logic == "ool")))) then
+	  if has("dig") and (has("bananaport_all") or (has("portal_shuffle_on") and has("aztec_entry_aqt")) or (has("@logic/quicksand_tunnel") and (has("dkb") or (ool)))) then
 	    cb_total = cb_total + 10 --Balloon in quicksand tunnel
 	  end
 	end
@@ -406,6 +547,8 @@ end
 
 function aztec_la_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("la") then
     return 0
   end
@@ -414,27 +557,31 @@ function aztec_la_cbs(logic)
   end
   local cb_total = 0 --All of Aztec requires some logic
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("vine") or (has("ti") and has("tim")) or (logic == "ool") then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/aztec_past_vine_strict") or ((ool) and has("@logic/aztec_past_vine")) then
     cb_total = cb_total + 5 --Line of 5 from coconut door in early tunnel to oasis
-	if has("lag") or ((logic == "ool") and ((has("di") and has("dig")) or (has("ti") and has("tig")) or (has("ch") and has("chg")))) then
-	  if has("dive") then
+	if has("@logic/tiny_temple_access") then
+	  if has("@logic/tiny_temple_water") and has("dive") then
 	    cb_total = cb_total + 14 --Set of 9 approaching and around vulture pillar + bunch above slam switch on vulture pillar
 	  end
 	end
-	if (has("di") and has("dii") and (has("dib") or has("vine"))) or has("barrier_aztec_door") or has("bananaport_all") then
-	  cb_total = cb_total + 35 --Line of 5 on winding skinny path to Cranky's Lab + bunch near Cranky's Lab + 5x bunches on trees around totem
-	  if has("lag") and (has("barrier_aztec_5dtemple") or (has("di") and has("dig") and has("dib") and ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (aztec_slam() == 1))))) then
+	if has("@logic/aztec_door_access") then
+	  cb_total = cb_total + 10 --Line of 5 on winding skinny path to Cranky's Lab + bunch near Cranky's Lab
+	  if has("climb") or ((ool) and has("di") and has("dib")) then
+	    cb_total = cb_total + 25 --5x bunches on trees around totem
+	  end
+	  if has("@logic/5_door_temple_switches") and has("lag") then
 	    cb_total = cb_total + 10 --Balloon in Lanky 5 door temple
 	  end
-	  if has("barrier_aztec_llama") or (has("dk") and has("dkp")) then
-	    if has("lag") or (has("dk") and has("dkg")) or (has("ti") and has("tig")) then
-	      cb_total = cb_total + 11 --2x lines of 3 going up stairs to entrance + bunch on entrance warp 1
-          if has("lag") and has("vine") then
-		    cb_total = cb_total + 5 --Bunch after defeating enemies in matching game room
-		  end
-		  if has("lag") and ((has("dk") and has("dki")) or (has("di") and has("dii")) or has("lai") or (has("ti") and has("tii")) or (has("ch") and has("chi"))) then
-		    cb_total = cb_total + 20 --2x balloons in llama temple Kong cage room
-		  end
+	  if has("@logic/llama_temple_access") then
+	    cb_total = cb_total + 11 --2x lines of 3 going up stairs to entrance + bunch on entrance warp 1
+        if has("lag") and has("vine") then
+		  cb_total = cb_total + 5 --Bunch after defeating enemies in matching game room
+		end
+		if has("lag") and has("@logic/llama_spit") then
+		  cb_total = cb_total + 20 --2x balloons in llama temple Kong cage room		
 		end
 	  end
 	end
@@ -444,6 +591,8 @@ end
 
 function aztec_ti_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ti") then
     return 0
   end
@@ -452,29 +601,38 @@ function aztec_ti_cbs(logic)
   end
   local cb_total = 0 --All of Aztec requires some logic
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("vine") or has("tim") or (logic == "ool") then
-    if has("tig") or ((logic == "ool") and ((has("di") and has("dig")) or (has("la") and has("lag")) or (has("ch") and has("chg")))) then
-	  if has("dive") and has("tig") then
-	    cb_total = cb_total + 20 --2x balloons in Kong cage room
-	  end
-	  if has("dive") and has("tib") then
-	    cb_total = cb_total + 5 --Line of 5 entering enemy gauntlet room
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/aztec_past_vine_strict") or ((ool) and has("@logic/aztec_past_vine")) then
+    if has("@logic/tiny_temple_access") then
+	  if has("@logic/tiny_temple_water") and has("dive") then
+	    if has("tig") then
+	      cb_total = cb_total + 20 --2x balloons in Kong cage room
+	    end
+	    if has("tib") then
+	      cb_total = cb_total + 5 --Line of 5 entering enemy gauntlet room
+	    end
 	  end
 	end
-	if (has("di") and has("dii") and (has("dib") or has("vine"))) or has("barrier_aztec_door") or has("bananaport_all") then
-	  cb_total = cb_total + 50 --Line of 10 from pressure plate to totem area + bunch under Tiny barrel by gong tower + bunch on warp 5 + line of 5 leading to 5 door temple + 5x bunches on trees around 5 door temple
-	  if has("barrier_aztec_llama") or (has("dk") and has("dkp")) then
-	    if has("tig") or (has("dk") and has("dkg")) or (has("la") and has("lag")) then
-	      cb_total = cb_total + 3 --Line of 3 entering bottle in fairy room
-		  if has("tig") then
-		    cb_total = cb_total + 10 --Balloon above lava/water pool
-		  end
-		  if has("tib") or has("bananaport_all") then
-		    cb_total = cb_total + 2 --Line of 2 on the lava room side of the bottle
-		    if has("tim") or (logic == "ool") or ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (aztec_slam() == 1))) then
-		      cb_total = cb_total + 10 --2x bunches on side platforms in lava room
-		    end
-		  end
+	if has("@logic/aztec_door_access") then
+	  cb_total = cb_total + 25 --Line of 10 from pressure plate to totem area + bunch under Tiny barrel by gong tower + bunch on warp 5 + line of 5 leading to 5 door temple
+	  if has("climb") or has("tim") or (ool) then 
+	    cb_total = cb_total + 15 --3x bunches on near trees around 5 door temple
+      end
+	  if has("climb") or has("tim") then
+	    cb_total = cb_total + 10 --2x bunches on far trees around 5 door temple
+	  end
+	  if has("@logic/llama_temple_access") then
+	    cb_total = cb_total + 3 --Line of 3 entering bottle in fairy room
+		if has("tig") then
+		  cb_total = cb_total + 10 --Balloon above lava/water pool
+		end
+		if has("tib") or has("bananaport_all") then
+		  cb_total = cb_total + 2 --Line of 2 on the lava room side of the bottle
+		  if has("tim") or (ool) or ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (aztec_slam() == 1))) then
+		    cb_total = cb_total + 10 --2x bunches on side platforms in lava room
+		  end		
 		end
 	  end
 	end
@@ -484,6 +642,8 @@ end
 
 function aztec_ch_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ch") then
     return 0
   end
@@ -492,20 +652,23 @@ function aztec_ch_cbs(logic)
   end
   local cb_total = 0 --All of Aztec requires some logic
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("vine") or (has("ti") and has("tim")) or (logic == "ool") then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/aztec_past_vine_strict") or ((ool) and has("@logic/aztec_past_vine")) then
     cb_total = cb_total + 5 --Line of 5 between sand pits in first tunnel
 	if has("chg") then
 	  cb_total = cb_total + 20 --4x bunches on thin walkways in vase room
 	end
-	if has("chg") or ((logic == "ool") and ((has("di") and has("dig")) or (has("la") and has("lag")) or (has("ti") and has("tig")))) then
+	if has("chg") or ((ool) and has("@logic/tiny_temple_access")) then
 	  cb_total = cb_total + 29 --5x bunches in back left corner around torch + line of 4 leading to rotating enemy gauntlet room
-	  if has("chg") and has("dive") then
+	  if has("chg") and has("dive") and has("@logic/tiny_temple_water") then
 	    cb_total = cb_total + 10 --Balloon in vulture room
 	  end
 	end
-	if (has("di") and has("dii") and (has("dib") or has("vine"))) or has("barrier_aztec_door") or has("bananaport_all") then
+	if has("@logic/aztec_door_access") then
 	  cb_total = cb_total + 16 --10 on lowest stairs surrounding totem + 2x lines of 3 on tri-stairs near Snide's HQ
-	  if has("chg") and (has("barrier_aztec_5dtemple") or (has("di") and has("dig") and has("dib") and ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (aztec_slam() == 1))))) then
+	  if has("@logic/5_door_temple_switches") and has("chg") then
 	    cb_total = cb_total + 20 --2x balloons in Chunky 5 door temple
 	  end
 	end
@@ -515,28 +678,39 @@ end
 
 function factory_dk_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("dk") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 15 --Line of 5 in tunnel from start to hatch + line of 6 in tunnel from bottom of hatch pole to Production room + line of 4 in tunnel between Production room and Storage
+  local cb_total = 10 --Line of 6 in tunnel from bottom of hatch pole to Production room + line of 4 in tunnel between Production room and Storage
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/factory_start_access") then
+    cb_total = cb_total + 5 --Line of 5 in tunnel from start to hatch
+  end
   if has("dkp") then
     cb_total = cb_total + 20 --4x bunches in Barrel Blast course
   end
   if has("dkg") then
     cb_total = cb_total + 10 --Balloon near Cranky's Lab and Candy's Music Store
   end
-  if has("barrier_factory_testing") or has("ss") or has("bananaport_all") then
+  if has("@logic/testing_access") then
     cb_total = cb_total + 5  --Line of 5 in tunnel to counting game
 	if has("dkg") then
-	  cb_total = cb_total + 35 --Balloon around counting game + balloon above hole to power hut + 3x bunches in power hut
+	  cb_total = cb_total + 10 --Balloon around counting game
 	end
   end
-  if has("barrier_factory_production") or ((has("barrier_factory_testing") or has("ss") or has("bananaport_all")) and has("dkg") and has("dkm")) then
-    if has("dkb") or (logic == "ool") then
+  if has("@logic/rd_access") and has("dkg") and ((ool) or has("climb")) then
+    cb_total = cb_total + 25 --Balloon above hole to power hut + 3x bunches in power hut
+  end
+  if has("@logic/prod_power_access") then
+    if has("dkb") or (ool) then
 	  cb_total = cb_total + 15 --3x bunches in crusher room
 	end
   end
@@ -545,27 +719,37 @@ end
 
 function factory_di_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("di") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 22 --Circle of 12 around Production room floor + 5 in tunnel to DK arcade + bunch on arcade warp 5
+  local cb_total = 12 --Circle of 12 around Production room floor
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("barrier_factory_testing") or has("ss") or has("bananaport_all") then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/arcade_access") then
+    cb_total = cb_total + 10 --5 in tunnel to DK arcade + bunch on arcade warp 5
+  end
+  if has("@logic/testing_access") then
     cb_total = cb_total + 8 --Line of 3 in tunnel to Funky's Armory + bunch on Funky's Armory warp 5
-    if has("dip") or (logic == "ool") then
+    if has("dip") or (ool) then
       cb_total = cb_total + 5 --Lowest bunch on block tower
     end
-    if has("dip") then
+    if has("dip") or ((ool) and (has("ch") or has("dk"))) then
       cb_total = cb_total + 20 --4x bunches on the rest of block tower
     end
+  end
+  if has("@logic/rd_ledge_access") then
     if has("dii") and has("dig") then
       cb_total = cb_total + 30 --3x balloons in enemy code room
     end
   end
-  if has("barrier_factory_production") or ((has("barrier_factory_testing") or has("ss") or has("bananaport_all")) and has("dk") and has("dkg") and has("dkm")) then
+  if has("@logic/upper_prod_access_strict") then
     cb_total = cb_total + 15 --3x bunches on rotating cylinders and Simian Spring pad in upper Production room
   end
   return cb_total >= cb_amount
@@ -573,35 +757,49 @@ end
 
 function factory_la_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("la") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 10 --Bunch on entrance warp 2 + line of 5 in tunnel to Cranky's Lab and Candy's Music Store
+  local cb_total = 5 --Line of 5 in tunnel to Cranky's Lab and Candy's Music Store
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("lam") or (logic == "ool") then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("lam") or (ool) or (has("portal_shuffle_on") and has("factory_entry_sp")) then
     cb_total = cb_total + 2 --lowest 2 bananas on pipe to vanilla Kong freeing switch
   end
-  if has("lam") then
+  if has("lam") or (has("portal_shuffle_on") and has("factory_entry_sp")) then
     cb_total = cb_total + 3 --upper 3 bananas on pipe to vanilla Kong freeing switch
   end
-  if has("barrier_factory_testing") or has("ss") or has("bananaport_all") then
-    cb_total = cb_total + 15 --Circle of 10 around R&D + bunch on R&D warp 2
+  if has("@logic/factory_start_access") then
+    cb_total = cb_total + 5 --Bunch on entrance warp 2
+  end
+  if has("@logic/rd_access") then
+    cb_total = cb_total + 10 --Half circle of 5 around lower R&D + bunch on R&D warp 2
+	if has("@logic/rd_upper_access") or (ool) then
+	  cb_total = cb_total + 5 --Half circle of 5 around upper R&D
+	end
     if has("lai") and has ("lag") then
       cb_total = cb_total + 10 --Balloon in piano room
     end
   end
-  if has("bananaport_all") or has("barrier_factory_production") or ((has("barrier_factory_testing") or has("ss")) and has("dk") and has("dkg") and has("dkm")) then
+  if has("bananaport_all") or has("@logic/upper_prod_access_strict") then
     cb_total = cb_total + 15 --3x bunches on stairs leading to rotating machine
   end
-  if has("barrier_factory_production") or ((has("barrier_factory_testing") or has("ss") or has("bananaport_all")) and has("dk") and has("dkg") and has("dkm")) then
+  if has("@logic/prod_power_access") and has("lag") then
+    cb_total = cb_total + 10 --Balloon in crusher room
+  end
+  if has("@logic/upper_prod_access_strict") then
     cb_total = cb_total + 5 --Lowest bunch on pipe grate in upper Production room
 	if has("lag") then
-	  cb_total = cb_total + 20 --balloon in crusher room + balloon near vanilla Production room T&S portal
+	  cb_total = cb_total + 10 --Balloon near vanilla Production room T&S portal
 	end
-	if has("lam") or (logic == "ool") then 
+	if has("lam") or (ool) then 
 	  cb_total = cb_total + 10 --Lower 2x bunches on pipe in upper Production room
 	end
 	if has("lam") then
@@ -613,29 +811,47 @@ end
 
 function factory_ti_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ti") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 18 --2x bunches in window halfway down hatch pole + bunch before air vent in DK arcade room + line of 3 before door from entrance to Testing room
+  local cb_total = 0
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("barrier_factory_testing") or has("ss") or has("bananaport_all") then
-    cb_total = cb_total + 22 --line of 7 in tunnel to Testing room + bunch in front of duct to shooting gallery + 10 in tunnel to car race
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/arcade_access") then
+    cb_total = cb_total + 5 --Bunch before air vent in DK arcade room
+  end
+  if has("tig") then
+	cb_total = cb_total + 10 --Balloon at the base of the Production room machine
+	if (has("@logic/factory_start_access") and has("bananaport_all")) or has("@logic/testing_access") then
+      cb_total = cb_total + 10 --Balloon near Snide's HQ
+    end
+  end
+  if has("@logic/factory_start_access") then
+    cb_total = cb_total + 3 --Line of 3 before door from entrance to Testing room
+	if has("climb") or (ool) then
+	  cb_total = cb_total + 10 --2x bunches in window halfway down hatch pole
+	end
+  end
+  if has("@logic/testing_access") then
+    cb_total = cb_total + 12 --line of 7 in tunnel to Testing room + bunch in front of duct to shooting gallery
     if has("tib") then
       cb_total = cb_total + 5 --Bunch near duct in shooting gallery room
     end
     if has("tig") then
-      cb_total = cb_total + 20 --Balloon near Snide's HQ + balloon near Funky's Armory
+      cb_total = cb_total + 10 --Balloon near Funky's Armory
     end
   end
-  if has("bananaport_all") or has("barrier_factory_production") or ((has("barrier_factory_testing") or has("ss") or has("bananaport_all")) and has("dk") and has("dkg") and has("dkm")) then
-    if has("tig") then
-	  cb_total = cb_total + 10 --Balloon at the base of the Production room machine
-	end
+  if has("@logic/rd_access") then
+    cb_total = cb_total + 10  --Line of 10 in tunnel to car race
   end
-  if has("barrier_factory_production") or ((has("barrier_factory_testing") or has("ss") or has("bananaport_all")) and has("dk") and has("dkg") and has("dkm")) then
+  if has("@logic/upper_prod_access_strict") then
     cb_total = cb_total + 20 --4x bunches on fast conveyors leading to top of Production room
 	if has("tim") then
 	  cb_total = cb_total + 5 --Bunch on ledge beyond Bonus Barrel
@@ -646,33 +862,44 @@ end
 
 function factory_ch_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ch") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 20 --Bunch on entrance warp 1 + 10 on pole under hatch + bunch on Storage room warp 1
+  local cb_total = 5 --Bunch on Storage room warp 1
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("chg") then
-    cb_total = cb_total + 10 --Balloon above hatch
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
   end
   if has("chm") then
     cb_total = cb_total + 15 --3x bunches above pistons in dark room
-  end  
-  if has("barrier_factory_testing") or has("ss") or has("bananaport_all") then
-    cb_total = cb_total + 5 --Bunch on warp 3 near Snide's HQ
+  end
+  if has("@logic/factory_start_access") then
+    cb_total = cb_total + 5 --Bunch on entrance warp 1
+	if has("climb") or (ool) then
+	  cb_total = cb_total + 10 --10 on pole under hatch
+	end
 	if has("chg") then
-      cb_total = cb_total + 20 --Balloon above pole to Snide's HQ
+      cb_total = cb_total + 10 --Balloon above hatch
     end
-	if has("chm") and has("chi") then
-	  cb_total = cb_total + 10 --2x lines of 5 in monster fight room
-	  if has("chg") then
-	    cb_total = cb_total + 10 --Balloon in monster fight room
-	  end
+  end
+  if (has("@logic/factory_start_access") and has("bananaport_all")) or has("@logic/testing_access") then
+    cb_total = cb_total + 5 --Bunch on warp 3 near Snide's HQ
+  end
+  if has("@logic/testing_access") and has("chg") then
+    cb_total = cb_total + 10 --Balloon above pole to Snide's HQ
+  end
+  if has("@logic/rd_ledge_access") and has("chm") and has("chi") and (has("climb") or (ool)) then
+	cb_total = cb_total + 10 --2x lines of 5 in monster fight room
+	if has("chg") then
+	  cb_total = cb_total + 10 --Balloon in monster fight room
 	end
   end
-  if has("bananaport_all") or has("barrier_factory_production") or ((has("barrier_factory_testing") or has("ss") or has("bananaport_all")) and has("dk") and has("dkg") and has("dkm")) then
+  if has("bananaport_all") or has("@logic/upper_prod_access_strict") then
 	cb_total = cb_total + 20 --4x bunches around spinning Production room machine
   end
   return cb_total >= cb_amount
@@ -680,6 +907,8 @@ end
 
 function galleon_dk_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("dk") then
     return 0
   end
@@ -688,10 +917,13 @@ function galleon_dk_cbs(logic)
   end
   local cb_total = 0
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
   if has("dkg") then
     cb_total = cb_total + 10 --Balloon above Primate Punch chests
   end
-  if has("barrier_galleon_shipyard") or has("bananaport_all") or (has("di") and has("dig")) then
+  if has("@logic/shipyard_access") then
 	if has("dive") then
 	  cb_total = cb_total + 15 --3x bunches in hollow ship tunnel
 	  if has("dki") then
@@ -699,18 +931,18 @@ function galleon_dk_cbs(logic)
 	  end
 	end
   end
-  if has("dkg") or has("barrier_galleon_lighthouse") or has("bananaport_all") then
+  if has("@logic/lighthouse_access") then
     if has("dive") and has("la") then
 	  cb_total = cb_total + 10 --10 behind Enguarde wall
 	end
-	if has("dive") or has("bananaport_all") or ((logic == "ool") and has("ti") and has("tim") and has("barrier_galleon_seasick")) then
+	if has("@logic/lighthouse_platform_strict") or ((ool) and has("@logic/lighthouse_platform")) then
 	  if has("dkg") then
 	    cb_total = cb_total + 10 --Balloon floating around lighthouse
 	  end
 	  if has("dkp") then
 	    cb_total = cb_total + 15 --3x bunches in Barrel Blast course
       end
-	  if (has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (galleon_slam() == 1)) then
+	  if has("climb") and ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (galleon_slam() == 1))) then
 	    cb_total = cb_total + 20 --4x bunches going up whomp's fortress
 		if has("dkg") then
 		  cb_total = cb_total + 10 --Balloon within lighthouse
@@ -723,6 +955,8 @@ end
 
 function galleon_di_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("di") then
     return 0
   end
@@ -731,7 +965,10 @@ function galleon_di_cbs(logic)
   end
   local cb_total = 10 --2x bunches in cannon path to Cranky's Lab
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("barrier_galleon_shipyard") or has("bananaport_all") or has("dig") then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/shipyard_access") then
     if has("dig") then
       cb_total = cb_total + 10 --Balloon around instrument cactus
     end
@@ -741,12 +978,12 @@ function galleon_di_cbs(logic)
    	    cb_total = cb_total + 14 --Line of 4 from entrance to 5 door ship + 2x bunches in corners of 5 door ship
 	  end
     end
-    if has("dig") and (has("bananaport_all") or (has("dive") and has("la") and ((logic == "ool") or (has("dk") and has("dkg")) or has("barrier_galleon_lighthouse")))) then
+    if has("dig") and (has("@logic/treasure_room_access_strict") or ((ool) and has("@logic/treasure_room_access"))) then
       cb_total = cb_total + 10 --Balloon in treasure room
     end
   end
-  if (has("dk") and has("dkg")) or has("barrier_galleon_lighthouse") or has("bananaport_all") then
-    if has("dive") or has("bananaport_all") or ((logic == "ool") and has("ti") and has("tim") and has("barrier_galleon_seasick")) then
+  if has("@logic/lighthouse_access") then
+    if has("@logic/lighthouse_platform_strict") or ((ool) and has("@logic/lighthouse_platform")) then
 	  if has("dig") then
 	    cb_total = cb_total + 10 --Balloon above seal cage
 	  end
@@ -760,6 +997,8 @@ end
 
 function galleon_la_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("la") then
     return 0
   end
@@ -768,15 +1007,16 @@ function galleon_la_cbs(logic)
   end
   local cb_total = 5 --Line of 5 from start to intersection
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
   if has("lag") and has("ch") and has("chm") then
 	cb_total = cb_total + 20 --2x balloons above Battle Arena pad
   end
-  if (has("dk") and has("dkg")) or has("barrier_galleon_lighthouse") or has("bananaport_all") then
-    if has("dive") then
-	  cb_total = cb_total + 25 --Ring of 5 under lighthouse Enguarde crate + 4x bunches in lighthouse Enguarde chests
-	end
+  if has("@logic/lighthouse_access") and has("dive") then
+	cb_total = cb_total + 25 --Ring of 5 under lighthouse Enguarde crate + 4x bunches in lighthouse Enguarde chests
   end
-  if has("barrier_galleon_shipyard") or has("bananaport_all") or (has("di") and has("dig")) then
+  if has("@logic/shipyard_access") then
     cb_total = cb_total + 5 --Bunch on trombone pad on instrument cactus
 	if has("lag") then
 	  cb_total = cb_total + 10 --Balloon above 5 door ship
@@ -790,9 +1030,9 @@ function galleon_la_cbs(logic)
 	    cb_total = cb_total + 15 --3x bunches in 5 door ship
 	  end
 	end
-    if (has("bananaport_all") and (has("galleon_water_raised") or ((logic == "ool") and has("ti") and has("tim")))) or (has("dive") and ((logic == "ool") or has("barrier_galleon_lighthouse") or has("galleon_water_raised") or (has("dk") and has("dkg")))) then
+    if has("@logic/treasure_room_access") and (has("@logic/raised_water_access") or (has("dive") and ((ool) or has("monkey_moves")))) then
       cb_total = cb_total + 1 --Banana on lowest balloon pad
-	  if has("lap") or ((logic == "ool") and (has("bananaport_all") and has("ti") and has("tim")) or (has("di") and has("dip") and has("ti") and has("tim"))) then
+	  if has("lap") or ((ool) and (has("bananaport_all") and has("ti") and has("tim")) or (has("di") and has("dip") and has("ti") and has("tim"))) then
 	    cb_total = cb_total + 4 --Upper 4 bananas on balloon pad gold pile
 	  end
     end
@@ -802,6 +1042,8 @@ end
 
 function galleon_ti_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ti") then
     return 0
   end
@@ -810,31 +1052,34 @@ function galleon_ti_cbs(logic)
   end
   local cb_total = 9 --Line of 5 from intersection to lighthouse gate + line of 4 from intersection to shipyard gate
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("vine") or (has("bananaport_all") and (has("dive") or (has("di") and has("dib")) or ((logic == "ool") and has("tim") and (has("barrier_galleon_seasick") or (has("dk") and has("dkm") and ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (galleon_slam() == 1)))))))) then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/planks_access") then
     cb_total = cb_total + 8 --Bunch on warp 3 by Cranky's Lab + line of 3 from warp 3 to Kasplat alcove
   end
-  if (has("bananaport_all") and has("vine")) or (has("bananaport_all") and (has("dive") or (has("di") and has("dib")) or ((logic == "ool") and has("tim") and (has("barrier_galleon_seasick") or (has("dk") and has("dkm") and ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (galleon_slam() == 1)))))))) or ((has("barrier_galleon_lighthouse") or (has("dk") and has("dkg"))) and (has("dive") or (has("barrier_galleon_seasick") and has("tim") and (logic == "ool")))) then
+  if (has("bananaport_all") and has("@logic/planks_access")) or (has("@logic/lighthouse_access") and (has("@logic/raised_water_access") or (has("@logic/k_rool_ship") and has("tim")) or ((has("monkey_moves") or (ool)) and (has("la") or has("ch")) and has("@logic/planks_access")))) then
     cb_total = cb_total + 5 --Bunch on warp 3 by Snide's HQ
 	if has("tig") then
 	  cb_total = cb_total + 10 --Balloon by Snide's HQ
 	end
   end
-  if has("ch") and has("chg") and ((logic == "ool") or has("galleon_water_raised") or (has("dive") and ((has("dk") and has("dkg")) or has("barrier_galleon_lighthouse") or has("bananaport_all")))) then
+  if has("@logic/cannon_room_access_strict") or ((ool) and has("@logic/cannon_room_access")) then
     cb_total = cb_total + 15 --3x bunches on cannon room thin platforms
   end
-  if (has("dk") and has("dkg")) or has("barrier_galleon_lighthouse") or has("bananaport_all") then
-    if has("tig") and has("galleon_water_lowered") or has("dive") then
+  if has("@logic/lighthouse_access") then
+    if has("tig") and has("@logic/lowered_water_access") then
 	  cb_total = cb_total + 10 --Balloon in low tide alcove
 	end
   end
-  if has("barrier_galleon_shipyard") or has("bananaport_all") or (has("di") and has("dig")) then
+  if has("@logic/shipyard_access") then
     if has("tii") and has("dive") then 
       cb_total = cb_total + 18 --8 singles in 5 door ship + 2x bunches in bushes in 5 door ship
     end
     if has("dive") and ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (galleon_slam() == 1))) then
       cb_total = cb_total + 10 --2x bunches in 2 door ship
     end
-    if has("bananaport_all") or (has("la") and has("dive") and ((logic == "ool") or (has("dk") and has("dkg")) or has("barrier_galleon_lighthouse"))) then
+    if has("@logic/treasure_room_access") then
       if has("dive") then
 	    cb_total = cb_total + 5 --Bunch in front of oyster chest
 	  end
@@ -848,6 +1093,8 @@ end
 
 function galleon_ch_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ch") then
     return 0
   end
@@ -856,32 +1103,35 @@ function galleon_ch_cbs(logic)
   end
   local cb_total = 12 --Line of 2 from intersection to warp 1 + line of 5 toward Primate Punch chests + bunch on warp 2
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("vine") or (has("bananaport_all") and (has("dive") or (has("di") and has("dib")) or ((logic == "ool") and (has("ti") and has("tim")) and (has("barrier_galleon_seasick") or (has("dk") and has("dkm") and ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (galleon_slam() == 1)))))))) then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/planks_access") then
     cb_total = cb_total + 3 --Line of 3 from warp 3 to T&S portal
   end
-  if has("chg") and ((logic == "ool") or has("galleon_water_raised") or (has("dive") and ((has("dk") and has("dkg")) or has("barrier_galleon_lighthouse") or has("bananaport_all")))) then
+  if has("@logic/cannon_room_access") and has("chg") then
     cb_total = cb_total + 10 --Balloon behind cannon in cannon game room
   end
-  if (has("dk") and has("dkg")) or has("barrier_galleon_lighthouse") or has("bananaport_all") then
+  if has("@logic/lighthouse_access") then
     if has("dive") then
 	  cb_total = cb_total + 10 --Circle of 10 around base of lighthouse platforms
 	end
   end
-  if has("ss") and ((has("bananaport_all") and (has("barrier_galleon_seasick") or (has("dk") and has("dkm") and ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (galleon_slam() == 1)))))) or ((has("barrier_galleon_lighthouse") or (has("dk") and has("dkg"))) and ((has("barrier_galleon_seasick") and (logic == "ool") and has("ti") and has("tim")) or (has("dive") and (has("barrier_galleon_seasick") or (has("dk") and has("dkm") and ((has("prog_switch_off") and has("ss")) or (has("prog_switch_on") and (galleon_slam() == 1))))))))) then
+  if has("ss") and has("@logic/k_rool_ship") then
     cb_total = cb_total + 20 --4x bunches in seasick ship
 	if has("chm") then
 	  cb_total = cb_total + 5 --bunch behind punch wall in seasick ship
 	end
   end
-  if has("barrier_galleon_shipyard") or has("bananaport_all") or (has("di") and has("dig")) then
+  if has("@logic/shipyard_access") then
     if has("chg") then
       cb_total = cb_total + 20 --Balloon over 2 door ship + balloon around instrument cactus
     end
     if has("dive") then
       cb_total = cb_total + 15 --3x bunches in hollow ship tunnel
 	end
-	if has("galleon_water_raised") or has("dive") and ((has("dk") and has("dkg")) or has("barrier_galleon_lighthouse") or has("bananaport_all")) then
-	    cb_total = cb_total + 5 --bunch above warp 2 at high tide
+	if has("@logic/raised_water_access") then
+	  cb_total = cb_total + 5 --bunch above warp 2 at high tide
 	end
   end
   return cb_total >= cb_amount
@@ -889,32 +1139,46 @@ end
 
 function forest_dk_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("dk") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 35 --Line of 5 in tunnel to mushroom + line of 5 in tunnel to mill + bunch on lower warp 5 near mushroom + 15 singles around middle level of mushroom + bunch in conveyor mill room ? box on slam switch
+  local cb_total = 15 --Line of 5 in tunnel to mushroom + line of 5 in tunnel to mill + bunch on lower warp 5 near mushroom
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if (logic == "ool") or (has("dkg") and has("di") and has("dig") and has("la") and has("lag") and has("ti") and has("tig") and has("ch") and has("chg")) then
-    cb_total = cb_total + 15 --3x lower bunches in cannon chain path in giant mushroom
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
   end
-  if (logic == "ool") or has("bananaport_all") or has("vine") or (has("di") and has("dib")) or (has("dkg") and has("di") and has("dig") and has("la") and has("lag") and has("ti") and has("tig") and has("ch") and has("chg")) then
+  if has("ss") and (has("@logic/day_access_strict") or ((ool) and has("@logic/day_access"))) then
+    cb_total = cb_total + 5 --Bunch in conveyor mill room ? box on slam switch
+  end
+  if has("@logic/mushroom_walkway_access_strict") or ((ool) and has("@logic/mushroom_walkway_access")) then
+    cb_total = cb_total + 13 --12 singles around middle level of mushroom + 1 on lowest part of ladder to blast platform
+	if has("climb") or has("@logic/upper_mushroom_access") then
+	  cb_total = cb_total + 2 --2 singles on upper part of ladder to blast platform
+	end
+  end
+  if has("@logic/upper_mushroom_access") then
     cb_total = cb_total + 5 --Bunch on upper warp 5 in mushroom area
-  end
-  if has("dkp") then
-    cb_total = cb_total + 10 --2x bunches in Barrel Blast course
+	if has("dkp") then
+      cb_total = cb_total + 10 --2x bunches in Barrel Blast course
+    end
+	if (ool) or (has("dkg") and has("di") and has("dig") and has("la") and has("lag") and has("ti") and has("tig") and has("ch") and has("chg")) then
+	  cb_total = cb_total + 15 --3x lower bunches in cannon chain path in giant mushroom
+    end
   end
   if has("dkg") then
     cb_total = cb_total + 10 --Balloon behind dark attic barn
-	if (has("prog_switch_off") and has("sss")) or (has("prog_switch_on") and (forest_slam() == 1)) then
+	if (has("@logic/day_access_strict") or ((ool) and has("@logic/day_access"))) and ((has("prog_switch_off") and has("sss")) or (has("prog_switch_on") and (forest_slam() == 1))) then
 	  cb_total = cb_total + 10 --Balloon in lever room in conveyor mill
 	end
   end
-  if has("dkg") or (has("di") and has("dig")) or (has("la") and has("lag")) or (has("ti") and has("tig")) or (has("ch") and has("chg")) or ((logic == "ool") and has("orng")) then
+  if has("@logic/night_access_strict") or ((ool) and has("@logic/night_access")) then
     cb_total = cb_total + 5 --Line of 5 leading toward rosebush barn
-	if has("dkb") or (logic == "ool") then
+	if has("dkb") or (ool) then
 	  cb_total = cb_total + 5 --Bunch on slam switch surrounded by thorns
 	  if (has("prog_switch_off") and has("sss")) or (has("prog_switch_on") and (forest_slam() == 1)) then
 	    cb_total = cb_total + 5 --Bunch in ? box on slam switch in rosebush barn
@@ -926,34 +1190,39 @@ end
 
 function forest_di_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("di") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 35 --2x bunches on bounce mushroom to rocketbarrel in main area + bunch on main area warp 4 + 2x bunches on bounce mushroom to rocketbarrel near giant mushroom + circle of 7 around bottom of upper giant mushroom + 3 on crates to dark attic barn
+  local cb_total = 28 --2x bunches on bounce mushroom to rocketbarrel in main area + bunch on main area warp 4 + 2x bunches on bounce mushroom to rocketbarrel near giant mushroom + 3 on crates to dark attic barn
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if (true) or (logic == "ool") or has("bananaport_all") or has("vine") or (has("di") and has("dib")) or (has("dk") and has("dkg") and has("dig") and has("la") and has("lag") and has("ti") and has("tig") and has("ch") and has("chg")) then
-    cb_total = cb_total + 10 --circle of 10 around mushroom top
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
   end
-  if has("barrier_forest_yellow") or has("bananaport_all") or (has("la") and has("lag")) then
+  if has("@logic/upper_mushroom_access") then
+    cb_total = cb_total + 17 --circle of 10 around mushroom top + circle of 7 around bottom of upper giant mushroom
+  end
+  if has("@logic/owl_tree_access") then
     cb_total = cb_total + 15 --circle of 10 around owl tree + bunch on owl tree warp 4
 	if has("dib") then
 	  cb_total = cb_total + 5 --bunch on top of owl tree
 	end
   end
-  if has("dig") then
+  if has("dig") and ((has("@logic/day_access_strict") or ((ool) and has("@logic/day_access"))) or (has("climb") and (ool))) then
     cb_total = cb_total + 10 --Balloon near Snide's HQ
   end
   if has("dip") then
     cb_total = cb_total + 5 --Bunch outside entrance to dark attic barn
   end
-   if has("dig") or (has("dk") and has("dkg")) or (has("la") and has("lag")) or (has("ti") and has("tig")) or (has("ch") and has("chg")) or ((logic == "ool") and has("orng")) then
-     if has("dip") and ((logic == "ool") or has("dii")) then
+   if has("@logic/night_access_strict") or ((ool) and has("@logic/night_access")) then
+     if has("dip") and ((ool) or has("dii")) then
 	   cb_total = cb_total + 10 --2x bunches in rafters of dark attic barn
 	 end
-	 if has("dig") and ((has("prog_switch_off") and has("sss")) or (has("prog_switch_on") and (forest_slam() == 1))) then
+	 if has("dig") and has("climb") and ((has("prog_switch_off") and has("sss")) or (has("prog_switch_on") and (forest_slam() == 1))) then
 	   cb_total = cb_total + 10 --Balloon in winch room
 	 end
   end
@@ -962,39 +1231,52 @@ end
 
 function forest_la_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("la") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 32 --Bunch on main area warp 1 + circle of 10 around bottom of giant mushroom + bunch on mushroom warp 3 + line of 4 along mill roof + line of 3 going up winch + bunch above Baboon Balloon pad
+  local cb_total = 21 --Bunch on main area warp 1 + circle of 10 around bottom of giant mushroom + bunch on mushroom warp 3 + bottom banana of winch
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
   if has("lag") then
     cb_total = cb_total + 10 --Balloon at bottom of giant mushroom interior
   end
-  if (logic == "ool") or has("bananaport_all") or has("vine") or (has("di") and has("dib")) or (has("dk") and has("dkg") and has("dig") and has("la") and has("lag") and has("ti") and has("tig") and has("ch") and has("chg")) then
+  if has("lap") or has("climb") or (has("portal_shuffle_on") and has("forest_entry_mr")) then
+     cb_total = cb_total + 9 --line of 4 along mill roof + bunch above Baboon Balloon pad
+	 if has("@logic/night_access_strict") or ((ool) and has("@logic/night_access")) then
+       cb_total = cb_total + 10 --Bunch entering mill attic + bunch on slam switch in mill attic
+     end
+  end
+  if has("climb") then
+    cb_total = cb_total + 2 --line of 2 climbing up winch
+  end
+  if has("@logic/upper_mushroom_access") then
     if has("lag") then
       cb_total = cb_total + 10 --Balloon at top of giant mushroom interior
 	end
-	if has("lam") or ((logic == "ool") and has("di") and has("dib")) then
+	if has("lam") or ((ool) and has("di") and has("dib")) then
 	  cb_total = cb_total + 5 --Bunch on slam switch at the top of the giant mushroom exterior
 	  if ((has("prog_switch_off") and has("sss")) or (has("prog_switch_on") and (forest_slam() == 1))) then
 	    cb_total = cb_total + 15 --2x bunches in zinger room + bunch in colored mushroom room
 	  end
 	end
   end
-  if has("barrier_forest_yellow") or has("bananaport_all") or has("lag") then
+  if has("@logic/owl_tree_access") then
     cb_total = cb_total + 18 --Line of 10 in the tunnel to the owl tree + line of 3 leading to the rabbit + bunch on trombone pad near rabbit
-  end
-  if has("lag") or (has("dk") and has("dkg")) or (has("di") and has("dig")) or (has("ti") and has("tig")) or (has("ch") and has("chg")) or ((logic == "ool") and has("orng")) then
-    cb_total = cb_total + 10 --Bunch entering mill attic + bunch on slam switch in mill attic
   end
   return cb_total >= cb_amount
 end
 
 function forest_ti_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ti") then
     return 0
   end
@@ -1003,36 +1285,42 @@ function forest_ti_cbs(logic)
   end
   local cb_total = 10 --Bunch on main area warp 3 + bunch on slam switch at bottom of giant mushroom
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("tig") or has("barrier_forest_green") then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/green_tunnel_clock") then
     cb_total = cb_total + 4 --Line of 4 between feather gate and pineapple gate toward beanstalk area
   end
-  if has("barrier_forest_green") or has("bananaport_all") or (has("tig") and has("ch") and has("chg")) then
-    cb_total = cb_total + 16 --Single banana behind pineapple gate + 3x bunches on mushrooms in beanstalk area
+  if has("@logic/beanstalk_access") then
+    cb_total = cb_total + 1 --Single banana behind pineapple gate
+	if has("climb") then
+	  cb_total = cb_total + 15 --3x bunches on mushrooms in beanstalk area
+	end
   end
-  if has("tig") then
+  if has("tig") and ((ool) or has("@logic/mushroom_walkway_access_strict")) then
     cb_total = cb_total + 10 --Balloon above Kasplat on lower mushroom walkways
   end
-  if has("barrier_forest_yellow") or has("bananaport_all") or (has("la") and has("lag")) then
+  if has("@logic/owl_tree_access") then
     cb_total = cb_total + 8 --Circle of 8 around anthill
-	if (has("tib") and has("tii")) or ((logic == "ool") and has("di") and has("dib")) then
+	if (has("tib") and has("tii")) or ((ool) and has("di") and has("dib")) then
 	  cb_total = cb_total + 5 --Bunch on top of anthill
 	end
   end
   if has("dive") then
     cb_total = cb_total + 17 --Circle of 17 in moat around mill
   end
-  if (has("ch") and has("chm")) or (has("tib")) then
+  if (has("@logic/day_access_strict") or ((ool) and has("@logic/day_access"))) and (has("tib") or ((ool) and has("ch") and has("chm"))) then
     cb_total = cb_total + 10 --2x bunches in mill back room  
 	if(has("ch") and has("chm")) then
       cb_total = cb_total + 5 --Bunch in ? box in mill back room
+	  if (has("@logic/night_access_strict") or ((ool) and has("@logic/night_access"))) and has("tib") then
+	    cb_total = cb_total + 5 --Bunch in spider boss room
+	  end
 	end
   end
-  if has("tig") or (has("dk") and has("dkg")) or (has("di") and has("dig")) or (has("la") and has("lag")) or (has("ch") and has("chg")) or ((logic == "ool") and has("orng")) then
+  if has("@logic/night_access_strict") or ((ool) and has("@logic/night_access")) then
     if has("tig") then
 	  cb_total = cb_total + 10 --Balloon behind rosebush barn
-	end
-	if has("ch") and has("chm") and has("tib") then
-	  cb_total = cb_total + 5 --Bunch in spider boss room
 	end
   end
   return cb_total >= cb_amount
@@ -1040,17 +1328,25 @@ end
 
 function forest_ch_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ch") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 40 --Bunch on main area warp 2 + bunch on well entrance + 16 climbing the lower mushroom (2x bunches + 2 sets of 3 going up ladders) + 14 climbing the upper mushroom until the vine (3x sets of 3 going up ladders + 1 bunch)
+  local cb_total = 11 --Bunch on main area warp 2 + bunch on well entrance + lowest banana on first giant mushroom ladder
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if (logic == "ool") or has("bananaport_all") or has("vine") or (has("di") and has("dib")) or (has("dk") and has("dkg") and has("dig") and has("la") and has("lag") and has("ti") and has("tig") and has("ch") and has("chg")) then
-    cb_total = cb_total + 11 --11 climbing the upper mushroom from past the vine until the top (2x sets of 3 going up ladders + bunch at the top)
-	if has("vine") or has("chg") or (has("dk") and has("dkg")) or (has("di") and has("dig")) or (has("la") and has("lag")) or (has("ti") and has("tig")) or ((logic == "ool") and has("orng")) then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/mushroom_walkway_access_strict") or ((ool) and has("@logic/mushroom_walkway_access")) then
+    cb_total = cb_total + 15 --2 remaining singles from lowest ladder in mushroom + 2x bunches + another set of 3 going up 2nd ladder
+  end
+  if has("@logic/upper_mushroom_access") then
+    cb_total = cb_total + 25 --14 climbing the upper mushroom until the vine (3x sets of 3 going up ladders + 1 bunch) + 11 climbing the upper mushroom from past the vine until the top (2x sets of 3 going up ladders + bunch at the top)
+	if has("vine") or has("@logic/night_access_strict") or ((ool) and has("@logic/night_access")) then
 	  cb_total = cb_total + 5 --Bunch by night only door
 	end
 	if has("chg") then
@@ -1063,10 +1359,10 @@ function forest_ch_cbs(logic)
 	  end
 	end
   end
-  if has("barrier_forest_green") or has("bananaport_all") or (has("chg") and has("ti") and has("tig")) then
+  if has("@logic/beanstalk_access") then
 	cb_total = cb_total + 14 --Circle of 9 around worm apple + bunch on warp 2 in front of Funky's Armory
   end
-  if has("chm") then
+  if has("chm") and (has("@logic/day_access_strict") or ((ool) and has("@logic/day_access"))) then
     cb_total = cb_total + 5 --Bunch in ? box with triangle pad in mill back room
   end
   return cb_total >= cb_amount
@@ -1074,6 +1370,8 @@ end
 
 function caves_dk_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("dk") then
     return 0
   end
@@ -1082,18 +1380,26 @@ function caves_dk_cbs(logic)
   end
   local cb_total = 25 --Bunch on starting warp 1 + circle of 5 around Barrel Blast pad + bunch on igloo warp 1 + 5 in circle around igloo + bunch on bongos pad to Donkey 5 door cabin
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("ch") and has("chm") then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/caves_ice_walls") or (has("portal_shuffle_on") and has("caves_entry_bc")) then
     cb_total = cb_total + 3 --Line of 3 entering big boulder cave
 	if has("dkg") then
-	  cb_total = cb_total + 20 --Balloon in Gorilla Gone cave + balloon in big boulder cave
+	  cb_total = cb_total + 10 --Balloon in big boulder cave
+	end
+  end
+  if has("@logic/caves_ice_walls") or (has("portal_shuffle_on") and has("caves_entry_fiw")) then
+    if has("dkg") then
+	  cb_total = cb_total + 10 --Balloon in Gorilla Gone cave
 	end
   end
   if has("dkp") then
     cb_total = cb_total + 20 --4x bunches in Barrel Blast course
   end
-  if has("dki") and (has("barrier_caves_igloo") or (has("di") and has("dib"))) then
+  if has("dki") and has("@logic/igloo_access") then
     cb_total = cb_total + 5 --Bunch above door in Donkey 5 door igloo
-	if has("dkb") or (logic == "ool") then
+	if has("dkb") or (ool) then
 	  cb_total = cb_total + 7 --7 in rotating ice thorn maze
 	end
 	if has("dkg") then
@@ -1108,6 +1414,8 @@ end
 
 function caves_di_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("di") then
     return 0
   end
@@ -1116,7 +1424,10 @@ function caves_di_cbs(logic)
   end
   local cb_total = 5 --Line of 5 between Rocketbarrel barrel and Funky's Armory
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if (logic == "ool") or has("dib") then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if (ool) or has("dib") or has("monkey_moves") then
     cb_total = cb_total + 10 --Bunch on pillar warp 4 + bunch under waterfall Bonus Barrel
   end
   if has("dib") then
@@ -1125,15 +1436,15 @@ function caves_di_cbs(logic)
   if has("dig") then
     cb_total = cb_total + 20 --Balloon around warp 4 pillar + balloon above 5 door cabin
   end
-  if (has("bananaport_all") and (has("dib") or ((logic == "ool")))) or ((has("ti") and has("tib") and has("tim")) and ((logic == "ool") or has("dib"))) then
+  if (has("bananaport_all") and (has("dib") or (ool) or has("monkey_moves"))) or ((has("ti") and has("tib") and has("tim")) and ((ool) or has("dib") or has("monkey_moves"))) then
     cb_total = cb_total + 10 --Bunch on cave warp 4 + 5 singles around back of Kasplat cave
   end
-  if has("dii") and has("dig") and (has("barrier_caves_igloo") or has("dib")) then
+  if has("dii") and has("dig") and has("@logic/igloo_access") then
     cb_total = cb_total + 10 --Balloon in Diddy 5 door igloo
   end
   if has("dii") then
     cb_total = cb_total + 5 --Circle of 5 in Diddy enemy cabin
-	if has("dib") or (logic == "ool") then
+	if has("dib") or (ool) or has("monkey_moves") then
 	  cb_total = cb_total + 5 --Bunch on raised central platform in Diddy enemy cabin
 	end
 	if has("dip") and has("dib") then
@@ -1145,6 +1456,8 @@ end
 
 function caves_la_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("la") then
     return 0
   end
@@ -1153,6 +1466,9 @@ function caves_la_cbs(logic)
   end
   local cb_total = 15  --Line of 5 from level entrance to warp hub + line of 10 in water between waterfalls
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
   if has("lap") then
     cb_total = cb_total + 15 --3x bunches floating near Cranky's Lab
   end
@@ -1160,26 +1476,26 @@ function caves_la_cbs(logic)
     cb_total = cb_total + 10 --Balloon by backmost waterfall
   end
   if ((has("prog_switch_off") and has("sss")) or (has("prog_switch_on") and (caves_slam() == 1))) then
-    if (logic == "ool") or has("lap") then
+    if (ool) or has("lap") or has("monkey_moves") then
 	  cb_total = cb_total + 5 --Bunch in ice castle top hatch to beetle race
 	end
 	if has("lag") then
 	  cb_total = cb_total + 10 --Balloon in ice castle minigame room
 	end
   end
-  if has("bananaport_all") or (has("di") and has("dib")) or ((logic == "ool") and has("lap")) then
+  if has("bananaport_all") or (has("di") and has("dib")) or (((ool) or has("monkey_moves")) and (has("lap") or (has("ti") and has("tim")))) then
     cb_total = cb_total + 20 --4x bunches on Kasplat pillar
   end
-  if has("lai") and (has("barrier_caves_igloo") or (has("di") and has("dib"))) then
+  if has("lai") and has("@logic/igloo_access") then
     cb_total = cb_total + 1 --Banana on lowest Baboon Balloon pad in Lanky 5 door igloo
-	if has("lap") or (logic == "ool") then
+	if has("lap") or (ool) or has("monkey_moves") then
 	  cb_total = cb_total + 4 --4 singles on ice structure above first Baboon Balloon pad in Lanky 5 door igloo
 	end
 	if has("lag") then
 	  cb_total = cb_total + 10 --Balloon around top of ice structure in Lanky 5 door igloo
 	end
   end
-  if has("lap") or ((logic == "ool") and has("di") and has("dib")) then
+  if has("lap") or ((ool) and has("di") and has("dib")) then
     cb_total = cb_total + 5 --Bunch on trombone pad on Lanky cabin
 	if has("lai") then
       cb_total = cb_total + 5 --Bunch on pressure switch in Lanky cabin
@@ -1190,6 +1506,8 @@ end
 
 function caves_ti_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ti") then
     return 0
   end
@@ -1198,6 +1516,9 @@ function caves_ti_cbs(logic)
   end
   local cb_total = 15 --Line of 10 in river from warp hub to igloo + bunch on igloo warp 3
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
   if has("tib") or has("bananaport_all") then
     cb_total = cb_total + 5 --Bunch on Bonus Barrel warp 3
   end
@@ -1210,7 +1531,7 @@ function caves_ti_cbs(logic)
 	  cb_total = cb_total + 10 --Balloon in Tiny 5 door cabin
 	end
   end
-  if (has("bananaport_all") and (has("tim") or (logic == "ool"))) or (has("tib") and has("tim")) then
+  if (has("bananaport_all") and (has("tim") or (ool))) or (has("tib") and has("tim")) then
     if has("tig") then
 	  cb_total = cb_total + 10 --Balloon in Kasplat cave
 	end
@@ -1221,7 +1542,7 @@ function caves_ti_cbs(logic)
   if has("ch") and has("brrl") and has("chm") and has("chb") and has("tip") then
     cb_total = cb_total + 20 --4x bunches in giant Kosha arena
   end
-  if has("tii") and (has("barrier_caves_igloo") or (has("di") and has("dib"))) then
+  if has("tii") and has("@logic/igloo_access") then
     cb_total = cb_total + 5 --Bunch on slam target in Tiny 5 door igloo
 	if has("tig") then
 	  cb_total = cb_total + 10 --Balloon in Tiny 5 door igloo
@@ -1232,6 +1553,8 @@ end
 
 function caves_ch_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ch") then
     return 0
   end
@@ -1240,14 +1563,22 @@ function caves_ch_cbs(logic)
   end
   local cb_total = 18 --Bunch on entrance warp 2 + bunch on small boulder switch + line of 3 between boulder and small boulder switch + bunch on cabins warp 2
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("brrl") then
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("brrl") or (ool) then
     cb_total = cb_total + 5 --Bunch under small boulder
   end
-  if has("chm") then
-    cb_total = cb_total + 11 --Bunch on Gorilla Gone pad in Gorilla Gone cave + line of 3 into Gorilla Gone cave + line of 3 into Snide's HQ room
+  if has("@logic/caves_ice_walls") or (has("portal_shuffle_on") and has("caves_entry_fiw")) then
+    cb_total = cb_total + 8 --Bunch on Gorilla Gone pad in Gorilla Gone cave + line of 3 into Gorilla Gone cave
+  end
+  if has("@logic/caves_ice_walls") or (has("portal_shuffle_on") and has("caves_entry_siw")) then
+    cb_total = cb_total + 3 --Line of 3 into Snide's HQ room
 	if has("chg") then
 	  cb_total = cb_total + 10 --Balloon in Snide's HQ room
 	end
+  end
+  if has("@logic/caves_ice_walls") or (has("portal_shuffle_on") and has("caves_entry_bc")) then
 	if has("brrl") then
 	  cb_total = cb_total + 6 --Circle of 6 around big boulder within ice shield in big boulder room
 	  if has("chb") then
@@ -1258,7 +1589,7 @@ function caves_ch_cbs(logic)
   if has("chg") and (has("bananaport_all") or (has("ti") and has("tib"))) then
     cb_total = cb_total + 10 --Balloon in Bonus Barrel cave
   end
-  if has("chg") and has("chi") and (has("barrier_caves_igloo") or (has("di") and has("dib"))) then
+  if has("chg") and has("chi") and has("@logic/igloo_access") then
     cb_total = cb_total + 10 --Balloon in Chunky 5 door igloo
   end
   if has("chi") and has("ss") and has("chp") then
@@ -1269,26 +1600,34 @@ end
 
 function castle_dk_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("dk") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 50 --Line of 5 on bridge near entrance + line of 45 from after tree until warp 2
+  local cb_total = 0
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("dkp") and has("dkg") then
-    cb_total = cb_total + 15 --Balloon past coconut switch in tree + bunch above driftwood in water raising room
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
   end
-  if (has("prog_switch_off") and has("sdss")) or (has("prog_switch_on") and (castle_slam() == 1)) then
-    cb_total = cb_total + 10 --Bunch on stack of books in library + bunch on face puzzle in dungeon
-	if has("dkb") or (logic == "ool") then
-	  cb_total = cb_total + 10 --2x bunches in flying book hallway
-	end
+  if has("@logic/castle_above_climb_strict") or ((ool) and has("@logic/castle_above_climb")) then
+    cb_total = cb_total + 50 --Line of 5 on bridge near entrance + line of 45 from after tree until warp 2
+    if has("dkp") and has("dkg") then
+      cb_total = cb_total + 15 --Balloon past coconut switch in tree + bunch above driftwood in water raising room
+    end
+    if (has("prog_switch_off") and has("sdss")) or (has("prog_switch_on") and (castle_slam() == 1)) then
+      cb_total = cb_total + 10 --Bunch on stack of books in library + bunch on face puzzle in dungeon
+	  if has("dkb") or (ool) then
+	    cb_total = cb_total + 10 --2x bunches in flying book hallway
+	  end
+    end
   end
-  if has("dkg") or ((logic == "ool") and ((has("di") and has("dig")) or (has("ch") and has("chg")))) then
+  if has("dkg") or has("barrier_castle_crypt") or ((ool) and ((has("di") and has("dig")) or (has("ch") and has("chg")))) then
     cb_total = cb_total + 5 --Bunch on crypt warp 2
-	if has("dkg") then
+	if has("dkg") or has("barrier_castle_crypt") then
 	  cb_total = cb_total + 10 --Balloon in minecart lever room
 	end
   end
@@ -1297,6 +1636,8 @@ end
 
 function castle_di_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("di") then
     return 0
   end
@@ -1305,30 +1646,40 @@ function castle_di_cbs(logic)
   end
   local cb_total = 0
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("dib") or (logic == "ool") then
-    cb_total = cb_total + 5 --Bunch on pole near Cranky's Lab
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
   end
-  if has("dib") then
-    cb_total = cb_total + 5 --Bunch on cloud at top of castle
+  if has("@logic/castle_above_climb_strict") or ((ool) and has("@logic/castle_above_climb")) then
+    if has("dib") or (ool) then
+      cb_total = cb_total + 5 --Bunch on pole near Cranky's Lab
+    end
+    if has("dib") then
+      cb_total = cb_total + 5 --Bunch on cloud at top of castle
+    end
+    if has("dig") then
+      cb_total = cb_total + 10 --Balloon above warp 1 tunnel entrance
+    end  
+    if has("ch") and has("chm") then
+      cb_total = cb_total + 20 --4x bunches in dungeon behind punch gates
+    end
+    if (has("prog_switch_off") and has("sdss")) or (has("prog_switch_on") and (castle_slam() == 1)) then
+      if has("dib") then
+	    cb_total = cb_total + 15 --3x bunches on candles in ballroom
+	  end
+	  if has("dig") then
+	    cb_total = cb_total + 20 --Balloon in ballroom + balloon in sniper vine room in dungeon
+	  end
+    end
   end
   if has("dig") then
-    cb_total = cb_total + 20 --Balloon above warp 1 tunnel entrance + balloon above crypt entrance
-  end  
-  if has("ch") and has("chm") then
-    cb_total = cb_total + 20 --4x bunches in dungeon behind punch gates
+    cb_total = cb_total + 10 --Balloon above crypt entrance
   end
-  if (has("prog_switch_off") and has("sdss")) or (has("prog_switch_on") and (castle_slam() == 1)) then
-    if has("dib") then
-	  cb_total = cb_total + 15 --3x bunches on candles in ballroom
-	end
-	if has("dig") then
-	  cb_total = cb_total + 20 --Balloon in ballroom + balloon in sniper vine room in dungeon
-	end
-  end
-  if has("dig") or ((logic == "ool") and ((has("dk") and has("dkg")) or (has("ch") and has("chg")))) then
+  if has("dig") or has("barrier_castle_crypt") or ((ool) and ((has("dk") and has("dkg")) or (has("ch") and has("chg")))) then
     cb_total = cb_total + 5 --Bunch on crypt warp 1
-	if has("dig") and has("dim") then
-	  cb_total = cb_total + 10 --Balloon in wrong casket in crypt counting room
+	if has("dig") or has("barrier_castle_crypt") then
+	  if has("dim") then
+	    cb_total = cb_total + 10 --Balloon in wrong casket in crypt counting room
+	  end
 	end
   end
   return cb_total >= cb_amount
@@ -1336,6 +1687,8 @@ end
 
 function castle_la_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("la") then
     return 0
   end
@@ -1344,14 +1697,19 @@ function castle_la_cbs(logic)
   end
   local cb_total = 30 --5x bunches and 5x singles in catacombs path to Funky's Armory
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if (has("prog_switch_off") and has("sdss")) or (has("prog_switch_on") and (castle_slam() == 1)) then
-    cb_total = cb_total + 30 --6x bunches in greenhouse hedge maze
-	if has("lag") then
-	  cb_total = cb_total + 20 --Balloon in windy tower + close balloon in acid room in dungeon
-	  if (has("lai") and has("lap")) or ((logic == "ool") and ((has("no_ha_sns") or has("ha_sns")))) then 
-	    cb_total = cb_total + 10 --Far balloon in acid room in dungeon
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/castle_above_climb_strict") or ((ool) and has("@logic/castle_above_climb")) then
+    if (has("prog_switch_off") and has("sdss")) or (has("prog_switch_on") and (castle_slam() == 1)) then
+      cb_total = cb_total + 30 --6x bunches in greenhouse hedge maze
+	  if has("lag") then
+	    cb_total = cb_total + 20 --Balloon in windy tower + close balloon in acid room in dungeon
+	    if (has("lai") and has("lap")) or ((ool) and has("@logic/sns_owned")) then 
+	      cb_total = cb_total + 10 --Far balloon in acid room in dungeon
+	    end
 	  end
-	end
+    end
   end
   if has("lag") and has("lab") then
     cb_total = cb_total + 10 --Balloon at end of mausoleum sprint
@@ -1361,63 +1719,92 @@ end
 
 function castle_ti_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ti") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 50 --Line of 45 from warp 2 to warp 5 + bunch on warp 5
+  local cb_total = 0 
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("tib") then
-    cb_total = cb_total + 5 --Bunch on cheese wedge in trash can_enter_helm
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/castle_above_climb_strict") or ((ool) and has("@logic/castle_above_climb")) then
+    cb_total = cb_total + 50 --Line of 45 from warp 2 to warp 5 + bunch on warp 5
+    if has("tib") then
+      cb_total = cb_total + 5 --Bunch on cheese wedge in trash can
+    end
+    if has("di") and ((has("prog_switch_off") and has("sdss")) or (has("prog_switch_on") and (castle_slam() == 1))) then
+      cb_total = cb_total + 5 --Bunch on monkeyport pad in ballroom
+      if has("tip") then
+	    cb_total = cb_total + 15 --3x bunches on monkeyport pads in museum rooms
+	    if has("tig") then
+	      cb_total = cb_total + 10 --Balloon in empty display room
+	    end
+	  end
+    end
   end
   if has("tig") then
     cb_total = cb_total + 10 --Balloon above Funky's Armory
   end
-  if has("tig") or ((logic == "ool") and has("la") and has("lag")) then
+  if has("tig") or has("barrier_castle_crypt") or ((ool) and has("la") and has("lag")) then
     cb_total = cb_total + 5 --Bunch over acid pit in mausoleum
-  end
-  if has("di") and ((has("prog_switch_off") and has("sdss")) or (has("prog_switch_on") and (castle_slam() == 1))) then
-    cb_total = cb_total + 5 --Bunch on monkeyport pad in ballroom
-	if has("tip") then
-	  cb_total = cb_total + 15 --3x bunches on monkeyport pads in museum rooms
-	  if has("tig") then
-	    cb_total = cb_total + 10 --Balloon in empty display room
-	  end
-	end
   end
   return cb_total >= cb_amount
 end
 
 function castle_ch_cbs(logic)
   logic = logic or ""
+  ool = (logic == "ool") or (logic == "hool")
+  half = (logic == "half") or (logic == "hool")
   if not_has("ch") then
     return 0
   end
   if has("cb_rando") then
 	return 1
   end
-  local cb_total = 30 --Line of 30 through the underground tunnel
+  local cb_total = 0
   local cb_amount = get_object("medal_amount") and get_object("medal_amount").AcquiredCount or 0
-  if has("dk") and has("dkp") then
-    cb_total = cb_total + 5 --Bunch before cracked wood wall
-	if has("chm") and has("chg") then
-	  cb_total = cb_total + 10 --Balloon in tree sniper hallway
+  if half then
+    cb_amount = get_object("half_medal_amount") and get_object("half_medal_amount").AcquiredCount or 0
+  end
+  if has("@logic/castle_above_climb_strict") or ((ool) and has("@logic/castle_above_climb")) then
+    cb_total = cb_total + 30 --Line of 30 through the underground tunnel
+    if has("dk") and has("dkp") then
+      cb_total = cb_total + 5 --Bunch before cracked wood wall
+	  if has("chm") and has("chg") then
+	    cb_total = cb_total + 10 --Balloon in tree sniper hallway
+	  end
+    end
+    if has("chm") and has("chg") then
+      cb_total = cb_total + 30 --Balloon in shed + 2x balloons behind gates in dungeon
+    end
+    if (has("prog_switch_off") and has("sdss")) or (has("prog_switch_on") and (castle_slam() == 1)) then
+      if has("chm") and has("brrl") then
+        cb_total = cb_total + 5 --Bunch in boulder in skull's mouth in museum
+	  end
+	  if has("chg") then
+	    cb_total = cb_total + 10 --Balloon around pressure plate in museum
+	  end
 	end
   end
-  if has("chm") and has("chg") then
-    cb_total = cb_total + 40 --Balloon in shed + 2x balloons behind gates in dungeon + 2x bunches in caskets in crypt
-  end
-  if (has("prog_switch_off") and has("sdss")) or (has("prog_switch_on") and (castle_slam() == 1)) then
-    if has("chm") and has("brrl") then
-	  cb_total = cb_total + 5 --Bunch in boulder in skull's mouth in museum
-	end
-	if has("chg") then
-	  cb_total = cb_total + 10 --Balloon around pressure plate in museum
-	end
+  if (has("chg") or has("barrier_castle_crypt")) and has("chm") then
+    cb_total = cb_total + 10 --2x bunches in caskets in crypt
   end
   return cb_total >= cb_amount
+end
+
+function has_enough_pearls()
+  local setting_pearl_amount =
+    get_object("pearl_amount") and get_object("pearl_amount").AcquiredCount or 0
+  local pearls = Tracker:ProviderCountForCode("pearl")
+  if pearls >= setting_pearl_amount then
+    return 1
+  end
+  return 0
 end
 
 function can_play_jetpac()
@@ -1428,6 +1815,51 @@ function can_play_jetpac()
     return 1
   end
   return 0
+end
+
+function update_jetpacs()
+  local isles_jp = get_object_no_print("@Training Grounds/Jetpac")
+  local japes_jp = get_object_no_print("@Japes Cranky's Lab/Jetpac")
+  local aztec_jp = get_object_no_print("@Aztec Cranky's Lab/Jetpac")
+  local factory_jp = get_object_no_print("@Factory Cranky's Lab/Jetpac")
+  local galleon_jp = get_object_no_print("@Galleon Cranky's Lab/Jetpac")
+  local forest_jp = get_object_no_print("@Forest Cranky's Lab/Jetpac")
+  local caves_jp = get_object_no_print("@Caves Cranky's Lab/Jetpac")
+  local castle_jp = get_object_no_print("@Castle Cranky's Lab/Jetpac")
+  
+  if isles_jp == nil or japes_jp == nil or aztec_jp == nil or factory_jp == nil or galleon_jp == nil or forest_jp == nil or caves_jp == nil or castle_jp == nil then
+    return 0
+  end
+  
+  local jps = isles_jp.AvailableChestCount +
+			  japes_jp.AvailableChestCount +
+			  aztec_jp.AvailableChestCount +
+			  factory_jp.AvailableChestCount +
+			  galleon_jp.AvailableChestCount +
+			  forest_jp.AvailableChestCount +
+			  caves_jp.AvailableChestCount +
+			  castle_jp.AvailableChestCount
+  
+  if jps == 7 then --A Jetpac has been clicked, so remove them all
+    isles_jp.AvailableChestCount = 0
+    japes_jp.AvailableChestCount = 0
+    aztec_jp.AvailableChestCount = 0
+    factory_jp.AvailableChestCount = 0
+    galleon_jp.AvailableChestCount = 0
+    forest_jp.AvailableChestCount = 0
+    caves_jp.AvailableChestCount = 0
+    castle_jp.AvailableChestCount = 0
+  elseif jps == 1 then --A Jetpac has been unclicked, so restore them all
+    isles_jp.AvailableChestCount = 1
+    japes_jp.AvailableChestCount = 1
+    aztec_jp.AvailableChestCount = 1
+    factory_jp.AvailableChestCount = 1
+    galleon_jp.AvailableChestCount = 1
+    forest_jp.AvailableChestCount = 1
+    caves_jp.AvailableChestCount = 1
+    castle_jp.AvailableChestCount = 1
+  end
+  return 1
 end
 
 function can_open_rw_gb_door()
@@ -1635,8 +2067,15 @@ function ch_helm_room()
   return 0
 end
 
+function lighthouse_access()
+  if has("@logic/lighthouse_access") then
+    return 1
+  end
+  return 0
+end
+
 function dk_krool_phase()
-  if has("krool_balanced") then
+  if has("krool_blast") then
     if has("dk") and has("dkp") then
 	  return 1
 	end
@@ -1649,12 +2088,16 @@ function dk_krool_phase()
 end
 
 function ch_krool_phase()
-  if has("krool_balanced") then
+  if has("chunky_slam1") then
     if has("ch") and has("chp") and has("chb") and has("chm") and has("ss") then
 	  return 1
 	end
-  else
+  elseif has("chunky_slam2") then
     if has("ch") and has("chp") and has("chb") and has("chm") and has("sss") then
+	  return 1
+	end
+  else
+    if has("ch") and has("chp") and has("chb") and has("chm") and has("sdss") then
 	  return 1
 	end
   end
@@ -1732,11 +2175,11 @@ function can_open_helm_door_1()
     end
   elseif has("helm_1_coin") then
     if (setting_helm_1_amount == 1) then
-	  if has("n64coin") or has("rwcoin") or has("bothcoins") then
+	  if has("n64coin") or has("rwcoin") or has("bothcoins") or has("n64coin_full") or has("rwcoin_full") then
         return 1
 	  end
 	elseif (setting_helm_1_amount == 2) then
-	  if has("bothcoins") then
+	  if has("bothcoins") or (has("n64coin_full") and has("rwcoin_full")) then
 	    return 1
 	  end
 	elseif (setting_helm_1_amount == 0) then
@@ -1754,7 +2197,7 @@ function can_open_helm_door_1()
   return 0
 end
 
-local max_amount_per_helm_door_2_type = {2, 8, 40, 10, 20, 16, 1, 5, 201, 40}
+local max_amount_per_helm_door_2_type = {201, 40, 2, 8, 40, 10, 20, 16, 1, 5}
 function update_helm_door_2_amount_max()
   local setting_helm_2_type = get_object("helm_2_type")
   local setting_helm_2_amount = get_object("helm_2_amount")
@@ -1810,11 +2253,11 @@ function can_open_helm_door_2()
     end
   elseif has("helm_2_coin") then
     if (setting_helm_2_amount == 1) then
-	  if has("n64coin") or has("rwcoin") or has("bothcoins") then
+	  if has("n64coin") or has("rwcoin") or has("bothcoins") or has("n64coin_full") or has("rwcoin_full") then
         return 1
 	  end
 	elseif (setting_helm_2_amount == 2) then
-	  if has("bothcoins") then
+	  if has("bothcoins") or (has("n64coin_full") and has("rwcoin_full")) then
 	    return 1
 	  end
 	elseif (setting_helm_2_amount == 0) then
@@ -1835,7 +2278,7 @@ end
 function go_mode_calculator()
   local go = get_object("gomode")
   if has("helm_barrel") and has("krool") then
-    if has("@logic/key_8_room") and has("@logic/krool_5th_phase") then
+    if has("@logic/key_8_room") and has("@logic/krool_5th_phase") and has("k3") then
 	  go.Active = true
 	  return
 	else
@@ -1863,10 +2306,115 @@ function go_mode_calculator()
   end
 end
 
+function open_lobby_1()
+  local l1 = get_object("l1")
+  
+  l1.Active = true
+end
+
+function open_lobby_2()
+  local l2 = get_object("l2")
+  
+  if (has("open_lobbies") or has("k1")) and has("@logic/upper_isles_access") then
+    l2.Active = true
+	return
+  else
+    l2.Active = false
+	return
+  end
+end
+
+function open_lobby_3()
+  local l3 = get_object("l3")
+  
+  if (has("open_lobbies") or has("k2")) and has("@logic/upper_krem_access") then
+    l3.Active = true
+	return
+  else
+    l3.Active = false
+	return
+  end
+end
+
+function open_lobby_4()
+  local l4 = get_object("l4")
+  
+  if (has("open_lobbies") or has("k2")) and has("dive") then
+    l4.Active = true
+	return
+  else
+    l4.Active = false
+	return
+  end
+end
+
+function open_lobby_5()
+
+  local l5 = get_object("l5")
+
+  if has("open_lobbies") or has("k4") then
+    l5.Active = true
+	return
+  else
+    l5.Active = false
+	return
+  end
+end
+
+function open_lobby_6()
+  local l6 = get_object("l6")
+
+  if (has("open_lobbies") or has("k5")) and has("@logic/upper_krem_access") then
+    l6.Active = true
+	return
+  else
+    l6.Active = false
+	return
+  end
+end
+  
+function open_lobby_7()
+  local l7 = get_object("l7")
+  
+  if has("open_lobbies") or has("k5") then
+    l7.Active = true
+	return
+  else
+    l7.Active = false
+	return
+  end
+end
+
+function open_lobby_8()
+  local l8 = get_object("l8")
+  
+  if has("@logic/helm_lobby") then
+    l8.Active = true
+	return
+  else
+    l8.Active = false
+	return
+  end
+end
+
+function open_lobby_calculator()
+  open_lobby_1()
+  open_lobby_2()
+  open_lobby_3()
+  open_lobby_4()
+  open_lobby_5()
+  open_lobby_6()
+  open_lobby_7()
+  open_lobby_8()
+  return
+end
+
 function call_updaters()
   update_generic_keys()
   update_helm_door_1_amount_max()
   update_helm_door_2_amount_max()
+  open_lobby_calculator()
   go_mode_calculator()
+  update_jetpacs()
   return 1
 end
