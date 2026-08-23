@@ -375,7 +375,7 @@
 	]
   },
   {
-	"name": "DK Portal Shuffler",
+	"name": "DK Portal Location Shuffler",
 	"type": "progressive",
 	"allow_disabled": false,
 	"loop": true,
@@ -389,6 +389,25 @@
 	  {
 		"img": "images/settings/portal.png",
 		"codes": "portal_shuffle,portal_shuffle_on",
+		"inherit_codes": false,
+	  }
+	]
+  },
+  {
+	"name": "Boss Location Shuffler",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+		"img": "images/settings/madjack.png",
+		"codes": "boss_shuffle,boss_shuffle_on",
+		"inherit_codes": false,
+	  },
+	  {
+		"img": "images/settings/madjack.png",
+		"img_mods": "@disabled",
+		"codes": "boss_shuffle,boss_shuffle_off",
 		"inherit_codes": false,
 	  }
 	]

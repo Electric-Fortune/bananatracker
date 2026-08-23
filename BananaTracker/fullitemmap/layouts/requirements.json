@@ -1,5 +1,5 @@
 {
-  "barriers_grid": {
+  "barriers_grid_wide": {
 	"type": "itemgrid",
 	"h_alignment": "center",
 	"item_height": 15,
@@ -11,6 +11,24 @@
 	  ["barrier_aztec_door", "barrier_galleon_shipyard", "barrier_caves_igloo"], 
 	  ["barrier_aztec_5dtemple", "barrier_galleon_seasick", ""], 
 	  ["barrier_aztec_llama", "barrier_galleon_treasure", "barrier_castle_crypt"],
+	  ["barrier_helm_star", "barrier_helm_punch"]
+	]
+  },
+  "barriers_grid_tall": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 15,
+	"item_width": 240,
+	"rows": [
+	  ["barrier_japes_coconut",  "barrier_galleon_lighthouse"],
+	  ["barrier_japes_shellhive", "barrier_galleon_shipyard"],
+	  ["barrier_aztec_ice", "barrier_galleon_seasick"],
+	  ["barrier_aztec_door", "barrier_galleon_treasure"], 
+	  ["barrier_aztec_5dtemple", "barrier_forest_green"], 
+	  ["barrier_aztec_llama", "barrier_forest_yellow"],
+	  ["barrier_factory_production", "barrier_caves_ice"], 
+	  ["barrier_factory_testing", "barrier_caves_igloo"],
+	  ["barrier_castle_crypt"],
 	  ["barrier_helm_star", "barrier_helm_punch"]
 	]
   },
@@ -49,7 +67,7 @@
     "item_margin": "0,0,10,4",
 	"rows": [
 	  [ "fairy_rando", "kasplat_rando", "arena_rando", "portal_shuffle" ],
-	  [ "dirt_patch_rando", "cb_rando", "melon_crate_rando" ]
+	  [ "dirt_patch_rando", "cb_rando", "melon_crate_rando", "boss_shuffle" ]
     ]
   },
   
@@ -122,7 +140,7 @@
 		"content": {
 	  	  "type": "layout",
 		  "margin": "1,1,1,1",
-          "key": "barriers_grid"
+          "key": "barriers_grid_tall"
 		}
 	  },
 	  {

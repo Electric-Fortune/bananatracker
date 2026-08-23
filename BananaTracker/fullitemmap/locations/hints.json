@@ -14,8 +14,7 @@
 		    "capture_persist": true,
 		    "capture_badge_offset": "5,1",
 		    "hosted_item": "wrinkly",
-		    "item_count": 0,
-			"force_invisibility_rules": [ "cb_rando" ]
+		    "item_count": 0
 		  }
 		],
 		"map_locations": [
@@ -23,8 +22,17 @@
 			"map": "hintsmap",
 			"badge_size": 30,
 			"badge_alignment": "bottomleft",
+			"force_invisibility_rules": [ "cb_rando" ],
 			"x": 140,
 			"y": 27
+		  },
+		  {
+			"map": "hintsmap",
+			"badge_size": 30,
+			"badge_alignment": "bottomleft",
+			"force_visibility_rules": [ "cb_rando" ],
+			"x": 174,
+			"y": 427
 		  }
 		]
 	  },
@@ -611,8 +619,8 @@
 		    "capture_badge_offset": "5,1",
 		    "hosted_item": "wrinkly",
 		    "item_count": 0,
-			"visibility_rules": [ "vanilla_hints", "shuffled_hints" ],
-			"force_invisibility_rules": [ "season_5_hints", "dos_hints" ]
+			"visibility_rules": [ "vanilla_hints", "shuffled_hints", "dos_hints" ],
+			"force_invisibility_rules": [ "season_5_hints" ]
 		  }
 		],
 		"map_locations": [
@@ -1375,6 +1383,7 @@
 			"map": "hintsmap",
 			"badge_size": 30,
 			"badge_alignment": "bottomleft",
+			"force_invisibility_rules": [ "cb_rando" ],
 			"x": 174,
 			"y": 427
 		  }
@@ -1392,9 +1401,7 @@
 		    "capture_persist": true,
 		    "capture_badge_offset": "5,1",
 		    "hosted_item": "wrinkly",
-		    "item_count": 0,
-			"visibility_rules": [ "vanilla_hints", "season_5_hints", "shuffled_hints" ],
-			"force_invisibility_rules": [ "dos_hints" ]
+		    "item_count": 0
 		  }
 		],
 		"map_locations": [
@@ -1420,8 +1427,8 @@
 		    "capture_badge_offset": "5,1",
 		    "hosted_item": "wrinkly",
 		    "item_count": 0,
-			"visibility_rules": [ "vanilla_hints", "shuffled_hints" ],
-			"force_invisibility_rules": [ "season_5_hints", "dos_hints" ]
+			"visibility_rules": [ "vanilla_hints", "shuffled_hints", "dos_hints" ],
+			"force_invisibility_rules": [ "season_5_hints" ]
 		  }
 		],
 		"map_locations": [
@@ -1447,8 +1454,8 @@
 		    "capture_badge_offset": "5,1",
 		    "hosted_item": "wrinkly",
 		    "item_count": 0,
-			"visibility_rules": [ "vanilla_hints", "shuffled_hints" ],
-			"force_invisibility_rules": [ "season_5_hints", "dos_hints" ]
+			"visibility_rules": [ "vanilla_hints", "shuffled_hints", "dos_hints" ],
+			"force_invisibility_rules": [ "season_5_hints" ]
 		  }
 		],
 		"map_locations": [
@@ -1474,8 +1481,8 @@
 		    "capture_badge_offset": "5,1",
 		    "hosted_item": "wrinkly",
 		    "item_count": 0,
-			"visibility_rules": [ "vanilla_hints", "shuffled_hints" ],
-			"force_invisibility_rules": [ "season_5_hints", "dos_hints" ]
+			"visibility_rules": [ "vanilla_hints", "shuffled_hints", "dos_hints" ],
+			"force_invisibility_rules": [ "season_5_hints" ]
 		  }
 		],
 		"map_locations": [
@@ -1501,8 +1508,8 @@
 		    "capture_badge_offset": "5,1",
 		    "hosted_item": "wrinkly",
 		    "item_count": 0,
-			"visibility_rules": [ "vanilla_hints", "shuffled_hints" ],
-			"force_invisibility_rules": [ "season_5_hints", "dos_hints" ]
+			"visibility_rules": [ "vanilla_hints", "shuffled_hints", "dos_hints" ],
+			"force_invisibility_rules": [ "season_5_hints" ]
 		  }
 		],
 		"map_locations": [
