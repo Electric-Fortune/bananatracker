@@ -2,6 +2,7 @@
   {
     "name": "Open Lobbies",
 	"type": "toggle",
+	"initial_active_state": false,
 	"img": "images/settings/b_locker.png",
 	"codes": "open_lobbies"
   },
@@ -14,21 +15,48 @@
   {
     "name": "Remove High Requirements",
 	"type": "toggle",
-	"initial_active_state": true,
+	"initial_active_state": false,
 	"img": "images/dk_move.png",
 	"codes": "no_hi_reqs"
   },
   {
 	"name": "Auto Complete Bonus Barrels",
 	"type": "toggle",
+	"initial_active_state": false,
 	"img": "images/settings/bonus.png",
 	"codes": "auto_bonus"
   },
   {
 	"name": "Hard Shooting",
 	"type": "toggle",
+	"loop": true,
+	"initial_active_state": false,
 	"img": "images/settings/hard_shoot.png",
 	"codes": "hard_shoot"
+  },
+  {
+    "name": "Hard Shooting (Right Click to enable Advanced Grenading)",
+    "type": "toggle_badged",
+    "base_item": "hard_shoot",
+	"initial_active_state": false,
+    "img": "images/settings/adv_orng.png",
+    "codes": "adv_orng"
+  },
+  {
+	"name": "Monkey Maneuvers",
+	"type": "toggle",
+	"loop": true,
+	"initial_active_state": false,
+	"img": "images/settings/legshake.png",
+	"codes": "monkey_moves"
+  },
+  {
+    "name": "Monkey Maneuvers (Right Click to enable Slope Resets)",
+    "type": "toggle_badged",
+    "base_item": "monkey_moves",
+	"initial_active_state": false,
+    "img": "images/settings/slope_resets.png",
+    "codes": "slope_resets"
   },
   {
 	"name": "Progressive Switch Strength",
@@ -113,6 +141,29 @@
 	"codes": "free_trade"
   },
   {
+	"name": "Chunky Phase Slam Requirement",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+  	  {
+		"img": "images/settings/chunky_slam1.png",
+		"codes": "chunky_slam,chunky_slam1",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/settings/chunky_slam2.png",
+		"codes": "chunky_slam,chunky_slam2",
+		"inherit_codes": false
+	  },
+	  {
+		"img": "images/settings/chunky_slam3.png",
+		"codes": "chunky_slam,chunky_slam3",
+		"inherit_codes": false
+	  },
+	]
+  },
+  {
     "name": "Kongless Hint Doors",
 	"type": "toggle",
 	"initial_active_state": true,
@@ -129,7 +180,7 @@
     "codes": "no_wrinkly_puzzles"
   },
   {
-	"name": "Pre-Activated Bananaports (Off, *Isles Only*, All)",
+	"name": "Pre-Activated Bananaports (Off, *Isles Only*, Isles + Helm Lobby, All)",
 	"type": "progressive",
 	"allow_disabled": false,
 	"loop": true,
@@ -137,6 +188,11 @@
 	  {
 	    "img": "images/settings/bananaport_isles.png",
 	    "codes": "bananaport,bananaport_isles",
+	    "inherit_codes": false
+	  },
+	  {
+	    "img": "images/settings/bananaport_isles_helm.png",
+	    "codes": "bananaport,bananaport_isles_helm",
 	    "inherit_codes": false
 	  },
 	  {
@@ -319,28 +375,76 @@
 	]
   },
   {
+	"name": "DK Portal Location Shuffler",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+		"img": "images/settings/portal.png",
+		"img_mods": "@disabled",
+		"codes": "portal_shuffle,portal_shuffle_off",
+		"inherit_codes": false,
+	  },
+	  {
+		"img": "images/settings/portal.png",
+		"codes": "portal_shuffle,portal_shuffle_on",
+		"inherit_codes": false,
+	  }
+	]
+  },
+  {
+	"name": "Boss Location Shuffler",
+	"type": "progressive",
+	"allow_disabled": false,
+	"loop": true,
+	"stages": [
+	  {
+		"img": "images/settings/madjack.png",
+		"codes": "boss_shuffle,boss_shuffle_on",
+		"inherit_codes": false,
+	  },
+	  {
+		"img": "images/settings/madjack.png",
+		"img_mods": "@disabled",
+		"codes": "boss_shuffle,boss_shuffle_off",
+		"inherit_codes": false,
+	  }
+	]
+  },
+  {
     "name": "Colored Banana Location Shuffler",
 	"type": "toggle",
+	"loop": true,
 	"img": "images/settings/rainbow_bananas.png",
 	"codes": "cb_rando"
   },
   {
+    "name": "Half Medal Colored Banana Amount",
+	"type": "consumable",
+	"img": "images/checks/halfmedal.png",
+	"codes": "half_medal_amount",
+	"disabled_img_mods": "@enabled",
+	"max_quantity": 100,
+	"initial_quantity": 30
+  },
+  {
     "name": "Medal Colored Banana Amount",
 	"type": "consumable",
-	"img": "images/settings/bunch.png",
+	"img": "images/bananamedal.gif",
 	"codes": "medal_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 100,
-	"initial_quantity": 45
+	"initial_quantity": 60
   },
   {
 	"name": "Jetpac Banana Medal Amount",
 	"type": "consumable", 
-	"img": "images/bananamedal.gif",
+	"img": "images/settings/jetman.png",
 	"codes": "jetpac_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 40,
-	"initial_quantity": 9
+	"initial_quantity": 15
   },
   {
 	"name": "Rareware Banana Fairy Amount",
@@ -349,7 +453,7 @@
 	"codes": "rw_gb_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 20,
-	"initial_quantity": 4
+	"initial_quantity": 10
   },
   {
 	"name": "Helm B. Locker Amount",
@@ -358,7 +462,16 @@
 	"codes": "helm_entry_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 201,
-	"initial_quantity": 64
+	"initial_quantity": 50
+  },
+  {
+	"name": "Mermaid Pearl Amount",
+	"type": "consumable",
+	"img": "images/pearl.png",
+	"codes": "pearl_amount",
+	"disabled_img_mods": "@enabled",
+	"max_quantity": 5,
+	"initial_quantity": 1
   },
   {
 	"name": "Helm Door 1 Amount",
@@ -434,7 +547,7 @@
 	"codes": "helm_2_amount",
 	"disabled_img_mods": "@enabled",
 	"max_quantity": 201,
-	"initial_quantity": 0
+	"initial_quantity": 64
   },
   {
 	"name": "Helm Door 2 Collectable",
@@ -442,6 +555,16 @@
 	"allow_disabled": false,
 	"loop": true, 
 	"stages": [
+	  {
+	    "img": "images/GB.gif",
+	    "codes": "helm_2_type,helm_2_gb",
+		"inherit_codes": false
+	  },
+	  {
+	    "img": "images/lanky_bp.png",
+	    "codes": "helm_2_type,helm_2_bp",
+		"inherit_codes": false
+	  },
 	  {
 	    "img": "images/n64rw_coin.png",
 	    "codes": "helm_2_type,helm_2_coin",
@@ -480,16 +603,6 @@
 	  {
 	    "img": "images/pearl.png",
 	    "codes": "helm_2_type,helm_2_pearl",
-		"inherit_codes": false
-	  },
-	   {
-	    "img": "images/GB.gif",
-	    "codes": "helm_2_type,helm_2_gb",
-		"inherit_codes": false
-	  },
-	  {
-	    "img": "images/lanky_bp.png",
-	    "codes": "helm_2_type,helm_2_bp",
 		"inherit_codes": false
 	  }
 	]

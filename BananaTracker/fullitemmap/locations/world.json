@@ -3,6 +3,7 @@
     "name": "Single Checks",
     "chest_unopened_img": "images/checks/check_GB.gif",
     "chest_opened_img": "images/checks/check_GB_done.png",
+	"capture_item_layout": "tracker_capture_item_map",
     "children": [
 	  {
 	    "name": "DK Isles",
@@ -14,6 +15,30 @@
 			  "@logic/any_kong",
 			],
 			"children": [
+			  {
+			    "name": "Test",
+				"short_name": "Test",
+				"sections": [
+				  {
+				    "name": "Test",
+				    "short_name": "Test",
+					"access_rules": [
+					  "@logic/japes_tunnel_to_hive,[@logic/japes_tunnel_to_hive_strict]"
+					],
+					"visibility_rules": [
+					  "gb_pool"
+					],
+				    "item_count": 0
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "islesmap",
+					"x": 60,
+					"y": 360
+				  }
+				]
+			  },
 			  {
 			    "name": "Outside Lobby 1",
 				"short_name": "Before Lobby 1",
@@ -45,8 +70,13 @@
 				    "name": "Dirt Patch",
 				    "chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 				    "access_rules": [
-				      "@logic/any_kong,@logic/wave_owned"
+					  "{@logic/any_kong,climb}",
+					  "{@logic/any_kong,@logic/upper_isles_access}",
+				      "@logic/any_kong,@logic/wave_owned,climb",
+					  "@logic/any_kong,@logic/wave_owned,@logic/upper_isles_access"
 				    ],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -69,6 +99,7 @@
 				  {
 				    "name": "Pineapple Switch",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chg",
 					  "{@logic/any_kong}"
@@ -94,12 +125,21 @@
 				    "name": "Dirt Patch",
 					"chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
+					  "{@logic/isles_rocketbarrel,di,dib}",
+					  "{@logic/cross_from_fungi_lobby,ti,tim,[di][dib],[@logic/isles_rocketbarrel]}",
+					  "{@logic/cross_from_fungi_lobby,ti,tim,[monkey_moves]}",
+					  "{@logic/cross_from_fungi_lobby,dk,[di][dib],[@logic/isles_rocketbarrel]}",
+					  "{@logic/upper_isles_access,ch,brrl,di,[dib],[@logic/isles_rocketbarrel]}",
+					  "{@logic/upper_isles_access,ch,brrl,ti,[di],[dib],[@logic/isles_rocketbarrel]}",
 					  "@logic/isles_rocketbarrel,di,dib,@logic/wave_owned",
 					  "@logic/cross_from_fungi_lobby,ti,tim,@logic/wave_owned,[di][dib],[@logic/isles_rocketbarrel]",
+					  "@logic/cross_from_fungi_lobby,ti,tim,@logic/wave_owned,[monkey_moves]",
 					  "@logic/cross_from_fungi_lobby,dk,@logic/wave_owned,[di][dib],[@logic/isles_rocketbarrel]",
 					  "@logic/upper_isles_access,@logic/wave_owned,ch,brrl,di,[dib],[@logic/isles_rocketbarrel]",
-					  "@logic/upper_isles_access,@logic/wave_owned,ch,brrl,ti,[di],[dib],[@logic/isles_rocketbarrel]",
+					  "@logic/upper_isles_access,@logic/wave_owned,ch,brrl,ti,[di],[dib],[@logic/isles_rocketbarrel]"
 					],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -116,9 +156,46 @@
 				]
 			  },
 			  {
-			    "name": "Boulders near Lobby 6",
+				"name": "Boulder near Lobby 2",
+				"short_name": "Lobby 2 Rock",
+				"sections": [
+				  {
+					"name": "Destroy Boulder",
+					"chest_unopened_img": "images/checks/boulder.png",
+				    "chest_opened_img": "images/checks/boulder_done.png",
+					"access_rules": [
+					  "@logic/upper_isles_access,ch,brrl"
+					],
+					"visibility_rules": [
+					  "boulder_pool"
+					],
+					"item_count": 1
+				  } 
+				],
+				"map_locations": [
+				  {
+				    "map": "islesmap",
+					"x": 105,
+					"y": 225
+				  }
+				]
+			  },
+			  {
+			    "name": "Boulder near Lobby 6",
 				"short_name": "Lobby 6 Rock",
 				"sections": [
+				  {
+					"name": "Destroy Boulder",
+					"chest_unopened_img": "images/checks/boulder.png",
+				    "chest_opened_img": "images/checks/boulder_done.png",
+					"access_rules": [
+					  "@logic/upper_isles_access,ch,brrl"
+					],
+					"visibility_rules": [
+					  "boulder_pool"
+					],
+					"item_count": 1
+				  },
 				  {
 				    "name": "Triangle Pad",
 					"access_rules": [
@@ -133,7 +210,7 @@
 				"map_locations": [
 				  {
 				    "map": "islesmap",
-					"x": 115,
+					"x": 120,
 					"y": 225
 				  }
 				]
@@ -146,7 +223,11 @@
 					"name": "Dirt Patch",
 					"chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
+					  "{@logic/any_kong,k4}",
+					  "{@logic/any_kong,open_lobbies}",
 					  "@logic/any_kong,k4,@logic/wave_owned",
 					  "@logic/any_kong,open_lobbies,@logic/wave_owned"
 					],
@@ -171,9 +252,12 @@
 				  {
 				    "name": "Peanut Switch",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/cross_from_fungi_lobby,di,dig",
-					  "{@logic/cross_from_fungi_lobby,@logic/any_kong}"
+					  "{@logic/cross_from_fungi_lobby,@logic/any_kong}",
+					  "{k4,@logic/any_gun,@logic/sns_owned}",
+					  "{open_lobbies,@logic/any_gun,@logic/sns_owned}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -195,6 +279,7 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "k4,@logic/isles_rocketbarrel,di,dib",
 					  "open_lobbies,@logic/isles_rocketbarrel,di,dib",
@@ -246,6 +331,7 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/cam_owned",
 					  "{@logic/any_kong}"
@@ -279,6 +365,7 @@
 				  {
 				    "name": "Feather Switch",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tig",
 					  "{@logic/any_kong}"
@@ -309,19 +396,20 @@
 					  "ti,tib"
 					],
 					"visibility_rules": [
-					  "shop_pool"
+					  "camera_pool"
 					],
 					"item_count": 1
 				  },
 				  {
 				    "name": "Rareware Banana",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tib,$can_open_rw_gb_door",
 					  "{ti,tib}"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool"
+					  "gb_pool"
 					],
 					"item_count": 1
 				  }
@@ -349,6 +437,7 @@
 				  {
 				    "name": "Grape Switch",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,lag",
 					  "{@logic/any_kong}"
@@ -375,6 +464,7 @@
 				    "name": "Orangstand Sprint Cage",
 					"short_name": "OSprint Cage",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,lab",
 					  "dk,[la],[lab]",
@@ -389,7 +479,10 @@
 					"name": "Dirt Patch",
 					"chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
+					  "{@logic/any_kong}",
 					  "@logic/any_kong,@logic/wave_owned"
 					],
 					"visibility_rules": [
@@ -413,6 +506,7 @@
 				  {
 				    "name": "Coconut Switch",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "dk,dkg,@logic/upper_krem_access",
 				      "{@logic/upper_krem_access,@logic/any_kong}"
@@ -438,6 +532,7 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/upper_krem_access,di,dip",
 					  "@logic/upper_krem_access,di,auto_bonus",
@@ -454,6 +549,7 @@
 					"chest_unopened_img": "images/crown.png",
 					"chest_opened_img": "images/checks/crown_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/upper_krem_access,ch,brrl"
 					],
@@ -490,6 +586,7 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/top_of_krem_isle,@logic/cam_owned",
 					  "{@logic/top_of_krem_isle}"
@@ -521,6 +618,18 @@
 				"short_name": "Japes Lobby Rock",
 				"sections": [
 				  {
+					"name": "Destroy Boulder",
+					"chest_unopened_img": "images/checks/boulder.png",
+				    "chest_opened_img": "images/checks/boulder_done.png",
+					"access_rules": [
+					  "ch,brrl"
+					],
+					"visibility_rules": [
+					  "boulder_pool"
+					],
+					"item_count": 1
+				  },
+				  {
 				    "name": "Trombone Pad",
 					"access_rules": [
 					  "la,lai,ch,brrl"
@@ -551,7 +660,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -576,7 +685,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -601,7 +710,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -626,7 +735,8 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,dos_hints",
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -651,7 +761,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -678,6 +788,7 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dim,[ti],[tim]",
 					  "auto_bonus,ti",
@@ -711,7 +822,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -736,7 +847,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -761,7 +872,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -786,7 +897,8 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints",
+					  "hint_pool,dos_hints"
 					],
 					"item_count": 1
 				  }
@@ -807,10 +919,15 @@
 					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
 					"chest_opened_img": "images/checks/wrinkly_door_done.png",
 					"access_rules": [
-					  "ti,tig,ch,chb"
+					  "aztec_lobby_door_feather,ti,tig,ch,chb",
+					  "aztec_lobby_door_pineapple,ch,chg,chb",
+					  "aztec_lobby_door_coconut,dk,dkg,ch,chb",
+					  "aztec_lobby_door_peanut,di,dig,ch,chb",
+					  "aztec_lobby_door_grape,la,lag,ch,chb",
+					  "aztec_lobby_door_any,@logic/any_gun,ch,chb",
 					],
 					"visibility_rules": [
-					  "hint_pool,$wrinkly_puzzles"
+					  "hint_pool,vanilla_hints,$wrinkly_puzzles"
 					],
 					"item_count": 1
 				  }
@@ -831,11 +948,21 @@
 					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
 					"chest_opened_img": "images/checks/wrinkly_door_done.png",
 					"access_rules": [
-					  "ti,tig,ch",
-					  "ti,tig,kongless_hints"
+					  "aztec_lobby_door_feather,ti,tig,ch",
+					  "aztec_lobby_door_pineapple,ch,chg",
+					  "aztec_lobby_door_coconut,dk,dkg,ch",
+					  "aztec_lobby_door_peanut,di,dig,ch",
+					  "aztec_lobby_door_grape,la,lag,ch",
+					  "aztec_lobby_door_any,@logic/any_gun,ch",
+					  "aztec_lobby_door_feather,ti,tig,kongless_hints",
+					  "aztec_lobby_door_pineapple,ch,chg,kongless_hints",
+					  "aztec_lobby_door_coconut,dk,dkg,kongless_hints",
+					  "aztec_lobby_door_peanut,di,dig,kongless_hints",
+					  "aztec_lobby_door_grape,la,lag,kongless_hints",
+					  "aztec_lobby_door_any,@logic/any_gun,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool,no_wrinkly_puzzles"
+					  "hint_pool,vanilla_hints,no_wrinkly_puzzles"
 					],
 					"item_count": 1
 				  }
@@ -890,6 +1017,7 @@
 					"chest_unopened_img": "images/tiny_bp.png",
 					"chest_opened_img": "images/checks/tiny_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chm,kasplat_rando_swap",
 					  "ch,chm,kasplat_rando_vanilla,ti",
@@ -907,6 +1035,7 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chm,@logic/cam_owned",
 					  "{ch,chm}"
@@ -937,7 +1066,8 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints",
+					  "hint_pool,dos_hints"
 					],
 					"item_count": 1
 				  }
@@ -964,7 +1094,7 @@
 					  "ch,[dk],[dkm],kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -986,10 +1116,12 @@
 					"chest_opened_img": "images/checks/wrinkly_door_done.png",
 					"access_rules": [
 					  "la,[dk],[dkm]",
-					  "@logic/any_kong,kongless_hints,[dk],[dkm]"
+					  "la,[monkey_moves]",
+					  "@logic/any_kong,kongless_hints,[dk],[dkm]",
+					  "@logic/any_kong,kongless_hints,[monkey_moves]"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1011,12 +1143,14 @@
 					"chest_opened_img": "images/checks/wrinkly_door_done.png",
 					"access_rules": [
 					  "ti,[dk],[dkm]",
+					  "ti,[monkey_moves]",
 					  "dk,dkm,kongless_hints",
 					  "di,[dk],[dkm],kongless_hints",
+					  "di,[monkey_moves],kongless_hints",
 					  "ch,[dk],[dkm],kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1041,7 +1175,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1096,6 +1230,7 @@
 					"chest_unopened_img": "images/chunky_bp.png",
 					"chest_opened_img": "images/checks/chunky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,ch",
@@ -1129,7 +1264,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1154,7 +1289,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1179,7 +1314,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1204,7 +1339,8 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints",
+					  "hint_pool,dos_hints"
 					],
 					"item_count": 1
 				  }
@@ -1229,7 +1365,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1258,6 +1394,7 @@
 					"chest_unopened_img": "images/crown.png",
 					"chest_opened_img": "images/checks/crown_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "dk,dkg,di,dig,la,lag,ti,tig,ch,chg,chp"
 					],
@@ -1276,16 +1413,27 @@
 				]
 			  },
 			  {
-			    "name": "Feather Switch",
+			    "name": "Fairy Cage",
 				"sections": [
 				  {
 				    "name": "Banana Fairy",
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "ti,tig,@logic/cam_owned",
-					  "{ti,tig}"
+					  "forest_lobby_fairy_feather,ti,tig,@logic/cam_owned",
+					  "forest_lobby_fairy_pineapple,ch,chg,@logic/cam_owned",
+					  "forest_lobby_fairy_coconut,dk,dkg,@logic/cam_owned",
+					  "forest_lobby_fairy_peanut,di,dig,@logic/cam_owned",
+					  "forest_lobby_fairy_grape,la,lag,@logic/cam_owned",
+					  "forest_lobby_fairy_any,@logic/any_gun,@logic/cam_owned",
+					  "{forest_lobby_fairy_feather,ti,tig}",
+					  "{forest_lobby_fairy_pineapple,ch,chg}",
+					  "{forest_lobby_fairy_coconut,dk,dkg}",
+					  "{forest_lobby_fairy_peanut,di,dig}",
+					  "{forest_lobby_fairy_lanky,la,lag}",
+					  "{forest_lobby_fairy_any,@logic/any_gun}"
 					],
 					"visibility_rules": [
 					  "fairy_pool,fairy_rando_off"
@@ -1312,7 +1460,7 @@
 					  "dk,dkm"
 					],
 					"visibility_rules": [
-					  "hint_pool,$wrinkly_puzzles"
+					  "hint_pool,vanilla_hints,$wrinkly_puzzles"
 					],
 					"item_count": 1
 				  }
@@ -1337,7 +1485,7 @@
 					  "dk,dkm,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool,$wrinkly_puzzles"
+					  "hint_pool,vanilla_hints,$wrinkly_puzzles"
 					],
 					"item_count": 1
 				  }
@@ -1362,7 +1510,7 @@
 					  "dk,dkm,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool,$wrinkly_puzzles"
+					  "hint_pool,vanilla_hints,$wrinkly_puzzles"
 					],
 					"item_count": 1
 				  }
@@ -1387,7 +1535,7 @@
 					  "dk,dkm,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool,$wrinkly_puzzles"
+					  "hint_pool,vanilla_hints,$wrinkly_puzzles"
 					],
 					"item_count": 1
 				  }
@@ -1412,7 +1560,8 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool,$wrinkly_puzzles"
+					  "hint_pool,vanilla_hints,$wrinkly_puzzles",
+					  "hint_pool,dos_hints"
 					],
 					"item_count": 1
 				  }
@@ -1437,7 +1586,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool,no_wrinkly_puzzles"
+					  "hint_pool,vanilla_hints,no_wrinkly_puzzles"
 					],
 					"item_count": 1
 				  }
@@ -1462,7 +1611,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool,no_wrinkly_puzzles"
+					  "hint_pool,vanilla_hints,no_wrinkly_puzzles"
 					],
 					"item_count": 1
 				  }
@@ -1487,7 +1636,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool,no_wrinkly_puzzles"
+					  "hint_pool,vanilla_hints,no_wrinkly_puzzles"
 					],
 					"item_count": 1
 				  }
@@ -1512,7 +1661,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool,no_wrinkly_puzzles"
+					  "hint_pool,vanilla_hints,no_wrinkly_puzzles"
 					],
 					"item_count": 1
 				  }
@@ -1537,7 +1686,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool,no_wrinkly_puzzles"
+					  "hint_pool,vanilla_hints,no_wrinkly_puzzles"
 					],
 					"item_count": 1
 				  }
@@ -1564,6 +1713,7 @@
 				  {
 				    "name": "Strong Kong",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chm,dk,dkb",
 					  "ch,chm,dk,orng,[dkb]",
@@ -1617,6 +1767,7 @@
 					"chest_unopened_img": "images/lanky_bp.png",
 					"chest_opened_img": "images/checks/lanky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chm,kasplat_rando_swap",
 					  "ch,chm,kasplat_rando_vanilla,la",
@@ -1628,7 +1779,19 @@
 					  "bp_pool,kasplat_rando_vanilla"
 					],
 					"item_count": 1
-			      }
+			      },
+				  {
+					"name": "Destroy Boulder",
+					"chest_unopened_img": "images/checks/boulder.png",
+				    "chest_opened_img": "images/checks/boulder_done.png",
+					"access_rules": [
+					  "ch,chm,brrl"
+					],
+					"visibility_rules": [
+					  "boulder_pool"
+					],
+					"item_count": 1
+				  }
 				],
 				"map_locations": [
 				  {
@@ -1652,7 +1815,7 @@
 					  "@logic/any_kong,kongless_hints,no_wrinkly_puzzles"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1677,7 +1840,7 @@
 					  "di,dib,no_wrinkly_puzzles"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1704,7 +1867,8 @@
 					  "@logic/any_kong,kongless_hints,no_wrinkly_puzzles"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints",
+					  "hint_pool,dos_hints"
 					],
 					"item_count": 1
 				  }
@@ -1731,7 +1895,7 @@
 					  "@logic/any_kong,kongless_hints,no_wrinkly_puzzles"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1757,7 +1921,7 @@
 					  "@logic/any_kong,kongless_hints,no_wrinkly_puzzles"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1779,16 +1943,43 @@
 			],
 			"children": [
 			  {
+				"name": "Castle Lobby Boulder",
+				"sections": [
+				  {
+					"name": "Destroy Boulder",
+					"chest_unopened_img": "images/checks/boulder.png",
+				    "chest_opened_img": "images/checks/boulder_done.png",
+					"access_rules": [
+					  "ch,brrl"
+					],
+					"visibility_rules": [
+					  "boulder_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "islesmap",
+					"x": 390,
+					"y": 313
+				  }
+				]
+			  },
+			  {
 			    "name": "Castle Lobby above Hint Structure",
 				"short_name": "Castle Lobby Top",
 				"sections": [
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,brrl,la,lap",
 					  "ti,tim,la,[ch],[brrl],[lap]",
+					  "ti,tim,la,[monkey_moves]",
 					  "ti,tim,free_trade,[ch],[brrl],[la],[lap]",
+					  "ti,tim,free_trade,[monkey_moves]",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -1800,9 +1991,14 @@
 					"name": "Dirt Patch",
 					"chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
+					  "{ch,brrl,la,lap}",
+					  "{ti,tim}",
 					  "ch,brrl,la,lap,@logic/wave_owned",
-					  "ti,tim,[ch],[brrl],[la],[lap],@logic/wave_owned"
+					  "ti,tim,[ch],[brrl],[la],[lap],@logic/wave_owned",
+					  "ti,tim,[monkey_moves],@logic/wave_owned"
 					],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -1828,6 +2024,7 @@
 				    "chest_unopened_img": "images/diddy_bp.png",
 					"chest_opened_img": "images/checks/diddy_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "dk,dkg,kasplat_rando_swap",
 					  "dk,dkg,kasplat_rando_vanilla,di",
@@ -1862,7 +2059,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1887,7 +2084,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1912,7 +2109,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1937,7 +2134,7 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints"
 					],
 					"item_count": 1
 				  }
@@ -1962,7 +2159,8 @@
 					  "@logic/any_kong,kongless_hints"
 					],
 					"visibility_rules": [
-					  "hint_pool"
+					  "hint_pool,vanilla_hints",
+					  "hint_pool,dos_hints"
 					],
 					"item_count": 1
 				  }
@@ -1990,9 +2188,11 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/helm_lobby_switch,vine",
 					  "@logic/helm_lobby_switch,ti,tim,[vine]",
+					  "@logic/helm_lobby_switch,auto_bonus,ti,tim,[monkey_moves]",
 					  "@logic/helm_lobby_switch,orng,[vine]",
 					  "ti,tim,auto_bonus,[@logic/helm_lobby_switch],[vine]",
 					  "@logic/any_kong,orng,auto_bonus,[@logic/helm_lobby_switch],[vine]",
@@ -2023,12 +2223,16 @@
 				    "chest_unopened_img": "images/dk_bp.png",
 					"chest_opened_img": "images/checks/dk_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "dk,dkg,@logic/sns_owned",
 					  "ti,tim,[dk],[dkg],[@logic/sns_owned],kasplat_rando_swap",
-					  "ti,tim,[dkg],[@logic/sns_owned],kasplat_rando_vanilla,dk",
-					  "ti,tim,[dkg],[@logic/sns_owned],kasplat_rando_vanilla,free_trade",
-					  "{ti,tim,[dkg],[@logic/sns_owned],kasplat_rando_vanilla}",
+					  "ti,tim,[monkey_moves],kasplat_rando_swap",
+					  "ti,tim,dk,[dkg],[@logic/sns_owned],kasplat_rando_vanilla",
+					  "ti,tim,dk,[monkey_moves],kasplat_rando_vanilla",
+					  "ti,tim,[dk],[dkg],[@logic/sns_owned],kasplat_rando_vanilla,free_trade",
+					  "ti,tim,[monkey_moves],kasplat_rando_vanilla,free_trade",
+					  "{ti,tim,[dk],[dkg],[@logic/sns_owned],kasplat_rando_vanilla}",
 					  "{@logic/any_gun}",
 					  "{@logic/any_instrument}"
 					],
@@ -2056,114 +2260,24 @@
 		"color": "#59FF64",
 		"children": [
 		  {
-		    "name": "Main Area",
+		    "name": "Japes Lowlands",
 			"access_rules": [
 			  "@logic/japes_lobby"
 			],
 			"children": [
 			  {
-				"name": "Behind Diddy Mountain",
-				"short_name": "Behind Mountain",
-				"chest_unopened_img": "images/melon.png",
-				"chest_opened_img": "images/checks/melon_done.png",
+			    "name": "Entrance Hint/T&S",
 				"sections": [
 				  {
-					"name": "Melon Crate",
-					"access_rules": [
-					  "@logic/any_kong",
-					],
-					"visibility_rules": [
-					  "melon_pool"
-					],
-					"item_count": 1
-				  }
-				],
-				"map_locations": [
-				  {
-					"map": "japesmap",
-					"x": 540,
-					"y": 340
-				  }
-				]
-			  },
-			  {
-			    "name": "In Front of Kong Cage",
-				"short_name": "Before Kong Cage",
-				"sections": [
-				  {
-				    "name": "Grab It",
-					"capture_item": true,
-					"access_rules": [
-					  "@logic/any_kong",
-					],
-					"visibility_rules": [
-					  "gb_pool"
-					],
-					"hosted_item": "japes_switches_spawned",
-					"item_count": 1
-				  }
-				],
-				"map_locations": [
-				  {
-				    "map": "japesmap",
-					"x": 675,
-					"y": 370
-				  }
-				]
-			  },
-			  {
-			    "name": "Kong Cage",
-				"sections": [
-				  {
-				    "name": "Kong",
-					"chest_unopened_img": "images/diddy_hat.png",
-					"chest_opened_img": "images/checks/diddy_done.png",
-					"capture_item": true,
-					"access_rules": [
-					  "@logic/any_gun,japes_switches_spawned",
-					  "{@logic/any_kong}"
-					],
-					"visibility_rules": [
-					  "kong_pool"
-					],
-					"item_count": 1
-				  },
-				  {
-				    "name": "Prize",
-					"capture_item": true,
-					"access_rules": [
-					  "@logic/any_gun,japes_switches_spawned",
-					  "{@logic/any_kong}"
-					],
-					"visibility_rules": [
-					  "gb_pool"
-					],
-					"hosted_item": "japes_kong_freed",
-					"item_count": 1
-				  }
-				],
-				"map_locations": [
-				  {
-				    "map": "japesmap",
-					"x": 690,
-					"y": 333
-				  }
-				]
-			  },
-			  {
-			    "name": "In Front of Funky's Armory",
-				"short_name": "Before Funky",
-				"sections": [
-				  {
-				    "name": "Battle Crown",
-					"chest_unopened_img": "images/crown.png",
-					"chest_opened_img": "images/checks/crown_done.png",
-					"capture_item": true,
+				    "name": "Hint Door/T&S",
+					"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
 					"access_rules": [
 					  "@logic/any_kong"
 					],
 					"visibility_rules": [
-					  "cr_pool,arena_rando_off"
+					  "hint_pool,dos_hints",
+					  "hint_pool,season_5_hints"
 					],
 					"item_count": 1
 				  }
@@ -2171,8 +2285,8 @@
 				"map_locations": [
 				  {
 				    "map": "japesmap",
-					"x": 435,
-					"y": 450
+					"x": 636,
+					"y": 760
 				  }
 				]
 			  },
@@ -2183,7 +2297,8 @@
 				  {
 				    "name": "Finish Course",
 					"access_rules": [
-					  "dk,dkp,vine"
+					  "dk,dkp,vine,climb",
+					  "@logic/japes_lobby,portal_shuffle_on,japes_entry_bl,dk,dkp"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -2200,14 +2315,39 @@
 				]
 			  },
 			  {
+			    "name": "Hive Tunnel Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "japesmap",
+					"x": 360,
+					"y": 540
+				  }
+				]
+			  },
+			  {
 			    "name": "Peanut Side Room",
 				"sections": [
 				  {
 				    "name": "Open the Gate",
 					"short_name": "Grab it",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "di,dig",
+					  "@logic/japes_tunnel_room",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -2231,9 +2371,10 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "di,dig,la,lag",
-					  "{di,dig}",
+					  "@logic/japes_tunnel_room,la,lag",
+					  "{@logic/japes_tunnel_room}",
 					  "{@logic/any_gun,@logic/sns_owned}",
 					  "{@logic/any_kong,auto_bonus}"
 					],
@@ -2258,9 +2399,10 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "di,dig,ti,tig",
-					  "{di,dig}",
+					  "@logic/japes_tunnel_room,ti,tig",
+					  "{@logic/japes_tunnel_room}",
 					  "{@logic/any_gun,@logic/sns_owned}",
 					  "{@logic/any_kong,auto_bonus}"
 					],
@@ -2275,6 +2417,32 @@
 				    "map": "japesmap",
 					"x": 550,
 					"y": 757
+				  }
+				]
+			  },
+			  {
+			    "name": "Peanut Room T&S",
+				"short_name": "Peanut T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/japes_tunnel_room"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "japesmap",
+					"x": 540,
+					"y": 703
 				  }
 				]
 			  },
@@ -2310,6 +2478,7 @@
 				    "name": "Cross the Gap",
 					"short_name": "Cross Gap",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,brrl,chg,vine,ss",
 					  "ch,brrl,ti,tim,[chg],[vine],ss",
@@ -2340,10 +2509,16 @@
 					"chest_unopened_img": "images/chunky_bp.png",
 					"chest_opened_img": "images/checks/chunky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,brrl,chg,vine,ss",
 					  "ch,brrl,ti,tim,[chg],[vine],ss",
 					  "ch,brrl,dk,[chg],[vine],ss",
+					  "ch,brrl,dk,[monkey_moves],ss",
+					  "ch,brrl,di,[chg],vine,ss",
+					  "ch,brrl,di,[monkey_moves],vine,ss",
+					  "ch,brrl,ti,[chg],vine,ss",
+					  "ch,brrl,ti,[monkey_moves],vine,ss",
 					  "{ch,brrl,ss,@logic/any_gun}",
 					  "{ch,brrl,ss,@logic/any_instrument}"
 					],
@@ -2363,16 +2538,42 @@
 				]
 			  },
 			  {
+				"name": "Underground Cave Center",
+				"short_name": "Underground Center",
+				"sections": [
+				  {
+				    "name": "Melon Crate",
+					"chest_unopened_img": "images/melon.png",
+					"chest_opened_img": "images/checks/melon_done.png",
+					"access_rules": [
+					  "ch,brrl,ss"
+					],
+					"visibility_rules": [
+					  "melon_pool,melon_pool_5,melon_crate_rando_off"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "japesmap",
+					"x": 240,
+					"y": 720
+				  }
+				]
+			  },
+			  {
 				"name": "Painting Room Hill",
 				"sections": [
 				  {
 					"name": "Dirt Patch",
 				    "chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 				    "access_rules": [
-				      "la,lam,@logic/wave_owned",
-					  "ti,tim,[la],[lam],@logic/wave_owned",
-					  "dk,[la],[lam],@logic/wave_owned"
+					  "@logic/japes_painting_hill,@logic/wave_owned,@logic/any_kong",
+					  "{@logic/any_kong}"
 				    ],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -2395,19 +2596,15 @@
 				    "name": "Defeat the Enemies",
 					"short_name": "Defeat Enemies",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "di,dig,la,lam,[lag],ss",
-					  "di,dig,la,lam,lai,ss",
-					  "di,dig,la,ti,tim,[lam],[lag],ss",
-					  "di,dig,la,ti,tim,[lam],lai,ss",
-					  "di,dig,la,dk,[lam],[lag],ss",
-					  "di,dig,la,dk,[lam],lai,ss",
-					  "{di,dig,la,lam}",
-					  "{di,dig,ti,tim}",
-					  "{di,dig,dk}"
+					  "@logic/japes_painting_room,la,ss,@logic/any_gun,[lag]",
+					  "@logic/japes_painting_room,la,ss,@logic/any_instrument,[lai]",
+					  "@logic/japes_painting_room,la,ss,orng,[adv_orng]",
+					  "{@logic/japes_painting_room}"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -2429,16 +2626,14 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "di,dig,la,lam,[lag],@logic/cam_owned,ss",
-					  "di,dig,la,lam,lai,@logic/cam_owned,ss",
-					  "di,dig,la,ti,tim,[lam],[lag],@logic/cam_owned,ss",
-					  "di,dig,la,ti,tim,[lam],lai,@logic/cam_owned,ss",
-					  "di,dig,la,dk,[lam],[lag],@logic/cam_owned,ss",
-					  "di,dig,la,dk,[lam],lai,@logic/cam_owned,ss",
-					  "{di,dig,la,lam,ss}",
-					  "{di,dig,ti,tim,ss}",
-					  "{di,dig,dk,ss}"
+					  "@logic/japes_painting_room,la,ss,@logic/any_gun,[lag],@logic/cam_owned",
+					  "@logic/japes_painting_room,la,ss,@logic/any_instrument,[lai],@logic/cam_owned",
+					  "@logic/japes_painting_room,la,ss,orng,[adv_orng],@logic/cam_owned",
+					  "{@logic/japes_painting_room,la,ss,@logic/any_gun}",
+					  "{@logic/japes_painting_room,la,ss,@logic/any_instrument}",
+					  "{@logic/japes_painting_room,la,ss,orng}"
 					],
 					"visibility_rules": [
 					  "fairy_pool,fairy_rando_off"
@@ -2453,6 +2648,159 @@
 					"y": 630
 				  }
 				]
+			  }
+			]
+		  },
+		  {
+		    "name": "Japes Hillside",
+			"access_rules": [
+			  "@logic/japes_lobby,@logic/any_kong,@logic/japes_hillside_strict",
+			  "@logic/japes_lobby,@logic/any_kong,@logic/japes_hillside,[@logic/japes_hillside_strict]"
+			],
+			"children": [
+			  {
+				"name": "Behind Diddy Mountain",
+				"short_name": "Behind Mountain",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/any_kong",
+					],
+					"visibility_rules": [
+					  "melon_pool,melon_crate_rando_off"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "japesmap",
+					"x": 540,
+					"y": 340,
+					"force_invisibility_rules": [ "melon_pool_5" ]
+				  }
+				]
+			  },
+			  {
+			    "name": "Behind Mountain Hint",
+				"short_name": "Mountain Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "japesmap",
+					"x": 585,
+					"y": 333
+				  }
+				]
+			  },
+			  {
+			    "name": "In Front of Kong Cage",
+				"short_name": "Before Kong Cage",
+				"sections": [
+				  {
+				    "name": "Grab It",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
+					"access_rules": [
+					  "@logic/any_kong",
+					],
+					"visibility_rules": [
+					  "gb_pool"
+					],
+					"hosted_item": "japes_switches_spawned",
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "japesmap",
+					"x": 675,
+					"y": 370
+				  }
+				]
+			  },
+			  {
+			    "name": "Kong Cage",
+				"sections": [
+				  {
+				    "name": "Kong",
+					"chest_unopened_img": "images/diddy_hat.png",
+					"chest_opened_img": "images/checks/diddy_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
+					"access_rules": [
+					  "@logic/japes_kong_solving,japes_switches_spawned",
+					  "{@logic/any_kong}"
+					],
+					"visibility_rules": [
+					  "kong_pool"
+					],
+					"item_count": 1
+				  },
+				  {
+				    "name": "Prize",
+					"capture_item_layout": "tracker_capture_item_only",
+					"access_rules": [
+					  "@logic/japes_kong_solving,japes_switches_spawned",
+					  "{@logic/any_kong}"
+					],
+					"visibility_rules": [
+					  "gb_pool"
+					],
+					"hosted_item": "japes_kong_freed",
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "japesmap",
+					"x": 690,
+					"y": 333
+				  }
+				]
+			  },
+			  {
+			    "name": "In Front of Funky's Armory",
+				"short_name": "Before Funky",
+				"sections": [
+				  {
+				    "name": "Battle Crown",
+					"chest_unopened_img": "images/crown.png",
+					"chest_opened_img": "images/checks/crown_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "cr_pool,arena_rando_off"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "japesmap",
+					"x": 435,
+					"y": 450
+				  }
+				]
 			  },
 			  {
 			    "name": "Top of Minecart Mountain",
@@ -2462,6 +2810,7 @@
 				    "name": "Slam the Switch",
 					"short_name": "Hit Switch",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dig,prog_switch_off,ss",
 					  "di,dig,prog_switch_on,$japes_slam"
@@ -2481,19 +2830,47 @@
 				]
 			  },
 			  {
+				"name": "Inside Diddy Mountain",
+				"short_name": "Inside Mountain",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "di,dig",
+					],
+					"visibility_rules": [
+					  "melon_pool,melon_pool_5,melon_crate_rando_off"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "japesmap",
+					"x": 222,
+					"y": 330
+				  }
+				]
+			  },
+			  {
 			    "name": "Japes Minecart",
 				"sections": [
 				  {
 				    "name": "Collect Coins",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dig,[dim],prog_switch_off,ss",
+					  "di,dig,[monkey_moves],prog_switch_off,ss",
 					  "di,dig,[dim],prog_switch_on,$japes_slam",
+					  "di,dig,[monkey_moves],prog_switch_on,$japes_slam",
 					  "di,dig,ch,[dim],[prog_switch_off],[ss]",
 					  "di,dig,ch,[dim],[prog_switch_on],[$japes_slam]"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool"
+					  "race_pool"
 					],
 					"item_count": 1
 				  }
@@ -2505,14 +2882,41 @@
 					"y": 190
 				  }
 				]
-			  }
+			  },
+			  {
+			    "name": "Alcove T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong,climb,vine",
+					  "@logic/any_kong,@logic/japes_hillside,[monkey_moves]",
+					  "@logic/any_kong,@logic/japes_hillside,[@logic/japes_hillside_strict]",
+					  "@logic/any_kong,portal_shuffle_on,japes_entry_hsa"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "japesmap",
+					"x": 760,
+					"y": 464
+				  }
+				]
+			  },
 			]
 		  },
 		  {
 		    "name": "Japes Tunnels",
 			"access_rules": [
-			  "@logic/japes_lobby,japes_kong_freed",
-			  "@logic/japes_lobby,barrier_japes_coconut"
+			  "@logic/japes_tunnels"
 			],
 			"children": [
 			  {
@@ -2524,6 +2928,7 @@
 				    "chest_unopened_img": "images/diddy_bp.png",
 					"chest_opened_img": "images/checks/diddy_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,di",
@@ -2552,8 +2957,10 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,lam",
+					  "@logic/any_kong,slope_resets",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -2579,6 +2986,7 @@
 				    "chest_unopened_img": "images/lanky_bp.png",
 					"chest_opened_img": "images/checks/lanky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,la",
@@ -2601,6 +3009,39 @@
 				]
 			  },
 			  {
+			    "name": "Stormy Area Hint",
+				"short_name": "Stormy Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "japesmap",
+					"x": 777,
+					"y": 140
+				  }
+				]
+			  }
+			]
+		  },
+		  {
+			"name": "Tunnel to Hive Area",
+			"access_rules": [
+			  "@logic/japes_tunnel_to_hive,[@logic/japes_tunnel_to_hive_strict]"
+			],
+			"children": [
+			  {
 			    "name": "Tunnel to Hive (Lower)",
 				"short_name": "Lower Hive Tunnel",
 				"sections": [
@@ -2610,6 +3051,7 @@
 				    "chest_unopened_img": "images/dk_bp.png",
 					"chest_opened_img": "images/checks/dk_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,dk",
@@ -2641,6 +3083,7 @@
 				    "chest_unopened_img": "images/tiny_bp.png",
 					"chest_opened_img": "images/checks/tiny_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,ti",
@@ -2665,10 +3108,9 @@
 			]
 		  },
 		  {
-		    "name": "Rambi Huts and Door",
+		    "name": "Rambi Huts",
 			"access_rules": [
-			  "@logic/japes_lobby,japes_kong_freed,dk,dkg",
-			  "@logic/japes_lobby,barrier_japes_coconut,dk,dkg",
+			  "@logic/japes_rambi",
 			  "{@logic/japes_lobby,@logic/any_kong}"
 			],
 			"children": [
@@ -2679,6 +3121,7 @@
 				  {
 				    "name": "Donkey Switch",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "prog_switch_off,ss",
 					  "prog_switch_on,$japes_slam",
@@ -2705,10 +3148,12 @@
 				  {
 				    "name": "Diddy Timer",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "di,prog_switch_off,ss",
-					  "di,prog_switch_on,$japes_slam",
-					  "{@logic/any_kong}"
+					  "di,prog_switch_off,ss,@logic/japes_hillside,[@logic/japes_hillside_strict]",
+					  "di,prog_switch_on,$japes_slam,@logic/japes_hillside,[@logic/japes_hillside_strict]",
+					  "{@logic/any_kong,@logic/japes_hillside}",
+					  
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -2725,38 +3170,13 @@
 				]
 			  },
 			  {
-			    "name": "Cage near Snide's HQ",
-				"short_name": "Snide Cage",
-				"sections": [
-				  {
-				    "name": "Chunky Timer",
-					"capture_item": true,
-					"access_rules": [
-					  "ch,brrl,prog_switch_off,ss",
-					  "ch,brrl,prog_switch_on,$japes_slam",
-					  "{@logic/any_kong}"
-					],
-					"visibility_rules": [
-					  "gb_pool"
-					],
-					"item_count": 1
-				  }
-				],
-				"map_locations": [
-				  {
-				    "map": "japesmap",
-					"x": 400,
-					"y": 380
-				  }
-				]
-			  },
-			  {
 			    "name": "Cage near Lake",
 				"short_name": "Lake Cage",
 				"sections": [
 				  {
 				    "name": "Tiny Timer",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,prog_switch_off,ss",
 					  "ti,prog_switch_on,$japes_slam",
@@ -2783,10 +3203,11 @@
 				  {
 				    "name": "Lanky Timer",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "la,prog_switch_off,ss",
-					  "la,prog_switch_on,$japes_slam",
-					  "{@logic/any_kong}"
+					  "la,prog_switch_off,ss,@logic/japes_hillside,[@logic/japes_hillside_strict]",
+					  "la,prog_switch_on,$japes_slam,@logic/japes_hillside,[@logic/japes_hillside_strict]",
+					  "{@logic/any_kong,@logic/japes_hillside}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -2801,6 +3222,42 @@
 					"y": 410
 				  }
 				]
+			  }
+			]
+		  },
+		  {
+			"name": "Rambi Cave",
+			"access_rules": [
+			  "@logic/japes_rambi_cave",
+			  "{@logic/any_kong}"
+			],
+			"children": [
+			  {
+			    "name": "Cage near Snide's HQ",
+				"short_name": "Snide Cage",
+				"sections": [
+				  {
+				    "name": "Chunky Timer",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
+					"access_rules": [
+					  "ch,brrl,prog_switch_off,ss,@logic/japes_hillside,[@logic/japes_hillside_strict]",
+					  "ch,brrl,prog_switch_on,$japes_slam,@logic/japes_hillside,[@logic/japes_hillside_strict]",
+					  "{@logic/any_kong,@logic/japes_hillside}"
+					],
+					"visibility_rules": [
+					  "gb_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "japesmap",
+					"x": 400,
+					"y": 380
+				  }
+				]
 			  },
 			  {
 			    "name": "Fairy Pool",
@@ -2810,9 +3267,10 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "dk,dkg,@logic/cam_owned",
-					  "{dk,dkg}"
+					  "@logic/japes_rambi_cave,@logic/cam_owned",
+					  "{@logic/japes_rambi_cave}"
 					],
 					"visibility_rules": [
 					  "fairy_pool,fairy_rando_off"
@@ -2829,7 +3287,7 @@
 				]
 			  },
 			  {
-				"name": "Chunky Rock Cave",
+				"name": "Chunky Boulder Cave",
 				"short_name": "Chunky Cave",
 				"chest_unopened_img": "images/melon.png",
 				"chest_opened_img": "images/checks/melon_done.png",	
@@ -2837,7 +3295,7 @@
 				  {
 					"name": "Melon Crate",
 					"access_rules": [
-					  "dk,dkg",
+					  "@logic/japes_rambi_cave"
 					],
 					"visibility_rules": [
 					  "melon_pool"
@@ -2849,7 +3307,34 @@
 				  {
 					"map": "japesmap",
 					"x": 915,
-					"y": 140
+					"y": 140,
+					"force_invisibility_rules": [ "melon_pool_5" ]
+				  }
+				]
+			  },
+			  {
+			    "name": "Chunky Boulder T&S",
+				"short_name": "Boulder T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/japes_rambi_cave"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "japesmap",
+					"x": 890,
+					"y": 116
 				  }
 				]
 			  }
@@ -2858,11 +3343,7 @@
 		  {
 		    "name": "Hive Area",
 			"access_rules": [
-			  "@logic/japes_lobby,japes_kong_freed,ti,tig",
-			  "@logic/japes_lobby,japes_kong_freed,barrier_japes_shellhive",
-			  "@logic/japes_lobby,barrier_japes_coconut,ti,tig",
-			  "@logic/japes_lobby,barrier_japes_coconut,barrier_japes_shellhive",
-			  "@logic/japes_lobby,bananaport_all,di,dig"
+			  "@logic/japes_shellhive"
 			],
 			"children": [
 			  {
@@ -2872,6 +3353,7 @@
 				  {
 				    "name": "Shrink Down",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tib",
 					  "{@logic/any_kong}"
@@ -2896,8 +3378,9 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "ch,chb",
+					  "ch,chb,climb",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -2915,11 +3398,38 @@
 			    ]
 			  },
 			  {
+			    "name": "Hive Area Hint/T&S",
+				"short_name": "Hive T&S",
+				"sections": [
+				  {
+				    "name": "Hint Door/T&S",
+					"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints",
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "japesmap",
+					"x": 144,
+					"y": 520
+				  }
+				]
+			  },
+			  {
 			    "name": "Hive Right Room",
 				"sections": [
 				  {
 				    "name": "Climb Pedestal",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tib,[orng],prog_switch_off,ss",
 					  "ti,tib,[tii],prog_switch_off,ss",
@@ -2955,6 +3465,30 @@
               "@logic/aztec_past_vine"
             ],
             "children": [
+			  {
+			    "name": "Entrance Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "aztecmap",
+					"x": 230,
+					"y": 768
+				  }
+				]
+			  },
               {
                 "name": "Chunky Vase Room",
 				"short_name": "Vase Room",
@@ -2969,7 +3503,19 @@
 					  "gb_pool"
 					],
                     "item_count": 1
-                  }
+                  },
+				  {
+					"name": "Destroy Vases",
+					"chest_unopened_img": "images/checks/boulder.png",
+				    "chest_opened_img": "images/checks/boulder_done.png",
+					"access_rules": [
+					  "ch,chg,brrl"
+					],
+					"visibility_rules": [
+					  "boulder_pool"
+					],
+					"item_count": 4
+				  }
                 ],
                 "map_locations": [
                   {
@@ -2980,8 +3526,8 @@
                 ]
               },
               {
-                "name": "Coconut Sand Room",
-				"short_name": "Coconut Sand",
+                "name": "Kasplat Sand Bridge Room",
+				"short_name": "Kasplat Bridge",
                 "sections": [
                   {
                     "name": "Donkey Kasplat",
@@ -2989,10 +3535,11 @@
 					"chest_unopened_img": "images/dk_bp.png",
 					"chest_opened_img": "images/checks/dk_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "dk,dkg,[dkb]",
-					  "dk,dkg,ti,tim,kasplat_rando_swap",
-					  "dk,dkg,ti,tim,kasplat_rando_vanilla,free_trade"
+					  "@logic/aztec_kasplat_room,[dkb]",
+					  "@logic/aztec_kasplat_room,ti,tim,kasplat_rando_swap",
+					  "@logic/aztec_kasplat_room,ti,tim,kasplat_rando_vanilla,free_trade"
 					],
 					"visibility_rules": [
 					  "bp_pool,kasplat_rando_swap",
@@ -3004,11 +3551,62 @@
                 "map_locations": [
                   {
                     "map": "aztecmap",
-                    "x": 177,
+                    "x": 175,
                     "y": 774
                   }
                 ]
               },
+			  {
+				"name": "Kasplat Sand Platform",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/aztec_kasplat_room,dk,[dkb]",
+					  "@logic/aztec_kasplat_room,ti,tim"
+					],
+					"visibility_rules": [
+					  "melon_pool,melon_pool_5,melon_crate_rando_off"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "aztecmap",
+					"x": 200,
+					"y": 774
+				  }
+				]
+			  },
+			  {
+			    "name": "Candy T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong,[vines]",
+					  "ti,tim"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "aztecmap",
+					"x": 90,
+					"y": 725
+				  }
+				]
+			  },
               {
                 "name": "Llama Cage",
                 "sections": [
@@ -3016,6 +3614,7 @@
                     "name": "Free the Llama",
 					"short_name": "Free Llama",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/aztec_door_access,dk,dkp",
 					  "{@logic/any_kong}"
@@ -3034,6 +3633,31 @@
                   }
                 ]
               },
+			  {
+			    "name": "Tiny Temple Roof Hint",
+				"short_name": "Roof Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "di,dib,climb"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "aztecmap",
+					"x": 111,
+					"y": 606
+				  }
+				]
+			  },
               {
                 "name": "Top of Tiny Temple",
 				"short_name": "Temple Top",
@@ -3044,8 +3668,9 @@
                     "chest_unopened_img": "images/diddy_bp.png",
                     "chest_opened_img": "images/checks/diddy_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "di,dib",
+					  "di,dib,climb",
 					  "{@logic/any_instrument}"
 					],
 					"visibility_rules": [
@@ -3058,8 +3683,8 @@
                 "map_locations": [
                   {
                     "map": "aztecmap",
-                    "x": 88,
-                    "y": 597
+                    "x": 85,
+                    "y": 595
                   }
                 ]
               },
@@ -3070,8 +3695,11 @@
 					"name": "Dirt Patch",
 				    "chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 				    "access_rules": [
 				      "@logic/any_kong,@logic/wave_owned",
+				      "{@logic/any_kong}",
 				    ],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -3103,12 +3731,13 @@
 				    "name": "Defeat the Enemies",
                     "short_name": "Defeat Enemies",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
                     "access_rules": [
                       "ch,chg,chi",
 					  "ch,chi,@logic/tiny_temple_access,[chg]"
                     ],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
                     "item_count": 1
                   }
@@ -3129,11 +3758,11 @@
 				    "name": "Defeat the Enemies",
                     "short_name": "Defeat Enemies",
 					"access_rules": [
-					  "ti,tig,tib,dive",
-					  "ti,tib,dive,@logic/tiny_temple_access,[tig]"
+					  "@logic/tiny_temple_water,ti,tig,tib,dive",
+					  "@logic/tiny_temple_water,ti,tib,dive,@logic/tiny_temple_access,[tig]"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
                     "item_count": 1
                   }
@@ -3155,12 +3784,10 @@
 					"chest_unopened_img": "images/tiny.png",
                     "chest_opened_img": "images/checks/tiny_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "ch,chg,chm,dive",
-					  "ch,chm,dive,@logic/tiny_temple_access,[chg]",
-					  "di,dig,dim,dive",
-					  "di,dim,dive,@logic/tiny_temple_access,[dig]",
-					  "{dive,@logic/any_kong,@logic/tiny_temple_access}"
+					  "@logic/tiny_temple_water,dive,@logic/tiny_kong_solving",
+					  "{@logic/tiny_temple_water,dive,@logic/any_kong,@logic/tiny_temple_access}"
 					],
 					"visibility_rules": [
 					  "kong_pool"
@@ -3170,12 +3797,10 @@
                   {
                     "name": "Prize",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "ch,chg,chm,dive",
-					  "ch,chm,dive,@logic/tiny_temple_access,[chg]",
-					  "di,dig,dim,dive",
-					  "di,dim,dive,@logic/tiny_temple_access,[dig]",
-					  "{dive,@logic/any_kong,@logic/tiny_temple_access}"
+					  "@logic/tiny_temple_water,dive,@logic/tiny_kong_solving",
+					  "{@logic/tiny_temple_water,dive,@logic/any_kong,@logic/tiny_temple_access}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -3198,11 +3823,12 @@
 				    "name": "Shoot the Vulture",
 					"short_name": "Vulture",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "la,lag,dive,prog_switch_off,ss",
-					  "la,lag,dive,prog_switch_on,$aztec_slam",
-					  "la,dive,@logic/tiny_temple_access,[lag],prog_switch_off,ss",
-					  "la,dive,@logic/tiny_temple_access,[lag],prog_switch_on,$aztec_slam"
+					  "@logic/tiny_temple_water,la,lag,dive,prog_switch_off,ss",
+					  "@logic/tiny_temple_water,la,lag,dive,prog_switch_on,$aztec_slam",
+					  "@logic/tiny_temple_water,la,dive,@logic/tiny_temple_access,[lag],prog_switch_off,ss",
+					  "@logic/tiny_temple_water,la,dive,@logic/tiny_temple_access,[lag],prog_switch_on,$aztec_slam"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -3214,11 +3840,12 @@
 					"chest_unopened_img": "images/crown.png",
 					"chest_opened_img": "images/checks/crown_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "la,lag,dive,prog_switch_off,ss",
-					  "la,lag,dive,prog_switch_on,$aztec_slam",
-					  "la,dive,@logic/tiny_temple_access,[lag],prog_switch_off,ss",
-					  "la,dive,@logic/tiny_temple_access,[lag],prog_switch_on,$aztec_slam"
+					  "@logic/tiny_temple_water,la,lag,dive,prog_switch_off,ss",
+					  "@logic/tiny_temple_water,la,lag,dive,prog_switch_on,$aztec_slam",
+					  "@logic/tiny_temple_water,la,dive,@logic/tiny_temple_access,[lag],prog_switch_off,ss",
+					  "@logic/tiny_temple_water,la,dive,@logic/tiny_temple_access,[lag],prog_switch_on,$aztec_slam"
 					],
 					"visibility_rules": [
 					  "cr_pool,arena_rando_off"
@@ -3252,6 +3879,7 @@
 					"chest_unopened_img": "images/tiny_bp.png",
 					"chest_opened_img": "images/checks/tiny_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,ti",
@@ -3274,12 +3902,38 @@
 				]
 			  },
 			  {
+			    "name": "Cranky Hint/T&S",
+				"sections": [
+				  {
+				    "name": "Hint Door/T&S",
+					"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints",
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "aztecmap",
+					"x": 395,
+					"y": 540
+				  }
+				]
+			  },
+			  {
 			    "name": "Tunnel Boulder Cage", 
 				"short_name": "Tunnel Cage",
 				"sections": [
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chb,brrl",
 					  "{@logic/any_kong}"
@@ -3299,6 +3953,31 @@
 				]
 			  },
 			  {
+			    "name": "Tunnel Huge Boulder", 
+				"short_name": "Tunnel Boulder",
+				"sections": [
+				  {
+				    "name": "Destroy Boulder",
+					"chest_unopened_img": "images/checks/boulder.png",
+				    "chest_opened_img": "images/checks/boulder_done.png",
+					"access_rules": [
+					  "ch,chb,brrl"
+					],
+					"visibility_rules": [
+					  "boulder_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "aztecmap",
+					"x": 327,
+					"y": 484
+				  }
+				]
+			  },
+			  {
 			    "name": "Totem Vulture Challenge",
 				"short_name": "Totem Vulture",
 				"sections": [
@@ -3306,11 +3985,12 @@
 				    "name": "Fly through the Rings",
 					"short_name": "Rings",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dib"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool"
+					  "race_pool"
 					],
 					"item_count": 1
 				  }
@@ -3324,17 +4004,45 @@
 				]
 			  },
 			  {
+			    "name": "Quicksand Tunnel Hint",
+				"short_name": "Quicksand Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/quicksand_tunnel,dk,[dkb]",
+					  "portal_shuffle_on,aztec_entry_aqt,free_trade,@logic/any_kong",
+					  "@logic/aztec_door_access,bananaport_all,@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "aztecmap",
+					"x": 595,
+					"y": 323
+				  }
+				]
+			  },
+			  {
 			    "name": "Strong Kong Tunnel",
 				"short_name": "Back Tunnel",
 				"sections": [
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "@logic/llama_temple_access,dk,[dkb],prog_switch_off,ss",
-					  "@logic/llama_temple_access,dk,[dkb],prog_switch_on,$aztec_slam",
+					  "@logic/quicksand_tunnel,dk,[dkb]",
 					  "@logic/aztec_door_access,bananaport_all,dk",
 					  "@logic/aztec_door_access,bananaport_all,free_trade,@logic/any_kong",
+					  "portal_shuffle_on,aztec_entry_aqt,free_trade,@logic/any_kong",
 					  "{@logic/aztec_door_access,bananaport_all}"
 					],
 					"visibility_rules": [
@@ -3346,8 +4054,82 @@
 				"map_locations": [
 				  {
 				    "map": "aztecmap",
-					"x": 577,
+					"x": 575,
 					"y": 335
+				  }
+				]
+			  },
+			  {
+			    "name": "Funky T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "aztecmap",
+					"x": 615,
+					"y": 380
+				  }
+				]
+			  },
+			  {
+			    "name": "Near Funky Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "aztecmap",
+					"x": 585,
+					"y": 404
+				  }
+				]
+			  },
+			  {
+			    "name": "Snide T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "aztecmap",
+					"x": 520,
+					"y": 444
 				  }
 				]
 			  },
@@ -3357,6 +4139,7 @@
 				  {
 				    "name": "Hit the Gongs",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dim,[dib]"
 					],
@@ -3368,11 +4151,12 @@
 				  {
 				    "name": "Beetle Race",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dim,[dib],ti,tii,tib"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool"
+					  "race_pool"
 					],
 					"item_count": 1
 				  }
@@ -3397,7 +4181,7 @@
 					  "@logic/any_kong",
 					],
 					"visibility_rules": [
-					  "melon_pool"
+					  "melon_pool,melon_crate_rando_off"
 					],
 					"item_count": 1
 				  }
@@ -3406,7 +4190,8 @@
 				  {
 					"map": "aztecmap",
 					"x": 610,
-					"y": 800
+					"y": 800,
+					"force_invisibility_rules": [ "melon_pool_5" ]
 				  }
 				]
 			  },
@@ -3422,7 +4207,7 @@
 					  "di,dib",
 					],
 					"visibility_rules": [
-					  "melon_pool"
+					  "melon_pool,melon_crate_rando_off"
 					],
 					"item_count": 1
 				  }
@@ -3431,7 +4216,34 @@
 				  {
 					"map": "aztecmap",
 					"x": 806,
-					"y": 475
+					"y": 475,
+					"force_invisibility_rules": [ "melon_pool_5" ]
+				  }
+				]
+			  },
+			  {
+			    "name": "5 Door Temple T&S",
+				"short_name": "5DT T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "aztecmap",
+					"x": 777,
+					"y": 300
 				  }
 				]
 			  }
@@ -3455,7 +4267,7 @@
 					  "@logic/any_kong",
 					],
 					"visibility_rules": [
-					  "melon_pool"
+					  "melon_pool,melon_crate_rando_off"
 					],
 					"item_count": 1
 				  }
@@ -3464,7 +4276,8 @@
 				  {
 					"map": "aztecmap",
 					"x": 411,
-					"y": 333
+					"y": 333,
+					"force_invisibility_rules": [ "melon_pool_5" ]
 				  }
 				]
 			  },
@@ -3477,9 +4290,10 @@
 					"chest_unopened_img": "images/lanky.png",
 					"chest_opened_img": "images/checks/lanky_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "@logic/any_gun_instrument,dive",
-					  "{@logic/any_instrument},dive"
+					  "@logic/llama_spit,@logic/llama_kong_solving,dive",
+				      "{@logic/llama_spit,dive}"
 					],
 					"visibility_rules": [
 					  "kong_pool"
@@ -3489,9 +4303,10 @@
 				  {
 				    "name": "Prize",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "@logic/any_gun_instrument,dive",
-					  "{@logic/any_instrument},dive"
+					  "@logic/llama_spit,@logic/llama_kong_solving,dive",
+					  "{@logic/llama_spit,dive}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -3515,6 +4330,7 @@
 				    "name": "Match the Sounds",
 					"short_name": "Match Sounds",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,lag,prog_switch_off,ss",
 					  "la,lag,prog_switch_on,$aztec_slam",
@@ -3541,9 +4357,12 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,lai,lam",
 					  "ti,tim,free_trade,[la],[lai],[lam]",
+					  "ti,tim,free_trade,[monkey_moves]",
+					  "la,lai,ti,free_trade,slope_resets",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -3569,6 +4388,7 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/cam_owned",
 					  "{@logic/any_kong}"
@@ -3595,6 +4415,7 @@
 				    "name": "Cross the Lava",
 					"short_name": "Cross Lava",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tib,prog_switch_off,ss",
 					  "ti,tib,prog_switch_on,$aztec_slam",
@@ -3620,6 +4441,7 @@
 					"chest_unopened_img": "images/lanky_bp.png",
 					"chest_opened_img": "images/checks/lanky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tib,kasplat_rando_swap",
 					  "@logic/any_kong,bananaport_all,kasplat_rando_swap",
@@ -3734,6 +4556,7 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tig,tib,@logic/cam_owned",
 					  "{ti,tig,tib}"
@@ -3753,12 +4576,37 @@
 				]
 			  },
 			  {
+				"name": "Tiny 5DT Hall",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "ti,tig",
+					],
+					"visibility_rules": [
+					  "melon_pool,melon_pool_5,melon_crate_rando_off"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "aztecmap",
+					"x": 960,
+					"y": 478
+				  }
+				]
+			  },
+			  {
 			    "name": "Chunky 5 Door Temple",
 				"short_name": "Chunky 5DT",
 				"sections": [
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chg"
 					],
@@ -3784,8 +4632,11 @@
 					"name": "Dirt Patch",
 				    "chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 				    "access_rules": [
 				      "ch,chg,@logic/wave_owned",
+					  "{ch,chg}"
 				    ],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -3835,6 +4686,7 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,lag"
 					],
@@ -3861,9 +4713,9 @@
 		"color": "#B5CDFF",
 		"children": [
 		  {
-		    "name": "Storage and Arcade",
+		    "name": "Storage Area",
 			"access_rules": [
-			  "@logic/factory_lobby"
+			  "@logic/storage_prod_access"
 			],
 			"children": [
 			  {
@@ -3876,6 +4728,7 @@
                     "chest_unopened_img": "images/diddy_bp.png",
                     "chest_opened_img": "images/checks/diddy_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,di",
@@ -3898,6 +4751,31 @@
 				]
 			  },
 			  {
+			    "name": "Production Room Above Crusher Hint",
+				"short_name": "Crusher Door Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "factorymap",
+					"x": 840,
+					"y": 760
+				  }
+				]
+			  },
+			  {
 			    "name": "Storage Room Cage",
 				"short_name": "Storage Cage",
 				"sections": [
@@ -3906,9 +4784,14 @@
 					"chest_unopened_img": "images/chunky.png",
                     "chest_opened_img": "images/checks/chunky_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "@logic/any_kong,prog_switch_off,ss",
-					  "@logic/any_kong,prog_switch_on,$factory_slam",
+					  "la,lam,prog_switch_on,$factory_slam",
+					  "la,lam,prog_switch_off,ss",
+					  "la,prog_switch_on,$factory_slam,slope_resets",
+					  "la,prog_switch_off,ss,slope_resets",
+					  "la,prog_switch_on,$factory_slam,portal_shuffle_on,factory_entry_sp",
+					  "la,prog_switch_off,ss,portal_shuffle_on,factory_entry_sp",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -3919,9 +4802,8 @@
 				  {
 				    "name": "Prize",
 					"access_rules": [
-					  "@logic/any_kong,prog_switch_off,ss",
-					  "@logic/any_kong,prog_switch_on,$factory_slam",
-					  "{@logic/any_kong}"
+					  "la,lam,prog_switch_on,$factory_slam",
+					  "la,lam,prog_switch_off,ss"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -3981,7 +4863,41 @@
 				  {
 					"map": "factorymap",
 					"x": 444,
-					"y": 574
+					"y": 574,
+					"force_invisibility_rules": [ "melon_pool_5" ]
+				  }
+				]
+			  },
+			  {
+			    "name": "Vines near Power Shed",
+				"short_name": "Power Shed Vines",
+				"sections": [
+				  {
+				    "name": "Bonus Barrel",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
+					"access_rules": [
+					  "@logic/rd_ledge_access,di,vine,prog_switch_off,ss",
+					  "@logic/rd_ledge_access,di,vine,prog_switch_on,$factory_slam",
+					  "@logic/rd_ledge_access,di,auto_bonus,prog_switch_off,ss",
+					  "@logic/rd_ledge_access,di,auto_bonus,prog_switch_on,$factory_slam",
+					  "di,vine,prog_switch_off,ss,[monkey_moves]",
+					  "di,vine,prog_switch_on,$factory_slam,[monkey_moves]",
+					  "{di,prog_switch_off,ss}",
+					  "{di,prog_switch_on,$factory_slam}"
+					  
+					],
+					"visibility_rules": [
+					  "gb_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "factorymap",
+					"x": 555,
+					"y": 635
 				  }
 				]
 			  },
@@ -3993,8 +4909,11 @@
 					"name": "Dirt Patch",
 				    "chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 				    "access_rules": [
 				      "ch,chm,@logic/wave_owned",
+				      "{@logic/any_kong}"
 				    ],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -4018,6 +4937,7 @@
 				    "name": "Ride the Pistons",
 					"short_name": "Ride Pistons",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chm,prog_switch_off,ss",
 					  "ch,chm,prog_switch_on,$factory_slam",
@@ -4037,6 +4957,58 @@
 				]
 			  },
 			  {
+			    "name": "Storage Spring Hint",
+				"short_name": "Spring Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "di,dip",
+					  "ti,tim,kongless_hints,[di],[dip]"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "factorymap",
+					"x": 535,
+					"y": 545
+				  }
+				]
+			  },
+			  {
+			    "name": "Storage Room T&S",
+				"short_name": "Storage T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "factorymap",
+					"x": 555,
+					"y": 545
+				  }
+				]
+			  },
+			  {
 			    "name": "Under Pole near Storage Room",
 				"short_name": "Storage Pole",
 				"sections": [
@@ -4046,6 +5018,7 @@
 					"chest_unopened_img": "images/tiny_bp.png",
 					"chest_opened_img": "images/checks/tiny_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,ti",
@@ -4068,12 +5041,47 @@
 				]
 			  },
 			  {
+			    "name": "Near Snide Hint",
+				"short_name": "Snide Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/testing_access,climb,@logic/any_kong",
+					  "@logic/factory_start_access,bananaport_all,@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "factorymap",
+					"x": 222,
+					"y": 690
+				  }
+				]
+			  }
+			]
+		  },
+		  {
+		    "name": "Arcade Area",
+			"access_rules": [
+			  "@logic/arcade_access"
+			],
+			"children": [
+			  {
 			    "name": "Arcade Hallway",
 				"short_name": "Arcade Hall",
 				"sections": [
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chm",
 					  "{@logic/any_kong}"
@@ -4099,6 +5107,7 @@
 				  {
 				    "name": "Shrink Down",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tib",
 					  "{@logic/any_kong}"
@@ -4118,6 +5127,57 @@
 				]
 			  },
 			  {
+			    "name": "Arcade Under Desk Hint",
+				"short_name": "Arcade Desk Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "factorymap",
+					"x": 166,
+					"y": 550
+				  }
+				]
+			  },
+			  {
+			    "name": "Arcade Room T&S",
+				"short_name": "Arcade T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "factorymap",
+					"x": 164,
+					"y": 500
+				  }
+				]
+			  },
+			  {
 				"name": "DK Arcade",
 				"short_name": "Arcade",
 				"sections": [
@@ -4127,7 +5187,7 @@
 					  "dk,dkp,dkm"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool,fast_arcade_off"
+					  "gb_pool,fast_arcade_off"
 					],
 					"item_count": 1
 				  },
@@ -4136,11 +5196,12 @@
 					"chest_unopened_img": "images/n64_coin.png",
                     "chest_opened_img": "images/checks/n64_coin_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "dk,dkp,dkm"
 					],
 					"visibility_rules": [
-					  "coin_pool"
+					  "n_coin_pool"
 					],
 					"item_count": 1
 				  }
@@ -4156,10 +5217,9 @@
 			]
 		  },
 		  {
-		    "name": "Testing and R&D",
+		    "name": "Testing Area",
 			"access_rules": [
-			  "@logic/factory_lobby,ss",
-			  "@logic/factory_lobby,barrier_factory_testing"
+			  "@logic/testing_access"
 			],
 			"children": [
 			  {
@@ -4172,6 +5232,7 @@
 					"chest_unopened_img": "images/chunky_bp.png",
 					"chest_opened_img": "images/checks/chunky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,ch",
@@ -4190,6 +5251,32 @@
 				    "map": "factorymap",
 					"x": 760,
 					"y": 285
+				  }
+				]
+			  },
+			  {
+			    "name": "Testing Room T&S",
+				"short_name": "Testing T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "factorymap",
+					"x": 766,
+					"y": 321
 				  }
 				]
 			  },
@@ -4226,6 +5313,7 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tib,tig,@logic/cam_owned,prog_switch_off,ss",
 					  "ti,tib,tig,@logic/cam_owned,prog_switch_on,$factory_slam",
@@ -4258,7 +5346,7 @@
 					  "@logic/any_kong",
 					],
 					"visibility_rules": [
-					  "melon_pool"
+					  "melon_pool,melon_crate_rando_off"
 					],
 					"item_count": 1
 				  }
@@ -4267,7 +5355,8 @@
 				  {
 					"map": "factorymap",
 					"x": 700,
-					"y": 140
+					"y": 140,
+					"force_invisibility_rules": [ "melon_pool_5" ]
 				  }
 				]
 			  },
@@ -4277,8 +5366,12 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,[lap]",
+					  "la,[monkey_moves]",
+					  "@logic/any_kong,free_trade,[la],[lap]",
+					  "@logic/any_kong,free_trade,[la],[monkey_moves]",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -4304,6 +5397,7 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/cam_owned",
 					  "{@logic/any_kong}"
@@ -4351,9 +5445,12 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dip",
-					  "la,lap,di,[dip]",
+					  "di,[dip],dk",
+					  "di,[dip],la",
+					  "di,[dip],ch",
 					  "la,lap,free_trade,[di],[dip]",
 					  "{la,lap}"
 					],
@@ -4370,7 +5467,15 @@
 					"y": 250
 				  }
 				]
-			  },
+			  }
+			]
+		  },
+		  {
+		    "name": "R&D Lower Area",
+			"access_rules": [
+			  "@logic/rd_access"
+			],
+			"children": [
 			  {
 			    "name": "Piano Room",
 				"sections": [
@@ -4396,6 +5501,106 @@
 				]
 			  },
 			  {
+			    "name": "R&D Room T&S",
+				"short_name": "R&D T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "factorymap",
+					"x": 285,
+					"y": 325
+				  }
+				]
+			  },
+			  {
+			    "name": "R&D Center Hint",
+				"short_name": "R&D Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "factorymap",
+					"x": 350,
+					"y": 320
+				  }
+				]
+			  },
+			  {
+			    "name": "Factory Car Race",
+				"short_name": "Factory Race",
+				"sections": [
+				  {
+					"name": "Lobby Melon Crate",
+					"short_name": "Lobby Crate",
+					"chest_unopened_img": "images/melon.png",
+				    "chest_opened_img": "images/checks/melon_done.png",
+					"access_rules": [
+					  "ti,tib",
+					],
+					"visibility_rules": [
+					  "melon_pool,melon_pool_5,melon_crate_rando_off"
+					],
+					"item_count": 1
+				  },
+				  {
+				    "name": "Win the Race",
+					"short_name": "Win Race",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
+					"access_rules": [
+					  "ti,tib"
+					],
+					"visibility_rules": [
+					  "race_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "factorymap",
+					"x": 400,
+					"y": 420
+				  }
+				]
+			  }
+			]
+		  },
+		  {
+		    "name": "R&D Upper Area",
+			"access_rules": [
+			  "@logic/rd_ledge_access",
+			  "@logic/rd_access,[climb]",
+			  "@logic/rd_access,[monkey_moves]"
+			],
+			"children": [
+			  {
 			    "name": "4 Digit Code Room",
 				"short_name": "Code Room",
 				"sections": [
@@ -4406,7 +5611,7 @@
 					  "di,dii,dim"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -4428,7 +5633,10 @@
 					"chest_unopened_img": "images/lanky_bp.png",
 					"chest_opened_img": "images/checks/lanky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
+					  "di,kasplat_rando_swap",
+					  "ti,kasplat_rando_swap",
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,la",
 					  "kasplat_rando_vanilla,free_trade,@logic/any_kong",
@@ -4457,6 +5665,7 @@
 					"chest_unopened_img": "images/crown.png",
 					"chest_opened_img": "images/checks/crown_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "dk,dkm"
 					],
@@ -4480,10 +5689,10 @@
 				  {
 				    "name": "FIGHT!",
 					"access_rules": [
-					  "ch,chi,chb,chm"
+					  "ch,chi,chb,chm,[climb]"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -4495,71 +5704,13 @@
 					"y": 215
 				  }
 				]
-			  },
-			  {
-			    "name": "Factory Car Race",
-				"short_name": "Factory Race",
-				"sections": [
-				  {
-				    "name": "Win the Race",
-					"short_name": "Win Race",
-					"capture_item": true,
-					"access_rules": [
-					  "ti,tib"
-					],
-					"visibility_rules": [
-					  "gb_pool"
-					],
-					"item_count": 1
-				  }
-				],
-				"map_locations": [
-				  {
-				    "map": "factorymap",
-					"x": 400,
-					"y": 424
-				  }
-				]
-			  },
-			  {
-			    "name": "Vines near Power Shed",
-				"short_name": "Power Shed Vines",
-				"sections": [
-				  {
-				    "name": "Bonus Barrel",
-					"capture_item": true,
-					"access_rules": [
-					  "di,vine,prog_switch_off,ss",
-					  "di,vine,prog_switch_on,$factory_slam",
-					  "di,auto_bonus,prog_switch_off,ss",
-					  "di,auto_bonus,prog_switch_on,$factory_slam",
-					  "{di,prog_switch_off,ss}",
-					  "{di,prog_switch_on,$factory_slam}"
-					  
-					],
-					"visibility_rules": [
-					  "gb_pool"
-					],
-					"item_count": 1
-				  }
-				],
-				"map_locations": [
-				  {
-				    "map": "factorymap",
-					"x": 555,
-					"y": 635
-				  }
-				]
 			  }
 			]
 		  },
 		  {
-		    "name": "Production Room",
+		    "name": "Powered Production Room",
 			"access_rules": [
-			  "@logic/factory_lobby,ss,dk,dkg,dkm",
-			  "@logic/factory_lobby,barrier_factory_testing,dk,dkg,dkm",
-			  "@logic/factory_lobby,barrier_factory_production",
-			  "{@logic/factory_lobby,@logic/any_kong}"
+			  "@logic/prod_power_access"
 			],
 			"children": [
 			  {
@@ -4593,7 +5744,8 @@
 				    "name": "Strong Kong",
 					"access_rules": [
 					  "dk,[dkb],dkg,dkm",
-					  "dk,[dkb],barrier_factory_production"
+					  "dk,[dkb],barrier_factory_production",
+					  "@logic/any_kong,free_trade,[dk],[dkb],barrier_factory_production"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -4608,18 +5760,25 @@
 					"y": 715
 				  }
 				]
-			  },
+			  }
+			]
+		  },
+		  {
+		    "name": "Upper Production Room",
+			"access_rules": [
+			  "@logic/upper_prod_access"
+			],
+			"children": [
 			  {
 			    "name": "Production Machine",
 				"sections": [
 				  {
 				    "name": "Chunky Timer",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "ch,prog_switch_off,ss,dk,dkg,dkm",
-					  "ch,prog_switch_off,ss,barrier_factory_production",
-					  "ch,prog_switch_on,$factory_slam,dk,dkg,dkm",
-					  "ch,prog_switch_on,$factory_slam,barrier_factory_production"
+					  "ch,prog_switch_off,ss,@logic/prod_power_access",
+					  "ch,prog_switch_on,$factory_slam,@logic/prod_power_access"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -4636,19 +5795,43 @@
 				]
 			  },
 			  {
+			    "name": "Production Room T&S",
+				"short_name": "Production T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "factorymap",
+					"x": 950,
+					"y": 630
+				  }
+				]
+			  },
+			  {
 			    "name": "Production Alcove",
 				"sections": [
 				  {
 				    "name": "Diddy Switch",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "di,dip,prog_switch_off,ss,dk,dkg,dkm",
-					  "di,[dip],prog_switch_off,ss,dk,dkg,dkm,ti,tim",
-					  "di,dip,prog_switch_off,ss,barrier_factory_production",
-					  "di,dip,prog_switch_on,$factory_slam,dk,dkg,dkm",
-					  "di,[dip],prog_switch_on,$factory_slam,dk,dkg,dkm,ti,tim",
-					  "di,dip,prog_switch_on,$factory_slam,barrier_factory_production",
-					  "di,[dip],prog_switch_on,$factory_slam,barrier_factory_production,ti,tim",
+					  "di,dip,prog_switch_off,ss",
+					  "di,[dip],prog_switch_off,ss,ti,tim",
+					  "di,dip,prog_switch_on,$factory_slam",
+					  "di,[dip],prog_switch_on,$factory_slam,ti,tim",
 					  "{di,prog_switch_off,ss}",
 					  "{di,prog_switch_on,$factory_slam}"
 					],
@@ -4676,14 +5859,12 @@
 					"chest_unopened_img": "images/dk_bp.png",
 					"chest_opened_img": "images/checks/dk_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "@logic/any_kong,kasplat_rando_swap,barrier_factory_production",
-					  "kasplat_rando_swap,dk,dkg,dkm",
-					  "kasplat_rando_vanilla,dk,dkg,dkm",
-					  "kasplat_rando_vanilla,dk,barrier_factory_production",
-					  "kasplat_rando_vanilla,barrier_factory_production,free_trade,@logic/any_kong",
-					  "{kasplat_rando_vanilla,dk,dkg,dkm}",
-					  "{kasplat_rando_vanilla,@logic/any_kong,barrier_factory_production}"
+					  "@logic/any_kong,kasplat_rando_swap",
+					  "kasplat_rando_vanilla,dk",
+					  "kasplat_rando_vanilla,free_trade,@logic/any_kong",
+					  "{kasplat_rando_vanilla,@logic/any_kong,climb}"
 					],
 					"visibility_rules": [
 					  "bp_pool,kasplat_rando_swap",
@@ -4707,10 +5888,16 @@
 				  {
 				    "name": "Lanky Switch",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "la,lam",
-					  "{@logic/any_kong}",
-					  "ti,[la],[lam]"
+					  "la,lam,prog_switch_off,ss",
+					  "la,lam,prog_switch_on,$factory_slam",
+					  "la,prog_switch_off,ss,ti,[la],[lam]",
+					  "la,prog_switch_on,$factory_slam,ti,[la],[lam]",
+					  "la,prog_switch_off,ss,ti,[slope_resets]",
+					  "la,prog_switch_on,$factory_slam,ti,[slopes_resets]",
+					  "{la,prog_switch_off,ss}",
+					  "{la,prog_switch_on,$factory_slam}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -4733,9 +5920,12 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "ti,tim",
-					  "{@logic/any_kong}"
+					  "ti,tim,prog_switch_off,ss",
+					  "ti,tim,prog_switch_on,$factory_slam",
+					  "{ti,prog_switch_off,ss}",
+					  "{ti,prog_switch_on,$factory_slam}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -4772,7 +5962,7 @@
 				  {
 				    "name": "Shoot 3 Targets",
 					"access_rules": [
-					  "[@logic/raised_water_access],ch,chg,brrl"
+					  "@logic/cannon_room_access,ch,brrl"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -4798,10 +5988,11 @@
 					"chest_unopened_img": "images/lanky_bp.png",
 					"chest_opened_img": "images/checks/lanky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "[@logic/raised_water_access],ch,chg,kasplat_rando_swap",
-					  "[@logic/raised_water_access],ch,chg,kasplat_rando_vanilla,la",
-					  "[@logic/raised_water_access],ch,chg,kasplat_rando_vanilla,free_trade",
+					  "[@logic/raised_water_access],@logic/cannon_room_access,kasplat_rando_swap",
+					  "[@logic/raised_water_access],@logic/cannon_room_access,kasplat_rando_vanilla,la",
+					  "[@logic/raised_water_access],@logic/cannon_room_access,kasplat_rando_vanilla,free_trade",
 					  "{ch,chg,@logic/any_instrument}",
 					  "{ch,chg,kasplat_rando_vanilla}"
 					],
@@ -4821,6 +6012,31 @@
 				]
 			  },
 			  {
+				"name": "Cavern Crossroads",
+				"short_name": "Cave Center",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/any_kong",
+					],
+					"visibility_rules": [
+					  "melon_pool,melon_pool_5,melon_crate_rando_off"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "galleonmap",
+					"x": 535,
+					"y": 666
+				  }
+				]
+			  },
+			  {
 			    "name": "Galleon Cave Alcove",
 				"short_name": "Cave Alcove",
 				"sections": [
@@ -4830,19 +6046,12 @@
 					"chest_unopened_img": "images/tiny_bp.png",
 					"chest_opened_img": "images/checks/tiny_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "kasplat_rando_swap,@logic/any_kong,vine",
-					  "kasplat_rando_swap,@logic/any_kong,@logic/water_switch_access,bananaport_all",
-					  "kasplat_rando_swap,bananaport_all,di,dib",
-					  "kasplat_rando_swap,bananaport_all,ti,tim,@logic/k_rool_ship",
-					  "kasplat_rando_vanilla,vine,ti",
-					  "kasplat_rando_vanilla,@logic/water_switch_access,bananaport_all,ti",
-					  "kasplat_rando_vanilla,bananaport_all,di,dib,ti,[vines]",
-					  "kasplat_rando_vanilla,bananaport_all,ti,tim,@logic/k_rool_ship",
-					  "kasplat_rando_vanilla,free_trade,vine,@logic/any_kong",
-					  "kasplat_rando_vanilla,free_trade,@logic/water_switch_access,bananaport_all,@logic/any_kong",
-					  "kasplat_rando_vanilla,free_trade,bananaport_all,di,dib",
-					  "{kasplat_rando_vanilla,vine,@logic/any_kong}",
+					  "kasplat_rando_swap,@logic/any_kong,@logic/planks_access",
+					  "kasplat_rando_vanilla,ti,@logic/planks_access",
+					  "kasplat_rando_vanilla,free_trade,@logic/any_kong,@logic/planks_access",
+					  "{kasplat_rando_vanilla,@logic/any_kong,@logic/planks_access}",
 					  "{@logic/any_instrument}",
 					  "{@logic/any_gun,@logic/sns_owned}"
 					],
@@ -4862,6 +6071,57 @@
 				]
 			  },
 			  {
+			    "name": "Warp 3 Mast Hint",
+				"short_name": "Mast Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/planks_access,@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "galleonmap",
+					"x": 625,
+					"y": 444
+				  }
+				]
+			  },
+			  {
+			    "name": "Planks near Cranky T&S",
+				"short_name": "Planks T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong,@logic/planks_access"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "galleonmap",
+					"x": 560,
+					"y": 414
+				  }
+				]
+			  },
+			  {
 			    "name": "Below Cranky's Lab",
 				"short_name": "Below Cranky",
 				"sections": [
@@ -4870,6 +6130,7 @@
 					"chest_unopened_img": "images/crown.png",
 					"chest_opened_img": "images/checks/crown_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chm"
 					],
@@ -4896,6 +6157,7 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chm,@logic/cam_owned",
 					  "{ch,chm}"
@@ -4952,6 +6214,7 @@
 				  {
 				    "name": "Use Enguarde",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,dive,prog_switch_off,ss",
 					  "la,dive,prog_switch_on,$galleon_slam",
@@ -4967,8 +6230,33 @@
 				"map_locations": [
 				  {
 				    "map": "galleonmap",
-					"x": 340,
-					"y": 755
+					"x": 333,
+					"y": 740
+				  }
+				]
+			  },
+			  {
+			    "name": "2 Door Ship Hint",
+				"short_name": "2DS Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "dive,@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "galleonmap",
+					"x": 339,
+					"y": 762
 				  }
 				]
 			  },
@@ -4979,6 +6267,7 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,dive,prog_switch_off,ss",
 					  "ti,dive,prog_switch_on,$galleon_slam",
@@ -5000,6 +6289,59 @@
 				]
 			  },
 			  {
+			    "name": "Behind 2 Door Ship T&S",
+				"short_name": "2DS T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong,dive"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "galleonmap",
+					"x": 350,
+					"y": 825
+				  }
+				]
+			  },
+			  {
+			    "name": "Near Warp 5 Plank Hint",
+				"short_name": "Warp 5 Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/raised_water_access,@logic/any_kong",
+					  "di,kongless_hints,[@logic/raised_water_access]",
+					  "ti,kongless_hints,[@logic/raised_water_access]"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "galleonmap",
+					"x": 315,
+					"y": 215
+				  }
+				]
+			  },
+			  {
 				"name": "Flotsam Near Cactus",
 				"short_name": "Cactus Plank",
 				"chest_unopened_img": "images/melon.png",
@@ -5011,7 +6353,7 @@
 					  "@logic/any_kong",
 					],
 					"visibility_rules": [
-					  "melon_pool"
+					  "melon_pool,melon_crate_rando_off"
 					],
 					"item_count": 1
 				  }
@@ -5020,7 +6362,8 @@
 				  {
 					"map": "galleonmap",
 					"x": 238,
-					"y": 182
+					"y": 182,
+					"force_invisibility_rules": [ "melon_pool_5" ]
 				  }
 				]
 			  },
@@ -5033,6 +6376,7 @@
 					"chest_unopened_img": "images/chunky_bp.png",
 					"chest_opened_img": "images/checks/chunky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,ch",
@@ -5055,6 +6399,32 @@
 				]
 			  },
 			  {
+			    "name": "Behind Cactus T&S",
+				"short_name": "Cactus T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong,dive"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "galleonmap",
+					"x": 80,
+					"y": 414
+				  }
+				]
+			  },
+			  {
 			    "name": "Tiny 5 Door Ship",
 				"short_name": "Tiny 5DS",
 				"sections": [
@@ -5073,6 +6443,7 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tii,@logic/cam_owned,dive",
 					  "{ti,tii,dive}"
@@ -5098,6 +6469,7 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "dk,dki,dive"
 					],
@@ -5122,6 +6494,7 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/lighthouse_access,@logic/lowered_water_access,ch,chi,dive",
 					  "{@logic/lowered_water_access,di,dii,dive}",
@@ -5148,6 +6521,7 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/lowered_water_access,di,dii,dive",
 					  "{@logic/lighthouse_access,@logic/lowered_water_access,ch,chi,dive}",
@@ -5174,6 +6548,7 @@
 				  {
 				    "name": "On the Bed",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/lowered_water_access,la,lai,dive",
 					  "{@logic/lowered_water_access,di,dii,dive}"
@@ -5199,6 +6574,7 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tib,dive"
 					],
@@ -5215,7 +6591,15 @@
 					"y": 414
 				  }
 				]
-			  },
+			  }
+			]
+		  },
+		  {
+		    "name": "Treasure Room",
+			"access_rules": [
+			  "@logic/treasure_room_access"
+			],
+			"children": [
 			  {
 			    "name": "Simian Spring Coin Pile",
 				"short_name": "Spring Pile",
@@ -5223,11 +6607,12 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,dive,[@logic/raised_water_access],di,dip",
+					  "la,dive,[monkey_moves],di,dip",
 					  "di,dip,bananaport_all",
-					  "{la,dive,lap,@logic/any_gun,@logic/sns_owned}",
-					  "{la,dive,lap,ti,tim}",
+					  "{la,dive,lap}",
 					  "{@logic/any_kong,bananaport_all}"
 					],
 					"visibility_rules": [
@@ -5239,8 +6624,37 @@
 				"map_locations": [
 				  {
 				    "map": "galleonmap",
-					"x": 89,
+					"x": 93,
 					"y": 700
+				  }
+				]
+			  },
+			  {
+			    "name": "Warp 4 Coin Pile Hint",
+				"short_name": "Coin Pile Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "la,dive,[@logic/raised_water_access],di,dip",
+					  "la,dive,[monkey_moves],di,dip",
+					  "@logic/any_kong,bananaport_all",
+					  "la,dive,lap,[@logic/raised_water_access],[di],[dip]",
+					  "la,dive,lap,[monkey_moves],[di],[dip]"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "galleonmap",
+					"x": 72,
+					"y": 710
 				  }
 				]
 			  },
@@ -5254,18 +6668,25 @@
                     "chest_unopened_img": "images/dk_bp.png",
                     "chest_opened_img": "images/checks/dk_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,dive,[@logic/raised_water_access],di,dip,kasplat_rando_swap",
+					  "la,dive,[monkey_moves],di,dip,kasplat_rando_swap",
 					  "la,dive,[@logic/raised_water_access],di,dip,kasplat_rando_vanilla,dk",
+					  "la,dive,[monkey_moves],di,dip,kasplat_rando_vanilla,dk",
 					  "la,dive,[@logic/raised_water_access],di,dip,kasplat_rando_vanilla,free_trade",
-					  "la,dive,lap,ti,tim,[@logic/raised_water_access],[di],[dip],kasplat_rando_swap",
+					  "la,dive,[monkey_moves],di,dip,kasplat_rando_vanilla,free_trade",
+					  "la,dive,lap,[@logic/raised_water_access],[di],[dip],kasplat_rando_swap",
+					  "la,dive,lap,[monkey_moves],[di],[dip],kasplat_rando_swap",
+					  "la,dive,lap,[@logic/raised_water_access],[di],[dip],kasplat_rando_vanilla,free_trade",
+					  "la,dive,lap,[monkey_moves],[di],[dip],kasplat_rando_vanilla,free_trade",
 					  "@logic/any_kong,kasplat_rando_swap,bananaport_all",
 					  "kasplat_rando_vanilla,bananaport_all,dk",
 					  "kasplat_rando_vanilla,bananaport_all,free_trade,@logic/any_kong",
 					  "{la,dive,@logic/any_instrument}",
 					  "{la,dive,@logic/any_gun}",
 					  "{la,dive,di,dip,kasplat_rando_vanilla}",
-					  "{la,dive,lap,ti,tim,kasplat_rando_vanilla}",
+					  "{la,dive,lap,kasplat_rando_vanilla}",
 					  "{bananaport_all,kasplat_rando_vanilla,@logic/any_kong}"
 					  
 					],
@@ -5279,7 +6700,7 @@
 				"map_locations": [
 				  {
 				    "map": "galleonmap",
-					"x": 90,
+					"x": 94,
 					"y": 725
 				  }
 				]
@@ -5291,9 +6712,12 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,dive,[@logic/raised_water_access],lap",
+					  "la,dive,[monkey_moves],lap",
 					  "la,dive,[@logic/raised_water_access],di,dip,ti,tim,[lap]",
+					  "la,dive,[monkey_moves],di,dip,ti,tim,[lap]",
 					  "bananaport_all,[@logic/raised_water_access],la,lap",
 					  "bananaport_all,ti,tim,la,[lap]",
 					  "bananaport_all,ti,tim,free_trade,[la],[lap]"
@@ -5321,11 +6745,10 @@
 					"chest_unopened_img": "images/pearl.png",
 					"chest_opened_img": "images/checks/pearl_done.png",
 					"access_rules": [
-					  "la,dive,[@logic/raised_water_access],ti,tib",
-					  "bananaport_all,ti,tib"
+					  "ti,tib"
 					],
 					"visibility_rules": [
-					  "misc_pool"
+					  "pearl_pool"
 					],
 					"item_count": 5
 				  }
@@ -5337,7 +6760,15 @@
 					"y": 770
 				  }
 				]
-			  },
+			  }
+			]
+		  },
+		  {
+		    "name": "Lighthouse -> Shipyard Checks",
+			"access_rules": [
+			  "@logic/lighthouse_access,@logic/shipyard_access"
+			],
+			"children": [
 			  {
 			    "name": "Pirate Seal",
 				"sections": [
@@ -5354,12 +6785,13 @@
 				  {
 				    "name": "Race the Seal",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "dk,dkp,@logic/lighthouse_platform,@logic/raised_water_access",
 					  "{dk,dkp,@logic/lighthouse_platform}"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool"
+					  "race_pool"
 					],
 					"item_count": 1
 				  }
@@ -5380,7 +6812,8 @@
 				    "name": "Shoot its Heart",
 					"short_name": "Shoot Heart",
 					"access_rules": [
-					  "@logic/lighthouse_platform,di,dii,dib,dive,[dig]"
+					  "@logic/lighthouse_platform,di,dii,dib,dive,dig",
+					  "@logic/lighthouse_platform,di,dii,dib,dive,[dig],@logic/any_gun"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -5401,7 +6834,7 @@
 		  {
 		    "name": "Lighthouse Area",
 			"access_rules": [
-			  "@logic/lighthouse_access"
+			  "$lighthouse_access"
 			],
 			"children": [
 			  {
@@ -5412,9 +6845,17 @@
 					"name": "Dirt Patch",
 				    "chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 				    "access_rules": [
-				      "@logic/lighthouse_platform,dk,@logic/wave_owned,prog_switch_off,ss",
-				      "@logic/lighthouse_platform,dk,@logic/wave_owned,prog_switch_on,$galleon_slam"
+				      "@logic/lighthouse_platform,dk,@logic/wave_owned,prog_switch_off,ss,climb",
+				      "@logic/lighthouse_platform,dk,@logic/wave_owned,prog_switch_off,ss,di,dib,[climb]",
+				      "@logic/lighthouse_platform,dk,@logic/wave_owned,prog_switch_on,$galleon_slam,climb",
+				      "@logic/lighthouse_platform,dk,@logic/wave_owned,prog_switch_on,$galleon_slam,di,dib,[climb]",
+					  "{@logic/lighthouse_platform,dk,prog_switch_off,ss,climb}",
+				      "{@logic/lighthouse_platform,dk,prog_switch_off,ss,di,dib,[climb]}",
+				      "{@logic/lighthouse_platform,dk,prog_switch_on,$galleon_slam,climb}",
+				      "{@logic/lighthouse_platform,dk,prog_switch_on,$galleon_slam,di,dib,[climb]}"
 				    ],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -5438,10 +6879,10 @@
 				    "name": "Pull the Lever",
 					"short_name": "Pull Lever",
 					"access_rules": [
-					  "@logic/lighthouse_platform,dk,dkm,prog_switch_off,ss",
-					  "@logic/lighthouse_platform,dk,dkm,prog_switch_on,$galleon_slam",
-					  "@logic/lighthouse_platform,dk,barrier_galleon_seasick,prog_switch_off,ss",
-					  "@logic/lighthouse_platform,dk,barrier_galleon_seasick,prog_switch_on,$galleon_slam"
+					  "@logic/lighthouse_platform,dk,dkm,prog_switch_off,ss,climb",
+					  "@logic/lighthouse_platform,dk,dkm,prog_switch_on,$galleon_slam,climb",
+					  "@logic/lighthouse_platform,dk,barrier_galleon_seasick,prog_switch_off,ss,climb",
+					  "@logic/lighthouse_platform,dk,barrier_galleon_seasick,prog_switch_on,$galleon_slam,climb"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -5464,9 +6905,12 @@
 				    "name": "Slam Switch on Boat",
 					"short_name": "Boat Switch",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "@logic/k_rool_ship,@logic/lighthouse_platform,di,dib,ss",
-				      "{@logic/k_rool_ship,di,ss}"
+					  "@logic/k_rool_ship,@logic/lighthouse_platform,di,dib,prog_switch_off,ss",
+					  "@logic/k_rool_ship,@logic/lighthouse_platform,di,dib,prog_switch_on,$galleon_slam",
+				      "{@logic/k_rool_ship,di,prog_switch_off,ss}",
+				      "{@logic/k_rool_ship,di,prog_switch_on,$galleon_slam}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -5483,6 +6927,31 @@
 				]
 			  },
 			  {
+			    "name": "Baboon Blast Block Hint",
+				"short_name": "Blast Block Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/lighthouse_platform,@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "galleonmap",
+					"x": 820,
+					"y": 305
+				  }
+				]
+			  },
+			  {
 			    "name": "Low Tide Alcove",
 				"sections": [
 				  {
@@ -5491,11 +6960,12 @@
                     "chest_unopened_img": "images/diddy_bp.png",
                     "chest_opened_img": "images/checks/diddy_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "@logic/lighthouse_access,@logic/any_kong,kasplat_rando_swap",
-					  "@logic/lighthouse_access,kasplat_rando_vanilla,di",
-					  "@logic/lighthouse_access,kasplat_rando_vanilla,free_trade,@logic/any_kong",
-					  "{@logic/lighthouse_access,kasplat_rando_vanilla,@logic/any_kong}"
+					  "@logic/any_kong,kasplat_rando_swap",
+					  "kasplat_rando_vanilla,di",
+					  "kasplat_rando_vanilla,free_trade,@logic/any_kong",
+					  "{kasplat_rando_vanilla,@logic/any_kong}"
 					],
 					"visibility_rules": [
 					  "bp_pool,kasplat_rando_swap",
@@ -5519,6 +6989,7 @@
 				    "name": "Punch the Barrels",
 					"short_name": "Get Drunk",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/k_rool_ship,ch,chm,ss",
 					  "{@logic/k_rool_ship,ch,ss}"
@@ -5538,12 +7009,63 @@
 				]
 			  },
 			  {
+				"name": "Under Enguarde Box",
+				"short_name": "Below Enguarde",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "la,dive",
+					],
+					"visibility_rules": [
+					  "melon_pool,melon_pool_5,melon_crate_rando_off"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "galleonmap",
+					"x": 800,
+					"y": 606
+				  }
+				]
+			  },
+			  {
+			    "name": "Deep Hole T&S",
+				"short_name": "Hole T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong,dive"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "galleonmap",
+					"x": 860,
+					"y": 500
+				  }
+				]
+			  },
+			  {
 			    "name": "Enguarde Chest",
 				"sections": [
 				  {
 				    "name": "Use Enguarde",
 					"access_rules": [
-					  "@logic/lighthouse_access,dive,la"
+					  "dive,la"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -5560,16 +7082,42 @@
 				]
 			  },
 			  {
+			    "name": "Enguarde Wall T&S",
+				"short_name": "Enguarde T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "la,dive"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "galleonmap",
+					"x": 1010,
+					"y": 290
+				  }
+				]
+			  },
+			  {
 			    "name": "Mermaid",
 				"sections": [
 				  {
 				    "name": "Return her Pearls",
 					"short_name": "Return Pearls",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "@logic/lighthouse_access,dive,ti,tib,pearl:5",
-					  "@logic/lighthouse_access,dive,ti,tib,cheap_mermaid_on,pearl:1",
-					  "{@logic/lighthouse_access,dive,ti,tib}"
+					  "dive,ti,tib,$has_enough_pearls",
+					  "{dive,ti,tib}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -5600,16 +7148,67 @@
 			],
 			"children": [
 			  {
+				"name": "Stumps Below Clock",
+				"short_name": "Clock Stumps",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/any_kong",
+					],
+					"visibility_rules": [
+					  "melon_pool,melon_pool_5,melon_crate_rando_off"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "forestmap",
+					"x": 380,
+					"y": 525
+				  }
+				]
+			  },
+			  {
+			    "name": "Clock Tree Hint",
+				"short_name": "Clock Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "forestmap",
+					"x": 410,
+					"y": 525
+				  }
+				]
+			  },
+			  {
 			    "name": "Well Minecart",
 				"sections": [
 				  {
 				    "name": "Collect Coins",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,ss"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool"
+					  "race_pool"
 					],
 					"item_count": 1
 				  }
@@ -5630,8 +7229,11 @@
 					"name": "Dirt Patch",
 				    "chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 				    "access_rules": [
 				      "@logic/any_kong,@logic/wave_owned",
+				      "{@logic/any_kong}"
 				    ],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -5648,6 +7250,32 @@
 				]
 			  },
 			  {
+			    "name": "Snide T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong,@logic/day_access",
+					  "ti,tim,[@logic/day_access]"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "forestmap",
+					"x": 313,
+					"y": 250
+				  }
+				]
+			  },
+			  {
 				"name": "Behind Rafters Barn",
 				"short_name": "Behind Barn",
 				"chest_unopened_img": "images/melon.png",
@@ -5659,7 +7287,7 @@
 					  "@logic/any_kong",
 					],
 					"visibility_rules": [
-					  "melon_pool"
+					  "melon_pool,melon_crate_rando_off"
 					],
 					"item_count": 1
 				  }
@@ -5668,7 +7296,8 @@
 				  {
 					"map": "forestmap",
 					"x": 303,
-					"y": 169
+					"y": 169,
+					"force_invisibility_rules": [ "melon_pool_5" ]
 				  }
 				]
 			  },
@@ -5678,11 +7307,12 @@
 				  {
 				    "name": "Defeat It",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/day_access,ch,chm,ti,tib,@logic/night_access,@logic/any_gun,[tig]"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -5696,11 +7326,50 @@
 				]
 			  },
 			  {
-			    "name": "Conveyor Mill",
+			    "name": "Mill Back Room Keg", 
+				"short_name": "Back Room Keg",
 				"sections": [
 				  {
-				    "name": "Crush 3 Barrels",
-					"short_name": "3 Barrels",
+				    "name": "Destroy Keg",
+					"chest_unopened_img": "images/checks/keg.png",
+				    "chest_opened_img": "images/checks/boulder_done.png",
+					"access_rules": [
+					  "@logic/day_access,ch,chm,brrl",
+					  "@logic/day_access,ch,brrl,ti,tib,[chm]"
+					],
+					"visibility_rules": [
+					  "boulder_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "forestmap",
+					"x": 404,
+					"y": 169
+				  }
+				]
+			  },
+			  {
+			    "name": "Mill Conveyor Room",
+				"short_name": "Mill Conveyor",
+				"sections": [
+				  {
+				    "name": "Destroy Kegs",
+					"chest_unopened_img": "images/checks/keg.png",
+				    "chest_opened_img": "images/checks/boulder_done.png",
+					"access_rules": [
+					  "@logic/day_access,ch,brrl"
+					],
+					"visibility_rules": [
+					  "boulder_pool"
+					],
+					"item_count": 2
+				  },
+				  {
+				    "name": "Crush 3 Kegs",
+					"short_name": "3 Kegs",
 					"access_rules": [
 					  "@logic/day_access,ch,chm,chi,brrl,[dk],[dkm],[prog_switch_off],[sss]",
 					  "@logic/day_access,ch,chm,chi,brrl,[dk],[dkm],[prog_switch_on],[$forest_slam]"
@@ -5726,10 +7395,11 @@
 				    "name": "Pull Levers",
 					"short_name": "Lever Code",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/day_access,dk,dkm,@logic/night_access,prog_switch_off,sss",
 					  "@logic/day_access,dk,dkm,@logic/night_access,prog_switch_on,$forest_slam",
-					  "{@logic/any_kong}"
+					  "{@logic/any_kong,@logic/day_access}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -5752,9 +7422,10 @@
 				    "name": "Activate Winch",
 					"short_name": "Pull Winch",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "di,dig,dim,dii,@logic/night_access,prog_switch_off,sss",
-					  "di,dig,dim,dii,@logic/night_access,prog_switch_on,$forest_slam",
+					  "di,dig,dim,dii,@logic/night_access,prog_switch_off,sss,climb",
+					  "di,dig,dim,dii,@logic/night_access,prog_switch_on,$forest_slam,climb",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -5772,6 +7443,33 @@
 				]
 			  },
 			  {
+			    "name": "Mill Roof Hint",
+				"short_name": "Mill Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "climb,@logic/any_kong",
+					  "la,lap",
+					  "@logic/forest_lobby,portal_shuffle_on,forest_entry_mr"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "forestmap",
+					"x": 185,
+					"y": 275
+				  }
+				]
+			  },
+			  {
 			    "name": "Dark Attic Ledge",
 				"short_name": "Attic Ledge",
 				"sections": [
@@ -5779,6 +7477,7 @@
 				    "name": "Cross the Rafters",
 					"short_name": "Cross Rafters",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dip,[dii],@logic/night_access",
 					  "{di,dip,@logic/night_access}"
@@ -5807,6 +7506,7 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dip,[dii],@logic/night_access,@logic/cam_owned",
 					  "{di,dip,@logic/night_access}"
@@ -5832,13 +7532,25 @@
 				    "name": "Defeat Fast Enemies",
 					"short_name": "Defeat Enemies",
 					"access_rules": [
-					  "la,@logic/night_access,@logic/any_gun,[@logic/ha_owned],[lag],prog_switch_off,sss",
-					  "la,@logic/night_access,@logic/any_gun,[@logic/ha_owned],[lag],prog_switch_on,$forest_slam",
-					  "la,@logic/night_access,@logic/any_gun,hard_shoot,[lag],prog_switch_off,sss",
-					  "la,@logic/night_access,@logic/any_gun,hard_shoot,[lag],prog_switch_on,$forest_slam"
+					  "la,@logic/night_access,@logic/any_gun,[@logic/ha_owned],[lag],prog_switch_off,sss,climb",
+					  "la,@logic/night_access,@logic/any_gun,[@logic/ha_owned],[lag],prog_switch_on,$forest_slam,climb",
+					  "la,@logic/night_access,@logic/any_gun,[@logic/ha_owned],[lag],prog_switch_off,sss,portal_shuffle_on,forest_entry_mr",
+					  "la,@logic/night_access,@logic/any_gun,[@logic/ha_owned],[lag],prog_switch_on,$forest_slam,portal_shuffle_on,forest_entry_mr",
+					  "la,@logic/night_access,@logic/any_gun,hard_shoot,[lag],prog_switch_off,sss,climb",
+					  "la,@logic/night_access,@logic/any_gun,hard_shoot,[lag],prog_switch_on,$forest_slam,climb",
+					  "la,@logic/night_access,@logic/any_gun,hard_shoot,[lag],prog_switch_off,sss,portal_shuffle_on,forest_entry_mr",
+					  "la,@logic/night_access,@logic/any_gun,hard_shoot,[lag],prog_switch_on,$forest_slam,portal_shuffle_on,forest_entry_mr",
+					  "la,@logic/night_access,@logic/any_gun,[@logic/ha_owned],[lag],prog_switch_off,sss,lap",
+					  "la,@logic/night_access,@logic/any_gun,[@logic/ha_owned],[lag],prog_switch_on,$forest_slam,lap",
+					  "la,@logic/night_access,@logic/any_gun,[@logic/ha_owned],[lag],prog_switch_off,sss,portal_shuffle_on,forest_entry_mr",
+					  "la,@logic/night_access,@logic/any_gun,[@logic/ha_owned],[lag],prog_switch_on,$forest_slam,portal_shuffle_on,forest_entry_mr",
+					  "la,@logic/night_access,@logic/any_gun,hard_shoot,[lag],prog_switch_off,sss,lap",
+					  "la,@logic/night_access,@logic/any_gun,hard_shoot,[lag],prog_switch_on,$forest_slam,lap",
+					  "la,@logic/night_access,@logic/any_gun,hard_shoot,[lag],prog_switch_off,sss,portal_shuffle_on,forest_entry_mr",
+					  "la,@logic/night_access,@logic/any_gun,hard_shoot,[lag],prog_switch_on,$forest_slam,portal_shuffle_on,forest_entry_mr"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -5860,6 +7572,7 @@
 					"chest_unopened_img": "images/dk_bp.png",
 					"chest_opened_img": "images/checks/dk_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/night_access,@logic/any_kong,kasplat_rando_swap",
 					  "@logic/night_access,kasplat_rando_vanilla,dk",
@@ -5882,6 +7595,32 @@
 				]
 			  },
 			  {
+			    "name": "Behind Barn T&S",
+				"short_name": "Barn T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong,@logic/night_access"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "forestmap",
+					"x": 192,
+					"y": 525
+				  }
+				]
+			  },
+			  {
 				"name": "Near Thornbush",
 				"short_name": "Near Thornbush",
 				"chest_unopened_img": "images/melon.png",
@@ -5893,7 +7632,7 @@
 					  "@logic/any_kong,@logic/night_access",
 					],
 					"visibility_rules": [
-					  "melon_pool"
+					  "melon_pool,melon_crate_rando_off"
 					],
 					"item_count": 1
 				  }
@@ -5902,7 +7641,8 @@
 				  {
 					"map": "forestmap",
 					"x": 160,
-					"y": 444
+					"y": 444,
+					"force_invisibility_rules": [ "melon_pool_5" ]
 				  }
 				]
 			  },
@@ -5912,9 +7652,14 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "dk,[dkb],[vine],@logic/night_access,prog_switch_off,sss",
-					  "dk,[dkb],[vine],@logic/night_access,prog_switch_on,$forest_slam"
+					  "dk,[dkb],[vine],@logic/night_access,prog_switch_off,sss,climb",
+					  "dk,[dkb],[monkey_moves],@logic/night_access,prog_switch_off,sss,climb",
+					  "dk,[dkb],[vine],@logic/night_access,prog_switch_on,$forest_slam,climb",
+					  "dk,[dkb],[monkey_moves],@logic/night_access,prog_switch_on,$forest_slam,climb",
+					  "{dk,@logic/night_access,prog_switch_off, sss}",
+					  "{dk,@logic/night_access,prog_switch_on,$forest_slam}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -5943,7 +7688,7 @@
 					  "@logic/night_access,dk,[dkb],prog_switch_on,$forest_slam",
 					],
 					"visibility_rules": [
-					  "melon_pool"
+					  "melon_pool,melon_crate_rando_off"
 					],
 					"item_count": 1
 				  }
@@ -5952,7 +7697,8 @@
 				  {
 					"map": "forestmap",
 					"x": 69,
-					"y": 555
+					"y": 555,
+					"force_invisibility_rules": [ "melon_pool_5" ]
 				  }
 				]
 			  },
@@ -5965,11 +7711,12 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "dk,[dkb],@logic/cam_owned,@logic/night_access,prog_switch_off,sss",
-					  "dk,[dkb],@logic/cam_owned,@logic/night_access,prog_switch_on,$forest_slam",
-					  "{dk,@logic/night_access,prog_switch_off,sss}",
-					  "{dk,@logic/night_access,prog_switch_on,$forest_slam}"
+					  "dk,[dkb],@logic/cam_owned,@logic/night_access,prog_switch_off,sss,climb",
+					  "dk,[dkb],@logic/cam_owned,@logic/night_access,prog_switch_on,$forest_slam,climb",
+					  "{dk,@logic/night_access,prog_switch_off,sss,climb}",
+					  "{dk,@logic/night_access,prog_switch_on,$forest_slam,climb}"
 					],
 					"visibility_rules": [
 					  "fairy_pool,fairy_rando_off"
@@ -5988,9 +7735,9 @@
 			]
 		  },
 		  {
-		    "name": "Giant Mushroom",
+		    "name": "Giant Mushroom Ground Floor",
 			"access_rules": [
-			  "@logic/forest_lobby",
+			  "@logic/forest_lobby"
 			],
 			"children": [
 			  {
@@ -5999,9 +7746,14 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "ti,prog_switch_off,sss",
-					  "ti,prog_switch_on,$forest_slam"
+					  "ti,prog_switch_off,sss,climb",
+					  "ti,prog_switch_on,$forest_slam,climb",
+					  "ti,prog_switch_off,sss,dk,dkg,di,dig,la,lag,tig,ch,chg,[climb]",
+					  "ti,prog_switch_on,$forest_slam,dk,dkg,di,dig,la,lag,tig,ch,chg,[climb]",
+					  "{ti,prog_switch_off,sss}",
+					  "{ti,prog_switch_on,$forest_slam}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -6018,6 +7770,43 @@
 				]
 			  },
 			  {
+			    "name": "Upper Mushroom Top Ledge",
+				"short_name": "Upper Mushroom Ledge",
+				"sections": [
+				  {
+				    "name": "Check of Legends",
+					"short_name": "Ride Cannons",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
+					"access_rules": [
+					  "dk,dkg,di,dig,la,lag,ti,tig,ch,chg,prog_switch_off,sss",
+					  "dk,dkg,di,dig,la,lag,ti,tig,ch,chg,prog_switch_on,$forest_slam",
+					  "{dk,prog_switch_off,sss}",
+					  "{dk,prog_switch_on,$forest_slam}"
+					],
+					"visibility_rules": [
+					  "gb_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "forestmap",
+					"x": 951,
+					"y": 188
+				  }
+				]
+			  }
+			]
+	      },
+		  {
+		    "name": "Giant Mushroom Middle Walkway",
+			"access_rules": [
+			  "@logic/mushroom_walkway_access"
+			],
+			"children": [
+			  {
 			    "name": "Lower Mushroom Walkway",
 				"sections": [
 				  {
@@ -6026,6 +7815,7 @@
 					"chest_unopened_img": "images/tiny_bp.png",
 					"chest_opened_img": "images/checks/tiny_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,ti",
@@ -6046,7 +7836,15 @@
 					"y": 693
 				  }
 				]
-			  },
+			  }
+			]
+		  },
+		  {
+		    "name": "Upper Giant Mushroom",
+			"access_rules": [
+			  "@logic/upper_mushroom_access"
+			],
+			"children": [
 			  {
 			    "name": "Barrel Blast Course",
 				"short_name": "Barrel Blast",
@@ -6054,11 +7852,12 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "dk,dkp"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool"
+					  "gb_pool"
 					],
 					"item_count": 1
 				  }
@@ -6081,6 +7880,7 @@
                     "chest_unopened_img": "images/diddy_bp.png",
                     "chest_opened_img": "images/checks/diddy_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,di",
@@ -6112,6 +7912,7 @@
 					"chest_unopened_img": "images/chunky_bp.png",
 					"chest_opened_img": "images/checks/chunky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/upper_mushroom_access,@logic/any_kong,kasplat_rando_swap",
 					  "@logic/night_access,vine,@logic/any_kong,kasplat_rando_swap",
@@ -6138,30 +7939,27 @@
 				]
 			  },
 			  {
-			    "name": "Upper Mushroom Top Ledge",
-				"short_name": "Upper Mushroom Ledge",
+				"name": "Upper Mushroom Top Floor",
+				"short_name": "Top of Mushroom",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
 				"sections": [
 				  {
-				    "name": "Ride the Cannons",
-					"short_name": "Ride Cannons",
-					"capture_item": true,
+					"name": "Melon Crate",
 					"access_rules": [
-					  "dk,dkg,di,dig,la,lag,ti,tig,ch,chg,prog_switch_off,sss",
-					  "dk,dkg,di,dig,la,lag,ti,tig,ch,chg,prog_switch_on,$forest_slam",
-					  "{dk,prog_switch_off,sss}",
-					  "{dk,prog_switch_on,$forest_slam}"
+					  "@logic/upper_mushroom_access,@logic/any_kong",
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "melon_pool,melon_pool_5,melon_crate_rando_off"
 					],
 					"item_count": 1
 				  }
 				],
 				"map_locations": [
 				  {
-				    "map": "forestmap",
-					"x": 955,
-					"y": 190
+					"map": "forestmap",
+					"x": 970,
+					"y": 210
 				  }
 				]
 			  },
@@ -6174,6 +7972,7 @@
 					"chest_unopened_img": "images/crown.png",
 					"chest_opened_img": "images/checks/crown_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/upper_mushroom_access,@logic/any_kong"
 					],
@@ -6186,8 +7985,33 @@
 				"map_locations": [
 				  {
 				    "map": "forestmap",
-					"x": 785,
-					"y": 100
+					"x": 780,
+					"y": 96
+				  }
+				]
+			  },
+			  {
+			    "name": "Giant Mushroom Top Hint",
+				"short_name": "Shroom Top Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/upper_mushroom_access,@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "forestmap",
+					"x": 865,
+					"y": 125
 				  }
 				]
 			  },
@@ -6198,6 +8022,7 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/upper_mushroom_access,di,dib"
 					],
@@ -6216,19 +8041,46 @@
 				]
 			  },
 			  {
+			    "name": "Top of the Giant Mushroom T&S",
+				"short_name": "Mushroom T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/upper_mushroom_access,@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "forestmap",
+					"x": 812,
+					"y": 100
+				  }
+				]
+			  },
+			  {
 			    "name": "Mushroom Top Colored Mushrooms Room",
 				"short_name": "Mushroom Top Colors",
 				"sections": [
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/upper_mushroom_access,la,lam,prog_switch_off,sss",
 					  "@logic/upper_mushroom_access,la,lam,prog_switch_on,$forest_slam",
 					  "@logic/upper_mushroom_access,la,di,dib,[lam],prog_switch_off,sss",
 					  "@logic/upper_mushroom_access,la,di,dib,[lam],prog_switch_on,$forest_slam",
-					  "@logic/upper_mushroom_access,la,di,dk,[lam],prog_switch_off,sss",
-					  "@logic/upper_mushroom_access,la,di,dk,[lam],prog_switch_on,$forest_slam"
+					  "@logic/upper_mushroom_access,la,di,slope_resets,[lam],prog_switch_off,sss",
+					  "@logic/upper_mushroom_access,la,di,slope_resets,[lam],prog_switch_on,$forest_slam"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -6239,7 +8091,7 @@
 				"map_locations": [
 				  {
 				    "map": "forestmap",
-					"x": 835,
+					"x": 840,
 					"y": 100
 				  }
 				]
@@ -6310,12 +8162,13 @@
 				    "name": "Win the Race",
 					"short_name": "Win Race",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/day_access,la,lai,lab",
 					  "{@logic/day_access,la,lai}"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool"
+					  "race_pool"
 					],
 					"item_count": 1
 				  }
@@ -6338,6 +8191,7 @@
 					"chest_unopened_img": "images/lanky_bp.png",
 					"chest_opened_img": "images/checks/lanky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,la",
@@ -6360,18 +8214,18 @@
 				]
 			  },
 			  {
-			    "name": "Owl Challenge",
-				"short_name": "Owl",
+			    "name": "Owl Tree Night Hint",
+				"short_name": "Owl Tree Hint",
 				"sections": [
 				  {
-				    "name": "Bonus Barrel",
-					"capture_item": true,
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
 					"access_rules": [
-					  "@logic/night_access,di,dii,dib",
-					  "{@logic/night_access,di,dii}"
+					  "@logic/night_access,di,dib"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool"
+					  "hint_pool,season_5_hints"
 					],
 					"item_count": 1
 				  }
@@ -6379,8 +8233,34 @@
 				"map_locations": [
 				  {
 				    "map": "forestmap",
-					"x": 635,
-					"y": 406
+					"x": 628,
+					"y": 414
+				  }
+				]
+			  },
+			  {
+			    "name": "Owl Challenge",
+				"short_name": "Owl",
+				"sections": [
+				  {
+				    "name": "Bonus Barrel",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
+					"access_rules": [
+					  "@logic/night_access,di,dii,dib",
+					  "{@logic/night_access,di,dii}"
+					],
+					"visibility_rules": [
+					  "race_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "forestmap",
+					"x": 636,
+					"y": 396
 				  }
 				]
 			  },
@@ -6395,7 +8275,7 @@
 					  "ti,tib,tii",
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  },
@@ -6407,7 +8287,7 @@
 					  "ti,tib,tii",
 					],
 					"visibility_rules": [
-					  "misc_pool"
+					  "bean_pool"
 					],
 					"item_count": 1
 				  }
@@ -6417,6 +8297,32 @@
 				    "map": "forestmap",
 					"x": 696,
 					"y": 315
+				  }
+				]
+			  },
+			  {
+			    "name": "Owl Tree Area T&S",
+				"short_name": "Owl T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "forestmap",
+					"x": 710,
+					"y": 464
 				  }
 				]
 			  },
@@ -6432,7 +8338,7 @@
 					  "@logic/any_kong",
 					],
 					"visibility_rules": [
-					  "melon_pool"
+					  "melon_pool,melon_crate_rando_off"
 					],
 					"item_count": 1
 				  }
@@ -6441,7 +8347,8 @@
 				  {
 					"map": "forestmap",
 					"x": 700,
-					"y": 434
+					"y": 434,
+					"force_invisibility_rules": [ "melon_pool_5" ]
 				  }
 				]
 			  }
@@ -6461,8 +8368,11 @@
 					"name": "Dirt Patch",
 				    "chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 				    "access_rules": [
 				      "@logic/any_kong,@logic/wave_owned",
+				      "{@logic/any_kong}"
 				    ],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -6485,9 +8395,10 @@
 				    "name": "Plant the Bean",
 					"short_name": "Plant Bean",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tib,tii,bean",
-					  "{bean}"
+					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -6504,19 +8415,71 @@
 				]
 			  },
 			  {
+			    "name": "Near Funky Hint",
+				"short_name": "Funky Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "forestmap",
+					"x": 92,
+					"y": 787
+				  }
+				]
+			  },
+			  {
+			    "name": "Beakstalk Area T&S",
+				"short_name": "Beanstalk T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "forestmap",
+					"x": 72,
+					"y": 616
+				  }
+				]
+			  },
+			  {
 			    "name": "Apple Soil",
 				"sections": [
 				  {
 				    "name": "Relocate the Worm",
 					"short_name": "Move Worm",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chb,brrl,chg,ti,tig",
 					  "ch,chb,brrl,barrier_forest_green",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -6544,13 +8507,14 @@
 			],
 			"children": [
 			  {
-			    "name": "Behind Early Ice Wall",
-				"short_name": "Early Ice Wall",
+			    "name": "Behind Start Ice Wall",
+				"short_name": "Start Ice Wall",
 				"sections": [
 				  {
 				    "name": "Gorilla Gone",
 					"access_rules": [
-					  "ch,chm,chp"
+					  "@logic/caves_ice_walls,ch,chp",
+					  "@logic/caves_lobby,portal_shuffle_on,caves_entry_fiw,ch,chp"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -6567,12 +8531,40 @@
 				]
 			  },
 			  {
+			    "name": "Near Snide's T&S",
+				"short_name": "Snide T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/caves_ice_walls,@logic/any_kong",
+					  "@logic/caves_lobby,portal_shuffle_on,caves_entry_siw,@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "cavesmap",
+					"x": 138,
+					"y": 624
+				  }
+				]
+			  },
+			  {
 			    "name": "Ice Castle",
 				"sections": [
 				  {
 				    "name": "Pumpkin Tile Minigame",
 					"short_name": "Tile Game",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,prog_switch_off,sss",
 					  "la,prog_switch_on,$caves_slam"
@@ -6585,14 +8577,17 @@
 				  {
 				    "name": "Beetle Race",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,[lap],lab,prog_switch_off,sss",
+					  "la,[monkey_moves],lab,prog_switch_off,sss",
 					  "la,[lap],lab,prog_switch_on,$caves_slam",
+					  "la,[monkey_moves],lab,prog_switch_on,$caves_slam",
 					  "{la,prog_switch_off,sss}",
 					  "{la,prog_switch_on,$caves_slam}"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool"
+					  "race_pool"
 					],
 					"item_count": 1
 				  }
@@ -6615,6 +8610,7 @@
 					"chest_unopened_img": "images/dk_bp.png",
 					"chest_opened_img": "images/checks/dk_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,dk",
@@ -6637,17 +8633,42 @@
 				]
 			  },
 			  {
+			    "name": "Small Boulder", 
+				"sections": [
+				  {
+				    "name": "Destroy Boulder",
+					"chest_unopened_img": "images/checks/boulder.png",
+				    "chest_opened_img": "images/checks/boulder_done.png",
+					"access_rules": [
+					  "ch,brrl"
+					],
+					"visibility_rules": [
+					  "boulder_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "cavesmap",
+					"x": 705,
+					"y": 507
+				  }
+				]
+			  },
+			  {
 			    "name": "Barrel Blast Course",
 				"short_name": "Barrel Blast",
 				"sections": [
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "dk,dkp"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool"
+					  "gb_pool"
 					],
 					"item_count": 1
 				  }
@@ -6661,12 +8682,143 @@
 				]
 			  },
 			  {
+				"name": "Path to Giant Boulder",
+				"short_name": "Big Boulder Hall",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "@logic/caves_ice_walls,@logic/any_kong",
+					  "@logic/caves_lobby,portal_shuffle_on,caves_entry_bc,@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "melon_pool,melon_pool_5,melon_crate_rando_off"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "cavesmap",
+					"x": 975,
+					"y": 620
+				  }
+				]
+			  },
+			  {
+			    "name": "Giant Boulder Room",
+				"short_name": "Giant Boulder",
+				"sections": [
+				  {
+				    "name": "Destroy Boulder",
+					"chest_unopened_img": "images/checks/boulder.png",
+				    "chest_opened_img": "images/checks/boulder_done.png",
+					"access_rules": [
+					  "@logic/caves_ice_walls,ch,chb,brrl",
+					  "@logic/caves_lobby,portal_shuffle_on,caves_entry_bc,ch,chb,brrl"
+					],
+					"visibility_rules": [
+					  "boulder_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "cavesmap",
+					"x": 955,
+					"y": 565
+				  }
+				]
+			  },
+			  {
+			    "name": "Giant Boulder Room T&S",
+				"short_name": "Boulder T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/caves_ice_walls,@logic/any_kong",
+					  "@logic/caves_lobby,portal_shuffle_on,caves_entry_bc,@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "cavesmap",
+					"x": 980,
+					"y": 560
+				  }
+				]
+			  },
+			  {
+			    "name": "Near Warp 4 Pillar Hint",
+				"short_name": "Warp 4 Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "cavesmap",
+					"x": 285,
+					"y": 650
+				  }
+				]
+			  },
+			  {
+			    "name": "Mini Bonus Room Hint",
+				"short_name": "Mini Bonus Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "ti,tib",
+					  "bananaport_all,@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "cavesmap",
+					"x": 330,
+					"y": 775
+				  }
+				]
+			  },
+			  {
 			    "name": "Tiny Room near Cranky",
 				"short_name": "Cranky Tiny Room",
 				"sections": [
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tib",
 					  "bananaport_all,ti",
@@ -6681,8 +8833,8 @@
 				"map_locations": [
 				  {
 				    "map": "cavesmap",
-					"x": 345,
-					"y": 762
+					"x": 350,
+					"y": 760
 				  }
 				]
 			  },
@@ -6696,10 +8848,12 @@
                     "chest_unopened_img": "images/diddy_bp.png",
                     "chest_opened_img": "images/checks/diddy_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tib,[tim],kasplat_rando_swap",
 					  "@logic/any_kong,[ti],[tim],bananaport_all,[tib],kasplat_rando_swap",
 					  "@logic/any_kong,[di],[dib],bananaport_all",
+					  "@logic/any_kong,[monkey_moves],bananaport_all",
 					  "ti,tib,[tim],kasplat_rando_vanilla,di,[dib]",
 					  "ti,tib,[tim],kasplat_rando_vanilla,free_trade",
 					  "[ti],[tim],bananaport_all,[tib],kasplat_rando_vanilla,di",
@@ -6732,16 +8886,21 @@
 					"chest_unopened_img": "images/lanky_bp.png",
 					"chest_opened_img": "images/checks/lanky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dib,kasplat_rando_swap",
 					  "@logic/any_kong,bananaport_all,kasplat_rando_swap",
 					  "la,lap,[di],[dib]",
+					  "la,lap,[monkey_moves]",
 					  "ch,brrl,kasplat_rando_vanilla,la,[di],[dib]",
 					  "ch,brrl,kasplat_rando_swap,[di],[dib]",
 					  "ch,brrl,kasplat_rando_vanilla,free_trade,[di],[dib]",
 					  "ti,tim,kasplat_rando_vanilla,la,[di],[dib]",
+					  "ti,tim,kasplat_rando_vanilla,la,[monkey_moves]",
 					  "ti,tim,kasplat_rando_swap,[di],[dib]",
+					  "ti,tim,kasplat_rando_swap,[monkey_moves]",
 					  "ti,tim,kasplat_rando_vanilla,free_trade,[di],[dib]",
+					  "ti,tim,kasplat_rando_vanilla,free_trade,[monkey_moves]",
 					  "di,dib,kasplat_rando_vanilla,la",
 					  "di,dib,kasplat_rando_vanilla,free_trade",
 					  "bananaport_all,kasplat_rando_vanilla,la",
@@ -6772,10 +8931,13 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dib",
 					  "dk,free_trade,[di],[dib]",
+					  "dk,free_trade,[monkey_moves]",
 					  "ti,tim,free_trade,[di],[dib]",
+					  "ti,tim,free_trade,[monkey_moves]",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -6802,19 +8964,24 @@
 			"children": [
 			  {
 			    "name": "Donkey 5 Door Cabin",
-				"short_name": "Donkey 5DT",
+				"short_name": "Donkey 5DC",
 				"sections": [
 				  {
 				    "name": "Defeat the Enemies",
 					"short_name": "Defeat Enemies",
 					"access_rules": [
 					  "dk,dki,dkg,[@logic/ha_owned]",
+					  "dk,dki,[dkg],[@logic/ha_owned],orng",
+					  "dk,dki,[@logic/ha_owned],orng,[adv_orng]",
 					  "dk,dki,dkg,hard_shoot",
+					  "dk,dki,[dkg],hard_shoot,orng",
+					  "dk,dki,hard_shoot,orng,[adv_orng]",
 					  "dk,dki,@logic/any_gun,[dkg],[@logic/ha_owned]",
-					  "dk,dki,@logic/any_gun,[dkg],hard_shoot"
+					  "dk,dki,[@logic/any_gun],[@logic/ha_owned],orng,[adv_orng]",
+					  "dk,dki,[@logic/any_gun],hard_shoot,orng,[adv_orng]"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -6829,11 +8996,12 @@
 			  },
 			  {
 			    "name": "Chunky 5 Door Cabin",
-				"short_name": "Chunky 5DT",
+				"short_name": "Chunky 5DC",
 				"sections": [
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chi,chp,ss",
 					  "{ch,chi}"
@@ -6854,16 +9022,17 @@
 			  },
 			  {
 			    "name": "Diddy Enemy 5 Door Cabin",
-				"short_name": "Diddy Enemy 5DT",
+				"short_name": "Diddy Enemy 5DC",
 				"sections": [
 				  {
 				    "name": "Defeat the Enemies",
 					"short_name": "Defeat Enemies",
 					"access_rules": [
-					  "di,dii,orng"
+					  "di,dii,orng,[dib]",
+					  "di,dii,orng,[monkey_moves]"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -6877,8 +9046,33 @@
 				]
 			  },
 			  {
+			    "name": "Upper 5 Door Cabin Hint",
+				"short_name": "Upper 5DC Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "cavesmap",
+					"x": 844,
+					"y": 150
+				  }
+				]
+			  },
+			  {
 			    "name": "Tiny 5 Door Cabin",
-				"short_name": "Tiny 5DT",
+				"short_name": "Tiny 5DC",
 				"sections": [
 				  {
 				    "name": "Defeat the Enemies",
@@ -6887,7 +9081,7 @@
 					  "ti,tii,orng"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -6896,7 +9090,7 @@
 				  {
 				    "map": "cavesmap",
 					"x": 858,
-					"y": 165
+					"y": 170
 				  }
 				]
 			  },
@@ -6908,13 +9102,14 @@
 				    "name": "Light the Candles",
 					"short_name": "Light Candles",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dii,dip,dib",
 					  "di,dii,dib,ti,tim,[dip]",
 					  "{di,dii}"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  },
@@ -6923,6 +9118,7 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dii,dip,dib,@logic/cam_owned",
 					  "{di,dii,dip,dib}"
@@ -6951,6 +9147,7 @@
 					"chest_unopened_img": "images/tiny_bp.png",
 					"chest_opened_img": "images/checks/tiny_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,ti",
@@ -6980,6 +9177,7 @@
 				    "name": "Match the Pictures",
 					"short_name": "Match Colors",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "dk,dki,ss",
 					  "{dk,dki}"
@@ -6994,11 +9192,27 @@
 					"chest_unopened_img": "images/crown.png",
 					"chest_opened_img": "images/checks/crown_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "dk,dki,ss"
 					],
 					"visibility_rules": [
 					  "cr_pool,arena_rando_off"
+					],
+					"item_count": 1
+				  },
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "di,[dib]",
+					  "di,[monkey_moves]",
+					  "ti,[monkey_moves]"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
 					],
 					"item_count": 1
 				  }
@@ -7012,12 +9226,37 @@
 				]
 			  },
 			  {
+			    "name": "Lanky Cabin Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "cavesmap",
+					"x": 980,
+					"y": 275
+				  }
+				]
+			  },
+			  {
 			    "name": "Lanky Cabin",
 				"sections": [
 				  {
 				    "name": "Sprint",
 					"short_name": "Hurry!",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,lap,lai,lab",
 					  "{la,lap,lai}",
@@ -7027,13 +9266,27 @@
 					  "gb_pool"
 					],
 					"item_count": 1
+				  },
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "di,dib",
+					  "la,lap"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
 				  }
 				],
 				"map_locations": [
 				  {
 				    "map": "cavesmap",
-					"x": 990,
-					"y": 290
+					"x": 999,
+					"y": 299
 				  }
 				]
 			  }
@@ -7053,6 +9306,7 @@
 				    "name": "Monkeyport In",
 					"short_name": "Warp In",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tib,tim,tip",
 					  "ti,[tim],tip,bananaport_all,[tib]",
@@ -7081,8 +9335,10 @@
 				    "name": "Press Boulder Switches",
 					"short_name": "Move Boulders",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "ch,brrl,chm,chb",
+					  "ch,brrl,chb,@logic/caves_ice_walls",
+					  "ch,brrl,chb,portal_shuffle_on,caves_entry_bc",
 					  "{@logic/any_kong}"
 					],
 					"visibility_rules": [
@@ -7106,8 +9362,13 @@
 					"name": "Dirt Patch",
 				    "chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 				    "access_rules": [
-				      "ch,brrl,chm,chb,ti,tip,@logic/wave_owned",
+				      "ch,brrl,chb,@logic/caves_ice_walls,ti,tip,@logic/wave_owned",
+				      "ch,brrl,chb,portal_shuffle_on,caves_entry_bc,ti,tip,@logic/wave_owned",
+				      "{ch,brrl,chb,@logic/caves_ice_walls,ti,tip}",
+				      "{ch,brrl,chb,portal_shuffle_on,caves_entry_bc,ti,tip}"
 				    ],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -7132,6 +9393,7 @@
 					"chest_unopened_img": "images/chunky_bp.png",
 					"chest_opened_img": "images/checks/chunky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,ch",
@@ -7154,6 +9416,32 @@
 				]
 			  },
 			  {
+			    "name": "Behind Igloo T&S",
+				"short_name": "Igloo T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "cavesmap",
+					"x": 195,
+					"y": 830
+				  }
+				]
+			  },
+			  {
 			    "name": "Tiny 5 Door Igloo",
 				"short_name": "Tiny 5DI",
 				"sections": [
@@ -7172,6 +9460,7 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/igloo_access,ti,tii,@logic/cam_owned,ss",
 					  "{@logic/igloo_access,ti,tii,ss}"
@@ -7201,7 +9490,7 @@
 					  "@logic/igloo_access,ch,chi"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -7215,6 +9504,31 @@
 				]
 			  },
 			  {
+			    "name": "Under Igloo Triangle Hint",
+				"short_name": "Igloo Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "cavesmap",
+					"x": 150,
+					"y": 777
+				  }
+				]
+			  },
+			  {
 			    "name": "Lanky 5 Door Igloo",
 				"short_name": "Lanky 5DI",
 				"sections": [
@@ -7222,11 +9536,13 @@
 				    "name": "Climb the Structure",
 					"short_name": "Climb Up",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "@logic/igloo_access,la,lai,[lap]"
+					  "@logic/igloo_access,la,lai,[lap]",
+					  "@logic/igloo_access,la,lai,[monkey_moves]"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -7247,6 +9563,7 @@
 				    "name": "Get to the Center",
 					"short_name": "In the Center",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/igloo_access,dk,dki,[dkb]"
 					],
@@ -7298,7 +9615,7 @@
 		  {
 		    "name": "Castle Exterior",
 			"access_rules": [
-			  "@logic/castle_lobby"
+			  "@logic/castle_above_climb,[@logic/castle_above_climb_strict]"
 			],
 			"children": [
 			  {
@@ -7308,6 +9625,7 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dib"
 					],
@@ -7326,14 +9644,42 @@
 				]
 			  },
 			  {
+			    "name": "Windy Tower Hint",
+				"short_name": "Tower Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "castlemap",
+					"x": 630,
+					"y": 199
+				  }
+				]
+			  },
+			  {
 				"name": "Behind Snide's HQ",
 				"sections": [
 				  {
 					"name": "Dirt Patch",
 				    "chest_unopened_img": "images/rainbowcoin.png",
 				    "chest_opened_img": "images/checks/rainbowcoin_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 				    "access_rules": [
 				      "@logic/any_kong,@logic/wave_owned",
+				      "{@logic/any_kong}"
 				    ],
 					"visibility_rules": [
 					  "rbc_pool,dirt_patch_rando_off"
@@ -7344,8 +9690,8 @@
 				"map_locations": [
 				  {
 					"map": "castlemap",
-					"x": 737,
-					"y": 300
+					"x": 740,
+					"y": 303
 				  }
 				]
 			  },
@@ -7361,7 +9707,7 @@
 					  "ch,chm,@logic/any_instrument,[chi]"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -7375,6 +9721,56 @@
 				]
 			  },
 			  {
+			    "name": "Greenhouse Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "castlemap",
+					"x": 357,
+					"y": 210
+				  }
+				]
+			  },
+			  {
+			    "name": "Near Greenhouse T&S",
+				"short_name": "Greenhouse T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "castlemap",
+					"x": 320,
+					"y": 255
+				  }
+				]
+			  },
+			  {
 			    "name": "Trash Can",
 				"sections": [
 				  {
@@ -7384,11 +9780,12 @@
 					  "ti,tib,tii",
 					  "ti,tib,tig,[@logic/ha_owned]",
 					  "ti,tib,tig,hard_shoot",
+					  "ti,tib,@logic/any_instrument,[tii]",
 					  "ti,tib,@logic/any_gun,[tig],[@logic/ha_owned]",
 					  "ti,tib,@logic/any_gun,[tig],hard_shoot"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -7396,7 +9793,7 @@
 				"map_locations": [
 				  {
 				    "map": "castlemap",
-					"x": 369,
+					"x": 360,
 					"y": 240
 				  }
 				]
@@ -7409,6 +9806,7 @@
 				    "name": "Reach the End",
 					"short_name": "Hurry!",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,prog_switch_off,sdss",
 					  "la,prog_switch_on,$castle_slam"
@@ -7436,6 +9834,7 @@
 					"chest_unopened_img": "images/crown.png",
 					"chest_opened_img": "images/checks/crown_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,prog_switch_off,sdss",
 					  "la,prog_switch_on,$castle_slam"
@@ -7455,6 +9854,31 @@
 				]
 			  },
 			  {
+			    "name": "Near Cranky Hint",
+				"short_name": "Warp 3 Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "castlemap",
+					"x": 393,
+					"y": 410
+				  }
+				]
+			  },
+			  {
 			    "name": "Castle Halfway Terrace",
 				"short_name": "Halfway Up",
 				"sections": [
@@ -7464,6 +9888,7 @@
 					"chest_unopened_img": "images/lanky_bp.png",
 					"chest_opened_img": "images/checks/lanky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,la",
@@ -7486,6 +9911,136 @@
 				]
 			  },
 			  {
+			    "name": "Rocketbarrel Plateau T&S",
+				"short_name": "Rocketbarrel T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "castlemap",
+					"x": 525,
+					"y": 456
+				  }
+				]
+			  },
+			  {
+			    "name": "Warp Hub Hint",
+				"sections": [
+				  {
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_donkey.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,season_5_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "castlemap",
+					"x": 300,
+					"y": 733
+				  }
+				]
+			  },
+			  {
+			    "name": "Castle Tree",
+				"short_name": "Tree",
+				"sections": [
+				  {
+				    "name": "Bonus Barrel",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
+					"access_rules": [
+					  "dk,dkp,ch,chm,chg,[@logic/sns_owned]",
+					  "dk,dkp,ch,chm,chg,hard_shoot",
+				      "{dk,dkp,ch,chm}"
+					],
+					"visibility_rules": [
+					  "gb_pool"
+					],
+					"item_count": 1
+				  },
+				  {
+				    "name": "Donkey Kasplat",
+                    "short_name": "Kasplat",
+					"chest_unopened_img": "images/dk_bp.png",
+					"chest_opened_img": "images/checks/dk_bp_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
+					"access_rules": [
+					  "dk,dkp,dkg"
+					],
+					"visibility_rules": [
+					  "bp_pool,kasplat_rando_swap",
+					  "bp_pool,kasplat_rando_vanilla"
+					],
+                    "item_count": 1
+				  },
+				  {
+				    "name": "Raise the Water",
+					"short_name": "Raise Water",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
+					"access_rules": [
+					  "dk,dkp,dkg,@logic/sns_owned",
+					  "{dk,dkp,dkg}"
+					],
+					"visibility_rules": [
+					  "gb_pool"
+					],
+					"item_count": 1
+				  },
+				  {
+				    "name": "Banana Fairy",
+					"chest_unopened_img": "images/fairy.png",
+					"chest_opened_img": "images/checks/fairy_done.png",
+					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
+					"access_rules": [
+					  "dk,dkp,dkg,@logic/cam_owned",
+					  "{dk,dkp,dkg}"
+					],
+					"visibility_rules": [
+					  "fairy_pool,fairy_rando_off"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "castlemap",
+				    "x": 285,
+				    "y": 765
+				  }
+				]
+			  }
+			]
+		  },
+		  {
+			"name": "Castle Back Bottom",
+			"access_rules": [
+			  "@logic/castle_lobby"
+			],
+			"children": [
+			  {
 			    "name": "Lowest Castle Ledge",
 				"short_name": "Lowest Ledge",
 				"sections": [
@@ -7495,6 +10050,7 @@
 					"chest_unopened_img": "images/tiny_bp.png",
 					"chest_opened_img": "images/checks/tiny_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,ti",
@@ -7517,61 +10073,17 @@
 				]
 			  },
 			  {
-			    "name": "Castle Tree",
-				"short_name": "Tree",
+			    "name": "Gravestone Hint",
 				"sections": [
 				  {
-				    "name": "Bonus Barrel",
-					"capture_item": true,
+				    "name": "Hint Door",
+					"chest_unopened_img": "images/checks/wrinkly_diddy.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
 					"access_rules": [
-					  "dk,dkp,ch,chm,chg,[@logic/sns_owned]",
-					  "dk,dkp,ch,chm,chg,hard_shoot",
-				      "{dk,dkp,ch,chm}"
+					  "@logic/any_kong"
 					],
 					"visibility_rules": [
-					  "gb_pool"
-					],
-					"item_count": 1
-				  },
-				  {
-				    "name": "Donkey Kasplat",
-                    "short_name": "Kasplat",
-					"chest_unopened_img": "images/dk_bp.png",
-					"chest_opened_img": "images/checks/dk_bp_done.png",
-					"capture_item": true,
-					"access_rules": [
-					  "dk,dkp,dkg"
-					],
-					"visibility_rules": [
-					  "bp_pool,kasplat_rando_swap",
-					  "bp_pool,kasplat_rando_vanilla"
-					],
-                    "item_count": 1
-				  },
-				  {
-				    "name": "Raise the Water",
-					"short_name": "Raise Water",
-					"capture_item": true,
-					"access_rules": [
-					  "dk,dkp,dkg,@logic/sns_owned",
-					  "{dk,dkp,dkg}"
-					],
-					"visibility_rules": [
-					  "gb_pool"
-					],
-					"item_count": 1
-				  },
-				  {
-				    "name": "Banana Fairy",
-					"chest_unopened_img": "images/fairy.png",
-					"chest_opened_img": "images/checks/fairy_done.png",
-					"capture_item": true,
-					"access_rules": [
-					  "dk,dkp,dkg,@logic/cam_owned",
-					  "{dk,dkp,dkg}"
-					],
-					"visibility_rules": [
-					  "fairy_pool,fairy_rando_off"
+					  "hint_pool,season_5_hints"
 					],
 					"item_count": 1
 				  }
@@ -7579,8 +10091,34 @@
 				"map_locations": [
 				  {
 				    "map": "castlemap",
-				    "x": 285,
-				    "y": 765
+					"x": 485,
+					"y": 640
+				  }
+				]
+			  },
+			  {
+			    "name": "Behind the Castle T&S",
+				"short_name": "Castle Rear T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_lanky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "castlemap",
+					"x": 432,
+					"y": 555
 				  }
 				]
 			  }
@@ -7589,8 +10127,8 @@
 		  {
 		    "name": "Castle Interiors",
 			"access_rules": [
-			  "@logic/castle_lobby,prog_switch_off,sdss",
-			  "@logic/castle_lobby,prog_switch_on,$castle_slam"
+			  "@logic/castle_above_climb,prog_switch_off,sdss,[@logic/castle_above_climb_strict]",
+			  "@logic/castle_above_climb,prog_switch_on,$castle_slam,[@logic/castle_above_climb_strict]"
 			],
 			"children": [
 			  {
@@ -7599,8 +10137,9 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "la,lag,lap,@logic/ha_owned",
+					  "la,lag,lap,@logic/ha_owned,[hard_shoot]",
 					  "la,lag,lap,@logic/sns_owned"
 					],
 					"visibility_rules": [
@@ -7613,7 +10152,32 @@
 				  {
 				    "map": "castlemap",
 					"x": 630,
-					"y": 190
+					"y": 169
+				  }
+				]
+			  },
+			  {
+				"name": "Library Crossroads",
+				"short_name": "Library Hallway",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "dk",
+					],
+					"visibility_rules": [
+					  "melon_pool,melon_pool_5,melon_crate_rando_off"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "castlemap",
+					"x": 818,
+					"y": 95
 				  }
 				]
 			  },
@@ -7624,11 +10188,12 @@
 				    "name": "Cross the Flying Books",
 					"short_name": "Beyond Books",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "dk,[dkb]"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -7647,11 +10212,12 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dib"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "mini_boss_pool"
 					],
 					"item_count": 1
 				  }
@@ -7668,16 +10234,18 @@
 			    "name": "Castle Car Race",
 				"short_name": "Castle Race",
 				"capture_item": true,
+				"capture_item_layout": "tracker_capture_item_only",
 				"sections": [
 				  {
 				    "name": "Win the Race",
 					"short_name": "Win Race",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,ti,tip,tib"
 					],
 					"visibility_rules": [
-					  "gb_pool"
+					  "race_pool"
 					],
 					"item_count": 1
 				  }
@@ -7699,6 +10267,7 @@
 					"chest_unopened_img": "images/fairy.png",
 					"chest_opened_img": "images/checks/fairy_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,ti,tip,@logic/cam_owned",
 					  "{di,ti,tip}"
@@ -7718,12 +10287,62 @@
 				]
 			  },
 			  {
+				"name": "Mysterious Museum Pillar",
+				"short_name": "Museum Pillar",
+				"chest_unopened_img": "images/melon.png",
+				"chest_opened_img": "images/checks/melon_done.png",
+				"sections": [
+				  {
+					"name": "Melon Crate",
+					"access_rules": [
+					  "di,ti,tip",
+					],
+					"visibility_rules": [
+					  "melon_pool,melon_pool_5,melon_crate_rando_off"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+					"map": "castlemap",
+					"x": 896,
+					"y": 215
+				  }
+				]
+			  },
+			  {
+			    "name": "Museum Boulder", 
+				"sections": [
+				  {
+				    "name": "Destroy Boulder",
+					"chest_unopened_img": "images/checks/boulder.png",
+				    "chest_opened_img": "images/checks/boulder_done.png",
+					"access_rules": [
+					  "ch,chm,brrl"
+					],
+					"visibility_rules": [
+					  "boulder_pool"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "castlemap",
+					"x": 808,
+					"y": 240
+				  }
+				]
+			  },
+			  {
 			    "name": "Museum Skulls",
 				"sections": [
 				  {
 				    "name": "Depress Pressure Plate",
 					"short_name": "Drop Boulder",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ch,chm,brrl",
 					  "{ch}"
@@ -7747,7 +10366,7 @@
 		  {
 		    "name": "Castle Tunnel and Dungeon",
 			"access_rules": [
-			  "@logic/castle_lobby"
+			  "@logic/castle_above_climb,[@logic/castle_above_climb_strict]"
 			],
 			"children": [
 			  {
@@ -7757,6 +10376,7 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "ti,tim",
 					  "{@logic/any_kong}"
@@ -7784,6 +10404,7 @@
 					"chest_unopened_img": "images/chunky_bp.png",
 					"chest_opened_img": "images/checks/chunky_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,ch",
@@ -7806,12 +10427,39 @@
 				]
 			  },
 			  {
+			    "name": "Near Candy's T&S",
+				"short_name": "Candy T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_chunky.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "castlemap",
+					"x": 120,
+					"y": 760
+				  }
+				]
+			  },
+			  {
 			    "name": "Dungeon Acid Room",
 				"short_name": "Acid Room",
 				"sections": [
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,lai,lap,prog_switch_off,sdss",
 					  "la,lai,lap,prog_switch_on,$castle_slam",
@@ -7864,6 +10512,7 @@
 				    "name": "Don't Touch the Floor",
 					"short_name": "Cross Chains",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "di,dig,@logic/sns_owned,vine,prog_switch_off,sdss",
 					  "di,dig,@logic/sns_owned,vine,prog_switch_on,$castle_slam",
@@ -7887,7 +10536,7 @@
 			]
 		  },
 		  {
-		    "name": "Castle Crypt",
+		    "name": "Castle Crypt, Catacombs, and Mausoleum",
 			"access_rules": [
 			  "@logic/castle_lobby"
 			],
@@ -7901,6 +10550,7 @@
                     "chest_unopened_img": "images/diddy_bp.png",
                     "chest_opened_img": "images/checks/diddy_bp_done.png",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "@logic/any_kong,kasplat_rando_swap",
 					  "kasplat_rando_vanilla,di",
@@ -7923,6 +10573,32 @@
 				]
 			  },
 			  {
+			    "name": "Near Funky's T&S",
+				"short_name": "Funky T&S",
+				"sections": [
+				  {
+				    "name": "T&S Portal Location",
+					"short_name": "T&S Location",
+					"chest_unopened_img": "images/checks/wrinkly_tiny.png",
+					"chest_opened_img": "images/checks/wrinkly_door_done.png",
+					"access_rules": [
+					  "@logic/any_kong"
+					],
+					"visibility_rules": [
+					  "hint_pool,dos_hints"
+					],
+					"item_count": 1
+				  }
+				],
+				"map_locations": [
+				  {
+				    "map": "castlemap",
+					"x": 800,
+					"y": 780
+				  }
+				]
+			  },
+			  {
 				"name": "Behind Mausoleum",
 				"short_name": "Behind Tomb",
 				"chest_unopened_img": "images/melon.png",
@@ -7934,7 +10610,7 @@
 					  "@logic/any_kong",
 					],
 					"visibility_rules": [
-					  "melon_pool"
+					  "melon_pool,melon_crate_rando_off"
 					],
 					"item_count": 1
 				  }
@@ -7943,7 +10619,8 @@
 				  {
 					"map": "castlemap",
 					"x": 820,
-					"y": 720
+					"y": 720,
+					"force_invisibility_rules": [ "melon_pool_5" ]
 				  }
 				]
 			  },
@@ -7954,8 +10631,10 @@
 				    "name": "Beat the Timer",
 					"short_name": "Hurry!",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
 					  "la,lag,lab,[lai],[vine]",
+					  "la,lag,lab,[monkey_moves]"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -7978,31 +10657,29 @@
 				    "name": "Twirl on Hands",
 					"short_name": "Platforming",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [ 
 					  "ti,tig,tim,prog_switch_off,sdss",
+					  "barrier_castle_crypt,ti,tim,prog_switch_off,sdss",
 					  "ti,tig,tim,prog_switch_on,$castle_slam",
+					  "barrier_castle_crypt,ti,tim,prog_switch_on,$castle_slam",
 					  "ti,tim,la,lag,[tig],prog_switch_off,sdss",
 					  "ti,tim,la,lag,[tig],prog_switch_on,$castle_slam",
-					  "ti,tig,orng,[tim],[prog_switch_off],sdss",
-					  "ti,tig,orng,[tim],[prog_switch_on],$castle_slam",
-					  "la,lag,ch,orng,[ti],[tig],[tim],[prog_switch_off],[sdss]",
-					  "la,lag,ch,orng,[ti],[tig],[tim],[prog_switch_on],[$castle_slam]",
-					  "la,lag,dk,orng,[ti],[tig],[tim],[prog_switch_off],[sdss]",
-					  "la,lag,dk,orng,[ti],[tig],[tim],[prog_switch_on],[$castle_slam]",
-					  "la,lag,di,orng,[ti],[tig],[tim],[prog_switch_off],[sdss]",
-					  "la,lag,di,orng,[ti],[tig],[tim],[prog_switch_on],[$castle_slam]",
+					  "ti,tig,orng,[tim],[prog_switch_off],[sdss]",
+					  "barrier_castle_crypt,[ti],orng,[tim],[prog_switch_off],[sdss]",
+					  "ti,tig,orng,[tim],[prog_switch_on],[$castle_slam]",
+					  "barrier_castle_crypt,[ti],orng,[tim],[prog_switch_on],[$castle_slam]",
 					  "la,lag,orng,[ti],[tig],[tim],[prog_switch_off],[sdss]",
-					  "la,lag,orng,ti,[tig],[tim],[prog_switch_on],[$castle_slam]",
+					  "barrier_castle_crypt,orng,[ti],[tig],[tim],[prog_switch_off],[sdss]",
+					  "la,lag,orng,[ti],[tig],[tim],[prog_switch_on],[$castle_slam]",
+					  "barrier_castle_crypt,orng,[ti],[tig],[tim],[prog_switch_on],[$castle_slam]",
 					  "ti,tig,dk,prog_switch_off,sdss,[tim]",
+					  "ti,barrier_castle_crypt,dk,prog_switch_off,sdss,[tim]",
 					  "ti,tig,dk,prog_switch_on,$castle_slam,[tim]",
-					  "{ti,tig,tim}",
-					  "{ti,tig,ch}",
-					  "{ti,tig,dk}",
-					  "{ti,tig,di}",
-					  "{la,lag,ti,tim}",
-					  "{la,lag,ch}",
-					  "{la,lag,dk}",
-					  "{la,lag,di}"
+					  "ti,barrier_castle_crypt,dk,prog_switch_on,$castle_slam,[tim]",
+					  "{ti,tig}",
+					  "{la,lag}",
+					  "{barrier_castle_crypt}"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -8025,7 +10702,8 @@
 				  {
 				    "name": "Count to 4",
 					"access_rules": [
-					  "di,dig,dim"
+					  "di,dig,dim",
+					  "di,dim,barrier_castle_crypt"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -8047,8 +10725,10 @@
 				  {
 				    "name": "Bonus Barrel",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "ch,chg,chm"
+					  "ch,chg,chm",
+					  "ch,chm,barrier_castle_crypt"
 					],
 					"visibility_rules": [
 					  "gb_pool"
@@ -8070,11 +10750,13 @@
 				  {
 				    "name": "Collect Coins",
 					"capture_item": true,
+					"capture_item_layout": "tracker_capture_item_only",
 					"access_rules": [
-					  "dk,dkg,dkm"
+					  "dk,dkg,dkm",
+					  "dk,dkm,barrier_castle_crypt"
 					],
 					"visibility_rules": [
-					  "hard_gb_pool"
+					  "race_pool"
 					],
 					"item_count": 1
 				  }

@@ -1,0 +1,157 @@
+{
+  "barriers_grid_wide": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 15,
+	"item_width": 240,
+	"rows": [
+	  ["barrier_japes_coconut", "barrier_factory_production", "barrier_forest_green"],
+	  ["barrier_japes_shellhive", "barrier_factory_testing", "barrier_forest_yellow"],
+	  ["barrier_aztec_ice", "barrier_galleon_lighthouse", "barrier_caves_ice"],
+	  ["barrier_aztec_door", "barrier_galleon_shipyard", "barrier_caves_igloo"], 
+	  ["barrier_aztec_5dtemple", "barrier_galleon_seasick", ""], 
+	  ["barrier_aztec_llama", "barrier_galleon_treasure", "barrier_castle_crypt"],
+	  ["barrier_helm_star", "barrier_helm_punch"]
+	]
+  },
+  "barriers_grid_tall": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 15,
+	"item_width": 240,
+	"rows": [
+	  ["barrier_japes_coconut",  "barrier_galleon_lighthouse"],
+	  ["barrier_japes_shellhive", "barrier_galleon_shipyard"],
+	  ["barrier_aztec_ice", "barrier_galleon_seasick"],
+	  ["barrier_aztec_door", "barrier_galleon_treasure"], 
+	  ["barrier_aztec_5dtemple", "barrier_forest_green"], 
+	  ["barrier_aztec_llama", "barrier_forest_yellow"],
+	  ["barrier_factory_production", "barrier_caves_ice"], 
+	  ["barrier_factory_testing", "barrier_caves_igloo"],
+	  ["barrier_castle_crypt"],
+	  ["barrier_helm_star", "barrier_helm_punch"]
+	]
+  },
+  "full_settings_grid": {
+    "type": "itemgrid",
+    "h_alignment": "center",
+	"item_size": 60,
+	"margin": "2,2,0,12",
+    "item_margin": "0,0,10,4",
+	"rows": [
+	  [ "open_lobbies", "open_levels", "no_hi_reqs", "prog_switch", "galleon_water" ],
+	  [ "fast_checks", "auto_bonus", "hard_shoot", "free_trade", "forest_time" ],
+	  [ "bananaport", "helm_start", "no_wrinkly_puzzles", "kasplat_rando" ],
+	  [ "cb_rando", "arena_rando", "fairy_rando", "dirt_patch_rando", "melon_crate_rando" ]
+    ]
+  },
+  
+  "settings_grid": {
+	"type": "itemgrid",
+    "h_alignment": "center",
+	"item_size": 60,
+	"margin": "2,2,0,12",
+    "item_margin": "0,0,10,4",
+	"rows": [
+	  [ "auto_bonus", "open_lobbies", "prog_switch", "free_trade" ],
+	  [ "fast_arcade", "galleon_water", "forest_time", "adv_orng" ],
+	  [ "chunky_slam", "bananaport", "helm_start", "slope_resets" ]
+    ]
+  },
+  
+  "shuffler_grid": {
+	"type": "itemgrid",
+    "h_alignment": "center",
+	"item_size": 60,
+	"margin": "2,2,0,12",
+    "item_margin": "0,0,10,4",
+	"rows": [
+	  [ "fairy_rando", "kasplat_rando", "arena_rando", "portal_shuffle" ],
+	  [ "dirt_patch_rando", "cb_rando", "melon_crate_rando", "boss_shuffle" ]
+    ]
+  },
+  
+  "pool_grid": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_size": 50,
+	"margin": "0,0,0,12",
+	"item_margin": "0,0,2,2",
+	"rows": [
+	  ["gb_pool","race_pool","mini_boss_pool","key_pool","bp_pool","fairy_pool","cr_pool"],
+	  ["kong_pool","shop_pool","camera_pool","bean_pool","pearl_pool","bm_pool","hbm_pool", "hm_pool"],
+	  ["snide_pool","n_coin_pool","r_coin_pool","rbc_pool","melon_pool_5","boulder_pool","hint_pool"]
+	]
+  },
+  
+  "amounts_grid": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_size": 50,
+	"item_margin": "3,3,15,5",
+	"rows": [
+	  ["half_medal_amount","medal_amount","jetpac_amount","rw_gb_amount","pearl_amount"],
+	  ["","helm_1_amount","helm_entry_amount","helm_2_amount",""],
+	  ["","helm_1_type","","helm_2_type",""]
+	]
+  },
+  
+  "options_grid": {
+	"type": "tabbed",
+	"tabs": [
+	  {
+		"title": "Main Settings",
+		"icon": "",
+		"content": {
+	  	  "type": "layout",
+		  "margin": "1,1,1,1",
+          "key": "settings_grid"
+		}
+	  },
+	  {
+		"title": "Item Pools",
+		"icon": "",
+		"content": {
+	  	  "type": "layout",
+		  "margin": "10,1,1,1",
+          "key": "pool_grid"
+		}
+	  },
+	  {
+		"title": "Check Thresholds",
+		"icon": "",
+		"content": {
+	  	  "type": "layout",
+          "key": "amounts_grid"
+		}
+	  },
+	  {
+		"title": "Location Shufflers",
+		"icon": "",
+		"content": {
+	  	  "type": "layout",
+		  "margin": "1,1,1,1",
+          "key": "shuffler_grid"
+		}
+	  },
+	  {
+		"title": "Open Barriers",
+		"icon": "",
+		"content": {
+	  	  "type": "layout",
+		  "margin": "1,1,1,1",
+          "key": "barriers_grid_tall"
+		}
+	  },
+	  {
+		"title": "Switchsanity",
+		"icon": "",
+		"content": {
+		  "type": "layout",
+		  "margin": "1,1,1,1",
+		  "key": "switchsanity_container"
+		}
+	  }
+	]
+  }
+}

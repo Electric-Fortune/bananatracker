@@ -1,0 +1,316 @@
+{
+  "switchsanity_grid": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 40,
+	"item_width": 40,
+	"rows": [
+	  ["isles_switches", "helm_access_?", "helm_switch_?", "aztec_lobby_door_feather", "forest_lobby_fairy_feather", "isles_rb_pad_trombone"],
+	  ["japes_switches", "japes_puzzle_dk", "japes_hive_feather", "japes_first_tunnel_peanut", "japes_painting_peanut", "japes_rambi_coconut"],
+	  ["aztec_switches", "tiny_puzzle_di", "llama_kong_dk", "aztec_kasplat_coconut", "aztec_tunnel_guitar", "aztec_llama_f_coconut", "aztec_llama_s_grape", "aztec_llama_b_feather", "aztec_quicksand_dk"],
+	  ["galleon_switches", "galleon_lighthouse_coconut", "galleon_shipyard_peanut", "galleon_cannon_pineapple"],
+	  ["forest_switches", "forest_yellow_grape", "forest_green_feather", "forest_apple_pineapple"]  
+	]
+  },
+  
+  "switchsanity_grid_helm": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 40,
+	"item_width": 40,
+	"rows": [
+	  ["helm_access_?", "helm_switch_?"]
+	]
+  },
+  
+  "switchsanity_grid_isles": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 40,
+	"item_width": 40,
+	"rows": [
+	  ["aztec_lobby_door_feather", "forest_lobby_fairy_feather", "isles_rb_pad_trombone"]
+	]
+  },
+  
+  "switchsanity_grid_japes_main": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 40,
+	"item_width": 40,
+	"rows": [
+	  ["japes_puzzle_dk", "japes_painting_peanut"]
+	]
+  },
+  
+  "switchsanity_grid_japes_tunnels": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 40,
+	"item_width": 40,
+	"rows": [
+	  ["japes_hive_feather", "japes_first_tunnel_peanut", "japes_rambi_coconut"]
+	]
+  },
+  
+  "switchsanity_grid_aztec_kongs": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 40,
+	"item_width": 40,
+	"rows": [
+	  ["tiny_puzzle_di", "llama_kong_dk"]
+	]
+  },
+  
+  "switchsanity_grid_aztec_llama": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 40,
+	"item_width": 40,
+	"rows": [
+	  ["aztec_llama_f_coconut", "aztec_llama_s_grape", "aztec_llama_b_feather"]
+	]
+  },
+  
+  "switchsanity_grid_aztec_tunnels": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 40,
+	"item_width": 40,
+	"rows": [
+	  ["aztec_kasplat_coconut", "aztec_tunnel_guitar", "aztec_quicksand_dk"]
+	]
+  },
+  
+  "switchsanity_grid_galleon": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 40,
+	"item_width": 40,
+	"rows": [
+	  ["galleon_lighthouse_coconut", "galleon_shipyard_peanut", "galleon_cannon_pineapple"] 
+	]
+  },
+  
+  "switchsanity_grid_forest": {
+	"type": "itemgrid",
+	"h_alignment": "center",
+	"item_height": 40,
+	"item_width": 40,
+	"rows": [
+	  ["forest_yellow_grape", "forest_green_feather", "forest_apple_pineapple"]
+	]
+  },
+  
+  "switchsanity_container_tl": {
+	"type": "array",
+	"orientation": "vertical",
+	"margin": "0,0,30,0",
+	"content": [
+	  {
+		"type": "text",
+		"text": "Helm Access",
+		"h_alignment": "center"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_grid_helm"
+	  },
+	  {
+		"type": "text",
+		"text": "Japes Hill Switches",
+		"h_alignment": "center"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_grid_japes_main"
+	  }
+	]
+  },
+  
+  "switchsanity_container_tr": {
+	"type": "array",
+	"orientation": "vertical",
+	"content": [
+	  {
+		"type": "text",
+		"text": "Isles Switches",
+		"h_alignment": "center"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_grid_isles"
+	  },
+	  {
+		"type": "text",
+		"text": "Japes Tunnel Switches",
+		"h_alignment": "center"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_grid_japes_tunnels"
+	  }
+	]
+  },
+  
+  "switchsanity_container_isles_japes": {
+	"type": "array",
+	"orientation": "horizontal",
+	"h_alignment": "center",
+	"content": [
+	  {
+		"type": "layout",
+		"key": "switchsanity_container_tl"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_container_tr"
+	  }
+	]
+  },
+  
+  "switchsanity_container_aztec_kongs_comb": {
+	"type": "array",
+	"orientation": "vertical",
+	"h_alignment": "center",
+	"margin": "0,0,30,0",
+	"content": [
+	  {
+		"type": "text",
+		"h_alignment": "center",
+		"text": "Aztec Kongs"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_grid_aztec_kongs"
+	  }
+	]
+  },
+  
+  "switchsanity_container_aztec_llama_comb": {
+	"type": "array",
+	"orientation": "vertical",
+	"h_alignment": "center",
+    "margin": "0,0,30,0",
+	"content": [
+	  {
+		"type": "text",
+		"h_alignment": "center",
+		"text": "Aztec Llama Temple Entry"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_grid_aztec_llama"
+	  }
+	]
+  },
+  
+  "switchsanity_container_aztec_tunnels_comb": {
+	"type": "array",
+	"orientation": "vertical",
+	"h_alignment": "center",
+	"content": [
+	  {
+		"type": "text",
+		"h_alignment": "center",
+		"text": "Aztec Tunnel Switches"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_grid_aztec_tunnels"
+	  }
+	]
+  },
+  
+  "switchsanity_container_galleon": {
+	"type": "array",
+	"orientation": "vertical",
+	"h_alignment": "center",
+	"margin": "0,0,30,0",
+	"content": [
+	  {
+		"type": "text",
+		"h_alignment": "center",
+		"text": "Galleon Switches"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_grid_galleon"
+	  }
+	]
+  },
+  
+  "switchsanity_container_forest": {
+	"type": "array",
+	"orientation": "vertical",
+	"h_alignment": "center",
+	"content": [
+	  {
+		"type": "text",
+		"h_alignment": "center",
+		"text": "Forest Switches"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_grid_forest"
+	  }
+	]
+  },
+  
+  "switchsanity_container_galleon_forest": {
+	"type": "array",
+	"orientation": "horizontal",
+	"h_alignment": "center",
+	"content": [
+	  {
+		"type": "layout",
+		"key": "switchsanity_container_galleon"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_container_forest"
+	  }
+	]
+  },
+  
+  "switchsanity_container_aztec": {
+	"type": "array",
+	"orientation": "horizontal",
+	"h_alignment": "center",
+	"content": [
+	  {
+		"type": "layout",
+		"key": "switchsanity_container_aztec_kongs_comb"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_container_aztec_llama_comb"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_container_aztec_tunnels_comb"
+	  }
+	]
+  },
+  
+  "switchsanity_container": {
+	"type": "array",
+	"orientation": "vertical",
+	"h_alignment": "center",
+	"content": [
+	  {
+		"type": "layout",
+		"key": "switchsanity_container_isles_japes"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_container_aztec"
+	  },
+	  {
+		"type": "layout",
+		"key": "switchsanity_container_galleon_forest"
+	  }
+	]
+  }
+}

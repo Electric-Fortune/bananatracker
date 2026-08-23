@@ -1,98 +1,165 @@
 [
   {
-	"name": "Shop Pool",
+	"name": "Shops & Moves Pool",
 	"type": "toggle",
 	"initial_active_state": true,
-	"img": "images/funky.png",
+	"img": "images/slam1.png",
 	"codes": "shop_pool"
+  },
+  {
+	"name": "Banana Fairy's Gift Pool (Camera & Shockwave)",
+	"type": "toggle",
+	"initial_active_state": true,
+	"img": "images/filmwave.png",
+	"codes": "camera_pool"
   },
   {
 	"name": "Golden Banana Pool",
 	"type": "toggle",
 	"initial_active_state": true,
-	"img": "images/GB.gif",
+	"img": "images/settings/GB.gif",
 	"codes": "gb_pool"
   },
   {
-    "name": "Tough Golden Banana Pool",
+    "name": "Minecart & Race Pool",
 	"type": "toggle",
 	"initial_active_state": true,
 	"img": "images/settings/rabbit.png",
-	"codes": "hard_gb_pool"
+	"codes": "race_pool"
   },
   {
-	"name": "Battle Crown Pool",
+	"name": "Battle Arena Pool",
 	"type": "toggle",
-	"initial_active_state": false,
+	"initial_active_state": true,
 	"img": "images/crown.png",
 	"codes": "cr_pool"
   },
   {
-	"name": "Blueprint Pool",
+	"name": "Kasplat Pool",
 	"type": "toggle",
 	"initial_active_state": true,
 	"img": "images/lanky_bp.png",
 	"codes": "bp_pool"
   },
   {
-	"name": "Key Pool",
+	"name": "Bosses Pool",
 	"type": "toggle",
 	"initial_active_state": true,
 	"img": "images/key.png",
 	"codes": "key_pool"
   },
   {
+	"name": "Half-Medal Pool",
+	"type": "toggle",
+	"initial_active_state": false,
+	"img": "images/settings/half_bm.gif",
+	"codes": "hbm_pool"
+  },
+  {
 	"name": "Banana Medal Pool",
 	"type": "toggle",
 	"initial_active_state": true,
-	"img": "images/bananamedal.gif",
+	"img": "images/settings/bananamedal.gif",
 	"codes": "bm_pool"
   },
   {
-	"name": "Company Coin Pool",
+	"name": "Helm Medal Pool",
+	"type": "toggle",
+	"initial_active_state": true,
+	"img": "images/settings/helmmedal.gif",
+	"codes": "hm_pool"
+  },
+  {
+	"name": "DK Arcade Pool",
 	"type": "toggle",
 	"initial_active_state": true,
 	"img": "images/n64_coin.png",
-	"codes": "coin_pool"
+	"codes": "n_coin_pool"
   },
   {
-	"name": "Kong Pool",
+	"name": "Jetpac Pool",
+	"type": "toggle",
+	"initial_active_state": true,
+	"img": "images/rareware_coin.png",
+	"codes": "r_coin_pool"
+  },
+  {
+	"name": "Kong Cage Pool",
 	"type": "toggle",
 	"initial_active_state": true,
 	"img": "images/dk.png",
 	"codes": "kong_pool"
   },
   {
-	"name": "Fairy Pool",
+	"name": "Banana Fairy Pool",
 	"type": "toggle",
 	"initial_active_state": true,
 	"img": "images/fairy.png",
 	"codes": "fairy_pool"
   },
   {
-	"name": "Rainbow Coin Pool",
+	"name": "Dirt Patches Pool",
 	"type": "toggle",
 	"initial_active_state": true,
 	"img": "images/rainbowcoin.png",
 	"codes": "rbc_pool"
   },
   {
-	"name": "Miscellaneous Pool",
+	"name": "Clam Item Pool",
+	"type": "toggle",
+	"initial_active_state": true,
+	"img": "images/pearl.png",
+	"codes": "pearl_pool"
+  },
+  {
+	"name": "Anthill Reward Pool",
 	"type": "toggle",
 	"initial_active_state": true,
 	"img": "images/bean.png",
-	"codes": "misc_pool"
+	"codes": "bean_pool"
   },
   {
 	"name": "Melon Crate Pool",
 	"type": "toggle",
-	"initial_active_state": true,
+	"loop": true,
+	"initial_active_state": false,
 	"img": "images/melon_full.png",
 	"codes": "melon_pool"
   },
   {
+    "name": "Melon Crate Pool (Right-click for Season 5 Seasonal Locations)",
+    "type": "toggle_badged",
+    "base_item": "melon_pool",
+	"initial_active_state": false,
+    "img": "images/settings/5_badged.png",
+    "codes": "melon_pool_5"
+  },
+  {
+	"name": "Holdable Objects Pool",
+	"type": "toggle",
+	"initial_active_state": false,
+	"img": "images/checks/boulder.png",
+	"codes": "boulder_pool"
+  },
+  {
+	"name": "Gauntlet & Mini-Boss Pool",
+	"type": "toggle",
+	"initial_active_state": true,
+	"img": "images/settings/zinger.png",
+	"codes": "mini_boss_pool"
+  },
+  {
+	"name": "Snide Reward Pool",
+	"type": "toggle",
+	"initial_active_state": false,
+	"img": "images/snide.png",
+	"codes": "snide_pool"
+  },
+  {
     "name": "Hint Pool",
 	"type": "toggle",
+	"loop": true,
+	"initial_active_state": false,
 	"img": "images/settings/wrinkly.png",
 	"codes": "hint_pool"
   }

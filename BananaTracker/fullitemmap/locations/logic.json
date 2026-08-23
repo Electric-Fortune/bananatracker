@@ -50,7 +50,8 @@
 		"name": "ha_owned",
 		"access_rules": [
 		  "ha_no_sns",
-		  "ha_sns"
+		  "ha_sns",
+		  "ha"
 		],
 		"item_count": 1
 	  },
@@ -58,7 +59,8 @@
 		"name": "sns_owned",
 		"access_rules": [
 		  "no_ha_sns",
-		  "ha_sns"
+		  "ha_sns",
+		  "sns"
 		],
 		"item_count": 1
 	  },
@@ -66,7 +68,8 @@
 		"name": "cam_owned",
 		"access_rules": [
 		  "film_no_wave",
-		  "film_wave"
+		  "film_wave",
+		  "cam"
 		],
 		"item_count": 1
 	  },
@@ -74,34 +77,41 @@
 		"name": "wave_owned",
 		"access_rules": [
 		  "no_film_wave",
-		  "film_wave"
+		  "film_wave",
+		  "wave"
 		],
 		"item_count": 1
 	  },
 	  {
 	    "name": "cross_from_fungi_lobby",
 		"access_rules": [
-		  "k4,ch,brrl,la,lai,vine,di,dib",
+		  "k4,ch,brrl,la,lai,climb,vine,di,dib",
 		  "k4,ch,brrl,la,lai,bananaport_isles,di,dib",
 		  "k4,ch,brrl,la,lai,bananaport_all,di,dib",
 		  "k4,ti,tim",
 		  "k4,dk,[ti],[tim]",
+		  "k4,dk,[monkey_moves]",
 		  "k4,ch,[ti],[tim]",
+		  "k4,ch,[monkey_moves]",
 		  "k4,di,[ti],[tim]",
-		  "open_lobbies,ch,brrl,la,lai,vine,di,dib",
+		  "k4,di,[monkey_moves]",
+		  "open_lobbies,ch,brrl,la,lai,climb,vine,di,dib",
 		  "open_lobbies,ch,brrl,la,lai,bananaport_isles,di,dib",
 		  "open_lobbies,ch,brrl,la,lai,bananaport_all,di,dib",
 		  "open_lobbies,ti,tim",
 		  "open_lobbies,dk,[ti],[tim]",
+		  "open_lobbies,dk,[monkey_moves]",
 		  "open_lobbies,ch,[ti],[tim]",
-		  "open_lobbies,di,[ti],[tim]"
+		  "open_lobbies,ch,[monkey_moves]",
+		  "open_lobbies,di,[ti],[tim]",
+		  "open_lobbies,di,[monkey_moves]"
 		],
 		"item_count": 1
 	  },
 	  {
 	    "name": "upper_isles_access",
 		"access_rules": [
-		  "vine",
+		  "climb,vine",
 		  "@logic/cross_from_fungi_lobby",
 		  "bananaport_isles",
 		  "bananaport_all"
@@ -111,7 +121,12 @@
 	  {
 	    "name": "isles_rocketbarrel",
 		"access_rules": [
-		  "@logic/upper_isles_access,ch,brrl,la,lai"
+		  "@logic/upper_isles_access,ch,brrl,la,lai,isles_rb_pad_trombone",
+		  "@logic/upper_isles_access,ch,brrl,ti,tii,isles_rb_pad_saxophone",
+		  "@logic/upper_isles_access,ch,brrl,chi,isles_rb_pad_triangle",
+		  "@logic/upper_isles_access,ch,brrl,dk,dki,isles_rb_pad_bongos",
+		  "@logic/upper_isles_access,ch,brrl,di,dii,isles_rb_pad_guitar",
+		  "@logic/upper_isles_access,ch,brrl,@logic/any_instrument,isles_rb_pad_any"
 		],
 		"item_count": 1
 	  },
@@ -160,14 +175,17 @@
 		  "@logic/helm_lobby,helm_switch_guitar,di,dii",
 		  "@logic/helm_lobby,helm_switch_trombone,la,lai",
 		  "@logic/helm_lobby,helm_switch_saxophone,ti,tii",
-		  "@logic/helm_lobby,helm_switch_triangle,ch,chi"
+		  "@logic/helm_lobby,helm_switch_triangle,ch,chi",
+		  "@logic/helm_lobby,helm_switch_bananaport"
 		],
 		"item_count": 1
 	  },
 	  {
 		"name": "helm_access",
 		"access_rules": [
-		  "@logic/helm_lobby_switch,vine,$can_enter_helm"
+		  "@logic/helm_lobby_switch,vine,$can_enter_helm",
+		  "@logic/helm_lobby,bananaport_all,$can_enter_helm",
+		  "@logic/helm_lobby,bananaport_isles_helm,$can_enter_helm"
 		],
 		"item_count": 1
 	  },
@@ -175,16 +193,34 @@
 	    "name": "blast-o-matic_access",
 		"access_rules": [
 		  "@logic/helm_access,[la],[lam],ch,chg,vine,ti,tib",
+		  "@logic/helm_access,[slope_resets],ch,chg,vine,ti,tib",
 		  "@logic/helm_access,helm_skip_start",
 		  "@logic/helm_access,helm_skip_all"
 		],
 		"item_count": 1
 	  },
 	  {
-	    "name": "blast-o-matic_doors",
+	    "name": "blast-o-matic_stars",
 		"access_rules": [
-		  "@logic/blast-o-matic_access,dk,dkm,di,dib,ch,chm",
-		  "@logic/helm_access,helm_skip_start",
+		  "@logic/blast-o-matic_access,dk,dkm,di,dib",
+		  "@logic/blast-o-matic_access,barrier_helm_star",
+		  "@logic/helm_access,helm_skip_all"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "blast-o-matic_punch_gates",
+		"access_rules": [
+		  "@logic/blast-o-matic_access,ch,chm",
+		  "@logic/blast-o-matic_access,barrier_helm_punch",
+		  "@logic/helm_access,helm_skip_all"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "blast-o-matic_doors",
+		"access_rules": [
+		  "@logic/blast-o-matic_stars, @logic/blast-o-matic_punch_gates",
 		  "@logic/helm_access,helm_skip_all"
 		],
 		"item_count": 1
@@ -460,30 +496,284 @@
 		"item_count": 1
 	  },
 	  {
+		"name": "japes_kong_solving",
+		"access_rules": [
+		  "japes_puzzle_dk,dk,dkg",
+		  "japes_puzzle_di,di,dig",
+		  "japes_puzzle_la,la,lag",
+		  "japes_puzzle_ti,ti,tig",
+		  "japes_puzzle_ch,ch,chg",
+		  "japes_puzzle_fu"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "tiny_kong_solving",
+		"access_rules": [
+		  "tiny_puzzle_di,di,dim,dig",
+		  "tiny_puzzle_di,di,dim,@logic/tiny_temple_access,[dig]",
+		  "tiny_puzzle_ch,ch,chm,chg",
+		  "tiny_puzzle_ch,ch,chm,@logic/tiny_temple_access,[chg]",
+		  "tiny_puzzle_fu"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "llama_spit",
+		"access_rules": [
+		  "llama_kong_dk,dk,dki",
+		  "llama_kong_di,di,dii",
+		  "llama_kong_la,la,lai",
+		  "llama_kong_ti,ti,tii",
+		  "llama_kong_ch,ch,chi",
+		  "llama_kong_any,@logic/any_instrument",
+		  "llama_kong_fu"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "llama_kong_solving",
+		"access_rules": [
+		  "llama_kong_dk,dk,dkg",
+		  "llama_kong_di,di,dig",
+		  "llama_kong_la,la,lag",
+		  "llama_kong_ti,ti,tig",
+		  "llama_kong_ch,ch,chg",
+		  "llama_kong_any,@logic/any_gun",
+		  "llama_kong_fu"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "factory_kong_solving",
+		"access_rules": [
+		  "factory_puzzle_dk,dk,prog_switch_on,$factory_slam",
+		  "factory_puzzle_dk,dk,prog_switch_off,ss",
+		  "factory_puzzle_di,di,prog_switch_on,$factory_slam",
+		  "factory_puzzle_di,di,prog_switch_off,ss",
+		  "factory_puzzle_la,la,lam,prog_switch_on,$factory_slam",
+		  "factory_puzzle_la,la,lam,prog_switch_off,ss",
+		  "factory_puzzle_ti,ti,prog_switch_on,$factory_slam",
+		  "factory_puzzle_ti,ti,prog_switch_off,ss",
+		  "factory_puzzle_ch,ch,prog_switch_on,$factory_slam",
+		  "factory_puzzle_ch,ch,prog_switch_off,ss",
+		  "factory_puzzle_fu"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "japes_tunnel_room",
+		"access_rules": [
+		  "@logic/japes_lobby,japes_first_tunnel_peanut,di,dig",
+		  "@logic/japes_lobby,japes_first_tunnel_grape,la,lag",
+		  "@logic/japes_lobby,japes_first_tunnel_feather,ti,tig",
+		  "@logic/japes_lobby,japes_first_tunnel_pineapple,ch,chg",
+		  "@logic/japes_lobby,japes_first_tunnel_coconut,dk,dkg",
+		  "@logic/japes_lobby,japes_first_tunnel_any,@logic/any_gun",
+		  "@logic/japes_lobby,portal_shuffle_on,japes_entry_ftr"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "japes_hillside",
+		"access_rules": [
+		  "@logic/japes_lobby,@logic/any_kong,climb",
+		  "@logic/japes_lobby,bananaport_all",
+		  "@logic/japes_lobby,portal_shuffle_on,japes_entry_hs",
+		  "@logic/japes_lobby,la,lam,monkey_moves",
+		  "@logic/japes_lobby,la,lam,[climb]",
+		  "@logic/japes_lobby,ti,slope_resets"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "japes_hillside_strict",
+		"access_rules": [
+		  "@logic/japes_lobby,climb",
+		  "@logic/japes_lobby,bananaport_all",
+		  "@logic/japes_lobby,portal_shuffle_on,japes_entry_hs",
+		  "@logic/japes_lobby,la,lam,monkey_moves",
+		  "@logic/japes_lobby,ti,slope_resets"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "japes_painting_hill",
+		"access_rules": [
+		  "@logic/japes_lobby,la,lam",
+		  "@logic/japes_lobby,@logic/any_kong,slope_resets",
+		  "@logic/japes_lobby,ti,tim,climb,[la],[lam]",
+		  "@logic/japes_lobby,ti,tim,@logic/japes_hillside,[la],[lam]",
+		  "@logic/japes_lobby,dk,climb,[la],[lam]",
+		  "@logic/japes_lobby,dk,@logic/japes_hillside,[la],[lam]",
+		  "@logic/japes_lobby,portal_shuffle_on,japes_entry_ps"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "japes_painting_hill_strict",
+		"access_rules": [
+		  "@logic/japes_lobby,la,lam",
+		  "@logic/japes_lobby,ti,tim,climb",
+		  "@logic/japes_lobby,@logic/any_kong,slope_resets",
+		  "@logic/japes_lobby,portal_shuffle_on,japes_entry_ps"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "japes_painting_room",
+		"access_rules": [
+		  "@logic/japes_painting_hill,japes_painting_peanut,di,dig",
+		  "@logic/japes_painting_hill,japes_painting_grape,la,lag",
+		  "@logic/japes_painting_hill,japes_painting_feather,ti,tig",
+		  "@logic/japes_painting_hill,japes_painting_pineapple,ch,chg",
+		  "@logic/japes_painting_hill,japes_painting_coconut,dk,dkg",
+		  "@logic/japes_painting_hill,japes_painting_any,@logic/any_gun"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "japes_tunnels",
+		"access_rules": [
+		  "@logic/japes_hillside,japes_kong_freed",
+		  "@logic/japes_lobby,barrier_japes_coconut",
+		  "@logic/japes_lobby,portal_shuffle_on,japes_entry_sa",
+		  "@logic/japes_lobby,portal_shuffle_on,japes_entry_lcs",
+		  "@logic/japes_lobby,portal_shuffle_on,japes_entry_rc"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "japes_tunnel_to_hive",
+		"access_rules": [
+		  "@logic/japes_hillside,japes_kong_freed",
+		  "@logic/japes_lobby,barrier_japes_coconut",
+		  "@logic/japes_lobby,portal_shuffle_on,japes_entry_ha",
+		  "@logic/japes_hillside,di,dig,bananaport_all"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "japes_tunnel_to_hive_strict",
+		"access_rules": [
+		  "@logic/japes_hillside,japes_kong_freed",
+		  "@logic/japes_lobby,barrier_japes_coconut",
+		  "@logic/japes_lobby,portal_shuffle_on,japes_entry_ha,@logic/japes_shellhive_gate",
+		  "@logic/japes_hillside,di,dig,bananaport_all,@logic/japes_shellhive_gate"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "japes_shellhive_gate",
+		"access_rules": [
+		  "japes_hive_feather,ti,tig",
+		  "japes_hive_pineapple,ch,chg",
+		  "japes_hive_coconut,dk,dkg",
+		  "japes_hive_peanut,di,dig",
+		  "japes_hive_lanky,la,lag",
+		  "japes_hive_any,@logic/any_gun",
+		  "barrier_japes_shellhive"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "japes_shellhive",
+		"access_rules": [
+		  "@logic/japes_tunnel_to_hive,@logic/japes_shellhive_gate",
+		  "@logic/japes_hillside,di,dig,bananaport_all",
+		  "@logic/japes_lobby,portal_shuffle_on,japes_entry_ha"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "japes_rambi",
+		"access_rules": [
+		  "@logic/japes_tunnels,japes_rambi_coconut,dk,dkg",
+		  "@logic/japes_tunnels,japes_rambi_peanut,di,dig,dk",
+		  "@logic/japes_tunnels,japes_rambi_grape,la,lag,dk",
+		  "@logic/japes_tunnels,japes_rambi_feather,ti,tig,dk",
+		  "@logic/japes_tunnels,japes_rambi_pineapple,ch,chg,dk",
+		  "@logic/japes_tunnels,japes_rambi_any,@logic/any_gun,dk"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "japes_rambi_cave",
+		"access_rules": [
+		  "@logic/japes_rambi",
+		  "@logic/japes_lobby,portal_shuffle_on,japes_entry_rc"
+		],
+		"item_count": 1
+	  },
+	  {
 	    "name": "aztec_past_vine",
 		"access_rules": [
 		  "@logic/aztec_lobby,[vine]",
-		  "@logic/aztec_lobby,ti,tim"
+		  "@logic/aztec_lobby,ti,tim",
+		  "@logic/aztec_lobby,portal_shuffle_on,aztec_entry_ao",
+		  "@logic/aztec_lobby,portal_shuffle_on,aztec_entry_at",
+		  "@logic/aztec_lobby,portal_shuffle_on,aztec_entry_aqt"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "aztec_past_vine_strict",
+		"access_rules": [
+		  "@logic/aztec_lobby,vine",
+		  "@logic/aztec_lobby,ti,tim",
+		  "@logic/aztec_lobby,portal_shuffle_on,aztec_entry_ao",
+		  "@logic/aztec_lobby,portal_shuffle_on,aztec_entry_at",
+		  "@logic/aztec_lobby,portal_shuffle_on,aztec_entry_aqt"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "aztec_kasplat_room",
+		"access_rules": [
+		  "@logic/aztec_past_vine,aztec_kasplat_coconut,dk,dkg",
+		  "@logic/aztec_past_vine,aztec_kasplat_peanut,di,dig",
+		  "@logic/aztec_past_vine,aztec_kasplat_grape,la,lag",
+		  "@logic/aztec_past_vine,aztec_kasplat_feather,ti,tig",
+		  "@logic/aztec_past_vine,aztec_kasplat_pineapple,ch,chg",
+		  "@logic/aztec_past_vine,aztec_kasplat_any,@logic/any_gun"
 		],
 		"item_count": 1
 	  },
 	  {
 	    "name": "tiny_temple_access",
 		"access_rules": [
-		  "di,dig",
-		  "la,lag",
-		  "ti,tig",
-		  "ch,chg"
+		  "@logic/aztec_past_vine,di,dig",
+		  "@logic/aztec_past_vine,la,lag",
+		  "@logic/aztec_past_vine,ti,tig",
+		  "@logic/aztec_past_vine,ch,chg"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "tiny_temple_water",
+		"access_rules": [
+		  "@logic/tiny_temple_access,di,prog_switch_off,ss,dig,dii",
+		  "@logic/tiny_temple_access,di,prog_switch_on,$aztec_slam,dig,dii",
+		  "@logic/tiny_temple_access,barrier_aztec_ice"
 		],
 		"item_count": 1
 	  },
 	  {
 	    "name": "aztec_door_access",
 		"access_rules": [
-		  "@logic/aztec_past_vine,di,dii,vine",
-		  "@logic/aztec_past_vine,di,dii,dib",
+		  "@logic/aztec_past_vine,@logic/aztec_tunnel_guitar,di,dii,vine,climb",
+		  "@logic/aztec_past_vine,@logic/aztec_tunnel_guitar,di,dii,[monkey_moves]",
+		  "@logic/aztec_past_vine,@logic/aztec_tunnel_trombone,la,lai,vine,climb",
+		  "@logic/aztec_past_vine,@logic/aztec_tunnel_saxophone,ti,tii,vine,climb",
+		  "@logic/aztec_past_vine,@logic/aztec_tunnel_saxophone,ti,tii,[monkey_moves]",
+		  "@logic/aztec_past_vine,@logic/aztec_tunnel_triangle,ch,chi,vine,climb",
+		  "@logic/aztec_past_vine,@logic/aztec_tunnel_bongos,dk,dki,vine,climb",
+		  "@logic/aztec_past_vine,@logic/aztec_tunnel_any,@logic/any_instrument,vine,climb",
+		  "@logic/aztec_past_vine,di,dii,dib,climb",
 		  "@logic/aztec_past_vine,barrier_aztec_door",
-		  "@logic/aztec_past_vine,bananaport_all"
+		  "@logic/aztec_past_vine,bananaport_all",
+		  "@logic/aztec_lobby,portal_shuffle_on,aztec_entry_at",
+		  "@logic/aztec_lobby,portal_shuffle_on,aztec_entry_aqt"
 		],
 		"item_count": 1
 	  },
@@ -498,9 +788,42 @@
 	  {
 	    "name": "llama_temple_access",
 		"access_rules": [
-		  "@logic/llama_temple_switches,dk,dkg",
-		  "@logic/llama_temple_switches,la,lag",
-		  "@logic/llama_temple_switches,ti,tig",
+		  "@logic/llama_temple_switches,aztec_llama_f_coconut,dk,dkg",
+		  "@logic/llama_temple_switches,aztec_llama_f_peanut,di,dig",
+		  "@logic/llama_temple_switches,aztec_llama_f_grape,la,lag",
+		  "@logic/llama_temple_switches,aztec_llama_f_feather,ti,tig",
+		  "@logic/llama_temple_switches,aztec_llama_f_pineapple,ch,chg",
+		  "@logic/llama_temple_switches,aztec_llama_f_any,@logic/any_gun",
+		  "@logic/llama_temple_switches,aztec_llama_s_coconut,dk,dkg",
+		  "@logic/llama_temple_switches,aztec_llama_s_peanut,di,dig",
+		  "@logic/llama_temple_switches,aztec_llama_s_grape,la,lag",
+		  "@logic/llama_temple_switches,aztec_llama_s_feather,ti,tig",
+		  "@logic/llama_temple_switches,aztec_llama_s_pineapple,ch,chg",
+		  "@logic/llama_temple_switches,aztec_llama_s_any,@logic/any_gun",
+		  "@logic/llama_temple_switches,aztec_llama_b_coconut,dk,dkg",
+		  "@logic/llama_temple_switches,aztec_llama_b_peanut,di,dig",
+		  "@logic/llama_temple_switches,aztec_llama_b_grape,la,lag",
+		  "@logic/llama_temple_switches,aztec_llama_b_feather,ti,tig",
+		  "@logic/llama_temple_switches,aztec_llama_b_pineapple,ch,chg",
+		  "@logic/llama_temple_switches,aztec_llama_b_any,@logic/any_gun",
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "quicksand_tunnel",
+		"access_rules": [
+		  "@logic/llama_temple_access,aztec_quicksand_dk,dk,prog_switch_off,ss",
+		  "@logic/llama_temple_access,aztec_quicksand_di,di,prog_switch_off,ss",
+		  "@logic/llama_temple_access,aztec_quicksand_la,la,prog_switch_off,ss",
+		  "@logic/llama_temple_access,aztec_quicksand_ti,ti,prog_switch_off,ss",
+		  "@logic/llama_temple_access,aztec_quicksand_ch,ch,prog_switch_off,ss",
+		  "@logic/llama_temple_access,aztec_quicksand_dk,dk,prog_switch_on,$aztec_slam",
+		  "@logic/llama_temple_access,aztec_quicksand_di,di,prog_switch_on,$aztec_slam",
+		  "@logic/llama_temple_access,aztec_quicksand_la,la,prog_switch_on,$aztec_slam",
+		  "@logic/llama_temple_access,aztec_quicksand_ti,ti,prog_switch_on,$aztec_slam",
+		  "@logic/llama_temple_access,aztec_quicksand_ch,ch,prog_switch_on,$aztec_slam",
+		  "@logic/aztec_door_access,bananaport_all",
+		  "@logic/aztec_lobby,portal_shuffle_on,aztec_entry_aqt"
 		],
 		"item_count": 1
 	  },
@@ -514,20 +837,155 @@
 		"item_count": 1
 	  },
 	  {
+	    "name": "factory_start_access",
+		"access_rules": [
+		  "@logic/storage_prod_access,climb",
+		  "@logic/factory_lobby,bananaport_all",
+		  "@logic/factory_lobby,portal_shuffle_on,factory_entry_sf"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "storage_prod_access",
+		"access_rules": [
+		  "@logic/factory_lobby",
+		  "@logic/factory_lobby,portal_shuffle_on,factory_entry_stor"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "testing_access",
+		"access_rules": [
+		  "@logic/factory_start_access,ss,climb",
+		  "@logic/factory_start_access,barrier_factory_testing,climb",
+		  "@logic/factory_lobby,bananaport_all",
+		  "@logic/factory_lobby,portal_shuffle_on,factory_entry_test",
+		  "@logic/factory_lobby,portal_shuffle_on,factory_entry_rd"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "rd_access",
+		"access_rules": [
+		  "@logic/testing_access,climb",
+		  "@logic/factory_lobby,bananaport_all",
+		  "@logic/factory_lobby,portal_shuffle_on,factory_entry_rd",
+		  "@logic/factory_lobby,portal_shuffle_on,factory_entry_rdl"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "rd_ledge_access",
+		"access_rules": [
+		  "@logic/rd_access,climb,@logic/any_kong",
+		  "@logic/rd_access,di",
+		  "@logic/rd_access,ti",
+		  "@logic/factory_lobby,portal_shuffle_on,factory_entry_rdl",
+		  "@logic/rd_access,[monkey_moves]"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "arcade_access",
+		"access_rules": [
+		  "@logic/storage_prod_access,climb",
+		  "@logic/testing_access,bananaport_all",
+		  "@logic/factory_lobby,portal_shuffle_on,factory_entry_arc"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "prod_power_access",
+		"access_rules": [
+		  "@logic/rd_ledge_access,dk,dkg,dkm",
+		  "@logic/storage_prod_access,ti,tim,dk,dkg,dkm,[monkey_moves]",
+		  "@logic/storage_prod_access,di,dk,dkg,dkm,[monkey_moves]",
+		  "@logic/storage_prod_access,barrier_factory_production"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "upper_prod_access",
+		"access_rules": [
+		  "@logic/prod_power_access,climb",
+		  "@logic/prod_power_access,bananaport_all",
+		  "@logic/factory_lobby,portal_shuffle_on,factory_entry_pu",
+		  "{@logic/factory_lobby,@logic/any_kong}"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "upper_prod_access_strict",
+		"access_rules": [
+		  "@logic/prod_power_access,climb",
+		  "@logic/prod_power_access,bananaport_all",
+		  "@logic/factory_lobby,portal_shuffle_on,factory_entry_pu"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "planks_access",
+		"access_rules": [
+		  "@logic/galleon_lobby,vine",
+		  "@logic/any_kong,bananaport_all,@logic/raised_water_access,@logic/lighthouse_access",
+		  "@logic/lighthouse_access,@logic/k_rool_ship,ti,tim,bananaport_all",
+		  "@logic/lighthouse_access,@logic/lighthouse_platform,di,dib,bananaport_all",
+		  "@logic/galleon_lobby,portal_shuffle_on,galleon_entry_mast"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "cannon_room_access",
+		"access_rules": [
+		  "@logic/galleon_lobby,galleon_cannon_pineapple,ch,chg,[@logic/raised_water_access]",
+		  "@logic/galleon_lobby,galleon_cannon_coconut,dk,dkg,[@logic/raised_water_access]",
+		  "@logic/galleon_lobby,galleon_cannon_peanut,di,dig,[@logic/raised_water_access]",
+		  "@logic/galleon_lobby,galleon_cannon_grape,la,lag,[@logic/raised_water_access]",
+		  "@logic/galleon_lobby,galleon_cannon_feather,ti,tig,[@logic/raised_water_access]",
+		  "@logic/galleon_lobby,galleon_cannon_any,@logic/any_gun,[@logic/raised_water_access]"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "cannon_room_access_strict",
+		"access_rules": [
+		  "@logic/galleon_lobby,galleon_cannon_pineapple,ch,chg,@logic/raised_water_access",
+		  "@logic/galleon_lobby,galleon_cannon_coconut,dk,dkg,@logic/raised_water_access",
+		  "@logic/galleon_lobby,galleon_cannon_peanut,di,dig,@logic/raised_water_access",
+		  "@logic/galleon_lobby,galleon_cannon_grape,la,lag,@logic/raised_water_access",
+		  "@logic/galleon_lobby,galleon_cannon_feather,ti,tig,@logic/raised_water_access",
+		  "@logic/galleon_lobby,galleon_cannon_any,@logic/any_gun,@logic/raised_water_access"
+		],
+		"item_count": 1
+	  },
+	  {
 		"name": "shipyard_access",
 		"access_rules": [
 		  "@logic/galleon_lobby,barrier_galleon_shipyard",
-		  "@logic/galleon_lobby,di,dig",
-		  "@logic/galleon_lobby,bananaport_all"
+		  "@logic/galleon_lobby,galleon_shipyard_peanut,di,dig",
+		  "@logic/galleon_lobby,galleon_shipyard_grape,la,lag",
+		  "@logic/galleon_lobby,galleon_shipyard_feather,ti,tig",
+		  "@logic/galleon_lobby,galleon_shipyard_pineapple,ch,chg",
+		  "@logic/galleon_lobby,galleon_shipyard_coconut,dk,dkg",
+		  "@logic/galleon_lobby,galleon_shipyard_any,@logic/any_gun",
+		  "@logic/galleon_lobby,bananaport_all",
+		  "@logic/galleon_lobby,portal_shuffle_on,galleon_entry_sy"
 		],
 		"item_count": 1
 	  },
 	  {
 	    "name": "lighthouse_access",
 		"access_rules": [
-		  "@logic/galleon_lobby,dk,dkg",
+		  "@logic/galleon_lobby,galleon_lighthouse_coconut,dk,dkg",
+		  "@logic/galleon_lobby,galleon_lighthouse_peanut,di,dig",
+		  "@logic/galleon_lobby,galleon_lighthouse_grape,la,lag",
+		  "@logic/galleon_lobby,galleon_lighthouse_feather,ti,tig",
+		  "@logic/galleon_lobby,galleon_lighthouse_pineapple,ch,chg",
+		  "@logic/galleon_lobby,galleon_lighthouse_any,@logic/any_gun",
 		  "@logic/galleon_lobby,barrier_galleon_lighthouse",
-		  "@logic/galleon_lobby,bananaport_all"
+		  "@logic/galleon_lobby,bananaport_all",
+		  "@logic/galleon_lobby,portal_shuffle_on,galleon_entry_lh",
+		  "@logic/galleon_lobby,portal_shuffle_on,galleon_entry_lp"
 		],
 		"item_count": 1
 	  },
@@ -535,7 +993,7 @@
 	    "name": "raised_water_access",
 		"access_rules": [
 		  "@logic/galleon_lobby,galleon_water_raised",
-		  "@logic/lighthouse_access,dive"
+		  "$lighthouse_access,dive"
 		],
 		"item_count": 1
 	  },
@@ -543,24 +1001,56 @@
 		"name": "lowered_water_access",
 		"access_rules": [
 		  "@logic/galleon_lobby,galleon_water_lowered",
-		  "@logic/lighthouse_access,dive"
+		  "$lighthouse_access,dive"
 		],
 		"item_count": 1
 	  },
 	  {
 	    "name": "lighthouse_platform",
 		"access_rules": [
-		  "@logic/raised_water_access",
 		  "@logic/k_rool_ship,ti,tim,[@logic/raised_water_access]",
-		  "@logic/galleon_lobby,bananaport_all"
+		  "$lighthouse_access,@logic/raised_water_access",
+		  "$lighthouse_access,la,[monkey_moves]",
+		  "$lighthouse_access,ch,[monkey_moves]",
+		  "@logic/galleon_lobby,bananaport_all",
+		  "@logic/galleon_lobby,portal_shuffle_on,galleon_entry_lp"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "lighthouse_platform_strict",
+		"access_rules": [
+		  "$lighthouse_access,@logic/raised_water_access",
+		  "@logic/galleon_lobby,bananaport_all",
+		  "@logic/galleon_lobby,portal_shuffle_on,galleon_entry_lp"
 		],
 		"item_count": 1
 	  },
 	  {
 	    "name": "k_rool_ship",
 		"access_rules": [
-		  "@logic/lighthouse_platform,dk,ss,dkm",
-		  "@logic/lighthouse_access,barrier_galleon_seasick"
+		  "@logic/lighthouse_platform,dk,ss,dkm,climb",
+		  "$lighthouse_access,barrier_galleon_seasick"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "treasure_room_access",
+		"access_rules": [
+		  "@logic/shipyard_access,la,dive,[@logic/raised_water_access]",
+		  "@logic/shipyard_access,la,dive,[monkey_moves]",
+		  "@logic/shipyard_access,dive,barrier_galleon_treasure",
+		  "@logic/shipyard_access,bananaport_all"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "treasure_room_access_strict",
+		"access_rules": [
+		  "@logic/shipyard_access,la,dive,@logic/raised_water_access",
+		  "@logic/shipyard_access,la,dive,monkey_moves",
+		  "@logic/shipyard_access,dive,barrier_galleon_treasure",
+		  "@logic/shipyard_access,bananaport_all"
 		],
 		"item_count": 1
 	  },
@@ -570,7 +1060,18 @@
 		  "@logic/forest_lobby,forest_time_day",
 		  "@logic/forest_lobby,forest_time_dusk",
 		  "@logic/forest_lobby,[@logic/any_gun],orng",
+		  "@logic/forest_lobby,[adv_orng],orng",
 		  "@logic/forest_lobby,@logic/any_gun"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "day_access_strict",
+		"access_rules": [
+		  "@logic/forest_lobby,forest_time_day",
+		  "@logic/forest_lobby,forest_time_dusk",
+		  "@logic/forest_lobby,@logic/any_gun",
+		  "@logic/forest_lobby,orng,adv_orng"
 		],
 		"item_count": 1
 	  },
@@ -580,36 +1081,110 @@
 		  "@logic/forest_lobby,forest_time_night",
 		  "@logic/forest_lobby,forest_time_dusk",
 		  "@logic/forest_lobby,[@logic/any_gun],orng",
+		  "@logic/forest_lobby,[adv_orng],orng",
 		  "@logic/forest_lobby,@logic/any_gun"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "night_access_strict",
+		"access_rules": [
+		  "@logic/forest_lobby,forest_time_night",
+		  "@logic/forest_lobby,forest_time_dusk",
+		  "@logic/forest_lobby,@logic/any_gun",
+		  "@logic/forest_lobby,orng,adv_orng"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "mushroom_walkway_access",
+		"access_rules": [
+		  "@logic/forest_lobby,climb",
+		  "@logic/forest_lobby,di,dib",
+		  "@logic/forest_lobby,dk,dkg,di,dig,la,lag,ti,tig,ch,chg",
+		  "@logic/forest_lobby,bananaport_all",
+		  "@logic/forest_lobby,portal_shuffle_on,forest_entry_mu",
+		  "@logic/forest_lobby,ti,tim,[monkey_moves]",
+		  "@logic/forest_lobby,ti,tim,[climb]",
+		  "@logic/forest_lobby,@logic/any_kong,[climb]"
+		  
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "mushroom_walkway_access_strict",
+		"access_rules": [
+		  "@logic/forest_lobby,climb",
+		  "@logic/forest_lobby,di,dib",
+		  "@logic/forest_lobby,dk,dkg,di,dig,la,lag,ti,tig,ch,chg",
+		  "@logic/forest_lobby,bananaport_all",
+		  "@logic/forest_lobby,portal_shuffle_on,forest_entry_mu",
+		  "@logic/forest_lobby,ti,tim,monkey_moves",
+		  "@logic/forest_lobby,ti,tim,climb",
+		  "@logic/forest_lobby,@logic/any_kong,climb"
+		  
 		],
 		"item_count": 1
 	  },
 	  {
 	    "name": "upper_mushroom_access",
 		"access_rules": [
-		  "@logic/forest_lobby", 
-		  "@logic/forest_lobby,[vine]",
+		  "@logic/forest_lobby,climb",
 		  "@logic/forest_lobby,di,dib",
 		  "@logic/forest_lobby,dk,dkg,di,dig,la,lag,ti,tig,ch,chg",
-		  "@logic/forest_lobby,bananaport_all"
+		  "@logic/forest_lobby,bananaport_all",
+		  "@logic/forest_lobby,portal_shuffle_on,forest_entry_mu"
 		],
 		"item_count": 1
 	  },
 	  {
 	    "name": "owl_tree_access",
 		"access_rules": [
-		  "@logic/forest_lobby,la,lag",
+		  "@logic/forest_lobby,forest_yellow_grape,la,lag",
+		  "@logic/forest_lobby,forest_yellow_feather,ti,tig",
+		  "@logic/forest_lobby,forest_yellow_pineapple,ch,chg",
+		  "@logic/forest_lobby,forest_yellow_coconut,dk,dkg",
+		  "@logic/forest_lobby,forest_yellow_peanut,di,dig",
+		  "@logic/forest_lobby,forest_yellow_any,@logic/any_gun",
 		  "@logic/forest_lobby,barrier_forest_yellow",
-		  "@logic/forest_lobby,bananaport_all"
+		  "@logic/forest_lobby,bananaport_all",
+		  "@logic/forest_lobby,portal_shuffle_on,forest_entry_ot"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "green_tunnel_clock",
+		"access_rules": [
+		  "@logic/forest_lobby,forest_green_feather,ti,tig",
+		  "@logic/forest_lobby,forest_green_pineapple,ch,chg",
+		  "@logic/forest_lobby,forest_green_coconut,dk,dkg",
+		  "@logic/forest_lobby,forest_green_peanut,di,dig",
+		  "@logic/forest_lobby,forest_green_grape,la,lag",
+		  "@logic/forest_lobby,forest_green_any,@logic/any_kong",
+		  "@logic/forest_lobby,barrier_forest_green"
+		],
+		"item_count": 1
+	  },
+	  {
+		"name": "green_tunnel_apple",
+		"access_rules": [
+		  "@logic/forest_lobby,forest_apple_pineapple,ch,chg",
+		  "@logic/forest_lobby,forest_apple_coconut,dk,dkg",
+		  "@logic/forest_lobby,forest_apple_peanut,di,dig",
+		  "@logic/forest_lobby,forest_apple_grape,la,lag",
+		  "@logic/forest_lobby,forest_apple_feather,ti,tig",
+		  "@logic/forest_lobby,forest_apple_any,@logic/any_kong",
+		  "@logic/forest_lobby,barrier_forest_green"
 		],
 		"item_count": 1
 	  },
 	  {
 		"name": "beanstalk_access",
 		"access_rules": [
-		  "@logic/forest_lobby,ti,tig,ch,chg",
+		  "@logic/forest_lobby,@logic/green_tunnel_clock,@logic/green_tunnel_apple",
 		  "@logic/forest_lobby,barrier_forest_green",
-		  "@logic/forest_lobby,bananaport_all"
+		  "@logic/forest_lobby,bananaport_all",
+		  "@logic/forest_lobby,portal_shuffle_on,forest_entry_bs"
 		],
 		"item_count": 1
 	  },
@@ -622,8 +1197,39 @@
 		"item_count": 1
 	  },
 	  {
+	    "name": "caves_ice_walls",
+		"access_rules": [
+		  "@logic/caves_lobby,ch,chm",
+		  "@logic/caves_lobby,barrier_caves_ice"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "castle_above_climb",
+		"access_rules": [
+		  "@logic/castle_lobby,portal_shuffle_off",
+		  "@logic/castle_lobby,portal_shuffle_on,castle_entry_main",
+		  "@logic/castle_lobby,portal_shuffle_on,castle_entry_bb,climb",
+		  "@logic/castle_lobby,portal_shuffle_on,castle_entry_bb,di,[monkey_moves]",
+		  "@logic/castle_lobby,portal_shuffle_on,castle_entry_bb,ti,[monkey_moves]"
+		],
+		"item_count": 1
+	  },
+	  {
+	    "name": "castle_above_climb_strict",
+		"access_rules": [
+		  "@logic/castle_lobby,portal_shuffle_off",
+		  "@logic/castle_lobby,portal_shuffle_on,castle_entry_main",
+		  "@logic/castle_lobby,portal_shuffle_on,castle_entry_bb,climb",
+		  "@logic/castle_lobby,portal_shuffle_on,castle_entry_bb,di,monkey_moves",
+		  "@logic/castle_lobby,portal_shuffle_on,castle_entry_bb,ti,monkey_moves"
+		],
+		"item_count": 1
+	  },
+	  {
 	    "name": "updaters",
 		"access_rules": [
+		  "@logic/lighthouse_access",
 		  "$call_updaters"
 		],
 		"item_count": 1
