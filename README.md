@@ -2,7 +2,7 @@
 - An [EmoTracker](https://emotracker.net/) pack for the [Donkey Kong 64 randomizer](https://github.com/2dos/dk64-randomizer) but can also be used for vanilla Donkey Kong 64 as well.
 - Current Version: **Version 1.5.0** (August 23rd, 2026)
 - [Changelog](https://github.com/Electric-Fortune/bananatracker/tree/master/docs/Changelog.MD)
-<img src="https://raw.githubusercontent.com/Electric-Fortune/bananatracker/master/bananatracker_example.PNG">
+<img src="https://raw.githubusercontent.com/Electric-Fortune/bananatracker/master/bananatracker_example_5.PNG">
 
 # Features
 This tracker features tracking packs for various DK64 Randomizer settings as well as vanilla DK64 101% playthroughs.
@@ -53,7 +53,7 @@ This tracker features tracking packs for various DK64 Randomizer settings as wel
 - Adds a Pinned Locations section to pin important or hinted locations during a playthrough
 - Adds a settings gear to customize the functionality of the map locations based on your randomizer settings
 - Adds the ability to resize the tracker for customizable map size control
-- View the full Map Tracker guide [HERE](https://github.com/Electric-Fortune/bananatracker/tree/master/docs/Map_tracker_usage.MD)
+- View the full Map Tracker guide [HERE](https://github.com/Electric-Fortune/bananatracker/tree/master/docs/Map_tracker_usage.md)
 
 # Instructions for use:
 1. Download EmoTracker at https://emotracker.net/
